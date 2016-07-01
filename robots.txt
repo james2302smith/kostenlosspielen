@@ -1,0 +1,56 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/themes/
+Disallow: /?s=
+Disallow: /images/
+Disallow: /database.asp*
+Disallow: /*function.require
+Disallow: /level*.xml
+Disallow: /category/
+Disallow: /author/
+Disallow: /weitere-s%3C/li%3E%3Cli%3E%3Ca%20href=
+Disallow: /sample-page/
+Disallow: /tag/
+Disallow: /wp-content/uploads/2011/11/*.xml
+Disallow: /wp-content/uploads/2011/11/*.php
+Disallow: /wp-content/uploads/2011/12/*.xml
+Disallow: /wp-content/uploads/2011/12/*.php
+Disallow: /wp-content/uploads/2011/10/*.xml
+Disallow: /wp-content/uploads/2011/10/*.php
+Disallow: /wp-content/uploads/2011/04/*.xml
+Disallow: /wp-content/uploads/2011/04/*.php
+Disallow: /wp-content/uploads/2011/05/*.xml
+Disallow: /wp-content/uploads/2011/05/*.php
+Disallow: /wp-content/uploads/2011/06/*.xml
+Disallow: /wp-content/uploads/2011/06/*.php
+Disallow: /wp-content/uploads/2011/07/*.xml
+Disallow: /wp-content/uploads/2011/07/*.php
+Disallow: /wp-content/uploads/2011/08/*.xml
+Disallow: /wp-content/uploads/2011/08/*.php
+Disallow: /wp-content/uploads/2012/01/*.xml
+Disallow: /wp-content/uploads/2012/01/*.php
+Disallow: /wp-content/uploads/2012/02/*.xml
+Disallow: /wp-content/uploads/2012/02/*.php
+Disallow: /wp-content/uploads/2012/03/*.xml
+Disallow: /wp-content/uploads/2012/03/*.php
+Disallow: /wp-content/uploads/2012/04/*.xml
+Disallow: /wp-content/uploads/2012/04/*.php
+Disallow: /wp-content/uploads/2012/05/*.xml
+Disallow: /wp-content/uploads/2012/05/*.php
+Disallow: /wp-content/uploads/2012/06/*.xml
+Disallow: /wp-content/uploads/2012/06/*.php
+Disallow: /wp-content/uploads/2012/07/*.xml
+Disallow: /wp-content/uploads/2012/07/*.php
+
+User-agent: Mediapartners-Google
+Disallow:
+
+
+
+Allow	: /wp-content/themes/twentyten/styles/default/
+Allow	: /wp-content/uploads/
+	
+
+
+Sitemap: http://www.kostenlosspielen.biz/sitemap.xml

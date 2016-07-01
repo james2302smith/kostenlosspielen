@@ -1,0 +1,30 @@
+/*
+	Custom Css
+	Author : Syed Amir Hussain
+*/
+.wrap .center{ text-align:center; }
+.sy-database-container{ border:1px solid; color:#235a81; min-width:250px; margin-bottom:10px; }
+.sy-database-container tr td.sy-header{ line-height:30px; width:98%; background:#333!important; color:#FFF; font-size:18px; font-family:Calibri; padding-left:5px; font-weight:bold; }
+.sy-database-container tr td.even{ background:#FFF; padding:5px; }
+.sy-database-container tr td.odd{ background:#DFDFDF; padding:5px; }
+.sy-database-container tr td.odd:hover, .sy-database-container tr td.even:hover{ background:#b6c6d7; cursor:pointer; }
+.wrap{ margin-bottom:10px; }
+
+.sy-database-container tr td{ border-left:1px solid #CCC; }
+.sy-database-container tr:first-child td{ border-left:none; }
+
+.sy-database-container tr th{ line-height:30px; border-left:1px solid #CCC; padding:0px 5px; }
+.sy-database-container tr:first-child th{ border-left:none; }
+
+.sy-database-container tr.data-row-even{ background:#FFF; }
+.sy-database-container tr.data-row-odd{ background:#DFDFDF; }
+.sy-database-container tr.data-row-even td, .sy-database-container tr.data-row-odd td{ padding:5px; font-weight:normal; }
+.sy-database-container tr.data-row-odd:hover, .sy-database-container tr.data-row-even:hover{ background:#b6c6d7; }
+
+.sy-database-container tr td.sy-header .sy_database{ margin-right:5px; cursor:pointer; background:url(../img/back.png) no-repeat left center; padding-left:32px; }
+.sy-database-container tr td.sy-header .sy_database:hover{ opacity:0.7; }
+.sy-main-content{ width: 99%; overflow-y: hidden; }
+.sy_bg{ background:#000; opacity:0.7; position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:99; }
+.sy_loader{ background:url(../img/ajax-loader.gif) #FFF no-repeat left center; background-position:5px; position: fixed; top: 32px; width: 130px; color: #000; text-align: center; z-index: 100; line-height: 25px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; font-weight: bold; left: 50%; }
+.sy_paginate{ background: #fff; width: 130px; margin-left:auto; margin-right:auto; color: #000; text-align: center; z-index: 100; border-radius: 4px; font-weight: bold; line-height:30px; margin-bottom:10px; }
+.sy_paginate:hover{ cursor:pointer; background:#237BAE; color:#FFF; }

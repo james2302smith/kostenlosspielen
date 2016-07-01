@@ -1,0 +1,52 @@
+/* =Log Page.
+ -------------------------------------------------------------- */
+.log-page-body {
+	background: url("../images/backgrounds/gray-diagonals-background.png") repeat scroll 50% 50% #A6A6A6;
+	font-size: 11px !important;
+}
+.log-page-body table {
+	font-size: 12px !important;
+}
+.log-page-body .ui-jqgrid-btable .jqgrow td {
+	height: 2.5em !important;
+}
+.log-page-body .ui-widget .ui-widget {
+	font-size: 12px !important;
+}
+.log-page-body .seopressor-log-page {
+	-moz-box-shadow: 1px 1px 15px #111111;
+	box-shadow: 1px 1px 15px #111111;
+	background-color: white;
+	border-radius: 11px;
+	margin: 2em auto;
+	padding: 1em 3em 2em 3em;
+	width: 90%;
+}
+.log-page-body .ui-pg-input {
+	border: 1px solid gray;
+	font-size: 11px !important;
+	height: 18px !important;
+}
+.log-page-body .ui-jqgrid .ui-pg-selbox {
+	height: 22px;
+}
+.seopressor-grid .ui-pg-selbox {
+	width: inherit !important;
+}
+.seopressor-grid .hasDatepicker {
+	background-color: white !important;
+}
+.seopressor-grid .ui-state-highlight {
+	border-color: #AAAAAA !important;
+}
+.seopressor-grid a {
+	color: #21759B !important;
+	text-decoration: none;
+}
+.seopressor-grid a:hover {
+	color: #D54E21 !important;
+	text-decoration: underline;
+}
+.ui-jqdialog .ui-jqdialog-content .DataTD input[type="text"] {
+	width: 16.3em;
+}

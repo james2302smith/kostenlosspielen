@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo SITE_ROOT_URL ?>/feed/" />
+    <link rel="pingback" href="<?php echo SITE_ROOT_URL ?>/xmlrpc.php" />
+    <link href="https://plus.google.com/110415531968788281581" rel="publisher" />
+
+    <?php wp_head(); ?>
+
+    <title><?php kos_title(); ?></title>
+    <?php kos_meta(); ?>
+
+    <!-- css -->
+    <!-- WP-Minify CSS -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SITE_ROOT_URL ?>/wp-content/themes/twentyten/jquery-plugins/jquery-modal/jquery.modal.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo SITE_CURRENT_THEME_URL?>/style.css" media="screen" />
+
+    <!-- Javascript -->
+    <!--[if IE]>
+    <script defer type="text/javascript" src="<?php echo SITE_CURRENT_THEME_URL?>/images/pngfix.js"></script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT_URL ?>/wp-content/themes/twentyten/jquery-plugins/jquery-modal/jquery.modal.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_CURRENT_THEME_URL?>/includes/js/main.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT_URL ?>/wp-content/themes/twentyten/scripts/common.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT_URL ?>/wp-content/themes/twentyten/scripts/tab_widgets.js"></script>
+    <!-- WP-Minify JS -->
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+          {lang:'de', parsetags:'explicit'}
+    </script>
+</head>
+
+<body <?php body_class(); ?>>
+    <!-- Facebook config -->
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '<?php echo KOS_FACEBOOK_CLIENT_API ?>',
+                cookie: true,
+                xfbml: true,
+                oauth: true
+            });
+        };
+    </script>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1&appId=624253760968467";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- TOP FIXED BAR -->
+    <div id="slogan">
+        <?php
+        if(is_front_page()){
+            ?>
+            <h1>Die besten Flash-Games kostenlos spielen | Online Spiele</h1>
+        <?php	}
+        if(is_single()){?>
+            <h1><?php echo $post->post_title ;?> kostenlos spielen auf <a href="<?php echo SITE_ROOT_URL ?>"><?php echo SITE_ROOT_URL ?></a></h1>
+        <?php	}
+        if(is_category()){
+            $thisCat = get_category(get_query_var('cat'),false);
+            $category_title=$thisCat->name;
+            { ?>
+                <h1><strong><?php echo $category_title ;?></strong></h1>: Nicht nur junge Leute, sondern auch alte Leute spielen heute noch gern. Unsere <?php echo $category_title ;?> auf <a href="<?php echo SITE_ROOT_URL ?>/"><?php echo KOS_DOMAIN ?></a> sorgen für viel Spaß, aber auch für viel Entspannung.
+            <?php }
+        }	?>
+    </div>
+    <div class="fixed-top-bar">
+        <div class="logo">
+            <a href="<?php echo SITE_ROOT_URL.(is_user_logged_in() ? '/?ref=logo' : '') ?>" title="Kostenlos Spielen"><img src="<?php echo SITE_ROOT_URL?>/wp-content/themes/twentyten/image/logo.png" alt="Kostenlos spielen" title="Kostenlos Spielen" /></a>
+        </div>
+        <div class="fixed-top-navigation">
+            <a href="javascript:void(0);">Spiele</a>
+            <ul class="nav">
+                <?php wp_list_categories('title_li='); ?>
+            </ul>
+        </div>
+        <div class="float-right fixed-top-right">
+            <!-- Search FORM -->
+            <div class="float-left searchform">
+                <form method="GET" action="<?php echo SITE_ROOT_URL ?>">
+                    <div class="input">
+                        <input type="text" name="s" value="<?php echo $_REQUEST['s'] ?>" autocomplete="off" placeholder="Suche nach Spiele…"/>
+                        <input type="submit" value="s"/>
+                        <ul class="search-suggestion">
+                            <li>Search 1</li>
+                            <li>Search 2</li>
+                            <li>Search 3</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!-- END Search FORM -->
+
+            <!-- RECOMMEND -->
+            <div class="float-left recommend-box">
+                <?php
+                $isLoggedIn = is_user_logged_in();
+                ?>
+                <ul>
+                    <?php /*
+                    <li class="inline-block common-background recommend <?php echo ($isLoggedIn ? 'recommend-game' : 'recommend-game-disabled') ?> ">
+                        <a class="recommend-game-link" href="javascript:void(0)" title="Recommended game <?php if(!$isLoggedIn) echo '- please login to use this function' ?>">
+                            <?php if($isLoggedIn): ?>
+                            <span>3</span>
+                            <?php endif ?>
+                        </a>
+                        <div class="recommend-list">
+                            <h3>Recommended game</h3>
+                            <div class="body">
+                                <ul>
+                                    <?php if(!$isLoggedIn): ?>
+                                        <div class="disabled-description">
+                                            This function is availble when you logged in!
+                                            <br/>
+                                            Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                        </div>
+                                    <?php else :?>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <div class="float-left game-img">
+                                                <img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/07/crazy-hoops.gif" />
+                                            </div>
+                                            <div class="float-left game">
+                                                <h4 class="title">Game title urna, lacus</h4>
+                                                <div class="description">
+                                                    Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <div class="float-left game-img">
+                                                <img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/07/crazy-hoops.gif" />
+                                            </div>
+                                            <div class="float-left game">
+                                                <h4 class="title">Game title urna, lacus</h4>
+                                                <div class="description">
+                                                    Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <div class="float-left game-img">
+                                                <img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/07/crazy-hoops.gif" />
+                                            </div>
+                                            <div class="float-left game">
+                                                <h4 class="title">Game title urna, lacus</h4>
+                                                <div class="description">
+                                                    Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <div class="float-left game-img">
+                                                <img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/07/crazy-hoops.gif" />
+                                            </div>
+                                            <div class="float-left game">
+                                                <h4 class="title">Game title urna, lacus</h4>
+                                                <div class="description">
+                                                    Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <div class="float-left game-img">
+                                                <img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/07/crazy-hoops.gif" />
+                                            </div>
+                                            <div class="float-left game">
+                                                <h4 class="title">Game title urna, lacus</h4>
+                                                <div class="description">
+                                                    Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                            <div class="footer">
+                                <?php if($isLoggedIn): ?>
+                                <a href="#">Show all</a>
+                                <?php endif;?>
+                            </div>
+                        </div>
+                    </li>
+                    */ ?>
+                    <li class = "inline-block common-background recommend <?php echo ('recent-game') ?>">
+                        <?php
+                        $kosRecent = KosRecents::getInstance();
+                        $recentGames = $kosRecent->getRecentGames();
+                        ?>
+                        <a class="recent-game-link" href="javascript:void(0)" title="Recent game">
+                            <?php if(count($recentGames) > 0): ?>
+                                <span><?php echo count($recentGames) ?></span>
+                            <?php endif ?>
+                        </a>
+                        <div class="recommend-list">
+                            <h3>Kürzlich gespielt</h3>
+                            <div class="body">
+                                <ul>
+                                    <?php if(!$isLoggedIn && false): ?>
+                                        <div class="disabled-description">
+                                            This function is availble when you logged in!
+                                            <br/>
+                                            Porttitor urna, lacus risus, sed tortor aliquam cras ultrices, cras porta dolor, et, facilisis facilisis nunc porttitor platea
+                                        </div>
+                                    <?php elseif(empty($recentGames)) :?>
+                                        <li>
+                                            <div class="standard-margin disabled-description">
+                                                Finde schnell, was du kürzlich gespielt hast: Diese Liste zeigt die letzten 5 Spiele, die du gespielt hast.
+                                            </div>
+                                        </li>
+                                    <?php else: ?>
+                                        <?php foreach($recentGames as $game): ?>
+                                            <li>
+                                                <a href="<?php echo SITE_ROOT_URL.'/'.$game->post_name ?>.html">
+                                                    <div class="float-left game-img">
+                                                        <img src="<?php echo $game->game_image ?>" />
+                                                    </div>
+                                                    <div class="float-left game">
+                                                        <h4 class="title"><?php echo $game->post_title ?></h4>
+                                                        <div class="description">
+                                                            <?php echo $game->game_intro_home ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </a>
+                                            </li>
+                                        <?php endforeach;?>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                            <div class="footer">
+                                <?php if($isLoggedIn && false): ?>
+                                    <a href="#">Show all</a>
+                                <?php endif;?>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="inline-block common-background recommend <?php echo ($isLoggedIn ? 'favorite-game' : 'favorite-game-disabled') ?>">
+                        <?php 
+                        if(class_exists('KosFavorites')) {
+                            $kosFavorites = KosFavorites::getInstance();
+                            $kosFavorites->init(1, 5);
+                        }
+                        ?>
+                        <a class="favorite-game-link" href="javascript:void(0)" title="Favorite game <?php if(!$isLoggedIn) echo '- please login to use this function' ?>">
+                            <?php if($kosFavorites && count($kosFavorites->getGames()) > 0): ?>
+                                <span><?php echo $kosFavorites->getTotal() ?><span>
+                            <?php endif ?>
+                        </a>
+                        <div class="recommend-list">
+                            <h3>Lieblingsspiel</h3>
+                            <div class="footer text-right">
+                                <?php if(($kosFavorites && count($kosFavorites->getGames()) > 0)):?>
+                                    <a href="<?php echo SITE_ROOT_URL ?>/favoriten-spiele">Alle Lieblingsspiel</a>
+                                <?php endif; ?>
+                            </div>
+                            <div class="body">
+                                <ul>
+                                    <?php if(!$isLoggedIn): ?>
+                                        <li>
+                                            <ul>
+                                                <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
+                                                <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+                                                <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
+                                            </ul>
+                                        </li>
+                                    <?php else :?>
+                                        <?php
+                                        if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
+                                            <?php foreach($kosFavorites->getGames() as $game): ?>
+                                            <li>
+                                                <a href="<?php echo SITE_ROOT_URL.'/'.$game->post_name ?>.html">
+                                                    <div class="float-left game-img">
+                                                        <img src="<?php echo $game->game_image ?>" />
+                                                    </div>
+                                                    <div class="float-left game">
+                                                        <h4 class="title"><?php echo $game->post_title ?></h4>
+                                                        <div class="description">
+                                                            <?php echo $game->game_intro_home ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </a>
+                                            </li>
+                                            <?php endforeach;?>
+                                        <?php else:?>
+                                            <li>
+                                                <ul>
+                                                    <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+                                                    <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
+                                                </ul>
+                                            </li>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- END RECOMMENDED -->
+            <!-- CURRENT USER -->
+            <div class="float-left userspaces">
+                <?php if(is_user_logged_in()): ?>
+                    <?php
+                        global $current_user;
+                        get_currentuserinfo();
+                        $userDisplayName = trim($current_user->first_name.' '.$current_user->last_name);
+                        if(!$userDisplayName) {
+                            $userDisplayName = $current_user->display_name;
+                            if(!$userDisplayName) {
+                                $userDisplayName = $current_user->user_login;
+                            }
+                        }
+                    ?>
+                    <div class="float-left user-avatar">
+                        <!--<img class="avatar" src="<?php /*echo SITE_ROOT_URL*/?>/wp-content/themes/twentyten/image/default_avatar.gif" />-->
+                        <?php echo get_avatar(get_current_user_id(),28);?>
+                    </div>
+                    <div class="float-left user-actions">
+                        <a class="display-name" href="javascript:void(0);">
+                            <?php echo $userDisplayName ?>
+                        </a>
+                        <ul>
+                            <li>
+                                <?php
+                                $userId = get_current_user_id();
+                                $commentFeed = CommentFeedModel::getInstance($userId);
+                                $noUnread = $commentFeed->getNoUnreadFeed();
+                                if($noUnread == 0) {
+                                    $noUnread = false;
+                                } else if($noUnread > 99) {
+                                    $noUnread = '99+';
+                                }
+
+                                ?>
+                                <a href="<?php echo SITE_ROOT_URL ?>/benachrichtigungen">Benachrichtigungen <?php echo $noUnread ? '('.$noUnread.')' : '' ?></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Einstellungen</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo SITE_ROOT_URL ?>/hilfe">Hilfe/FAQs</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo wp_logout_url(get_permalink()) ?>">Abmelden</a>
+                            </li>
+                        </ul>
+                    </div>
+                <?php else :?>
+                    <div class="standard-margin-right guestspace">
+                        <div class="float-left signin">
+                            <a id="social_connect_register_link" class="register" rel="modal:open" href="#authentication_modal_form_register" >
+                                Kostenlos registrieren
+                            </a>
+                            <span>oder</span>
+                            <a id="social_connect_login_link" class="login" rel="modal:open" href="#authentication_modal_form_login">
+                                Einloggen
+                            </a>
+                        </div>
+                    </div>
+                    <div style="width: 0px; height: 0px">
+                        <!-- LOGIN FORM -->
+                        <?php //echo authentication_modal_form('login') ?>
+                        <div id="authentication_modal_form_login" class="authentication-modal-form login-form" style="display: none">
+                            <div class="box-with-border form box-form form-login">
+                                <h4 class="title standard-margin-bottom">EINLOGGEN</h4>
+                                <a class="close-modal common-background" rel="modal:close"></a>
+                                <div class="body">
+                                    <div class="input-form standard-margin">
+                                        <?php echo KosUIHelper::modal_login_form() ?>
+                                    </div>
+                                    <div class="social standard-margin">
+                                        <?php echo KosUIHelper::social_login_buttons()?>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    Du hast noch kein Konto? <a rel="modal:open" href="#authentication_modal_form_register">Registrieren und zwar KOSTENLOS!</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- REGISTER FORM -->
+                        <?php //echo authentication_modal_form('register') ?>
+                        <div id="authentication_modal_form_register" class="authentication-modal-form register-form" style="display: none">
+                            <div class="float-left box authentication-intro">
+                                <div class="logo text-center">
+                                    <img src="http://demo.kostenlosspielen.biz/wp-content/themes/twentyten/image/logo1.png" alt="Kostenlos spielen" title="Kostenlos Spielen">
+                                </div>
+                                <div class="standard-margin">
+                                    <ul>
+                                        <li class="standard-margin-top standard-margin-bottom">In 15 Sekunden kostenlos registrieren</li>
+                                        <li class="standard-margin-top standard-margin-bottom">Mehr als 15.000 kostenlose Spiele spielen</li>
+                                        <li class="standard-margin-top standard-margin-bottom">Viele gute Spiele von uns empfohlen</li>
+                                        <li class="standard-margin-top standard-margin-bottom">Lieblingsspiele speichern</li>
+                                        <li class="standard-margin-top standard-margin-bottom">Highscore Spiele spielen und speichern</li>
+                                        <li class="standard-margin-top standard-margin-bottom">An monatlichen Wettbewerben teilnehmen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="float-left box box-with-border form box-form form-register">
+                                <h4 class="title">Registrieren</h4>
+                                <a class="close-modal common-background" rel="modal:close"></a>
+                                <div class="body">
+                                    <div class="input-form standard-margin">
+                                        <?php echo KosUIHelper::modal_register_form() ?>
+                                    </div>
+                                    <div class="social standard-margin">
+                                        <?php echo KosUIHelper::social_login_buttons() ?>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    Hast du schon ein Konto? <a rel="modal:open" href="#authentication_modal_form_login">Logge dich hier ein</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif;?>
+            </div>
+            <!-- END CURRENT USER -->
+
+            <div class="float-left fixed-top-userspace">
+                <ul>
+                    <?php //social_connect_login_header(); ?>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div><!--/header -->
+
+<div id="wrapper" class="hfeed">
+    <?php /*
+	<div id="slogan">
+	<?php
+	if(is_front_page()){
+		?>
+	<h1><strong><a href="<?php echo SITE_ROOT_URL ?>">Kostenlos Spielen</a></strong></h1>, ohne Gebühren und mit den besten Spielen. Wer mag das nicht? Jung oder alt, groß oder klein, spielen tut jeder gern.
+	<?php	}
+	if(is_single()){?>
+			<h1><?php echo $post->post_title ;?> kostenlos spielen auf <a href="<?php echo SITE_ROOT_URL ?>"><?php echo SITE_ROOT_URL ?></a></h1>
+	<?php	}
+	if(is_category()){
+	$thisCat = get_category(get_query_var('cat'),false);
+	$category_title=$thisCat->name;
+	{ ?>
+		<h1><strong><?php echo $category_title ;?></strong></h1>: Nicht nur junge Leute, sondern auch alte Leute spielen heute noch gern. Unsere <?php echo $category_title ;?> auf <a href="<?php echo SITE_ROOT_URL ?>/"><?php echo KOS_DOMAIN ?></a> sorgen für viel Spaß, aber auch für viel Entspannung.
+	<?php }
+	}	?>
+	</div>
+    */ ?>
+
+						
+
+	<div id="header">
+		<div id="masthead">
+			<div id="access">
+				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<?php
+   	  	$thisCat = get_category(get_query_var('cat'),false);
+		$cat_ID = $thisCat->term_id;
+	//echo 'cateid= '.$cat_ID;
+	if($cat_ID>0){
+	$categories=  get_categories('parent='.$cat_ID); 
+	$sub_menu='';
+		if(sizeof($categories)>0) { 
+			$sub_menu=$sub_menu.'<div class="sub-menu-navigation">';
+			//print_r(sizeof($categories));
+			foreach ($categories as $category) {
+				$sub_menu=$sub_menu.'<div class="sub-navigation"><a href="' . get_category_link( $category->term_id ) . '" title="' . $category->name . '" ' . '>' . $category->name.'</a></div>';
+			}
+			$sub_menu=$sub_menu.'</div>';
+			echo $sub_menu; 
+		} 
+	}
+	
+   if(is_home()||is_front_page()){?>
+   <div class="top-content">
+		<div class="top-content-left">
+			<h2>Empfehlung von kostenlosen Spielen</h2>
+			<?php include (ABSPATH . '/wp-content/plugins/wp-glideshow/glideshow.php'); ?> 
+		</div>
+		<div class="top-content-center" id="top-popular-post">
+			<div style="background: none repeat scroll 0 0 #009AFF; color: #FFFFFF;   font-size: 16px;   padding-bottom: 5px;   padding-left: 0;    padding-top: 5px;font-weight:bold; margin-bottom:5px !important;height:15px;">
+			<div style="float:left;width: 200px;">Meist gespielte Spiele</div>
+			<div class="top-popular-num-general">
+			<?php 
+			for($i=1;$i<6;$i++){
+				if($i==1){
+					echo '<a rel="nofollow" href="javascript:void(0);" name="'.$i.'" class="top-popular-post-page"><strong>'.$i.'</strong></a>&nbsp;';
+				}else{
+					echo '<a rel="nofollow" href="javascript:void(0);" name="'.$i.'" class="top-popular-post-page">'.$i.'</a>&nbsp;';
+				}
+			}
+			?>
+			
+			</div>
+			</div>
+			<?php 
+				$query='SELECT * FROM kostenlosspielen_posts
+						WHERE kostenlosspielen_posts.post_status =  \'publish\'
+						AND kostenlosspielen_posts.post_type =  \'post\'
+						ORDER BY game_views DESC
+						LIMIT 0,9'; 
+			   $pageposts = $wpdb->get_results($query, ARRAY_A);
+			   foreach ($pageposts as $post){
+			   	$post_image=replaceImages($post['game_image'],'75');
+				?>
+				<div class="top-popular-item">
+				<div class="ArrangeID_waiting"></div>
+				<a title="<?php echo $post['post_title']; ?>" href="<?php echo SITE_ROOT_URL.'/'.$post['post_name']; ?>.html"><img src="<?php echo $post_image; ?>" width="75" height="56" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" /><div><?php echo $post['post_title']; ?></div></a>
+				</div>
+			   <?php } ?>
+ 
+		</div>
+		<div class="top-content-right">
+			<div class="top-content-right-ads"><strong>Werbung</strong></div>
+			<div class="top-content-right-google">
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-2394577543361208";
+			/* kostenlosspielenbiz_index_300_right */
+			google_ad_slot = "7263029967";
+			google_ad_width = 300;
+			google_ad_height = 250;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script> 
+			</div>
+		</div>
+   </div>
+   
+   <?php }  ?>
+   <div style="clear:both;"></div>
+   <div class="breadcrumbs">
+      
+      <?php if ( function_exists('yoast_breadcrumb') ) {
+  $breadcrumbs = yoast_breadcrumb('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">','</span>',false);
+  echo $breadcrumbs;
+	} ?>      
+      <div style="float:right;padding-top:0px;">
+      	<div id="plusone-div" class="plusone"></div>
+		<script type="text/javascript">
+		      gapi.plusone.render('plusone-div',{"size": "medium", "count": "true"});
+		</script>
+      </div>
+      <div style="float:right;margin-top:0px;padding-right:7px;padding-top:0px;margin-top:-2px;">
+
+      	<?php 
+      	if(is_page('2')) { the_ratings('div','2', true); }
+		//if(is_category()) { echo category_vote($cat_ID); }
+      	?>
+      </div>
+
+      
+    </div>
+	
+
+	<div id="columns"><!-- START MAIN CONTENT COLUMNS -->
+

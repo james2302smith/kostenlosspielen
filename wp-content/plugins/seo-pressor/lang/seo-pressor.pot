@@ -1,0 +1,2267 @@
+# Copyright (C) 2013 SEOPressor
+# This file is distributed under the same license as the SEOPressor package.
+msgid ""
+msgstr ""
+"Project-Id-Version: SEOPressor 5.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/seo-pressor\n"
+"POT-Creation-Date: 2013-01-23 15:24:19+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: classes/capabilities.class.php:55
+msgid "Access List of Posts"
+msgstr ""
+
+#: classes/capabilities.class.php:55
+msgid "Access to the list of Posts and Pages with SEOPressor information"
+msgstr ""
+
+#: classes/capabilities.class.php:56
+msgid "Access Score Box"
+msgstr ""
+
+#: classes/capabilities.class.php:56
+msgid "Access to SEOPressor Box in Post add and edit page"
+msgstr ""
+
+#: classes/capabilities.class.php:57
+msgid "Full Access"
+msgstr ""
+
+#: classes/capabilities.class.php:57
+msgid "Full Access, including administrative options"
+msgstr ""
+
+#: classes/capabilities.class.php:58
+msgid "Access Settings and set Minimum Score"
+msgstr ""
+
+#: classes/capabilities.class.php:58
+msgid ""
+"Permission to access to global Settings including the access to set the "
+"Minimum Score on Advanced Settings tab"
+msgstr ""
+
+#: classes/capabilities.class.php:59
+msgid "Access Settings without access to set Minimum Score"
+msgstr ""
+
+#: classes/capabilities.class.php:59
+msgid ""
+"Permission to access to global Settings without permission to set the "
+"Minimum Score on Advanced Settings tab"
+msgstr ""
+
+#. translators: <<N>> and <<(s)>> should be ignored when translate
+#: classes/content_rate.class.php:38
+msgid "You have <<N>> keyword<<(s)>> in bold."
+msgstr ""
+
+#: classes/content_rate.class.php:39 classes/content_rate.class.php:95
+msgid ""
+"Keywords decorations are important. It tells search engines what your "
+"content is all about. Bold your keywords few times but do not overdo it."
+msgstr ""
+
+#: classes/content_rate.class.php:41
+msgid "You have <<N>> keyword<<(s)>> in italic."
+msgstr ""
+
+#: classes/content_rate.class.php:42 classes/content_rate.class.php:98
+msgid ""
+"Keywords decorations are important. It tells search engines what your "
+"content is all about. Italize your keywords few times but do not overdo it."
+msgstr ""
+
+#: classes/content_rate.class.php:44
+msgid "You have <<N>> keyword<<(s)>> in underline."
+msgstr ""
+
+#: classes/content_rate.class.php:45 classes/content_rate.class.php:101
+msgid ""
+"Keywords decorations are important. It tells search engines what your "
+"content is all about. Underline your keywords few times but do not overdo it."
+msgstr ""
+
+#: classes/content_rate.class.php:47
+msgid "You have keyword in <<N>> H1 tag<<(s)>>."
+msgstr ""
+
+#: classes/content_rate.class.php:48 classes/content_rate.class.php:104
+msgid ""
+"Most themes have H1 tag on the title. If not, always make sure you have a H1 "
+"tag in your content. An example is: <h1>Your title here</h1>"
+msgstr ""
+
+#: classes/content_rate.class.php:50
+msgid "You have keyword in <<N>> H2 tag<<(s)>>."
+msgstr ""
+
+#: classes/content_rate.class.php:51 classes/content_rate.class.php:107
+msgid ""
+"You should always section your content with sub-headings. An example of the "
+"tag in HTML: <h2>Your sub-heading</h2>"
+msgstr ""
+
+#: classes/content_rate.class.php:53
+msgid "You have keyword in <<N>> H3 tag<<(s)>>."
+msgstr ""
+
+#: classes/content_rate.class.php:54 classes/content_rate.class.php:110
+msgid ""
+"You should always section your content with sub-headings. An example of the "
+"tag in HTML: <h3>Your sub-heading</h3>"
+msgstr ""
+
+#: classes/content_rate.class.php:56
+msgid "You have keyword in <<N>> image ALT<<(s)>>."
+msgstr ""
+
+#: classes/content_rate.class.php:59
+msgid "You have keyword in first 100 words."
+msgstr ""
+
+#: classes/content_rate.class.php:62
+msgid "You have keyword in last 100 words."
+msgstr ""
+
+#: classes/content_rate.class.php:65
+msgid "You have keyword in the first sentence."
+msgstr ""
+
+#: classes/content_rate.class.php:68
+msgid "You have keyword in the last sentence."
+msgstr ""
+
+#: classes/content_rate.class.php:71
+msgid "Keyword in anchor text of an internal link."
+msgstr ""
+
+#: classes/content_rate.class.php:72 classes/content_rate.class.php:128
+#: classes/content_rate.class.php:131
+msgid ""
+"Add a link to your other pages within the same website using your keyword as "
+"the anchor text. An example in HTML: <a href=\"http://yoursite.com/"
+"anotherpage/\" >YOUR KEYWORD</a>"
+msgstr ""
+
+#: classes/content_rate.class.php:74
+msgid "Keyword in anchor text of an external link."
+msgstr ""
+
+#: classes/content_rate.class.php:75 classes/content_rate.class.php:134
+#: classes/content_rate.class.php:137
+msgid ""
+"Add a link to another reputable source of information with your keyword as "
+"the anchor text. An example in HTML: <a href=\"http://wikipedia.org/"
+"relatedtopic\">YOUR KEYWORD</a>"
+msgstr ""
+
+#: classes/content_rate.class.php:77
+msgid "Keyword found in domain name."
+msgstr ""
+
+#: classes/content_rate.class.php:78
+msgid ""
+"Your domain name is found to contain your keyword which is a good boost to "
+"your scoring."
+msgstr ""
+
+#: classes/content_rate.class.php:80
+msgid "Keyword found in Post/Page URL."
+msgstr ""
+
+#: classes/content_rate.class.php:81 classes/content_rate.class.php:140
+msgid "Your main keyword should always appear in the URL of this content."
+msgstr ""
+
+#: classes/content_rate.class.php:83
+msgid "<<N>> LSI Keyword<<(s)>> found."
+msgstr ""
+
+#: classes/content_rate.class.php:84 classes/content_rate.class.php:143
+msgid ""
+"Using more LSI keywords will help you rank better. Click on the LSI tab to "
+"see what other words you should include in your content. Include the ones "
+"which are most relevant to your content."
+msgstr ""
+
+#: classes/content_rate.class.php:86
+msgid "Keyword density is OK."
+msgstr ""
+
+#: classes/content_rate.class.php:87 classes/content_rate.class.php:146
+#: classes/content_rate.class.php:149
+msgid ""
+"The best keyword density is between 2% to 4%. There is no rule on this. "
+"Having less than 2%, your content will most likely be unfocused. Having it "
+"higher than 4% will most probably make your content unreadable. Try to "
+"adjust accordingly, focus on pleasing the readers, not the search engine."
+msgstr ""
+
+#: classes/content_rate.class.php:91
+msgid "Increase the length of the content."
+msgstr ""
+
+#: classes/content_rate.class.php:92
+msgid ""
+"Longer content tends to rank better. The reason is that longer content is "
+"perceived to contain more useful information. Try to increase the length of "
+"your content and make sure they are useful to the readers and not fillers."
+msgstr ""
+
+#: classes/content_rate.class.php:94
+msgid "You do not have keyword(s) in bold."
+msgstr ""
+
+#: classes/content_rate.class.php:97
+msgid "You do not have keyword(s) in italic."
+msgstr ""
+
+#: classes/content_rate.class.php:100
+msgid "You do not have keyword(s) in underline."
+msgstr ""
+
+#: classes/content_rate.class.php:103
+msgid "You do not have keyword in H1 tag."
+msgstr ""
+
+#: classes/content_rate.class.php:106
+msgid "You do not have keyword in H2 tag."
+msgstr ""
+
+#: classes/content_rate.class.php:109
+msgid "You do not have keyword in H3 tag."
+msgstr ""
+
+#: classes/content_rate.class.php:112
+msgid "You do not have keyword in Image ALT tag."
+msgstr ""
+
+#: classes/content_rate.class.php:115
+msgid "Keyword not found in first 100 words."
+msgstr ""
+
+#: classes/content_rate.class.php:118
+msgid "Keyword not found in last 100 words."
+msgstr ""
+
+#: classes/content_rate.class.php:121
+msgid "Keyword not found in first sentence."
+msgstr ""
+
+#: classes/content_rate.class.php:124
+msgid "Keyword not found in last sentence."
+msgstr ""
+
+#: classes/content_rate.class.php:127
+msgid "Link pointing to an internal page not found."
+msgstr ""
+
+#: classes/content_rate.class.php:130
+msgid "Keyword not found in anchor text of internal link."
+msgstr ""
+
+#: classes/content_rate.class.php:133
+msgid "Link pointing to an external reputable source not found."
+msgstr ""
+
+#: classes/content_rate.class.php:136
+msgid "keyword not found in anchor text of an external link."
+msgstr ""
+
+#: classes/content_rate.class.php:139
+msgid "Keyword not found in Post/Page URL."
+msgstr ""
+
+#: classes/content_rate.class.php:142
+msgid "No LSI Keyword used."
+msgstr ""
+
+#: classes/content_rate.class.php:145
+msgid "Keyword density is high."
+msgstr ""
+
+#: classes/content_rate.class.php:148
+msgid "Keyword density is too low."
+msgstr ""
+
+#: classes/content_rate.class.php:153
+msgid "Keyword is found in META Keyword."
+msgstr ""
+
+#: classes/content_rate.class.php:156
+msgid "Keyword is found in META description."
+msgstr ""
+
+#: classes/content_rate.class.php:159
+msgid "You need to have Keyword in Meta Keywords."
+msgstr ""
+
+#: classes/content_rate.class.php:162
+msgid "You need to have Keywords in META Description."
+msgstr ""
+
+#: classes/content_rate.class.php:167
+msgid "Use more LSI keywords."
+msgstr ""
+
+#: classes/content_rate.class.php:168
+msgid "Add more images with ALT tag."
+msgstr ""
+
+#: classes/content_rate.class.php:169
+msgid "Section your content using more headings."
+msgstr ""
+
+#: classes/content_rate.class.php:170
+msgid "Longer content ranks better."
+msgstr ""
+
+#: classes/content_rate.class.php:171
+msgid "You can target up to 3 keywords per content."
+msgstr ""
+
+#: classes/content_rate.class.php:174
+msgid ""
+"Your score may be too high, try to reduce to 100% by adjusting decorated "
+"keywords, keyword density and LSIs or increase your content length."
+msgstr ""
+
+#: classes/content_rate.class.php:177
+msgid "You are safe. No over-optimization is detected."
+msgstr ""
+
+#: classes/content_rate.class.php:178
+msgid "Keywords are bolded too many times."
+msgstr ""
+
+#: classes/content_rate.class.php:179
+msgid "Keywords are italized too many times."
+msgstr ""
+
+#: classes/content_rate.class.php:180
+msgid "Keywords are underlined too many times."
+msgstr ""
+
+#: classes/content_rate.class.php:181
+msgid ""
+"Keyword density is too high. Try replace some of your keywords with LSI "
+"keywords."
+msgstr ""
+
+#: classes/content_rate.class.php:182
+msgid "Too many LSI keywords are used."
+msgstr ""
+
+#: classes/content_rate.class.php:184
+msgid "Too many H1 tags contain your keyword."
+msgstr ""
+
+#: classes/content_rate.class.php:185
+msgid "Too many H2 tags contain your keyword."
+msgstr ""
+
+#: classes/content_rate.class.php:186
+msgid "Too many H3 tags contain your keyword."
+msgstr ""
+
+#: classes/content_rate.class.php:187
+msgid "Keyword appear in image ALTs too many times."
+msgstr ""
+
+#: classes/content_rate.class.php:188
+msgid "Keywords are used too many times as anchor text in links."
+msgstr ""
+
+#: classes/settings.class.php:69
+msgid ""
+"There is a new version of the SEOPressor Plugin. You can download the new "
+"version "
+msgstr ""
+
+#: classes/settings.class.php:71
+msgid "here"
+msgstr ""
+
+#: classes/settings.class.php:73
+msgid " or you can "
+msgstr ""
+
+#: classes/settings.class.php:76
+msgid " automatically upgrade"
+msgstr ""
+
+#: classes/settings.class.php:249 includes/admin/handle_settings.php:49
+msgid "The plugin is Active."
+msgstr ""
+
+#: classes/settings.class.php:256
+msgid "Your Single Domain license has already been activated on "
+msgstr ""
+
+#: classes/settings.class.php:256
+msgid ". If you need assistant, please contact support at "
+msgstr ""
+
+#: classes/settings.class.php:256 classes/settings.class.php:265
+#: pages/ajax/update_settings.php:270
+msgid " with your receipt number."
+msgstr ""
+
+#: classes/settings.class.php:262
+msgid ""
+"Your receipt number is not active, \n"
+"\t\t\t\t\t\tplease try again in 10 minutes or contact support at "
+msgstr ""
+
+#: classes/upgrade.class.php:135
+msgid "The file uploading fails: "
+msgstr ""
+
+#: includes/admin/handle_automatic_internal_link.php:12
+#: includes/admin/handle_external_cloaked.php:12
+#: includes/admin/handle_make_money.php:12
+#: includes/admin/handle_role_settings.php:12
+#: includes/admin/handle_score.php:12 includes/admin/handle_settings.php:14
+#: includes/admin/postbox.php:13
+msgid ""
+"SEOPressor permission denied. You can check this with WordPress or "
+"SEOPressor plugin administrator."
+msgstr ""
+
+#: includes/admin/handle_automatic_internal_link.php:18
+#: includes/admin/handle_external_cloaked.php:18
+#: includes/admin/handle_make_money.php:18
+#: includes/admin/handle_role_settings.php:18
+#: includes/admin/handle_score.php:18 includes/admin/handle_settings.php:20
+#: includes/admin/postbox.php:19
+msgid "SEOPressor needs to be activated."
+msgstr ""
+
+#: includes/admin/handle_settings.php:46
+msgid "The plugin is Inactive."
+msgstr ""
+
+#: includes/admin/handle_settings.php:104
+msgid "Write permission on Plugin folder."
+msgstr ""
+
+#: includes/admin/handle_settings.php:107
+msgid ""
+"Write permission is required to update SEOPressor. Please contact your "
+"hosting provider to compile your PHP handler to SuPHP or enable permissions "
+"to the following folders:"
+msgstr ""
+
+#: includes/admin/postbox.php:59
+msgid "Your keyword density is too low"
+msgstr ""
+
+#: includes/admin/postbox.php:62
+msgid "Your keyword density is too high"
+msgstr ""
+
+#: includes/admin/postbox.php:82
+msgid "Main"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:28
+msgid "This plugin require WordPress 3.4.2 or newer"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:28 seo-pressor.php:601
+msgid "Please update"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:32
+msgid "You already has a valid WordPress version:"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:39
+msgid ""
+"This plugin require PHP 5.3 or newer. We suggest you request this upgrade "
+"from your hosting provider. Your current version is:"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:43
+msgid "You already has a valid PHP version:"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:49
+msgid ""
+"For \"Support Multibyte character encoding\" in Settings/Advanced is needed "
+"the <a href=\"http://php.net/manual/en/book.mbstring.php\">PHP Multibyte "
+"String extension</a>, that is build in PHP library. To enable it please "
+"contact your hosting support"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:57
+msgid ""
+"You already has <a href=\"http://php.net/manual/en/book.mbstring.php\">PHP "
+"Multibyte String extension</a>"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:63
+msgid ""
+"Outgoing connection to SEOPressor Central Server fails, try again later or "
+"contact the "
+msgstr ""
+
+#: includes/admin/tab_requirements.php:63
+msgid "SEOPressor support desk"
+msgstr ""
+
+#: includes/admin/tab_requirements.php:63
+#: templates/includes/admin/handle_make_money.php:68
+#: templates/includes/admin/handle_settings.php:245
+#: templates/includes/admin/handle_settings.php:277
+#: templates/includes/admin/handle_settings.php:309
+#: templates/includes/admin/handle_settings.php:984
+#: templates/includes/admin/handle_settings.php:989
+#: templates/includes/admin/postbox.php:205
+msgid "."
+msgstr ""
+
+#: includes/admin/tab_requirements.php:67
+msgid "Success outgoing connections."
+msgstr ""
+
+#: pages/ajax/add_data/related_to_posts.php:25
+msgid "The Keywords were deleted."
+msgstr ""
+
+#: pages/ajax/add_data/related_to_posts.php:75 pages/ajax/list_data.php:355
+msgid "Click to view"
+msgstr ""
+
+#: pages/ajax/add_data/related_to_posts.php:76 pages/ajax/list_data.php:356
+msgid "suggestions"
+msgstr ""
+
+#: pages/ajax/add_data/related_to_posts.php:80 pages/ajax/list_data.php:360
+msgid "No suggestions"
+msgstr ""
+
+#: pages/ajax/add_data.php:46
+msgid "Already exists."
+msgstr ""
+
+#: pages/ajax/add_data.php:50
+msgid "The Name is missing."
+msgstr ""
+
+#: pages/ajax/add_data.php:54
+msgid "The Start Time must be less or equal that Due Time."
+msgstr ""
+
+#: pages/ajax/add_data.php:58 pages/ajax/delete_data.php:39
+msgid "You haven't enough permissions for this action."
+msgstr ""
+
+#: pages/ajax/add_data.php:62
+msgid "Update successfully."
+msgstr ""
+
+#: pages/ajax/add_data.php:70
+msgid "Added successfully."
+msgstr ""
+
+#: pages/ajax/add_data.php:74
+msgid "Error in DB query."
+msgstr ""
+
+#: pages/ajax/box_suggestions.php:43
+msgid "Data retrieved successfully"
+msgstr ""
+
+#: pages/ajax/box_suggestions.php:55 pages/ajax/box_suggestions.php:66
+#: pages/ajax/box_suggestions.php:76
+msgid "There is no LSI related to the keyword."
+msgstr ""
+
+#: pages/ajax/box_suggestions.php:85
+msgid "In order to get the LSI you should go to "
+msgstr ""
+
+#: pages/ajax/box_suggestions.php:88
+msgid " tab and specify a valid Bing API Key."
+msgstr ""
+
+#: pages/ajax/delete_data.php:43
+msgid "Deleted successfully."
+msgstr ""
+
+#: pages/ajax/delete_data.php:47
+msgid "Wasn't deleted."
+msgstr ""
+
+#: pages/ajax/html/capabilities_select.php:15
+#: pages/ajax/html/posts_select.php:21
+msgid "All"
+msgstr ""
+
+#: pages/ajax/list_data.php:113
+msgid ""
+"The videos couldn't be retrieved due to outgoing network connection problem. "
+"If this persist contact yout hosting support."
+msgstr ""
+
+#: pages/ajax/update_settings.php:21 pages/ajax/update_settings.php:111
+#: pages/ajax/update_settings.php:203 pages/ajax/update_settings.php:422
+msgid "The Settings were successfully updated."
+msgstr ""
+
+#: pages/ajax/update_settings.php:33
+msgid "The Bing API Key is valid. Click \"Save Settings\" if you want save it."
+msgstr ""
+
+#: pages/ajax/update_settings.php:42
+msgid ""
+"The Bing API Key can't be validated due to outgoing network connection "
+"problem. Could be a temporary problem, please try again and if this persist "
+"contact yout hosting support."
+msgstr ""
+
+#: pages/ajax/update_settings.php:45
+msgid "The Bing API Key is invalid."
+msgstr ""
+
+#: pages/ajax/update_settings.php:52
+msgid "The Bing API Key must be specified."
+msgstr ""
+
+#: pages/ajax/update_settings.php:127
+msgid ""
+"The Settings were successfully updated but note that the Bing API Key can't "
+"be validated due to outgoing network connection problem. If this persist "
+"contact yout hosting support."
+msgstr ""
+
+#: pages/ajax/update_settings.php:130
+msgid ""
+"The Settings were successfully updated but note that the Bing API Key seems "
+"to be invalid."
+msgstr ""
+
+#: pages/ajax/update_settings.php:232
+msgid ""
+"A problem occurs when try to Re-Activate the plugin. Check your network "
+"connection."
+msgstr ""
+
+#: pages/ajax/update_settings.php:238
+msgid "The ClickBank Receipt Number must be filled for Re-Activation."
+msgstr ""
+
+#: pages/ajax/update_settings.php:250
+msgid "The plugin is active."
+msgstr ""
+
+#: pages/ajax/update_settings.php:255
+msgid "The plugin requires Reactivation."
+msgstr ""
+
+#: pages/ajax/update_settings.php:265
+msgid "SEOPressor was activated successfully."
+msgstr ""
+
+#: pages/ajax/update_settings.php:270
+msgid ""
+"Activation failed. Either your receipt number is invalid or current domain "
+"name isn't registered. <a target='_blank' href='http://seopressor.com/"
+"download/download.php'>Please add your domain to your license and try again."
+"</a> Contact support at "
+msgstr ""
+
+#: pages/ajax/update_settings.php:277
+msgid "The ClickBank Receipt Number must be filled for activation."
+msgstr ""
+
+#: pages/ajax/update_settings.php:290
+msgid "The Plugin isn't Active."
+msgstr ""
+
+#: pages/ajax/update_settings.php:297
+msgid "You don't need upgrade. You already has the last version."
+msgstr ""
+
+#: pages/ajax/update_settings.php:301
+msgid ""
+"ZipArchive class is required. Please request your hosting provider to "
+"install this for your server"
+msgstr ""
+
+#: pages/ajax/update_settings.php:306
+msgid ""
+"The server where the Plugin is installed is blocking outgoing connections. "
+"Please check with your hosting provider to allow outgoing connections to "
+"SEOPressor.com"
+msgstr ""
+
+#: pages/ajax/update_settings.php:313
+msgid "Write permission is required to update SEOPressor."
+msgstr ""
+
+#: pages/ajax/update_settings.php:329
+msgid "Your license is invalid."
+msgstr ""
+
+#: pages/ajax/update_settings.php:347
+msgid ""
+"The upgrade fails. Check the Web Server user have permission to rewrite the "
+"content on the plugin folder "
+msgstr ""
+
+#: pages/ajax/update_settings.php:350
+msgid " Details: "
+msgstr ""
+
+#: pages/ajax/update_settings.php:362
+msgid ""
+"The upgrade fails. Check the permission to rewrite the content of the plugin "
+"folder "
+msgstr ""
+
+#: pages/ajax/update_settings.php:369
+msgid "Your plugin folder needs to have write permission."
+msgstr ""
+
+#: pages/ajax/update_settings.php:377
+msgid "Connection to download last version fails. Error: "
+msgstr ""
+
+#: pages/ajax/update_settings.php:388
+msgid ""
+"The upgrade was successfully. Now you can remove write access to your Plugin "
+"files."
+msgstr ""
+
+#: pages/ajax/update_settings.php:438 pages/ajax/update_settings.php:475
+msgid "The Setting was successfully updated."
+msgstr ""
+
+#: pages/ajax/update_settings.php:480
+msgid "Wrong Request"
+msgstr ""
+
+#: pages/seopressor.php:20
+msgid "Reactivation required."
+msgstr ""
+
+#: seo-pressor.php:177
+msgid "Twitter ID"
+msgstr ""
+
+#: seo-pressor.php:180
+msgid "Google Plus Profile URL"
+msgstr ""
+
+#: seo-pressor.php:574
+msgid "To use SEOPressor Plugin, it has to be activated. To do this, go to "
+msgstr ""
+
+#: seo-pressor.php:575
+msgid "Activation Settings"
+msgstr ""
+
+#: seo-pressor.php:601
+msgid "SEOPressor plugin require WordPress 3.2 or newer"
+msgstr ""
+
+#. #-#-#-#-#  seo-pressor.pot (SEOPressor 5.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: seo-pressor.php:629
+msgid "SEOPressor"
+msgstr ""
+
+#: seo-pressor.php:631 templates/includes/admin/handle_settings.php:98
+#: templates/includes/admin/postbox.php:205
+#: templates/includes/admin/postbox_below.php:22
+msgid "Settings"
+msgstr ""
+
+#: seo-pressor.php:633 templates/includes/admin/handle_score.php:13
+msgid "Posts/Pages Score"
+msgstr ""
+
+#: seo-pressor.php:634
+#: templates/includes/admin/handle_automatic_internal_link.php:13
+msgid "Internal Links"
+msgstr ""
+
+#: seo-pressor.php:635 templates/includes/admin/handle_external_cloaked.php:13
+msgid "External Cloaked"
+msgstr ""
+
+#: seo-pressor.php:636 templates/includes/admin/handle_role_settings.php:21
+msgid "Role Settings"
+msgstr ""
+
+#: seo-pressor.php:637 templates/includes/admin/handle_make_money.php:24
+msgid "Make Money"
+msgstr ""
+
+#: seo-pressor.php:638
+msgid "Support"
+msgstr ""
+
+#: seo-pressor.php:1148
+msgid "(no title)"
+msgstr ""
+
+#: seo-pressor.php:1321
+msgid "Automatic reactivation fails."
+msgstr ""
+
+#: templates/includes/add_to_footer.php:20
+#: templates/includes/admin/handle_make_money.php:81
+msgid "Wordpress "
+msgstr ""
+
+#: templates/includes/add_to_footer.php:22
+#: templates/includes/admin/handle_make_money.php:81
+msgid " Plugin by "
+msgstr ""
+
+#: templates/includes/admin/handle_automatic_internal_link.php:15
+msgid "This page let you configure the internal links."
+msgstr ""
+
+#: templates/includes/admin/handle_automatic_internal_link.php:25
+#: templates/includes/admin/handle_external_cloaked.php:25
+#: templates/includes/admin/handle_role_settings.php:115
+#: templates/includes/admin/handle_role_settings.php:132
+msgid "Click to Add"
+msgstr ""
+
+#: templates/includes/admin/handle_automatic_internal_link.php:25
+msgid "Internal Link"
+msgstr ""
+
+#: templates/includes/admin/handle_external_cloaked.php:15
+msgid "This page let you configure the cloaked redirects for the links."
+msgstr ""
+
+#: templates/includes/admin/handle_external_cloaked.php:25
+msgid "Cloaked Redirect"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:26
+msgid ""
+"This page lets you configure settings to make money via SEOPressor Affiliate "
+"Program."
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:40
+msgid "Add SEOPressor Attribution Link at the footer of the blog"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:46
+msgid "Check if you want earn money through us."
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:52
+msgid "Affiliate Link Color"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:62
+msgid "ClickBank ID"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:68
+msgid ""
+"Add your ClickBank Affiliate ID into the box. If you do not have a ClickBank "
+"ID, it's free to "
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:68
+msgid "sign up"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:75
+msgid "Tags before and after the link (optional)"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:89
+msgid "Participate in SEOPressor's Advertising Program"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:96
+msgid ""
+"We will have your visitors' browsers cookied to serve them SEOPressor "
+"banners."
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:98
+msgid ""
+"If they purchase SEOPressor following the banners, <strong>you will earn a "
+"commission</strong> too!"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:100
+msgid "Best part, <strong>we pay</strong> for the advertisement."
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:102
+msgid "Just <strong>enable this</strong> to earn from our effort!"
+msgstr ""
+
+#: templates/includes/admin/handle_make_money.php:109
+#: templates/includes/admin/handle_role_settings.php:56
+#: templates/includes/admin/handle_settings.php:175
+#: templates/includes/admin/handle_settings.php:222
+#: templates/includes/admin/handle_settings.php:334
+#: templates/includes/admin/handle_settings.php:471
+#: templates/includes/admin/handle_settings.php:514
+#: templates/includes/admin/handle_settings.php:647
+#: templates/includes/admin/handle_settings.php:800
+#: templates/includes/admin/handle_settings.php:900
+msgid "Save Settings"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:23
+msgid ""
+"This page let you configure what SEOPressor' sections users can access to."
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:32
+msgid "General Settings"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:33
+msgid "WordPress Roles"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:34
+msgid "Custom Roles"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:43
+msgid "Enable Roles Support"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:49
+msgid ""
+"Check if you want SEOPressor to be restricted to certain roles. If disabled, "
+"everyone can use SEOPressor."
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:68
+#: templates/includes/admin/handle_role_settings.php:99
+msgid "Capabilities List"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:87
+msgid ""
+"Set the capabilities that will have each Wordpress role enabling or "
+"restricting SEOPressor functionalities to users:"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:115
+msgid "Custom Role"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:119
+msgid "Create new custom roles and set its capabilities:"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:132
+msgid " Roles to User"
+msgstr ""
+
+#: templates/includes/admin/handle_role_settings.php:136
+msgid ""
+"Associate users with the created custom roles enabling or restricting "
+"SEOPressor functionalities to users:"
+msgstr ""
+
+#: templates/includes/admin/handle_score.php:15
+msgid ""
+"This page shows you the score and suggestions for all the posts and pages "
+"you have. Also allows you to change the main SEOPressor keyword."
+msgstr ""
+
+#: templates/includes/admin/handle_score.php:24
+msgid "To add or edit the keyword you must select a row in the grid below:"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:100
+msgid "This page shows you the settings for the plugin."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:109
+msgid "Automatic Decorations"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:110
+msgid "Tags"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:111
+msgid "Advanced"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:113
+msgid "Requirements"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:115
+msgid "Plugin Update"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:128
+msgid "Posts Titles"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:134
+msgid "Posts Slugs"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:140
+msgid "Keywords"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:146
+msgid "Images"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:152
+msgid "Links"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:161
+msgid "Keyword in post titles"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:167
+msgid "Allow SEOPressor to automatically add the Keyword in Posts titles."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:190
+msgid "Make Post Slugs SEO Friendly"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:197
+msgid ""
+"Allow SEOPressor to removing common words like 'a', 'since' and 'so' from "
+"the slug."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:205
+msgid "Words to omit"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:212
+msgid "What words do you want to omit when optimizing your post slugs."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:214
+msgid "One word per line."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:238
+msgid "Decorate your keyword with bold"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:245
+#: templates/includes/admin/handle_settings.php:277
+#: templates/includes/admin/handle_settings.php:309
+msgid "Allow SEOPressor to automatically decorate your keyword with "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:245
+msgid "bold"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:252
+msgid "Bold style"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:263
+msgid "This style will be used to display the keyword in Bold."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:270
+msgid "Decorate your keyword with italic"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:277
+msgid "italic"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:284
+msgid "Italic style"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:295
+msgid "This style will be used to display the keyword in Italic."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:302
+msgid "Decorate your keyword with underline"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:309
+msgid "underline"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:316
+msgid "Underline style"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:327
+msgid "This style will be used to display the keyword in Underline."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:349
+msgid "Alternate text attribute"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:356
+#: templates/includes/admin/handle_settings.php:492
+#: templates/includes/admin/handle_settings.php:506
+msgid "Allow SEOPressor to automatically add"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:356
+msgid " alt=\"value\" "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:356
+msgid "to all images in the content that do not have an alt tag value."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:363
+msgid "Override all images alt values."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:370
+msgid "Don't automatically decorate alt images values."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:378
+msgid "Alternate text structure"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:386
+msgid "Structure to be used for the image alt attribute."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:392
+#: templates/includes/admin/handle_settings.php:453
+msgid "List of allowed tags"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:410
+msgid "Title attribute"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:417
+msgid ""
+"Allow SEOPressor to automatically add the title attribute to all images in "
+"the content that do not have a image title value."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:424
+msgid "Override all images title values."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:431
+msgid "Don't automatically decorate title images values."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:439
+msgid "Title structure"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:447
+msgid "Structure to be used for the image title attribute."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:486
+msgid "No follow external links"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:492
+#: templates/includes/admin/handle_settings.php:506
+msgid " rel=\"nofollow\" "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:492
+msgid "to external links."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:500
+msgid "No follow image links"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:506
+msgid "to image links."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:536
+msgid "Post Tags"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:546
+msgid "Enable tagging"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:553
+msgid ""
+"Allow SEOPressor to automatically add related keywords in Posts tags based "
+"on Google Suggestions and Search."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:561
+msgid "Number of tags to add"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:569
+msgid "Specify up to how many tags should be added."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:577
+msgid "Append or Overwrite tags"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:583
+msgid "Append"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:588
+msgid "Overwrite"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:595
+msgid "Data to use to retrieve keywords"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:601
+msgid "Use post title."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:606
+msgid "Use post content."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:613
+msgid "Blacklisted tags"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:620
+msgid "What tags do you never want to include when importing keywords."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:622
+#: templates/includes/admin/handle_settings.php:639
+msgid "Comma separated values."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:630
+msgid "Generic tags"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:637
+msgid "What tags do you want to include in all posts."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:669
+msgid "LSI Settings"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:675
+msgid "Miscellaneous"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:684
+msgid "Language"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:689
+msgid "Default (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:695
+msgid "Language to be used for SEOPressor texts."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:702
+msgid "Content to analize"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:708
+msgid "SEOPressor will analyze the <strong>full page</strong>."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:713
+msgid "SEOPressor will analyze the <strong>content area</strong> only."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:716
+msgid ""
+" For Draft Posts will be always analized the Post Content because isn't "
+"published yet, for Published Posts the content to analyze depends on this "
+"settings. "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:722
+msgid "Headings in theme"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:727
+msgid "The active Theme already uses H1 tags for post and page headings."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:733
+msgid "The active Theme already uses H2 tags for post and page headings."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:739
+msgid "The active Theme already uses H3 tags for post and page headings."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:747
+msgid "Characters to omit"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:754
+msgid "What characters do you want to omit when analyzing your keywords."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:756
+msgid "One character per line."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:764
+msgid "Minimum score before publishing"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:773
+msgid "Important Note: "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:773
+msgid ""
+"Edit permission denied. Check this with WordPress or SEOPressor plugin "
+"administrator."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:776
+msgid ""
+"If the Score of a Post is less than this value, the status will be \"Draft\" "
+"instead of \"Published\"."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:778
+msgid "Leave it empty to allow Posts with any score to be published."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:786
+msgid "Support Multibyte character encoding"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:792
+msgid ""
+"Select if you requires that SEOPressor works with Multibyte character "
+"encoding languages."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:814
+msgid "Bing API Key"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:819
+msgid ""
+"Click to see instructions on how get a Bing API key in order to get the LSI."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:823
+msgid "API key for make the requests to the Bing API at Azure Marketplace."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:829
+msgid "Region/Language"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:833
+msgid "Arabia (Arabic)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:834
+msgid "Bulgaria (Bulgarian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:835
+msgid "Czech Republic (Czech)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:836
+msgid "Denmark (Danish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:837
+msgid "Austria (German)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:838
+msgid "Switzerland (German)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:839
+msgid "Germany (German)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:840
+msgid "Greece (Greek)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:841
+#: templates/includes/admin/handle_settings.php:843
+msgid "Australia (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:842
+msgid "Canada (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:844
+msgid "United Kingdom (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:845
+msgid "Indonesia (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:846
+msgid "Ireland (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:847
+msgid "India (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:848
+msgid "Malaysia (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:849
+msgid "New Zealand (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:850
+msgid "Philippines (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:851
+msgid "Singapore (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:852
+msgid "United States (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:853
+msgid "Arabia (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:854
+msgid "South Africa (English)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:855
+msgid "Argentina (Spanish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:856
+msgid "Chile (Spanish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:857
+msgid "Spain (Spanish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:858
+msgid "Mexico (Spanish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:859
+msgid "United States (Spanish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:860
+msgid "Latin America (Spanish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:861
+msgid "Estonia (Estonian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:862
+msgid "Finland (Finish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:863
+msgid "Belgium (French)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:864
+msgid "Canada (French)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:865
+msgid "Switzerland (French)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:866
+msgid "France (French)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:867
+msgid "Israel (Hebrew)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:868
+msgid "Croatia (Croatian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:869
+msgid "Hungary (Hungarian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:870
+msgid "Italy (Italian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:871
+msgid "Japan (Japanese)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:872
+msgid "Korea (Korean)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:873
+msgid "Lithuania (Lithuanian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:874
+msgid "Latvia (Latvian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:875
+msgid "Norway (Norwegian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:876
+msgid "Belgium (Dutch)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:877
+msgid "Netherlands (Dutch)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:878
+msgid "Poland (Polish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:879
+msgid "Brazil (Portuguese)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:880
+msgid "Portugal (Portuguese)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:881
+msgid "Romania (Romanian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:882
+msgid "Russia (Russian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:883
+msgid "Slovak Republic (Slovak)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:884
+msgid "Slovenia (Slovenian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:885
+msgid "Sweden (Swedish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:886
+msgid "Thailand (Thai)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:887
+msgid "Turkey (Turkish)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:888
+msgid "Ukraine (Ukrainian)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:889
+msgid "China (Chinese)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:890
+msgid "Hong Kong SAR (Chinese)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:891
+msgid "Taiwan (Chinese)"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:894
+msgid "Language to be used for the keywords LSI."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:901
+msgid "Validate API Key"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:930
+msgid "Activate Plugin Now"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:935
+msgid "Re Activate Plugin Now"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:969
+msgid ""
+"Your license is for multiples Sites. When you download SEOPressor you had "
+"the follow domains registered:"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:972
+msgid ""
+"Your license is for a single Site, and can be installed on the follow "
+"registered domain:"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:984
+msgid "You can download a new SEOPressor copy from the "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:984
+msgid "SEOPressor download page"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:989
+msgid "You can upgrade your SEOPressor to a Multi-site License now in "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:989
+msgid "SEOPressor upgrade page"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1008
+msgid "Step 1: "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1008
+msgid "Check for requirements."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1025
+msgid "See files"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1051
+msgid "Connection to download the latest version is allowed."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1063
+msgid "Has required PHP libraries."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1077
+msgid "You have an active license."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1080
+msgid ""
+"You have't an active license. You can try <a href='http://seopressor.com/"
+"download/download.php'>download</a> the latest version manually or contact "
+"SEOPressor support."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1090
+msgid "Step 2: "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1090
+msgid "Make a manual backup of the Plugin files."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1093
+msgid "Step 3: "
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1093
+msgid "Proceed with Update."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1106
+msgid "Proceed with Update"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1111
+msgid "You are using the latest version"
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1111
+msgid "Update is not required."
+msgstr ""
+
+#: templates/includes/admin/handle_settings.php:1113
+msgid "The need to activate the plugin."
+msgstr ""
+
+#: templates/includes/admin/postbox.php:53
+msgid "You may optimize "
+msgstr ""
+
+#: templates/includes/admin/postbox.php:53
+msgid "up to 3"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:53
+msgid " keywords."
+msgstr ""
+
+#: templates/includes/admin/postbox.php:55
+msgid "Click on "
+msgstr ""
+
+#: templates/includes/admin/postbox.php:55
+msgid "\"+\""
+msgstr ""
+
+#: templates/includes/admin/postbox.php:55
+msgid " to add keyword."
+msgstr ""
+
+#: templates/includes/admin/postbox.php:74
+msgid "Click to Refresh the Analysis"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:81
+msgid "Score"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:85
+#: templates/includes/admin/postbox.php:95
+msgid "0"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:92
+msgid "Keyword Density"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:96
+msgid "%"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:106
+msgid "Suggestions"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:109
+#: templates/includes/admin/postbox.php:121
+msgid "Content"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:116
+msgid "Filter suggestions"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:119
+msgid "Keyword Decoration"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:120
+#: templates/includes/admin/postbox_below.php:304
+#: templates/includes/admin/postbox_below.php:710
+#: templates/includes/admin/postbox_below.php:801
+msgid "URL"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:134
+msgid "Get your 100% easily"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:140
+msgid "Possible Over-Optimization Detected"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:146
+msgid "Over-Optimization Warning"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:156
+msgid "LSI"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:159
+msgid "Videos"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:166
+msgid "Filter LSI by keyword"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:177
+msgid "<strong>Click to Search</strong> Related Videos"
+msgstr ""
+
+#: templates/includes/admin/postbox.php:193
+msgid "Type to add a keyword."
+msgstr ""
+
+#: templates/includes/admin/postbox.php:201
+msgid ""
+"<strong>SEOPressor permission denied.</strong><br />You can check this with "
+"WordPress or SEOPressor plugin administrator."
+msgstr ""
+
+#: templates/includes/admin/postbox.php:205
+msgid ""
+"SEOPressor is <strong>inactive</strong>.<br />For more information, please "
+"visit "
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:23
+msgid "Rich Snippets"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:24
+msgid "Social SEO"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:25
+#: templates/includes/admin/postbox_below.php:835
+msgid "Dublin Core"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:26
+msgid "Add Tags"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:34
+msgid "Use keywords as META Tags"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:40
+msgid ""
+"Allow SEOPressor to automatically use the SEOPressor keywords as META "
+"keyword tags."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:50
+msgid "Use Post Categories as META keywords."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:60
+msgid "Use Post Tags as META keywords."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:70
+msgid "Use SEOPressor Keywords as META keywords."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:78
+msgid "Use META title tag"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:84
+msgid "Allow SEOPressor to automatically use the text below as META title tag."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:91
+msgid "META title"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:103
+msgid "Use META description tag"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:109
+msgid ""
+"Allow SEOPressor to automatically use the text below as META description tag."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:116
+msgid "META description"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:126
+msgid "Override keyword detection in sentences"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:132
+msgid ""
+"Allows you to automatically override SEOPressor keywords autodetection in "
+"sentences."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:142
+msgid "Keyword present in first sentence"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:152
+msgid "Keyword present in last sentence"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:159
+#: templates/includes/admin/postbox_below.php:263
+#: templates/includes/admin/postbox_below.php:359
+#: templates/includes/admin/postbox_below.php:446
+#: templates/includes/admin/postbox_below.php:507
+#: templates/includes/admin/postbox_below.php:668
+#: templates/includes/admin/postbox_below.php:765
+msgid "Update Settings"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:171
+#: templates/includes/admin/postbox_below.php:204
+msgid "Review"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:177
+#: templates/includes/admin/postbox_below.php:274
+msgid "Event"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:183
+#: templates/includes/admin/postbox_below.php:370
+msgid "People"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:189
+#: templates/includes/admin/postbox_below.php:457
+msgid "Product"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:195
+#: templates/includes/admin/postbox_below.php:518
+msgid "Recipe"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:210
+msgid "Rating"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:225
+msgid "Author"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:235
+msgid "Summary"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:242
+msgid "A short (one line) summary of the review."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:249
+#: templates/includes/admin/postbox_below.php:483
+#: templates/includes/admin/postbox_below.php:756
+#: templates/includes/admin/postbox_below.php:817
+#: templates/includes/admin/postbox_below.php:871
+msgid "Description"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:256
+msgid "A one-paragraph summary of the review."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:280
+#: templates/includes/admin/postbox_below.php:319
+#: templates/includes/admin/postbox_below.php:463
+msgid "Name"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:290
+msgid "Date And Time"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:297
+msgid "Format: mm/dd/yyyy hh:mm"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:313
+msgid "Location"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:329
+msgid "Street"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:339
+#: templates/includes/admin/postbox_below.php:396
+msgid "Locality"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:349
+#: templates/includes/admin/postbox_below.php:406
+msgid "Region"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:376
+msgid "First Name"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:386
+msgid "Last Name"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:416
+#: templates/includes/admin/postbox_below.php:726
+#: templates/includes/admin/postbox_below.php:809
+#: templates/includes/admin/postbox_below.php:847
+msgid "Title"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:426
+msgid "Home URL"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:436
+#: templates/includes/admin/postbox_below.php:554
+msgid "Photo URL"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:473
+msgid "Image URL"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:493
+msgid "Offers"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:500
+msgid "Put each Offer in a new line. Each Offer should be like: $19.99 USD."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:524
+msgid "Recipe Name"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:534
+msgid "Recipe Yield"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:544
+msgid "Author Name"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:564
+msgid "Ingredients"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:571
+msgid "Put each ingredient in a new line."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:577
+msgid "Nutrition Facts"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:583
+msgid "Calories"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:593
+msgid "Sodium"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:603
+msgid "Fat"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:613
+msgid "Protein"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:623
+msgid "Cholesterol"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:632
+msgid "Times"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:638
+msgid "Total (in minutes)"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:648
+msgid "Cook (in minutes)"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:658
+msgid "Preparation (in minutes)"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:682
+msgid "Facebook"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:688
+msgid "Twitter"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:697
+msgid "OpenGraph Tags"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:702
+#: templates/includes/admin/postbox_below.php:887
+msgid "Type"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:718
+msgid "Site Name"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:734
+msgid "Image"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:747
+msgid "Previous"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:748
+msgid "Next"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:777
+msgid "Twitter Card"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:783
+msgid "Creator Site"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:789
+msgid ""
+"This is the value the Post author specify in \"Twitter ID\" field in his "
+"profile."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:792
+#: templates/includes/admin/postbox_below.php:795
+#: templates/includes/admin/postbox_below.php:862
+#: templates/includes/admin/postbox_below.php:865
+msgid "EDIT"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:795
+msgid ""
+"Empty. This is the value the Post author specify in \"Twitter ID\" field in "
+"his profile."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:855
+msgid "Creator"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:860
+msgid ""
+"This is the value the Post author specify in \"Google Plus Profile URL\" "
+"field in his profile."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:865
+msgid ""
+"Empty. This is the value the Post author specify in \"Google Plus Profile URL"
+"\" field in his profile."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:879
+msgid "Date"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:904
+msgid "Tag The Net"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:910
+msgid "Yahoo!"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:921
+msgid "Add Tags from Tag the Net"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:927
+#: templates/includes/admin/postbox_below.php:966
+msgid " Instructions"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:930
+#: templates/includes/admin/postbox_below.php:969
+msgid "<strong>Step 1:</strong> Gather the tags from the service."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:932
+#: templates/includes/admin/postbox_below.php:971
+msgid "<strong>Step 2:</strong> Select the tags you want to add."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:934
+#: templates/includes/admin/postbox_below.php:973
+msgid "<strong>Step 3:</strong> Add selected tags to WordPress tags."
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:946
+#: templates/includes/admin/postbox_below.php:985
+msgid "Get Tags"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:947
+#: templates/includes/admin/postbox_below.php:986
+msgid "Add Tags to WordPress Tags"
+msgstr ""
+
+#: templates/includes/admin/postbox_below.php:960
+msgid "Add Tags from Yahoo!"
+msgstr ""
+
+#: templates/pages/log.php:26
+msgid "Log Viewer (server date and time: "
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.seopressor.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SEOPressor the Mandatory SEO Wordpress Plugin now optimizes your Wordpress "
+"better for top SEO ranking. Now powering more than 128K unique domains and "
+"15 million Wordpress pages. <a href=\"admin.php?page=seopressor-make-money"
+"\">Make Money</a> with SEOPressor now. Join our <a href=\"http://seopressor."
+"com/affiliate-invite/\">affiliate program</a>."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "SEOPressor on Facebook"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.facebook.com/SEOPressorOfficial"
+msgstr ""

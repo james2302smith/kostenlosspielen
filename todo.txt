@@ -1,0 +1,19 @@
+#Login and Register
+[v] Stylesheet for register form-error notification
+[ ] Text color of Input field is not consistence
+[ ] Validate in server side
+[ ] Process error return from server side
+[ ] In Oauth callback: if user already login and that oauth is not linked to any other account -> connect account directly
+[ ] Customise default login and register page (disable this page)
+[ ] Avatar khi login?
+
+#Comment
+[ ] Show comment form for any one
+[ ] Only logged in can comment
+[ ] Show comments exclude pingback and trackback
+
+#Deploy demo
+[x] Edit .htaccess file for working both in live and demo
+[ ] Fixbug hard-code in site URL
+
+

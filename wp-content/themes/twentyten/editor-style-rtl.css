@@ -1,0 +1,27 @@
+/*
+Theme Name: Twenty Ten
+*/
+/*
+Used to style the TinyMCE editor.
+*/
+html .mceContentBody{
+	unicode-bidi: embed;
+	width: 800px;
+}
+* {
+	font-family: Arial, Tahoma, sans-serif;
+}
+/* Text elements */
+ul, ol {
+	margin: 0 -18px 18px 0;
+}
+dd {
+	margin-right: 0;
+}
+blockquote {
+	font-style: normal;
+}
+table {
+	text-align: right;
+	margin: 0 0 24px -1px;
+}

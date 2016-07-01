@@ -1,0 +1,288 @@
+/* =Settings Pages. General.
+ -------------------------------------------------------------- */
+.seopressor-page .seopressor-page-header {
+	line-height: 1 !important;
+	margin-bottom: 0.5em;
+}
+.seopressor-settings-heading {
+	font-size: 16px !important;
+}
+.seopressor-page .seopressor-grid .ui-jqgrid .ui-pg-input {
+	font-size: 1em;
+	height: 1.8em;
+}
+.seopressor-page .seopressor-grid .ui-jqgrid .ui-pg-selbox {
+	font-size: 1em;
+	height: 1.9em;
+}
+.seopressor-page .seopressor-grid .ui-jqgrid td input {
+	height: 1.9em;
+	text-align: center;
+}
+/* =Settings Pages. General. Tables.
+ -------------------------------------------------------------- */
+.seopressor-page .seopressor-inner-table {
+	margin-bottom: 0;
+}
+.seopressor-page .seopressor-inner-table td {
+	padding: 4px 7px 2px;
+}
+.seopressor-page .seopressor-inner-table td.import-system {
+	padding-left: 7px !important;
+	width: 25em;
+}
+/* =Settings Pages. General. Messages.
+ -------------------------------------------------------------- */
+.seopressor-notification-message.seopressor-positive p, .seopressor-error-message.seopressor-negative p {
+	margin-left: 1.5em !important;
+}
+.seopressor-notification-message.seopressor-positive .seopressor-icon-suggestion-type {
+	background: url('../images/icons/sprites.png') no-repeat top left;
+	background-position: 0 -516px;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 0.6em;
+	 left: 0.6em;
+}
+.seopressor-error-message.seopressor-negative .seopressor-icon-suggestion-type {
+	background: url('../images/icons/sprites.png');
+	background-position: 0 -450px;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 0.6em;
+	left: 0.6em;
+}
+/* =Settings Pages. TAB: Advanced.
+ -------------------------------------------------------------- */
+#seopressor-advanced #seopressor-bing-api-get-api-keys-steps-button {
+	display: inline-block;
+	left: 0.4em;
+	top: -0.1em;
+	vertical-align: bottom;
+}
+/* =Settings Pages. TAB: Requirements.
+ -------------------------------------------------------------- */
+#seopressor-requirements table {
+	font-size: 12px;
+	margin-top: 0.5em;
+	padding-left: 1em;
+	width: 100%;
+}
+#seopressor-requirements table .seopressor-icon-cell {
+	border-bottom: 1px dotted #CCCCCC;
+	border-right: 1px dotted #CCCCCC;
+	position: relative;
+	width: 2.5em;
+}
+#seopressor-requirements table tr.seopressor-positive .seopressor-icon-suggestion-type {
+	background: url("../images/icons/sprites.png") no-repeat scroll 0 -516px transparent;
+	height: 16px;
+	left: 0.6em;
+	position: absolute;
+	top: -0.6em;
+	width: 16px;
+}
+#seopressor-requirements table tr.seopressor-negative .seopressor-icon-suggestion-type {
+	background: url("../images/icons/sprites.png") no-repeat scroll 0 -450px transparent;
+	height: 16px;
+	left: 0.6em;
+	position: absolute;
+	top: -0.6em;
+	width: 16px;
+}
+#seopressor-requirements table .seopressor-msg-cell {
+	border-bottom: 1px dotted #CCCCCC;
+	padding-left: 1em;
+}
+#seopressor-requirements .seopressor-requirements-domain-list {
+	padding-left: 3em;
+}
+#seopressor-requirements .seopressor-requirements-domain-list li {
+	list-style-type: disc;
+}
+/* =Settings Pages. TAB: Upgrade.
+ -------------------------------------------------------------- */
+#seopressor-upgrade {
+	font-size: 12px;
+}
+#seopressor-upgrade table {
+	margin-top: 0.5em;
+	padding-left: 1em;
+	width: 100%;
+}
+#seopressor-upgrade table .seopressor-icon-cell {
+	border-bottom: 1px dotted #CCCCCC;
+	border-right: 1px dotted #CCCCCC;
+	position: relative;
+	width: 2.5em;
+}
+#seopressor-upgrade table tr.seopressor-positive .seopressor-icon-suggestion-type {
+	background: url("../images/icons/sprites.png") no-repeat scroll 0 -516px transparent;
+	height: 16px;
+	left: 0.6em;
+	position: absolute;
+	top: -0.6em;
+	width: 16px;
+}
+#seopressor-upgrade table tr.seopressor-negative .seopressor-icon-suggestion-type {
+	background: url("../images/icons/sprites.png") no-repeat scroll 0 -450px transparent;
+	height: 16px;
+	left: 0.6em;
+	position: absolute;
+	top: -0.6em;
+	width: 16px;
+}
+#seopressor-upgrade table .seopressor-msg-cell {
+	border-bottom: 1px dotted #CCCCCC;
+	padding-left: 1em;
+}
+#seopressor-upgrade #seopressor-show-files .ui-icon {
+	float: left;
+}
+#seopressor-upgrade #seopressor-file-list-wrapper {
+	display: none;
+}
+#seopressor-upgrade #seopressor-file-list-wrapper {
+	padding-left: 3em;
+}
+#seopressor-upgrade #seopressor-file-list-wrapper li {
+	list-style-type: disc;
+}
+/* =Settings Pages. Posts/Pages Score.
+ -------------------------------------------------------------- */
+#seopressor-score-grid input[name='keyword']:focus {
+	border: 1px solid #7C0404;
+}
+.seopressor_page_seopressor-score #seopressor-message-container {
+	margin-bottom: 0.5em;
+}
+.seopressor_page_seopressor-score #TB_load {
+	border-radius: 8px !important;
+	padding-top: 20px !important;
+}
+.seopressor_page_seopressor-score #TB_ajaxContent {
+	overflow-x: hidden;
+	padding: 0;
+	width: 100% !important;
+}
+#seopressor-score-page-suggestions-container {
+	background-color: #E6E6E6;
+	background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6) !important;
+	background-image: -webkit-linear-gradient(top, #FFFFFF, #E6E6E6) !important;
+	background-image: -ms-linear-gradient(top, #FFFFFF, #E6E6E6) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#E6E6E6') !important;
+	background-image: -o-linear-gradient(top, #FFFFFF, #E6E6E6) !important;
+	background-image: linear-gradient(top, #FFFFFF, #E6E6E6) !important;
+	background-repeat: no-repeat;
+	border-color: #CCCCCC #CCCCCC #BBBBBB;
+	border-radius: 0 0 2px 2px;
+	border-style: solid;
+	border-top: 0 none;
+	border-width: 1px;
+	color: #545454;
+	font-size: 13px;
+	line-height: normal;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	width: 100%
+}
+#seopressor-score-page-suggestions-container li {
+	border-bottom: 1px dotted gray;
+	padding-bottom: 0.2em;
+	padding-left: 2.6em;
+	position: relative;
+}
+#seopressor-score-page-suggestions-container li:first-of-type {
+	margin-top: 0.4em;
+}
+#seopressor-score-page-suggestions-container li:last-of-type {
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+#seopressor-score-page-suggestions-container li.seopressor-negative .seopressor-icon-suggestion-type {
+	left: 0.8em !important;
+	top: 0.55em;
+}
+#seopressor-score-page-suggestions-container li p {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+	padding-top: 0.5em !important;
+	padding-bottom: 0.8em !important;
+	width: 92%;
+}
+#seopressor-score-page-suggestions-container li .seopressor-hidden-help {
+	border-left: 1px solid #C4BFBF;
+	font-style: italic;
+	padding-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+#seopressor-score-page-suggestions-container li .seopressor-icon-info {
+	background-position: 5% 0;
+	right: 0.5em;
+	top: 0.5em;
+}
+#seopressor-score-page-suggestions-container li .seopressor-icon-info-black {
+	background-position: 95% 0 !important;
+}
+/* =Settings Pages. Make Money. Colorpicker.
+ -------------------------------------------------------------- */
+#seopressor-footer-text-color {
+	background: url('../images/icons/colorpicker.png') no-repeat 98% 50%;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+#seopressor-footer-text-color-selector {
+	background: none repeat scroll 0 0 #EEEEEE;
+	border: 1px solid #CCCCCC;
+	position: absolute;
+	z-index: 2;
+}
+/* =Settings Pages. Make Money. Fields.
+ -------------------------------------------------------------- */
+.seopressor_page_seopressor-make-money input[type="text"] {
+	width: 16.3em !important;
+}
+/* =Settings Pages. Internal Links.
+ -------------------------------------------------------------- */
+.seopressor_page_seopressor-automatic-internal-link fieldset {
+	margin-top: 2em;
+}
+.seopressor_page_seopressor-automatic-internal-link fieldset legend {
+	top: -1.3em;
+}
+
+.seopressor_page_seopressor-automatic-internal-link #times_to_link {
+	text-align: right;
+}
+.seopressor_page_seopressor-automatic-internal-link .seopressor-icon-info {
+	margin-top: 0.2em;
+	right: auto;
+	top: auto;
+}
+/* =Settings Pages. External Cloaked.
+ -------------------------------------------------------------- */
+.seopressor_page_seopressor-external-cloaked fieldset {
+	margin-top: 2em;
+}
+.seopressor_page_seopressor-external-cloaked fieldset legend {
+	top: -1.3em;
+}
+.seopressor_page_seopressor-external-cloaked #times_to_link {
+	text-align: right;
+}
+.seopressor_page_seopressor-external-cloaked .seopressor-icon-info {
+	margin-top: 0.2em;
+	right: auto;
+	top: auto;
+}
+/* =Settings Pages. Role Settings.
+ -------------------------------------------------------------- */
+.seopressor_page_seopressor-role-settings #seopressor-role-settings-general table th {
+	width: 200px !important;
+}
+#seopressor-manage-wordpress-roles-grid .action_edit {
+	padding: 0.3em 1em !important;
+}

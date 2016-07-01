@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubble Ice World</title>
+	<script>document.domain = 'kostenlosspielen.biz';</script>
+    <link rel="stylesheet" href="assets/css/bubble.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, minimal-ui" />
+</head>
+<body class="loading">
+    <!-- share -->
+    <div id="share" >
+       
+    </div>
+
+    <div id="grid">
+        <div class="page" id="loading">
+            <div class="windows8" id="win-loading">
+                <div class="wBall" id="wBall_1">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_2">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_3">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_4">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_5">
+                <div class="wInnerBall">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="page hide" id="index">
+            <div class="btn-wrap">
+                <button class="btn-classics" id="start">Start</button>
+            </div>
+			 <div class="btn-wrap" style="bottom: 300px;">
+			 <a href="http://www.izzygames.com/?utm_source=Bubble+Ice+World&utm_medium=Bubble+Shooter&utm_campaign=Sponsorship" target="_blank">
+			<button class="btn-classics" id="more" style="height:200px;width:200px;background-repeat: no-repeat;background-position:0;background-image: url(http://www.izzygames.com/sponsor/Logo.gif);background-size: 200px 200px;"></button>
+			</a>
+			</div>
+        </div>
+        <div class="page hide" id="levelList">
+            <div class="wrap" id="listWrap">
+                <ul class="clearfix"></ul>
+            </div>
+            <div id="handler" class="handler">
+                <span class="icon-prev"></span>
+                <span class="txt">10/200</span>
+                <span class="icon-next"></span>
+            </div>
+            <button class="btn-back" id="goToIndex">Go To</button>
+        </div>
+        <div class="page hide" id="room">
+            <div id="info" class="hide">
+                <div id="pauseInfo" class="dialog">
+                    <h4 class="title pause">Pause</h4>
+                    <div class="btn-wrap">
+                        <button class="btn resume">Resume</button>
+                        <button class="fl back btn-back">Back</button>
+                        <button class="btn restart">Restart</button>
+                    </div>
+                </div>
+                <div id="gameWinInfo" class="dialog">
+                    <div class="info">
+                        <div class="star-wrap"></div>
+                        Time : <span class="time"></span>
+                    </div>
+                    <div class="share"><a href="javacript:;" id="weixinShare"></a></div>
+                    <div class="btn-wrap">
+                        <button class="btn nextLv">Nächste Level</button>
+                        <button class="fl back btn-back">Back</button>
+                        <button class="btn restart">Neuestarten</button>
+                    </div>
+                </div>
+                <div id="gameLostInfo" class="dialog">
+                    <h4 class="title lose">You Lose</h4>
+                    <p class="help-txt lose"><a href="http://www.izzygames.com">Mehr Spiele</a></p>
+                    <div class="btn-wrap">
+                        <button class="fl back btn-back">Back</button>
+                        <button class="btn restart">Restart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;">
+ </div>
+	<script type="text/javascript">var _gaq=[['_setAccount','UA-26616236-1'],['_gat._anonymizeIp'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=g.src='//stats.g.doubleclick.net/dc.js';s.parentNode.insertBefore(g,s);}(document,'script'));</script>	
+</body>
+</html>
+<script type="text/html" id="tpl_lvItem">
+    <span data-lv="<%=lv%>" class="<%=className%> lv-item">
+        <% if(className == 'unlock') {%>
+            <p><%=idx%></p>
+        <% } %>
+        <span class="star-wrap">
+            <%
+                _(3).times(function(i) {
+                    if( i+1 > star){
+            %>
+                <i></i>
+            <% }else{ %>
+                <i class="star"></i>
+            <%}})%>
+        </span>
+    </span>
+</script>
+<script src="assets/js/lib/lib.min.js"></script>
+<script src="assets/js/app/app.min.js"></script>

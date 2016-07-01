@@ -1,0 +1,23 @@
+
+You should set the Language files in this directory.
+
+=== Name convention ===
+
+Name your PO and MO file as locale.po and locale.mo (e.g., da_DK.mo or es_ES.mo)
+Do not name your PO or MO file as seo-pressor-es_ES.mo
+
+=== Translating With Poedit ===
+
+1- Download and install Poedit
+
+2- Open the seo-pressor.pot file in Poedit. You can see an image about how will looks the poEdit here http://codex.wordpress.org/Translating_WordPress#Translating_With_Poedit
+
+In the image the box labeled (1) is the original message (in English) from the POT file. The box labeled (2) is where you add your translation. Boxes labeled (3) and (4) are used for adding comments about the messages.
+For SEOPressor take in care that we could put some message for translators in box (3).
+
+3- Go to File → Save as… to save your translations in a PO file.
+
+4- If the .mo wasn't automatically generated, you can go to File → Save as… again to generate the MO file.
+Make sure the .mo file has read permission for the Web Server user.
+
+
