@@ -2,8 +2,8 @@
 /*
 +----------------------------------------------------------------+
 |																							|
-|	WordPress 2.8 Plugin: WP-PostRatings 1.62								|
-|	Copyright (c) 2009 Lester "GaMerZ" Chan									|
+|	WordPress Plugin: WP-PostRatings								|
+|	Copyright (c) 2012 Lester "GaMerZ" Chan									|
 |																							|
 |	File Written By:																	|
 |	- Lester "GaMerZ" Chan															|
@@ -16,6 +16,8 @@
 +----------------------------------------------------------------+
 */
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 ### Check Whether User Can Manage Ratings
 if(!current_user_can('manage_ratings')) {
@@ -29,7 +31,8 @@ $base_page = 'admin.php?page='.$base_name;
 
 
 ### If Form Is Submitted
-if($_POST['Submit']) {
+if ( isset( $_POST['Submit'] ) ) {
+	check_admin_referer('wp-postratings_options');
 	$postratings_customrating = intval($_POST['postratings_customrating']);
 	$postratings_template_vote = trim($_POST['postratings_template_vote']);
 	$postratings_template_text = trim($_POST['postratings_template_text']);
@@ -39,6 +42,7 @@ if($_POST['Submit']) {
 	$postratings_template_mostrated = trim($_POST['postratings_template_mostrated']);
 	$postratings_image = strip_tags(trim($_POST['postratings_image']));
 	$postratings_max = intval($_POST['postratings_max']);
+	$postratings_richsnippet = intval($_POST['postratings_richsnippet']);
 	$postratings_ratingstext_array = $_POST['postratings_ratingstext'];
 	$postratings_ratingstext = array();
 	foreach($postratings_ratingstext_array as $ratingstext) {
@@ -54,6 +58,7 @@ if($_POST['Submit']) {
 	$postratings_allowtorate = intval($_POST['postratings_allowtorate']);
 	$update_ratings_queries = array();
 	$update_ratings_text = array();
+	$postratings_options = array('richsnippet' => $postratings_richsnippet);
 	$update_ratings_queries[] = update_option('postratings_customrating', $postratings_customrating);
 	$update_ratings_queries[] = update_option('postratings_template_vote', $postratings_template_vote);
 	$update_ratings_queries[] = update_option('postratings_template_text', $postratings_template_text);
@@ -68,6 +73,7 @@ if($_POST['Submit']) {
 	$update_ratings_queries[] = update_option('postratings_ajax_style', $postratings_ajax_style);
 	$update_ratings_queries[] = update_option('postratings_logging_method', $postratings_logging_method);
 	$update_ratings_queries[] = update_option('postratings_allowtorate', $postratings_allowtorate);
+	$update_ratings_queries[] = update_option('postratings_options', $postratings_options);
 	$update_ratings_text[] = __('Custom Rating', 'wp-postratings');
 	$update_ratings_text[] = __('Ratings Template Vote', 'wp-postratings');
 	$update_ratings_text[] = __('Ratings Template Voted', 'wp-postratings');
@@ -82,22 +88,24 @@ if($_POST['Submit']) {
 	$update_ratings_text[] = __('Ratings AJAX Style', 'wp-postratings');
 	$update_ratings_text[] = __('Logging Method', 'wp-postratings');
 	$update_ratings_text[] = __('Allow To Vote Option', 'wp-postratings');
+	$update_ratings_text[] = __('Ratings Settings', 'wp-postratings');
 	$i = 0;
 	$text = '';
 	foreach($update_ratings_queries as $update_ratings_query) {
 		if($update_ratings_query) {
-			$text .= '<font color="green">'.$update_ratings_text[$i].' '.__('Updated', 'wp-postratings').'</font><br />';
+			$text .= '<p style="color: green;">'.$update_ratings_text[$i].' '.__('Updated', 'wp-postratings').'</p>';
 		}
 		$i++;
 	}
 	if(empty($text)) {
-		$text = '<font color="red">'.__('No Ratings Option Updated', 'wp-postratings').'</font>';
+		$text = '<p style="color: red;">'.__('No Ratings Option Updated', 'wp-postratings').'</p>';
 	}
 }
 
 
 ### Needed Variables
 $postratings_max = intval(get_option('postratings_max'));
+$postratings_options = get_option('postratings_options');
 $postratings_customrating = intval(get_option('postratings_customrating'));
 $postratings_url = plugins_url('wp-postratings/images');
 $postratings_path = WP_PLUGIN_DIR.'/wp-postratings/images';
@@ -197,16 +205,16 @@ $postratings_image = get_option('postratings_image');
 </script>
 <?php if(!empty($text)) { echo '<!-- Last Action --><div id="message" class="updated fade"><p>'.$text.'</p></div>'; } ?>
 <div class="wrap">
-	<div id="icon-wp-postratings" class="icon32"><br /></div>
-	<h2><?php _e('Post Ratings Options', 'wp-postratings'); ?></h2> 
-	<form method="post" action="<?php echo admin_url('admin.php?page='.plugin_basename(__FILE__)); ?>"> 
+	<h2><?php _e('Post Ratings Options', 'wp-postratings'); ?></h2>
+	<form method="post" action="<?php echo admin_url('admin.php?page='.plugin_basename(__FILE__)); ?>">
+		<?php wp_nonce_field('wp-postratings_options'); ?>
 		<input type="hidden" id="postratings_customrating" name="postratings_customrating" value="<?php echo $postratings_customrating; ?>" />
-		<input type="hidden" id="postratings_template_vote" name="postratings_template_vote" value="<?php echo htmlspecialchars(stripslashes(get_option('postratings_template_vote'))); ?>" />
-		<input type="hidden" id="postratings_template_text" name="postratings_template_text" value="<?php echo htmlspecialchars(stripslashes(get_option('postratings_template_text'))); ?>" />
-		<input type="hidden" id="postratings_template_permission" name="postratings_template_permission" value="<?php echo htmlspecialchars(stripslashes(get_option('postratings_template_permission'))); ?>" />
-		<input type="hidden" id="postratings_template_none" name="postratings_template_none" value="<?php echo htmlspecialchars(stripslashes(get_option('postratings_template_none'))); ?>" />
-		<input type="hidden" id="postratings_template_highestrated" name="postratings_template_highestrated" value="<?php echo htmlspecialchars(stripslashes(get_option('postratings_template_highestrated'))); ?>" />
-		<input type="hidden" id="postratings_template_mostrated" name="postratings_template_mostrated" value="<?php echo htmlspecialchars(stripslashes(get_option('postratings_template_mostrated'))); ?>" />
+		<input type="hidden" id="postratings_template_vote" name="postratings_template_vote" value="<?php echo esc_attr(stripslashes(get_option('postratings_template_vote'))); ?>" />
+		<input type="hidden" id="postratings_template_text" name="postratings_template_text" value="<?php echo esc_attr(stripslashes(get_option('postratings_template_text'))); ?>" />
+		<input type="hidden" id="postratings_template_permission" name="postratings_template_permission" value="<?php echo esc_attr(stripslashes(get_option('postratings_template_permission'))); ?>" />
+		<input type="hidden" id="postratings_template_none" name="postratings_template_none" value="<?php echo esc_attr(stripslashes(get_option('postratings_template_none'))); ?>" />
+		<input type="hidden" id="postratings_template_highestrated" name="postratings_template_highestrated" value="<?php echo esc_attr(stripslashes(get_option('postratings_template_highestrated'))); ?>" />
+		<input type="hidden" id="postratings_template_mostrated" name="postratings_template_mostrated" value="<?php echo esc_attr(stripslashes(get_option('postratings_template_mostrated'))); ?>" />
 		<h3><?php _e('Ratings Settings', 'wp-postratings'); ?></h3>
 		<table class="form-table">
 			 <tr>
@@ -214,14 +222,14 @@ $postratings_image = get_option('postratings_image');
 				<td>
 					<?php
 						$postratings_images_array = array();
-						if($handle = @opendir($postratings_path)) {     
-							while (false !== ($filename = readdir($handle))) {  
+						if($handle = @opendir($postratings_path)) {
+							while (false !== ($filename = readdir($handle))) {
 								if ($filename != '.' && $filename != '..' && strpos($filename, '.') !== 0) {
 									if(is_dir($postratings_path.'/'.$filename)) {
 										$postratings_images_array[$filename] = ratings_images_folder($filename);
 									}
-								} 
-							} 
+								}
+							}
 							closedir($handle);
 						}
 						foreach($postratings_images_array as $key => $value) {
@@ -236,20 +244,20 @@ $postratings_image = get_option('postratings_image');
 									echo '<input type="radio" name="postratings_image" onclick="set_custom('.$value['custom'].', '.$value['max'].');" value="'.$key.'" />';
 								}
 								echo '&nbsp;&nbsp;&nbsp;';
-								if('rtl' == $text_direction && file_exists($postratings_path.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT)) {
-									echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT.'" alt="rating_start-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								if(is_rtl() && file_exists($postratings_path.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT)) {
+									echo '<img src="'.$postratings_url.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT.'" alt="rating_start-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								} else if(file_exists($postratings_path.'/'.$key.'/rating_start.'.RATINGS_IMG_EXT)) {
-									echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_start.'.RATINGS_IMG_EXT.'" alt="rating_start.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+									echo '<img src="'.$postratings_url.'/'.$key.'/rating_start.'.RATINGS_IMG_EXT.'" alt="rating_start.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								}
-								echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_over.'.RATINGS_IMG_EXT.'" alt="rating_over.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
-								echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_on.'.RATINGS_IMG_EXT.'" alt="rating_on.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
-								echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_on.'.RATINGS_IMG_EXT.'" alt="rating_on.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
-								if('rtl' == $text_direction && file_exists($postratings_path.'/'.$key.'/rating_half-rtl.'.RATINGS_IMG_EXT)) {
-									echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_half-rtl.'.RATINGS_IMG_EXT.'" alt="rating_half-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								echo '<img src="'.$postratings_url.'/'.$key.'/rating_over.'.RATINGS_IMG_EXT.'" alt="rating_over.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								echo '<img src="'.$postratings_url.'/'.$key.'/rating_on.'.RATINGS_IMG_EXT.'" alt="rating_on.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								echo '<img src="'.$postratings_url.'/'.$key.'/rating_on.'.RATINGS_IMG_EXT.'" alt="rating_on.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								if(is_rtl() && file_exists($postratings_path.'/'.$key.'/rating_half-rtl.'.RATINGS_IMG_EXT)) {
+									echo '<img src="'.$postratings_url.'/'.$key.'/rating_half-rtl.'.RATINGS_IMG_EXT.'" alt="rating_half-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								} else {
-									echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_half.'.RATINGS_IMG_EXT.'" alt="rating_half.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+									echo '<img src="'.$postratings_url.'/'.$key.'/rating_half.'.RATINGS_IMG_EXT.'" alt="rating_half.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								}
-								echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_off.'.RATINGS_IMG_EXT.'" alt="rating_off.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								echo '<img src="'.$postratings_url.'/'.$key.'/rating_off.'.RATINGS_IMG_EXT.'" alt="rating_off.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 							} else {
 								if($postratings_image == $key) {
 									echo '<input type="radio" name="postratings_image" onclick="set_custom('.$value['custom'].', '.$value['max'].');" value="'.$key.'" checked="checked" />';
@@ -257,21 +265,21 @@ $postratings_image = get_option('postratings_image');
 									echo '<input type="radio" name="postratings_image" onclick="set_custom('.$value['custom'].', '.$value['max'].');" value="'.$key.'" />';
 								}
 								echo '&nbsp;&nbsp;&nbsp;';
-								if('rtl' == $text_direction && file_exists($postratings_path.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT)) {
-									echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT.'" alt="rating_start-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								if(is_rtl() && file_exists($postratings_path.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT)) {
+									echo '<img src="'.$postratings_url.'/'.$key.'/rating_start-rtl.'.RATINGS_IMG_EXT.'" alt="rating_start-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								} elseif(file_exists($postratings_path.'/'.$key.'/rating_start.'.RATINGS_IMG_EXT)) {
-									echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_start.'.RATINGS_IMG_EXT.'" alt="rating_start.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+									echo '<img src="'.$postratings_url.'/'.$key.'/rating_start.'.RATINGS_IMG_EXT.'" alt="rating_start.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								}
 								for($i = 1; $i <= $value['max']; $i++) {
 										if(file_exists($postratings_path.'/'.$key.'/rating_'.$i.'_off.'.RATINGS_IMG_EXT)) {
-											echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_'.$i.'_off.'.RATINGS_IMG_EXT.'" alt="rating_'.$i.'_off.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+											echo '<img src="'.$postratings_url.'/'.$key.'/rating_'.$i.'_off.'.RATINGS_IMG_EXT.'" alt="rating_'.$i.'_off.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 										}
 								}
 							}
-							if('rtl' == $text_direction && file_exists($postratings_path.'/'.$key.'/rating_end-rtl.'.RATINGS_IMG_EXT)) {
-								echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_end-rtl.'.RATINGS_IMG_EXT.'" alt="rating_end-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+							if(is_rtl() && file_exists($postratings_path.'/'.$key.'/rating_end-rtl.'.RATINGS_IMG_EXT)) {
+								echo '<img src="'.$postratings_url.'/'.$key.'/rating_end-rtl.'.RATINGS_IMG_EXT.'" alt="rating_end-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 							} elseif(file_exists($postratings_path.'/'.$key.'/rating_end.'.RATINGS_IMG_EXT)) {
-								echo '<img height="16" width="16" src="'.$postratings_url.'/'.$key.'/rating_end.'.RATINGS_IMG_EXT.'" alt="rating_end.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
+								echo '<img src="'.$postratings_url.'/'.$key.'/rating_end.'.RATINGS_IMG_EXT.'" alt="rating_end.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 							}
 							echo '&nbsp;&nbsp;&nbsp;('.$key.')';
 							echo '</p>'."\n";
@@ -284,7 +292,15 @@ $postratings_image = get_option('postratings_image');
 				<td><input type="text" id="postratings_max" name="postratings_max" value="<?php echo $postratings_max; ?>" size="3" <?php if($postratings_customrating) { echo 'readonly="readonly"'; } ?> /></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="button" name="update" value="<?php _e('Update \'Individual Rating Text/Value\' Display', 'wp-postratings'); ?>" onclick="update_rating_text_value();" class="button" /><br /><img id="postratings_loading" src="<?php echo $postratings_url; ?>/loading.gif" alt="" style="display: none;" /></td>
+				<th scope="row" valign="top"><?php _e('Enable Google Rich Snippets?', 'wp-postratings'); ?></th>
+				<td>
+					<input type="radio" id="postratings_richsnippet_on" name="postratings_richsnippet" value="1" <?php if($postratings_options['richsnippet']) { echo 'checked="checked"'; } ?> />&nbsp;<?php _e('Yes', 'wp-postratings'); ?>
+					&nbsp;&nbsp;
+					<input type="radio" id="postratings_richsnippet_off" name="postratings_richsnippet" value="0" <?php if(!$postratings_options['richsnippet']) { echo 'checked="checked"'; } ?> />&nbsp;<?php _e('No', 'wp-postratings'); ?>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" name="update" value="<?php _e('Update \'Individual Rating Text/Value\' Display', 'wp-postratings'); ?>" onclick="update_rating_text_value('<?php echo wp_create_nonce('wp-postratings_option_update_individual_rating')?>');" class="button" /><br /><img id="postratings_loading" src="<?php echo $postratings_url; ?>/loading.gif" alt="" style="display: none;" /></td>
 			</tr>
 		</table>
 		<h3><?php _e('Individual Rating Text/Value', 'wp-postratings'); ?></h3>
@@ -302,7 +318,7 @@ $postratings_image = get_option('postratings_image');
 						for($i = 1; $i <= $postratings_max; $i++) {
 							echo '<tr>'."\n";
 							echo '<td>'."\n";
-							if('rtl' == $text_direction && file_exists($postratings_path.'/'.$postratings_image.'/rating_start-rtl.'.RATINGS_IMG_EXT)) {
+							if(is_rtl() && file_exists($postratings_path.'/'.$postratings_image.'/rating_start-rtl.'.RATINGS_IMG_EXT)) {
 								echo '<img src="'.$postratings_url.'/'.$postratings_image.'/rating_start-rtl.'.RATINGS_IMG_EXT.'" alt="rating_start-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 							} elseif(file_exists($postratings_path.'/'.$postratings_image.'/rating_start.'.RATINGS_IMG_EXT)) {
 								echo '<img src="'.$postratings_url.'/'.$postratings_image.'/rating_start.'.RATINGS_IMG_EXT.'" alt="rating_start.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
@@ -320,7 +336,7 @@ $postratings_image = get_option('postratings_image');
 									echo '<img src="'.$postratings_url.'/'.$postratings_image.'/rating_on.'.RATINGS_IMG_EXT.'" alt="rating_on.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 								}
 							}
-							if('rtl' == $text_direction && file_exists($postratings_path.'/'.$postratings_image.'/rating_end-rtl.'.RATINGS_IMG_EXT)) {
+							if(is_rtl() && file_exists($postratings_path.'/'.$postratings_image.'/rating_end-rtl.'.RATINGS_IMG_EXT)) {
 								echo '<img src="'.$postratings_url.'/'.$postratings_image.'/rating_end-rtl.'.RATINGS_IMG_EXT.'" alt="rating_end-rtl.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
 							} elseif(file_exists($postratings_path.'/'.$postratings_image.'/rating_end.'.RATINGS_IMG_EXT)) {
 								echo '<img src="'.$postratings_url.'/'.$postratings_image.'/rating_end.'.RATINGS_IMG_EXT.'" alt="rating_end.'.RATINGS_IMG_EXT.'" class="post-ratings-image" />';
@@ -337,7 +353,7 @@ $postratings_image = get_option('postratings_image');
 							echo $postratings_ratingsvalue[$i-1].'" size="3" maxlength="5" />'."\n";
 							echo '</td>'."\n";
 							echo '</tr>'."\n";
-						}								
+						}
 					?>
 				</tbody>
 			</table>
@@ -361,7 +377,7 @@ $postratings_image = get_option('postratings_image');
 						<option value="0"<?php selected('0', $postratings_ajax_style['fading']); ?>><?php _e('No', 'wp-postratings'); ?></option>
 						<option value="1"<?php selected('1', $postratings_ajax_style['fading']); ?>><?php _e('Yes', 'wp-postratings'); ?></option>
 					</select>
-				</td> 
+				</td>
 			</tr>
 		</table>
 		<h3><?php _e('Allow To Rate', 'wp-postratings'); ?></h3>
