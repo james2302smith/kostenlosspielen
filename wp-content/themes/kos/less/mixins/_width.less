@@ -1,0 +1,48 @@
+// MIXIN: Generate Width
+//--------------------------------------------------------------------------------
+// Parameter 		Type 		Default 		Description
+//--------------------------------------------------------------------------------
+// @maxValue 		int							maximum value
+// @minValue 		int			1				Minium value
+// @countDown 		int			5				Count down value
+
+.widthSizeLoop(@maxValue, @minValue: 1, @countDown: 5) {
+	@numberMaxValue: unit(@maxValue);
+	@unitMaxValue: get-unit(@maxValue);
+	@numberMinValue: unit(@minValue);
+	@unitMinValue: get-unit(@maxValue);
+
+	// Default unit is px
+	.loopSize (@numberMaxValue) when (@numberMaxValue >= @numberMinValue) and (@unitMaxValue = px){
+		.@{width-prefix}-@{numberMaxValue} {
+			width: ~"@{numberMaxValue}@{unitMaxValue}";
+		}
+
+		// next iteration
+		.loopSize(@numberMaxValue - @countDown);
+	}
+	// When unit is %
+	.loopSize (@index) when (@index >= @minValue)  and (@unitMaxValue = ~"%"){
+		@per: per;
+		.@{width-prefix}-@{index}-@{per} {
+			width: ~"@{index}@{unitMaxValue}";
+		}
+
+		// next iteration
+		.loopSize(@index - @countDown);
+	}
+
+	// When unit is not px and %
+	.loopSize (@index) when (@index >= @minValue) and not (@unitMaxValue = ~"%") and not (@unitMaxValue = px){
+		.@{width-prefix}-@{index}@{unitMaxValue} {
+			width: ~"@{index}@{unitMaxValue}";
+		}
+
+		// next iteration
+		.loopSize(@index - @countDown);
+	}
+
+	// end the loop when index is 0
+	.loopSize (0) {}
+	.loopSize(@numberMaxValue);
+}

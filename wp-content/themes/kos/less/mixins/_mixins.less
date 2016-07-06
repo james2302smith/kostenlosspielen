@@ -1,0 +1,52 @@
+//
+// MIXINS
+// --------------------------------------------------
+@import "_font-size.less";
+@import "_width.less";
+@import "_margin-padding.less";
+@import "_layout.less";
+
+// MIXIN : Transform CSS3
+// --------------------------------------------------
+.transform(@transform) {
+	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform; // IE9 only
+	transform: @transform;
+}
+
+// MIXIN: Set Link Color
+// --------------------------------------------------
+.link-color(@color: @link-color, @colorHover: @link-hover-color){
+	color: @color;
+	&:hover {
+		color: @colorHover;
+	}
+}
+
+// MIXIN: Set Link Color for text
+.link-text-color(@color: @text-color, @colorHover: @link-color){
+	color: @color;
+	&:hover {
+		color: @colorHover;
+	}
+}
+
+//
+// MIXIN: MIXINS for this Project
+// --------------------------------------------------//
+// Write new mixin for project here...
+.reset-list(){
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+// Init Hook Mixins
+.hook-common-style(){};
+.hook-screen-sm-min(){};
+.hook-screen-md-min(){};
+.hook-screen-lg-min(){};
+.hook-screen-md-max(){};
+.hook-screen-sm-max(){};
+.hook-screen-xs-max(){};

@@ -102,6 +102,7 @@ add_action( 'widgets_init', 'kos_widgets_init' );
  * Enqueue scripts and styles.
  */
 function kos_scripts() {
+	//wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/bootstrap.min.css' );
 	wp_enqueue_style( 'kos-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'kos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -117,7 +118,7 @@ add_action( 'wp_enqueue_scripts', 'kos_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -127,14 +128,19 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+// require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Hiden Admin Bar
+ */
+show_admin_bar( false );

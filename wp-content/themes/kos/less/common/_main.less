@@ -1,0 +1,48 @@
+// --------------------------------------------------
+// MAIN STYLE
+// --------------------------------------------------
+//
+
+// LAYOUT: LAYOUT STYLE
+// -------------------------------------
+.site-header {
+	background: #161711 url('@{img-patch}/bg-header.png') repeat-x center top;
+}
+.site-footer {
+	background: #532a14 url('@{img-patch}/bg-footer.png') repeat-x center bottom;
+	padding-bottom: 125px;
+	.site-info {
+		position: relative;
+		&:before {
+			content: "";
+			display: block;
+			.size(206px, 216px);
+			background: transparent url('@{img-patch}/squirrel-footer.png') repeat-x center bottom;
+			position: absolute;
+			left: -95px;
+			bottom: -45px;
+		}
+	}
+}
+// MODULE: MODULE STYLE
+// -------------------------------------
+.site-main-menu {
+	background-color: #bb6428;
+}
+#primary-menu {
+	padding-left: 0;
+	li {
+		list-style: none;
+	}
+	> li {
+		> a {
+			color: #fff;
+			font-weight: bold;
+			text-shadow: -1px -1px 0 #4d1609, 1px -1px 0 #4d1609, -1px 1px 0 #4d1609, 1px 1px 0 #4d1609;
+		}
+
+	}
+	.sub-menu {
+		display: none;
+	}
+}
