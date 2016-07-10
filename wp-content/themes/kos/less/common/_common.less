@@ -2,18 +2,124 @@
 // COMMONS STYLE
 // --------------------------------------------------
 //
-
+a {
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+ul, li {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.circle-number {
+	font-size: 10px;
+	.square(17px);
+	line-height: 17px;
+	display: block;
+	background-color: #f7941d;
+	border-radius: 17px;
+}
+.fa-heart {
+	color: #fbce08;
+}
+.container {
+	width: auto;
+	max-width: 1440px;
+}
 // OVERRIDE: OVERRIDE STYLE
 // -------------------------------------
 
 // COMMON: COMMON STYLE
 // -------------------------------------
+
 // Genarate Sprite Images
 .icon {
 	display: inline-block;
 	vertical-align: middle;
 }
 .sprites(@spritesheet-sprites);
+.dropdown-box {
+	&:extend(.dropdown-menu);
+	padding: 15px;
+	.dropdown-title {
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 0;
+		> a.pull-right  {
+			font-size: @font-size-base;
+		}
+	}
+}
+.open > .dropdown-box {
+	&:extend(.open > .dropdown-menu);
+}
+.pull-right > .dropdown-box {
+	&:extend(.pull-right > .dropdown-menu);
+}
+// ICON CATEGORY
+// -------------------------------------
+.stitches-icon-cat(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.icon-cat {
+    background-image: url('@{img-path}/spritesheet.png');
+    background-repeat: no-repeat;
+    display: block;
+
+    &.icon-cat-abenteuer {
+        .stitches-icon-cat(-5px, -5px, 62px, 32px);
+    }
+
+    &.icon-cat-action {
+        .stitches-icon-cat(-77px, -5px, 46px, 31px);
+    }
+
+    &.icon-cat-brettspiele {
+        .stitches-icon-cat(-133px, -5px, 45px, 43px);
+    }
+
+    &.icon-cat-denkspiele {
+        .stitches-icon-cat(-188px, -5px, 37px, 42px);
+    }
+
+    &.icon-cat-dice, &.icon-cat-dice {
+        .stitches-icon-cat(-235px, -5px, 41px, 34px);
+    }
+
+    &.icon-cat-geschick {
+        .stitches-icon-cat(-286px, -5px, 44px, 43px);
+    }
+
+    &.icon-cat-kinder {
+        .stitches-icon-cat(-340px, -5px, 49px, 42px);
+    }
+
+    &.icon-cat-madchen {
+        .stitches-icon-cat(-399px, -5px, 45px, 54px);
+    }
+
+    &.icon-cat-renen {
+        .stitches-icon-cat(-454px, -5px, 51px, 45px);
+    }
+
+    &.icon-cat-sport {
+        .stitches-icon-cat(-515px, -5px, 40px, 40px);
+    }
+
+    &.icon-cat-startseite {
+        .stitches-icon-cat(-565px, -5px, 20px, 17px);
+    }
+}
+
+
+
+
+
+
 
 /* HOOK COMMONS STYLE */
 .hook-common-style;

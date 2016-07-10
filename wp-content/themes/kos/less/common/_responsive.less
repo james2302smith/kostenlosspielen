@@ -27,11 +27,19 @@
 
 // Large devices (large desktops, 1200px and up)
 @media (min-width: @screen-lg-min) {
-
-
+	#primary-menu > li > a {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 
 	// Hook Mixin Render Medium devices (desktops, 992px and up)
 	.hook-screen-lg-min;
+}
+@media (min-width: 1366px) {
+	#primary-menu > li > a {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 // In special cases
