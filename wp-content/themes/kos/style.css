@@ -9285,6 +9285,61 @@ li {
   width: 20px;
   height: 17px;
 }
+.icon-cat-sm {
+  background-image: url('images/spritesheet-sm.png');
+  background-repeat: no-repeat;
+  display: block;
+}
+.icon-cat-sm.icon-cat-sm-abenteuer {
+  background-position: -5px -5px;
+  width: 52px;
+  height: 27px;
+}
+.icon-cat-sm.icon-cat-sm-action {
+  background-position: -67px -5px;
+  width: 41px;
+  height: 32px;
+}
+.icon-cat-sm.icon-cat-sm-brettspiele {
+  background-position: -118px -5px;
+  width: 39px;
+  height: 38px;
+}
+.icon-cat-sm.icon-cat-sm-denkspiele {
+  background-position: -167px -5px;
+  width: 32px;
+  height: 36px;
+}
+.icon-cat-sm.icon-cat-sm-dice {
+  background-position: -209px -5px;
+  width: 41px;
+  height: 34px;
+}
+.icon-cat-sm.icon-cat-sm-geschick {
+  background-position: -260px -5px;
+  width: 38px;
+  height: 37px;
+}
+.icon-cat-sm.icon-cat-sm-kinder {
+  background-position: -308px -5px;
+  width: 43px;
+  height: 36px;
+}
+.icon-cat-sm.icon-cat-sm-madchen {
+  background-position: -361px -5px;
+  width: 33px;
+  height: 40px;
+}
+.icon-cat-sm.icon-cat-sm-renen {
+  background-position: -404px -5px;
+  width: 44px;
+  height: 39px;
+}
+.icon-cat-sm.icon-cat-sm-sport {
+  background-position: -458px -5px;
+  width: 34px;
+  height: 34px;
+}
 /* HOOK COMMONS STYLE */
 .site-header {
   background: #161711 url('images/bg-header.png') repeat-x center top;
