@@ -9340,6 +9340,91 @@ li {
   width: 34px;
   height: 34px;
 }
+.icon-cm {
+  background-image: url('images/common-icons.png');
+  background-repeat: no-repeat;
+  display: block;
+}
+.icon-cm.icon-cm-black-crown {
+  background-position: -5px -5px;
+  width: 19px;
+  height: 15px;
+}
+.icon-cm.icon-cm-black-gift {
+  background-position: -34px -5px;
+  width: 19px;
+  height: 19px;
+}
+.icon-cm.icon-cm-black-group {
+  background-position: -63px -5px;
+  width: 20px;
+  height: 14px;
+}
+.icon-cm.icon-cm-camera-yellow {
+  background-position: -93px -5px;
+  width: 31px;
+  height: 24px;
+}
+.icon-cm.icon-cm-comment {
+  background-position: -134px -5px;
+  width: 26px;
+  height: 23px;
+}
+.icon-cm.icon-cm-comment-lg {
+  background-position: -170px -5px;
+  width: 36px;
+  height: 33px;
+}
+.icon-cm.icon-cm-diamonds {
+  background-position: -216px -5px;
+  width: 36px;
+  height: 35px;
+}
+.icon-cm.icon-cm-favorite-plus {
+  background-position: -262px -5px;
+  width: 29px;
+  height: 27px;
+}
+.icon-cm.icon-cm-heart-yellow {
+  background-position: -301px -5px;
+  width: 24px;
+  height: 23px;
+}
+.icon-cm.icon-cm-heart-yellow-lg {
+  background-position: -335px -5px;
+  width: 30px;
+  height: 29px;
+}
+.icon-cm.icon-cm-medal {
+  background-position: -375px -5px;
+  width: 33px;
+  height: 54px;
+}
+.icon-cm.icon-cm-new {
+  background-position: -418px -5px;
+  width: 37px;
+  height: 41px;
+}
+.icon-cm.icon-cm-no-avatar {
+  background-position: -465px -5px;
+  width: 14px;
+  height: 15px;
+}
+.icon-cm.icon-cm-question {
+  background-position: -489px -5px;
+  width: 26px;
+  height: 27px;
+}
+.icon-cm.icon-cm-rank {
+  background-position: -525px -5px;
+  width: 27px;
+  height: 23px;
+}
+.icon-cm.icon-cm-star-metal {
+  background-position: -562px -5px;
+  width: 22px;
+  height: 31px;
+}
 /* HOOK COMMONS STYLE */
 .site-header {
   background: #161711 url('images/bg-header.png') repeat-x center top;
