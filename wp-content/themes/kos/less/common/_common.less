@@ -27,6 +27,14 @@ ul, li {
 	width: auto;
 	max-width: 1440px;
 }
+.btn {
+	min-width: 34px;
+	font-weight: bold;
+	.fa-heart {
+		font-size: 17px;
+    	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+	}
+}
 // OVERRIDE: OVERRIDE STYLE
 // -------------------------------------
 
@@ -39,15 +47,38 @@ ul, li {
 	vertical-align: middle;
 }
 .sprites(@spritesheet-sprites);
+.dropdown-menu {
+	border-width: 5px;
+}
 .dropdown-box {
 	&:extend(.dropdown-menu);
-	padding: 15px;
+	min-width: 300px;
+	padding: 0;
 	.dropdown-title {
 		font-size: 16px;
 		font-weight: bold;
 		margin-top: 0;
 		> a.pull-right  {
 			font-size: @font-size-base;
+		}
+	}
+}
+.dropdown-box-content {
+	padding: @gutter;
+	background-color: #fff;
+	margin: 0 5px 5px;
+}
+.dropdown-box-header {
+	font-size: @font-size-base;
+	font-weight: bold;
+	margin: 0;
+	padding: 10px @gutter 10px;
+	color: #fae09b;
+	a {
+		color: #eee;
+		font-weight: normal;
+		&:hover {
+			color: #fff;
 		}
 	}
 }
@@ -118,7 +149,8 @@ ul, li {
 .icon-cat-sm {
     background-image: url('@{img-path}/spritesheet-sm.png');
     background-repeat: no-repeat;
-    display: block;
+    display: inline-block;
+    vertical-align: text-bottom;
 
     &.icon-cat-sm-abenteuer {
         .stitches-icon-cat(-5px, -5px, 52px, 27px);
@@ -164,7 +196,7 @@ ul, li {
 .icon-cm {
     background-image: url('@{img-path}/common-icons.png');
     background-repeat: no-repeat;
-    display: block;
+    display: inline-block;
 
     &.icon-cm-black-crown {
         .stitches-icon-cat(-5px, -5px, 19px, 15px);

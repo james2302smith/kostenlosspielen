@@ -2697,7 +2697,11 @@ output {
   line-height: 1.42857143;
   color: #555555;
 }
-.form-control {
+.form-control,
+.signin-register-box input[type="text"],
+.signin-register-box input[type="email"],
+.signin-register-box input[type="password"],
+.signin-register-box select {
   display: block;
   width: 100%;
   height: 34px;
@@ -3679,9 +3683,9 @@ tbody.collapse.in {
   list-style: none;
   font-size: 14px;
   text-align: left;
-  background-color: #ffffff;
+  background-color: rgba(0, 88, 38, 0.9);
   border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.55);
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -3703,13 +3707,13 @@ tbody.collapse.in {
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  color: #333333;
+  color: #ffffff;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #262626;
+  color: #005826;
   background-color: #f5f5f5;
 }
 .dropdown-menu > .active > a,
@@ -9175,6 +9179,14 @@ li {
   width: auto;
   max-width: 1440px;
 }
+.btn {
+  min-width: 34px;
+  font-weight: bold;
+}
+.btn .fa-heart {
+  font-size: 17px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -9197,8 +9209,13 @@ li {
   width: 44px;
   height: 44px;
 }
+.dropdown-menu,
 .dropdown-box {
-  padding: 15px;
+  border-width: 5px;
+}
+.dropdown-box {
+  min-width: 300px;
+  padding: 0;
 }
 .dropdown-box .dropdown-title {
   font-size: 16px;
@@ -9207,6 +9224,25 @@ li {
 }
 .dropdown-box .dropdown-title > a.pull-right {
   font-size: 14px;
+}
+.dropdown-box-content {
+  padding: 15px;
+  background-color: #fff;
+  margin: 0 5px 5px;
+}
+.dropdown-box-header {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px 15px 10px;
+  color: #fae09b;
+}
+.dropdown-box-header a {
+  color: #eee;
+  font-weight: normal;
+}
+.dropdown-box-header a:hover {
+  color: #fff;
 }
 .icon-cat,
 #primary-menu > li.cat-icon > a:before {
@@ -9288,7 +9324,8 @@ li {
 .icon-cat-sm {
   background-image: url('images/spritesheet-sm.png');
   background-repeat: no-repeat;
-  display: block;
+  display: inline-block;
+  vertical-align: text-bottom;
 }
 .icon-cat-sm.icon-cat-sm-abenteuer {
   background-position: -5px -5px;
@@ -9343,7 +9380,7 @@ li {
 .icon-cm {
   background-image: url('images/common-icons.png');
   background-repeat: no-repeat;
-  display: block;
+  display: inline-block;
 }
 .icon-cm.icon-cm-black-crown {
   background-position: -5px -5px;
@@ -9746,6 +9783,15 @@ li {
 .header-right .search-form {
   overflow: hidden;
 }
+.header-right .favorite-game-link .fa-heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .header-right .user-spaces .dropdown {
   margin-left: 5px;
 }
@@ -9757,18 +9803,11 @@ li {
 }
 .header-right .favorite-game .btn .circle-number {
   position: absolute;
-  left: 50%;
-  bottom: 50%;
-}
-.header-right .favorite-game .dropdown-box {
-  min-width: 300px;
+  right: -2px;
+  bottom: 58%;
 }
 .header-right .recommend-box {
   margin-left: 5px;
-}
-.header-right .list-game-favorite {
-  border-top: 1px solid #bb6428;
-  padding-top: 10px;
 }
 .header-right .list-game-favorite .game-item {
   font-size: 12px;
@@ -9798,6 +9837,10 @@ li {
 .guest-space {
   text-align: right;
 }
+.guest-space .icon-cm-no-avatar {
+  position: relative;
+  top: 2px;
+}
 #footer-widget {
   color: #fff;
 }
@@ -9806,6 +9849,22 @@ li {
   font-weight: bold;
   font-size: 18px;
   text-transform: uppercase;
+}
+.signin-register-box {
+  display: none;
+  width: 100%;
+  background-color: #005e20;
+  color: #fff;
+  padding: 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1050;
+  max-height: 100%;
+}
+.signin-register-box .form-box,
+.signin-register-box .register-hint {
+  display: none;
 }
 .clear {
   clear: both;
@@ -10292,34 +10351,40 @@ li {
   margin: 5px 0 !important;
 }
 .margin-0 {
-  margin: 0;
+  margin: 0!important;
 }
 .margin-top-0 {
-  margin-top: 0;
+  margin-top: 0!important;
 }
 .margin-right-0 {
-  margin-right: 0;
+  margin-right: 0!important;
 }
 .margin-bottom-0 {
-  margin-bottom: 0;
+  margin-bottom: 0!important;
 }
 .margin-left-0 {
-  margin-left: 0;
+  margin-left: 0!important;
 }
 .padding-0 {
-  padding: 0;
+  padding: 0!important;
 }
 .padding-top-0 {
-  padding-top: 0;
+  padding-top: 0!important;
 }
 .padding-right-0 {
-  padding-right: 0;
+  padding-right: 0!important;
 }
 .padding-bottom-0 {
-  padding-bottom: 0;
+  padding-bottom: 0!important;
 }
 .padding-left-0 {
-  padding-left: 0;
+  padding-left: 0!important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.no-padding {
+  padding: 0 !important;
 }
 .font-size-0 {
   font-size: 0;

@@ -63,19 +63,20 @@
 							                    ?>
 							                    <?php if($isLoggedIn): ?>
 							                    <button class="btn btn-primary favorite-game-link" data-toggle="dropdown" href="javascript:void(0)" title="Favorite game <?php if(!$isLoggedIn) echo '- please login to use this function' ?>">
+						                        	&nbsp;
+						                        	<span class="fa fa-heart"></span>
 							                        <?php if($kosFavorites && count($kosFavorites->getGames()) > 0): ?>
-							                        	<span class="fa fa-heart"></span>
 							                            <span class="circle-number"><?php echo $kosFavorites->getTotal() ?><span>
 							                        <?php endif ?>
 							                    </button>
 							                    <?php endif; ?>
 							                    <div class="dropdown-box recommend-list">
-							                        <h3 class="dropdown-title">Lieblingsspiel
+							                        <h4 class="dropdown-box-header">Lieblingsspiel
 														<?php if(($kosFavorites && count($kosFavorites->getGames()) > 0)):?>
 							                                <a class="pull-right" href="<?php echo SITE_ROOT_URL ?>/favoriten-spiele">Alle Lieblingsspiel</a>
 							                            <?php endif; ?>
-							                        </h3>
-							                        <div class="body">
+							                        </h4>
+							                        <div class="dropdown-box-content">
 							                            <ul class="list-game-favorite">
 							                                <?php if(!$isLoggedIn): ?>
 							                                    <li>
@@ -163,9 +164,16 @@
 							                    </div>
 							                <?php else :?>
 							                    <div class="guest-space">
-							                        <div class="signin">
-							                            <a id="social_connect_register_link" class="btn btn-primary btn-xs register" rel="modal:open" href="#authentication_modal_form_register" >Kostenlos registrieren <i class="fa fa-user-plus"></i></a><br><a id="social_connect_login_link" class="btn btn-primary btn-xs margin-top-5 login" rel="modal:open" href="#authentication_modal_form_login">Einloggen <i class="fa fa-sign-in"></i></a>
+							                        <div class="dropdown pull-right">
+							                        	<button class="btn btn-primary favorite-game-link" data-toggle="dropdown">&nbsp;<i class="fa fa-heart"></i></button>
+							                        	<div class="dropdown-box">
+							                        		<h4 class="dropdown-box-header">Lieblingsspiel</h4>
+							                        		<div class="dropdown-box-content">
+							                        			<p class="no-margin">Melde dich bitte an, um diese Funktion zu nutzen. Um deine Lieblingsspiele aus <strong class="text-primary">www.kostenlosspielen.biz</strong> schneller zu finden, kannst du sie abspeichern. Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</p>
+							                        		</div>
+							                        	</div>
 							                        </div>
+							                        <button class="btn btn-primary login pull-right" ><i class="icon-cm icon-cm-no-avatar"></i> Einloggen</button>
 							                    </div>
 							                    <div style="width: 0px; height: 0px">
 							                        <!-- LOGIN FORM -->

@@ -379,6 +379,14 @@
 	.search-form {
 		overflow: hidden;
 	}
+	.favorite-game-link {
+		.fa-heart {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			.translate(-50%, -50%);
+		}
+	}
 	.user-spaces {
 		.dropdown {
 			margin-left: 5px;
@@ -392,20 +400,17 @@
 			position: relative;
 			.circle-number {
 				position: absolute;
-				left: 50%;
-				bottom: 50%;
+				right: -2px;
+				bottom: 58%;
 			}
 		}
 		.dropdown-box {
-			min-width: 300px;	
 		}
 	}
 	.recommend-box {
 		margin-left: 5px;
 	}
 	.list-game-favorite {
-		border-top: 1px solid #bb6428;
-		padding-top: 10px;
 		> li {
 			> a {
 
@@ -444,6 +449,10 @@
 
 .guest-space {
 	text-align: right;
+	.icon-cm-no-avatar {
+		position: relative;
+		top: 2px;
+	}
 }
 #footer-widget {
 	.widget {}
@@ -453,5 +462,27 @@
 		font-weight: bold;
 		font-size: 18px;
 		text-transform: uppercase;
+	}
+}
+.signin-register-box{
+	display: none;
+	width: 100%;
+	background-color: #005e20;
+	color: #fff;
+	padding: @grid-gutter-width;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: @zindex-modal;
+	max-height: 100%;
+	.form-box, .register-hint {
+		display: none
+	}
+}
+
+.signin-register-box {
+	input[type="text"], input[type="email"], input[type="password"],
+	select {
+		&:extend(.form-control);
 	}
 }

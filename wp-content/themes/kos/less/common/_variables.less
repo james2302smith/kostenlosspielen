@@ -4,6 +4,9 @@
 // You Create new variable for your project form here
 //
 
+@border-color: #ddd;
+@gutter: @grid-gutter-width / 2;
+
 // Define Prefix & Alias
 //--------------------
 @margin-prefix: 	~"margin";
@@ -243,20 +246,20 @@
 //## Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-//@dropdown-bg:                    #fff;
+@dropdown-bg:                    fade(@brand-primary, 90%);
 //** Dropdown menu `border-color`.
-//@dropdown-border:                rgba(0,0,0,.15);
+@dropdown-border:                fade(#000, 55%);
 //** Dropdown menu `border-color` **for IE8**.
 //@dropdown-fallback-border:       #ccc;
 //** Divider color for between dropdown items.
 //@dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-//@dropdown-link-color:            @gray-dark;
+@dropdown-link-color:           #fff;
 //** Hover color for dropdown links.
-//@dropdown-link-hover-color:      darken(@gray-dark, 5%);
+@dropdown-link-hover-color:      @brand-primary;
 //** Hover background for dropdown links.
-//@dropdown-link-hover-bg:         #f5f5f5;
+@dropdown-link-hover-bg:         #f5f5f5;
 
 //** Active dropdown menu item text color.
 //@dropdown-link-active-color:     @component-active-color;
