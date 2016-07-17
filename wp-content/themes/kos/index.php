@@ -17,7 +17,34 @@ get_header(); ?>
 		<div class="col-xs-9 col-lg-10">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
-
+				<div class="popular-games-box">
+					<h4 class="board-header"><span class="board"><i class="icon-cm icon-cm-heart-yellow"></i>Populäre Spiele</span></h4>
+					<div id="favoriteSlider" class="favorite-slider">
+						<?php
+							$query='SELECT * FROM kostenlosspielen_posts
+									WHERE kostenlosspielen_posts.post_status =  \'publish\'
+									AND kostenlosspielen_posts.post_type =  \'post\'
+									ORDER BY game_views DESC
+									LIMIT 0,32'; 
+							$pageposts = $wpdb->get_results($query, ARRAY_A);
+							foreach (array_chunk($pageposts, 16) as $row) {
+								echo '<div class="row-item">';
+								foreach ($row as $post){
+								$post_image=$post['game_image'];
+								?>
+								<div class="top-popular-item">
+									<div class="ArrangeID_waiting"></div>
+									<a title="<?php echo $post['post_title']; ?>" href="<?php echo SITE_ROOT_URL.'/'.$post['post_name']; ?>.html"><img src="<?php echo $post_image; ?>" width="134" height="100" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" />
+										<span class="title"><?php echo $post['post_title']; ?></span>
+									</a>
+								</div>
+						   <?php
+						   		}
+						   		echo '</div>';
+							}
+						   ?>
+					</div>
+				</div>
 				<?php
 				if ( have_posts() ) :
 

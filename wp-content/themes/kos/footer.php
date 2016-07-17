@@ -80,10 +80,11 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<div class="signin-register-box">
+<div id="signinRegisterBox" class="signin-register-box">
+	<button onclick="closeLogin(this)" id="closeLoginBox" class="btn btn-default btn-close btn-bordered">Close</button>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-4">
 				<div class="register-hint">
 					<h4>GET AN ACCOUNT AND</h4>
 					<ul>
@@ -96,7 +97,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<div class="form-box login-form">
 					<h3 class="form-title">Login</h3>
 					<hr>
@@ -120,8 +121,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3 hidden-xs hidden-sm">
-				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/fig-signin-register.png" alt="">
+			<div class="col-sm-4 hidden-xs hidden-sm">
+				<img class="img-responsive pull-right" src="<?php echo get_template_directory_uri(); ?>/images/fig-signin-register.png" alt="">
 			</div>
 		</div>
 	</div>

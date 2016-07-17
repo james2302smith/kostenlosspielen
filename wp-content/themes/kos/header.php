@@ -173,7 +173,7 @@
 							                        		</div>
 							                        	</div>
 							                        </div>
-							                        <button class="btn btn-primary login pull-right" ><i class="icon-cm icon-cm-no-avatar"></i> Einloggen</button>
+							                        <button id="login-toggle" class="btn btn-primary login-toggle pull-right" onclick="openLogin(this)" ><i class="icon-cm icon-cm-no-avatar"></i> Einloggen</button>
 							                    </div>
 							                    <div style="width: 0px; height: 0px">
 							                        <!-- LOGIN FORM -->
@@ -250,7 +250,7 @@
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'kos' ); ?></button>
 					<div class="nav-menu-top clearfix">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'clearfix' ) ); ?>
-						<?php //wp_nav_menu( array( 'theme_location' => 'full', 'menu_id' => 'full-menu', 'menu_class' => 'clearfix' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'full', 'menu_id' => 'full-menu', 'menu_class' => 'clearfix' ) ); ?>
 					</div>
 				</nav><!-- #site-navigation -->
 			</div>
