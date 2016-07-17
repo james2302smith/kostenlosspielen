@@ -14,11 +14,14 @@
 
 get_header(); ?>
 	<div class="row">
-		<div class="col-xs-9 col-lg-10">
+		<div class="col-xs-9">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
-				<div class="popular-games-box">
-					<h4 class="board-header"><span class="board"><i class="icon-cm icon-cm-heart-yellow"></i>Populäre Spiele</span></h4>
+				<div class="panel panel-default popular-games-box clearfix">
+					<div class="panel-heading board-header">
+						<h4 class="panel-title"><span class="board-title"><i class="icon-cm icon-cm-heart-yellow"></i> Populäre Spiele</span></h4>
+					</div>
+					<a class="more-link" href="#">Mehr</a>
 					<div id="favoriteSlider" class="favorite-slider">
 						<?php
 							$query='SELECT * FROM kostenlosspielen_posts
@@ -32,7 +35,7 @@ get_header(); ?>
 								foreach ($row as $post){
 								$post_image=$post['game_image'];
 								?>
-								<div class="top-popular-item">
+								<div class="item">
 									<div class="ArrangeID_waiting"></div>
 									<a title="<?php echo $post['post_title']; ?>" href="<?php echo SITE_ROOT_URL.'/'.$post['post_name']; ?>.html"><img src="<?php echo $post_image; ?>" width="134" height="100" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" />
 										<span class="title"><?php echo $post['post_title']; ?></span>
@@ -75,20 +78,14 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', 'none' );
 
 				endif; ?>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Panel title</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
 				</main><!-- #main -->
 			</div><!-- #primary -->
 
 		</div>
-		<div class="col-xs-3 col-lg-2">
-			<?php get_sidebar(); ?>
+		<div class="col-xs-3">
+			<aside id="secondary" class="widget-area" role="complementary">
+				<?php dynamic_sidebar( 'fav-cat-menu' ); ?>
+			</aside><!-- #secondary -->
 		</div>
 	</div>
 

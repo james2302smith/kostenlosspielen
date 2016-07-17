@@ -41,6 +41,9 @@ ul, li {
 .form-control {
 	border-color: transparent;
 }
+.transition-default {
+    .transition(all 200ms ease-in-out);
+}
 // OVERRIDE: OVERRIDE STYLE
 // -------------------------------------
 
@@ -53,6 +56,56 @@ ul, li {
 	vertical-align: middle;
 }
 .sprites(@spritesheet-sprites);
+
+.board-header,
+.panel-heading.board-header {
+    background-color: transparent!important;
+    border-radius: 0;
+    position: relative;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: -30px;
+    font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+    [class*="icon-"] {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        .translate(0, -50%);
+    }
+    .panel-title {
+        position: relative;
+        background: transparent url("@{img-path}/board-header.png");
+        .size(181px, 42px);
+        line-height: 42px;
+        color: #fff;
+        display: block;
+        padding-left: 45px;
+        font-size: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+    &.board-lg {
+        .panel-title {
+            background-image: url("@{img-path}/board-header-lg.png");
+            .size(272px, 50px);
+            line-height: 50px;
+            padding-left: 55px;
+        }
+    }
+}
+.panel {
+    padding: 10px;
+}
+.panel-default {
+    background-color: #bb6428;
+    > .panel-body {
+        background-color: #ffc887;
+    }
+}
+
+
 .dropdown-menu {
 	border-width: 5px;
 }
@@ -267,10 +320,6 @@ ul, li {
     &.icon-cm-star-metal {
         .stitches-icon-cat(-562px, -5px, 22px, 31px);
     }
-}
-
-.board-header {
-	.size(141px,42px);
 }
 
 

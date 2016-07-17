@@ -5917,22 +5917,22 @@ button.list-group-item-danger.active:focus {
   border-bottom: 1px solid #dddddd;
 }
 .panel-default {
-  border-color: #dddddd;
+  border-color: transparent;
 }
 .panel-default > .panel-heading {
   color: #333333;
   background-color: #f5f5f5;
-  border-color: #dddddd;
+  border-color: transparent;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #dddddd;
+  border-top-color: transparent;
 }
 .panel-default > .panel-heading .badge {
   color: #f5f5f5;
   background-color: #333333;
 }
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #dddddd;
+  border-bottom-color: transparent;
 }
 .panel-primary {
   border-color: #005826;
@@ -9529,6 +9529,11 @@ li {
 .signin-register-box select {
   border-color: transparent;
 }
+.transition-default {
+  -webkit-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -9550,6 +9555,59 @@ li {
   background-position: 0px -46px;
   width: 44px;
   height: 44px;
+}
+.board-header,
+.panel-heading.board-header {
+  background-color: transparent!important;
+  border-radius: 0;
+  position: relative;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: -30px;
+  font-weight: bold;
+  padding-left: 0;
+  padding-right: 0;
+}
+.board-header [class*="icon-"],
+.panel-heading.board-header [class*="icon-"] {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.board-header .panel-title,
+.panel-heading.board-header .panel-title {
+  position: relative;
+  background: transparent url("images/board-header.png");
+  width: 181px;
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+  display: block;
+  padding-left: 45px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.board-header.board-lg .panel-title,
+.panel-heading.board-header.board-lg .panel-title {
+  background-image: url("images/board-header-lg.png");
+  width: 272px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 55px;
+}
+.panel {
+  padding: 10px;
+}
+.panel-default {
+  background-color: #bb6428;
+}
+.panel-default > .panel-body {
+  background-color: #ffc887;
 }
 .dropdown-menu,
 .dropdown-box {
@@ -9804,10 +9862,6 @@ li {
   width: 22px;
   height: 31px;
 }
-.board-header {
-  width: 141px;
-  height: 42px;
-}
 /* HOOK COMMONS STYLE */
 .site-header {
   background: #161711 url('images/bg-header.png') repeat-x center top;
@@ -9954,6 +10008,7 @@ li {
 #primary-menu {
   padding-left: 0;
   margin: 0;
+  margin-right: 40px;
   min-height: 39px;
 }
 #primary-menu li {
@@ -10035,23 +10090,20 @@ li {
   left: 8px;
 }
 #primary-menu > li.show-more-menu > a {
-  padding-top: 13px;
-  padding-bottom: 40px;
-  position: relative;
-}
-#primary-menu > li.show-more-menu > a:after {
-  content: "";
-  font-family: FontAwesome;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #491210;
+  /*padding-top: 13px;
+				padding-bottom: 40px;
+				position: relative;
+				&:after {
+					content: "";
+					.font-icon;
+					position: absolute;
+					top: 70%;
+					left: 50%;
+					.translate(-50%, -50%);
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-top: 8px solid #491210;
+				}*/
 }
 #primary-menu .sub-menu {
   display: none;
@@ -10247,10 +10299,12 @@ li {
   text-transform: uppercase;
 }
 .popular-games-box {
-  position: relative;
   padding: 5px;
   border-radius: 4px;
-  background-color: #bb6428;
+  position: relative;
+}
+.popular-games-box .board-header {
+  margin-top: -25px;
 }
 .popular-games-box .slick-slider {
   position: static;
@@ -10275,57 +10329,45 @@ li {
   left: auto;
   right: 10px;
 }
-.board-header {
+.popular-games-box .more-link {
   position: absolute;
-  left: 10px;
-  top: -15px;
-  font-size: 14px;
-  text-transform: uppercase;
+  top: 8px;
+  right: 71px;
+  color: #fff;
   font-weight: bold;
+  background-color: #240f0c;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 2px 10px 3px;
 }
-.board-header [class*="icon-"] {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+.popular-games-box .more-link:hover {
+  text-decoration: underline;
 }
-.board-header > span {
-  position: relative;
-  background: transparent url("images/board-header.png");
-  width: 181px;
-  height: 42px;
-  line-height: 42px;
-  color: #fff;
-  display: block;
-  padding-left: 45px;
-  white-space: nowrap;
-}
-.popular-games-box {
-  padding-top: 40px;
-  position: relative;
-}
-.popular-games-box .board-header {
-  padding: 0 5px;
-  color: #fff;
-}
-.favorite-slider .top-popular-item {
+.favorite-slider .item {
+  -webkit-transition: background 200ms ease-in-out;
+  -o-transition: background 200ms ease-in-out;
+  transition: background 200ms ease-in-out;
   float: left;
   width: 20%;
   padding: 5px;
 }
-.favorite-slider .top-popular-item > a {
-  border: 1px solid rgba(0, 0, 0, 0.5);
+.favorite-slider .item:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.favorite-slider .item,
+.favorite-slider .item > a,
+.favorite-slider .item img {
+  border-radius: 4px;
+}
+.favorite-slider .item > a {
+  background-color: #fac887;
   position: relative;
   display: block;
-  border-radius: 4px;
   overflow-y: hidden;
   height: 0;
   padding-bottom: 75%;
 }
-.favorite-slider .top-popular-item img {
+.favorite-slider .item img {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -10334,22 +10376,26 @@ li {
   height: 100%;
   border: 0;
 }
-.favorite-slider .top-popular-item .title {
+.favorite-slider .item .title {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #210808;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
   padding: 5px;
   width: 100%;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media (max-width: 1439px) {
-  .favorite-slider .row-item > .top-popular-item:nth-child(n+11) {
+  .favorite-slider .row-item > .item:nth-child(n+11) {
     display: none;
   }
 }
 @media (min-width: 1440px) {
-  .favorite-slider .top-popular-item {
+  .favorite-slider .item {
     width: 12.5%;
   }
 }

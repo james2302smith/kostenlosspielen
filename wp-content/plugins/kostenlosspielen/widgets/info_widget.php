@@ -53,7 +53,7 @@ class Info_Widget extends WP_Widget {
             <div class = "col-xs-3 col-lg-2">
                 <ul class="list-toggle-tab" role="tablist">
                     <?php foreach($tabTitles as $i => $tabTitle): ?>
-                        <li class="<?php echo ($i == 0 ? 'active' : '') ?>" role="presentation" style="<?php echo $tabWidth ?>">
+                        <li class="<?php echo ($i == 0 ? 'active' : '') ?>" role="presentation">
                             <a href="#<?php echo $widgetId.'_tab_'.$i ?>" aria-controls="<?php echo $widgetId.'_tab_'.$i ?>" role="tab" data-toggle="tab">
                                 <?php echo $tabTitle ?>
                             </a>

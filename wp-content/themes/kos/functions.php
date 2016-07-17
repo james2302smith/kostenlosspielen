@@ -108,6 +108,15 @@ function kos_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Favorite Category Menu', 'kos' ),
+		'id'            => 'fav-cat-menu',
+		'description'   => esc_html__( 'Include Widget here', 'kos' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s panel panel-default">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<div class="widget-title panel-heading board-header board-lg"><h4 class="panel-title"><i class="icon-cm icon-cm-medal"></i> ',
+		'after_title'   => '</h4></div><div class="panel-body">',
+	) );
 }
 add_action( 'widgets_init', 'kos_widgets_init' );
 
