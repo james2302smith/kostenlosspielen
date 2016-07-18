@@ -9,7 +9,7 @@
 ( function( $ ) {
 	// FAVORITE GAMES
 	$('#favoriteSlider').slick({
-		infinite: true,
+		infinite: false,
 		adaptiveHeight: true
 	});
 	// SHOW FULL MENU

@@ -4,10 +4,24 @@
 //
 // LAYOUT: LAYOUT STYLE
 // -------------------------------------
+	// Hook Mixin Render Small devices (tablets, 768px and up)
+html {
+	overflow-x: hidden;
+}
+.hook-screen-sm-min(){
+	.main-layout {
+		margin-bottom: 20px;
+		#liquid-layout > .fluidFixedSwap(270px, 20px);
+	}
+}
 .site-header {
 	background: #161711 url('@{img-path}/bg-header.png') repeat-x center top;
 }
 .site-content {
+}
+.site-footer {
+	position: relative;
+	z-index: 1;
 }
 .layout-header {
 	padding-top: 14px;
@@ -528,7 +542,7 @@
 }
 .popular-games-box {
 	position: relative;
-	padding: 5px;
+	padding: 40px 5px 5px;
 	border-radius: @border-radius-base;
 	position: relative;
 	.board-header {
@@ -545,7 +559,7 @@
 		top: 20px;
 		.square(25px);
 		background-color: #240f0c;
-		border-radius: @border-radius-base;
+		border-radius: @border-radius-small;
 		&:before {
 			font-size: 13px;
 		}
@@ -571,6 +585,38 @@
 	    &:hover {
 	    	text-decoration: underline;
 	    }
+	}
+}
+.list-cat-ver {
+	> li {
+		+ li  {
+			border-top: 1px solid #bb6428;
+		}
+		> a {
+			display: block;
+			padding: 5px;
+			font-weight: bold;
+		}
+		.name {
+			color: #240f0c;
+		}
+		.number {
+			float: right;
+			color: @brand-primary;
+		}
+	}
+}
+.category-box-item {
+	bordder-radius: 10px;
+	.panel-body {
+		padding: 5px;
+		background-color: #ffc887;
+		bordder-radius: 10px;
+	}
+	.image{
+		img {
+			width: 100%;
+		}
 	}
 }
 .favorite-slider {
@@ -613,6 +659,7 @@
 			width: 100%;
 			font-weight: bold;
 			white-space: nowrap;
+			font-size: 13px;
 			.text-overflow;
 		}
 	}
