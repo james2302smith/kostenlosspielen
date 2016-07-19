@@ -166,3 +166,83 @@ require get_template_directory() . '/inc/template-tags.php';
  * Hiden Admin Bar
  */
 show_admin_bar( false );
+
+
+function getAllSubCategoriesOf($categoryId, $number = 0) {
+    if(empty($categoryId) || $categoryId <= 0) {
+        return array();
+    }
+    $categories = get_categories(array(
+        'parent' => $categoryId
+    ));
+
+    foreach($categories as &$category) {
+        // Load custom field
+        //$ordering = (int)get_field('category_order', $category);
+        $ordering = 1;
+        $category->order = $ordering;
+
+        // Load newest game of each category
+        $latestGames = wp_get_recent_posts(array(
+            'numberposts' => 1,
+            'category' => $category->cat_ID,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish'
+        ), OBJECT);
+        $category->latest_game = $latestGames[0];
+
+        //. Count number game
+        global $table_prefix, $wpdb;
+        $sql = 'SELECT count(*) as count FROM '.$table_prefix.'term_relationships WHERE term_taxonomy_id = '.(int)$category->term_id;
+        $category->nunber_games = $wpdb->get_var($sql);
+
+    }
+
+    // sort category then get limit:
+    usort($categories, function($cat1, $cat2){
+        if($cat1->order == $cat2->order) {
+            return 0;
+        }
+        return $cat1->order > $cat2->order ? 1 : -1;
+    });
+
+    if($number && count($categories) > $number) {
+        $categories = array_slice($categories, 0, $number);
+    }
+
+    return $categories;
+}
+
+function render_home_category($slug) {
+    $category = get_category_by_slug($slug);
+    $subCategories = getAllSubCategoriesOf($category->cat_ID, 10);
+    ?>
+    <div class="panel panel-default	category-box-item">
+        <div class="panel-heading board-header">
+            <h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i><?php echo $category->name ?></h4>
+        </div>
+        <div class="panel-body">
+            <a class="image" href="#">
+                <img class="img-responsive" alt="<?php echo $subCategories[0]->name?>" src="<?php echo $subCategories[0]->latest_game->game_image ?>" />
+            </a>
+            <ul class="list-cat-ver clearfix">
+                <?php foreach($subCategories as $subCategory):?>
+                    <li>
+                        <a href="<?php echo get_category_link($subCategory) ?>"
+                           game-image="<?php echo $subCategory->latest_game->game_image ?>"
+                           cat-name="<?php echo $subCategory->name?>"
+                        >
+                            <span class="name"><?php echo $subCategory->name ?></span> <span class="number"><?php echo $subCategory->nunber_games ?></span>
+                        </a>
+                    </li>
+                <?php endforeach;?>
+            </ul>
+            <div class="more-btn std-margin std-padding text-center">
+                <a href="<?php echo get_category_link($category)?>" class="button btn-orange btn-large">Mehr Online Spiele</a>
+            </div>
+        </div>
+    </div>
+    <?php
+}

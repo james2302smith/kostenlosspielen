@@ -60,14 +60,44 @@ get_header(); ?>
 		</div>
 	</div><!-- .main-layout -->
 	<div class="row">
-		<div class="col-md-3">
+        <div class="col-md-3">
+            <?php render_home_category('denkspiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('abenteuer-spiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('maedchen-spiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('geschicklichkeitsspiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('action-spiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('sport-spiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('abenteuer-spiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('rennspiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('denkspiele');?>
+        </div>
+        <div class="col-md-3">
+            <?php render_home_category('action-spiele');?>
+        </div>
+		<!--<div class="col-md-3">
 			<div class="panel panel-default	category-box-item">
 				<div class="panel-heading board-header">
 					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -91,7 +121,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -115,7 +145,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -139,7 +169,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -163,7 +193,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -187,7 +217,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -211,7 +241,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -235,7 +265,7 @@ get_header(); ?>
 				</div>
 				<div class="panel-body">
 					<a class="image" href="#">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="samples">
+						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
 					</a>
 					<ul class="list-cat-ver clearfix">
 						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
@@ -251,7 +281,7 @@ get_header(); ?>
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		
 
 	</div>
