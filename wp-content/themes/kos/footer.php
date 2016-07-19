@@ -99,14 +99,15 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="form-box login-form">
-					<h3 class="form-title">Login</h3>
+					<h3 class="form-title">LOG IN</h3>
+					<div class="social standard-margin">
+						<?php echo KosUIHelper::social_login_buttons()?>
+					</div>
 					<hr>
+					<div class="form-desc">Do you prefer to use your e-mail?</div>
 					<div class="body">
 						<div class="input-form standard-margin">
 							<?php echo KosUIHelper::modal_login_form() ?>
-						</div>
-						<div class="social standard-margin">
-							<?php echo KosUIHelper::social_login_buttons()?>
 						</div>
 					</div>
 				</div>

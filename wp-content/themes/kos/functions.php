@@ -215,22 +215,22 @@ function getAllSubCategoriesOf($categoryId, $number = 0) {
     return $categories;
 }
 
-function render_home_category($slug) {
+function render_home_category($slug, $icon) {
     $category = get_category_by_slug($slug);
     $subCategories = getAllSubCategoriesOf($category->cat_ID, 10);
     ?>
     <div class="panel panel-default	category-box-item">
         <div class="panel-heading board-header">
-            <h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i><?php echo $category->name ?></h4>
+            <h4 class="panel-title" title="<?php echo $category->name ?>"><i class="icon-cat-sm icon-cat-sm-<?php echo strtolower($icon) ?>"></i> <span><?php echo $category->name ?></span></h4>
         </div>
         <div class="panel-body">
-            <a class="image" href="#">
+            <a class="image img-4x3" href="#">
                 <img class="img-responsive" alt="<?php echo $subCategories[0]->name?>" src="<?php echo $subCategories[0]->latest_game->game_image ?>" />
             </a>
             <ul class="list-cat-ver clearfix">
                 <?php foreach($subCategories as $subCategory):?>
                     <li>
-                        <a href="<?php echo get_category_link($subCategory) ?>"
+                        <a title="<?php echo $subCategory->name ?>" href="<?php echo get_category_link($subCategory) ?>"
                            game-image="<?php echo $subCategory->latest_game->game_image ?>"
                            cat-name="<?php echo $subCategory->name?>"
                         >
@@ -239,8 +239,8 @@ function render_home_category($slug) {
                     </li>
                 <?php endforeach;?>
             </ul>
-            <div class="more-btn std-margin std-padding text-center">
-                <a href="<?php echo get_category_link($category)?>" class="button btn-orange btn-large">Mehr Online Spiele</a>
+            <div class="more-btn std-margin std-padding text-right">
+                <a href="<?php echo get_category_link($category)?>" class="button btn-orange btn-large">Mehr Online Spiele <i class="fa fa-caret-right"></i></a>
             </div>
         </div>
     </div>

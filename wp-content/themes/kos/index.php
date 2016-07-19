@@ -49,6 +49,38 @@ get_header(); ?>
 								   ?>
 							</div>
 						</div>
+						<div class="row">
+						<div class="col-md-4 col-lg-3">
+								<?php render_home_category('denkspiele', 'denkspiele');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('maedchen-spiele', 'madchen');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('geschicklichkeitsspiele', 'geschick');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('action-spiele', 'action');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('sport-spiele', 'sport');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('rennspiele', 'renen');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('denkspiele', 'denkspiele');?>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<?php render_home_category('action-spiele', 'action');?>
+							</div>
+						</div>
 					</main><!-- #main -->
 				</div><!-- #primary -->
 			</div>
@@ -56,235 +88,48 @@ get_header(); ?>
 		<div class="fixed-column">
 			<aside id="secondary" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'fav-cat-menu' ); ?>
+				<div class="panel panel-default">
+					<div class="panel-heading board-header board-lg">
+						<h4 class="panel-title"><i class="icon-cm icon-cm-new"></i> <span>News Game</span></h4>
+					</div>
+					<div class="panel-body no-bg">
+						<ul class="list-new-game-ver">
+							<li>
+								<a href="#" class="image img-4x3">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
+								</a>
+								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
+							</li>
+							<li>
+								<a href="#" class="image img-4x3">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
+								</a>
+								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
+							</li>
+							<li>
+								<a href="#" class="image img-4x3">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
+								</a>
+								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
+							</li>
+							<li>
+								<a href="#" class="image img-4x3">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
+								</a>
+								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
+							</li>
+							<li>
+								<a href="#" class="image img-4x3">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
+								</a>
+								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</aside><!-- #secondary -->
 		</div>
 	</div><!-- .main-layout -->
-	<div class="row">
-        <div class="col-md-3">
-            <?php render_home_category('denkspiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('abenteuer-spiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('maedchen-spiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('geschicklichkeitsspiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('action-spiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('sport-spiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('abenteuer-spiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('rennspiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('denkspiele');?>
-        </div>
-        <div class="col-md-3">
-            <?php render_home_category('action-spiele');?>
-        </div>
-		<!--<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="panel panel-default	category-box-item">
-				<div class="panel-heading board-header">
-					<h4 class="panel-title"><i class="icon-cat-sm icon-cat-sm-denkspiele"></i>Denkspiele</h4>
-				</div>
-				<div class="panel-body">
-					<a class="image" href="#">
-						<img class="img-responsive" src="<?php /*echo get_template_directory_uri(); */?>/images/img-cat-sample.png" alt="samples">
-					</a>
-					<ul class="list-cat-ver clearfix">
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-						<li><a href="#"><span class="name">Baby</span> <span class="number">303</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>-->
-		
-
-	</div>
 <?php
 get_footer();
 

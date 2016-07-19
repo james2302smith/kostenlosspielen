@@ -29,10 +29,12 @@ class KosUIHelper {
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = ' </div>';
+        $html[] = ' <p class="forgot-pass"><a href="#" class>Forgot your username or password?</a></p>';
         $html[] = ' <div class="submit text-center">';
-        $html[] = '     <input type="submit" class="user-auth-button auth-email" value="Einloggen mit E-mail" placeholder="Einloggen" />';
+        $html[] = '     <input type="submit" class="user-auth-button auth-email" value="LOG IN" placeholder="Einloggen" />';
         $html[] = '     <input type="hidden" name="redirect_to" value="'. get_permalink() .'"/>';
         $html[] = ' </div>';
+        $html[] = ' <p class="not-a-member"><a href="#">NOT A MEMBER YET?</a></p>';
         $html[] = '</form>';
 
         return implode("\n", $html);
@@ -163,14 +165,18 @@ class KosUIHelper {
     public static function social_login_buttons() {
         $html = array();
         $html[] = '<div class="standard-margin social-login-form">';
-        $html[] = ' <div class="text-center standard-margin separator">';
-        $html[] = '     <span>ODER</span>';
-        $html[] = ' </div>';
         $html[] = ' <div class="social-buttons">';
-        $html[] = '     <div class="text-center social-button-facebook">';
-        $html[] = '         <a href="javascript:void(0)" title="Facebook" class="user-auth-button auth-facebook social-login" provider="facebook" callback="'.KOS_REST_API_URL.'">';
-        $html[] = '             <span class="standard-margin-left">Einloggen mit Facebook</span>';
-        $html[] = '         </a>';
+        $html[] = '     <div class="row social-button-facebook">';
+        $html[] = '         <div class="col-xs-6">';
+        $html[] = '             <a href="javascript:void(0)" title="Facebook" class="btn auth-facebook social-login btn-block" provider="facebook" callback="'.KOS_REST_API_URL.'">';
+        $html[] = '                 <i class="fa fa-facebook"></i><span class="standard-margin-left">Facebook</span>';
+        $html[] = '             </a>';
+        $html[] = '         </div>';
+        $html[] = '         <div class="col-xs-6">';
+        $html[] = '             <a href="javascript:void(0)" title="Facebook" class="btn auth-google social-login btn-block" provider="goggle" callback="'.KOS_REST_API_URL.'">';
+        $html[] = '                 <i class="fa fa-google-plus"></i><span class="standard-margin-left">Google +</span>';
+        $html[] = '             </a>';
+        $html[] = '         </div>';
         $html[] = '     </div>';
         $html[] = ' </div>';
         $html[] = ' <div class="clear"></div>';
