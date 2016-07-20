@@ -483,12 +483,17 @@ html {
 		text-transform: uppercase;
 	}
 }
+@media(min-width: 1200px) and (max-width: 1439px) {
+	.signin-register-box .container{
+		width: 1160px;
+	}
+}
 .signin-register-box{
 	display: none;
 	width: 100%;
 	background-color: #005e20;
 	color: #fff;
-	padding: @grid-gutter-width;
+	padding: 30px 0;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -497,12 +502,16 @@ html {
 	.form-box, .register-hint, .field-hint {
 		display: none;
 	}
+	.register-hint {
+		margin-top: 125px;
+	}
 	.form-box {
 		text-align: center;
 		.form-title {
 			text-align: center;
 			text-transform: uppercase;
-			margin-bottom: 20px;
+			margin-bottom: 30px;
+			margin-top: 0;
 		}
 	}
 	&.open {
@@ -515,21 +524,12 @@ html {
 	}
 	.forgot-pass,
 	.not-a-member {
-		a {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-	.not-a-member {
 		margin-top: 15px;
-		a {
-			color: #fff;
-		}
 	}
 	.form-desc {
 		text-align: center;
 		font-size: 15px;
+		margin-bottom: 20px;
 	}
 	.btn-bordered {
 		border-color: #fff;
@@ -548,7 +548,7 @@ html {
 		}
 	}
 	.field {
-		margin-bottom: @grid-gutter-width;
+		margin-bottom: 10px;
 	}
 	.social-button-facebook {
 		.btn {
@@ -565,6 +565,7 @@ html {
 		&.auth-facebook,
 		&.auth-google {
 			color: #fff;
+			.box-shadow(0 2px 1px 0 rgba(0, 0, 0, 0.45));
 		}
 		&.auth-facebook {
 			background-color: #2d4486;
@@ -575,9 +576,41 @@ html {
 	}
 
 }
-.open-login-box {
-	.form-box.login-form {
+.open-login-box .signin-register-box .squirrel-img {margin-top: 20px;}
+.open-login-box .form-box.login-form,
+.open-register-box .form-box.register-form,
+.open-register-box .register-hint,
+{
 		display: block;
+}
+.register-hint {
+	ul {
+		> li {
+			position: relative;
+			padding: 17px 0;
+			font-size: 16px;
+			font-weight: 300;
+			.icon-cir {
+				position: absolute;
+				right: 100%;
+				margin-right: 15px;
+				top: 50%;
+				.translate(0, -50%);
+			}
+		}
+	}
+}
+.switch-login,
+.not-a-member {
+	font-size: 16px;
+	font-weight: 300;
+	margin-bottom: 0;
+	margin-top: 20px;
+	a {
+		color: #fff;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 .user-auth-button {
@@ -601,15 +634,16 @@ html {
 	select {
 		&:extend(.form-control);
 	}
+	.squirrel-img {
+		margin-top: 80px;
+		.transition(margin-top 150ms ease-in-out);
+	}
 }
 .popular-games-box {
 	position: relative;
 	padding: 40px 5px 5px;
 	border-radius: @border-radius-base;
 	position: relative;
-	.board-header {
-		margin-top: -25px;
-	}
 	.slick-list {
 		//height: 326px!important;
 	}
@@ -657,7 +691,7 @@ html {
 		> a {
 			.transition(150ms);
 			display: block;
-			padding: 5px;
+			padding: 6px 5px;
 			font-weight: 600;
 			&:extend(.clearfix all);
 		}
@@ -765,7 +799,7 @@ html {
 }
 @media(min-width: 1440px) {
 	.favorite-slider .item {
-		width: 12.5%;
+		width: 16.666666%;
 	}
 	.slick-list {
 		//height: auto;
@@ -781,6 +815,7 @@ html {
 		}
 	}
 	.name {
+		margin: 14px 0;
 		position: relative;
 		> a {
 			color: #ffffff;
@@ -792,5 +827,68 @@ html {
 			top: 50%;
 			.translate(0, -50%);
 		}
+	}
+}
+
+.main-bottom {
+	margin-left: -10px;
+	margin-right: -10px;
+	.item {
+		padding: 0 10px;
+		width: 20%;
+		float: left;
+		&.newest-game {
+			float: right;
+			.panel {
+			}
+		}
+	}
+}
+.top-bar {
+	display: none;
+	padding: 10px 0;
+	background-color: #372012;
+	color: #fff;
+	a {
+		color: #fff;
+		&:hover {text-decoration: underline;}
+	}
+	.heading {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+		padding-bottom: 5px;
+		margin-bottom: 15px;
+		.more-link {
+			float: right;
+		}
+	}
+}
+
+.select-gender {
+	border-radius: @border-radius-small;
+	background-color: #003804;
+	padding: 2px;
+	position: relative;
+	input[type="radio"] {
+		position: absolute;
+		width: 0;
+		height: 0;
+		visibility: hidden;
+	}
+	.button-sex {
+		float: left;
+		width: 50%;
+		height: 31px;
+		line-height: 31px;
+		text-align: center;
+		color: #fff;
+		border-radius: @border-radius-small;
+		font-weight: 600;
+		margin: 0;
+		cursor: pointer;
+	}
+	#sex-male:checked ~ .toggle-male,
+	#sex-female:checked ~ .toggle-female {
+		color: #000;
+		background-color: #fff;
 	}
 }

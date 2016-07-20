@@ -29,9 +29,9 @@ get_header(); ?>
 											WHERE kostenlosspielen_posts.post_status =  \'publish\'
 											AND kostenlosspielen_posts.post_type =  \'post\'
 											ORDER BY game_views DESC
-											LIMIT 0,32'; 
+											LIMIT 0,24'; 
 									$pageposts = $wpdb->get_results($query, ARRAY_A);
-									foreach (array_chunk($pageposts, 16) as $row) {
+									foreach (array_chunk($pageposts, 12) as $row) {
 										echo '<div class="row-item">';
 										foreach ($row as $post){
 										$post_image=$post['game_image'];
@@ -49,38 +49,6 @@ get_header(); ?>
 								   ?>
 							</div>
 						</div>
-						<div class="row">
-						<div class="col-md-4 col-lg-3">
-								<?php render_home_category('denkspiele', 'denkspiele');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('maedchen-spiele', 'madchen');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('geschicklichkeitsspiele', 'geschick');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('action-spiele', 'action');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('sport-spiele', 'sport');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('rennspiele', 'renen');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('denkspiele', 'denkspiele');?>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<?php render_home_category('action-spiele', 'action');?>
-							</div>
-						</div>
 					</main><!-- #main -->
 				</div><!-- #primary -->
 			</div>
@@ -88,48 +56,77 @@ get_header(); ?>
 		<div class="fixed-column">
 			<aside id="secondary" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'fav-cat-menu' ); ?>
-				<div class="panel panel-default">
-					<div class="panel-heading board-header board-lg">
-						<h4 class="panel-title"><i class="icon-cm icon-cm-new"></i> <span>News Game</span></h4>
-					</div>
-					<div class="panel-body no-bg">
-						<ul class="list-new-game-ver">
-							<li>
-								<a href="#" class="image img-4x3">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
-								</a>
-								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
-							</li>
-							<li>
-								<a href="#" class="image img-4x3">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
-								</a>
-								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
-							</li>
-							<li>
-								<a href="#" class="image img-4x3">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
-								</a>
-								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
-							</li>
-							<li>
-								<a href="#" class="image img-4x3">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
-								</a>
-								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
-							</li>
-							<li>
-								<a href="#" class="image img-4x3">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/img-cat-sample.png" alt="sample">
-								</a>
-								<h5 class="name"><a href="#">Goodgame EMPIRE <i class="icon-cm icon-cm-new"></i></a></h5>
-							</li>
-						</ul>
-					</div>
-				</div>
 			</aside><!-- #secondary -->
 		</div>
 	</div><!-- .main-layout -->
+	<div class="main-bottom clearfix">
+		
+		<div class="item">
+			<?php render_home_category('denkspiele', 'denkspiele');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('maedchen-spiele', 'madchen');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('geschicklichkeitsspiele', 'geschick');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('action-spiele', 'action');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('sport-spiele', 'sport');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
+		</div>
+		<div class="item newest-game">
+			<div class="panel panel-default">
+				<div class="panel-heading board-header">
+					<h4 class="panel-title"><i class="icon-cm icon-cm-new"></i> <span>News Game</span></h4>
+				</div>
+				<div class="panel-body no-padding no-bg">
+					<ul class="list-new-game-ver">
+						<?php
+							$args = array( 'numberposts' => '5', 'post_status' => 'publish');
+							$recent_posts = wp_get_recent_posts($args);
+							//debug($recent_posts);
+							foreach( $recent_posts as $recent ){
+						?>
+							<li>
+								<a href="<?php echo get_permalink($recent["ID"]) ?>" class="image img-4x3">
+									<img src="<?php echo $recent["game_image"]  ?>" alt="sample">
+								</a>
+								<h5 class="name"><a href="<?php echo get_permalink($recent["ID"]) ?>"><?php echo $recent["post_title"] ?> <i class="icon-cm icon-cm-new"></i></a></h5>
+							</li>
+						<?php
+							}
+						?>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<?php render_home_category('rennspiele', 'renen');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('denkspiele', 'denkspiele');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('action-spiele', 'action');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('denkspiele', 'denkspiele');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
+		</div>
+		<div class="item">
+			<?php render_home_category('maedchen-spiele', 'madchen');?>
+		</div>
+	</div>
 <?php
 get_footer();
 

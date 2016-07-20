@@ -22,11 +22,27 @@
 
 
 function openLogin(e){
-	jQuery("#signinRegisterBox").slideToggle('slow/400/fast');
+	jQuery("#signinRegisterBox").slideToggle('fast/400/fast');
 	jQuery("body").toggleClass('open-login-box');
-	console.log('End clicked');
+}
+function switchRegister(e){
+	jQuery("#signinRegisterBox .form-box.login-form").hide();
+	jQuery("#signinRegisterBox .form-box.register-form").slideDown('fast/400/fast');
+	jQuery("body").removeClass('open-login-box');
+	jQuery("body").addClass('open-register-box');
+}
+
+function switchLogin(e) {
+	jQuery("#signinRegisterBox .form-box.register-form").hide();
+	jQuery("#signinRegisterBox .form-box.login-form").slideDown('fast/400/fast');
+	jQuery("body").removeClass('open-register-box');
+	jQuery("body").addClass('open-login-box');
 }
 
 function closeLogin(e) {
 	jQuery("#login-toggle").click();
+}
+
+function openFavoriteBox(e) {
+	 jQuery('#favoritesBar').slideToggle('fast/400/fast');
 }

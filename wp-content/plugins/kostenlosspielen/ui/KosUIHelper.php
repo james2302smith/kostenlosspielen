@@ -21,7 +21,7 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = ' </div>';
         $html[] = ' <div class="field">';
-        $html[] = '     <input type="password" name="pwd" id="user_pass" class="validate input standard-margin-left standard-margin-right" validate="password" placeholder="Passwort" />';
+        $html[] = '     <input type="password" name="pwd" id="user_pass" class="validate input standard-margin-left standard-margin-right" validate="password" placeholder="Passwort" >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -32,9 +32,9 @@ class KosUIHelper {
         $html[] = ' <p class="forgot-pass"><a href="#" class>Forgot your username or password?</a></p>';
         $html[] = ' <div class="submit text-center">';
         $html[] = '     <input type="submit" class="user-auth-button auth-email" value="LOG IN" placeholder="Einloggen" />';
-        $html[] = '     <input type="hidden" name="redirect_to" value="'. get_permalink() .'"/>';
+        $html[] = '     <input type="hidden" name="redirect_to" value="'. get_permalink() .'" >';
         $html[] = ' </div>';
-        $html[] = ' <p class="not-a-member"><a href="#">NOT A MEMBER YET?</a></p>';
+        $html[] = ' <p class="not-a-member"><a onclick="switchRegister(this)" href="javascript:void(0)">NOT A MEMBER YET?</a></p>';
         $html[] = '</form>';
 
         return implode("\n", $html);
@@ -47,8 +47,8 @@ class KosUIHelper {
         $html[] = ' <div class="standard-margin alert hidden">';
         $html[] = '     ';
         $html[] = ' </div>';
-        $html[] = '   <div class="field inline-block name firstname">';
-        $html[] = '       <input type="text" class="validate input standard-margin-left standard-margin-right name" validate="required" name="firstname" placeholder="Vorname..."/>';
+        $html[] = '   <div class="field name firstname">';
+        $html[] = '       <input type="text" class="validate input standard-margin-left standard-margin-right name" validate="required" name="firstname" placeholder="Vorname..." >';
         $html[] = '       <div class="field-hint firstname-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -56,8 +56,8 @@ class KosUIHelper {
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
-        $html[] = '   <div class="field inline-block float-right name lastname">';
-        $html[] = '       <input type="text" class="validate input standard-margin-left standard-margin-right name" validate="notempty " name="lastname" placeholder="Nachname..."/>';
+        $html[] = '   <div class="field float-right name lastname">';
+        $html[] = '       <input type="text" class="validate input standard-margin-left standard-margin-right name" validate="notempty " name="lastname" placeholder="Nachname..." >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint firstname-hint">';
@@ -66,7 +66,7 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = '   </div>';
         $html[] = '   <div class="field show-hint">';
-        $html[] = '       <input type="email" class="validate input standard-margin-left standard-margin-right" validate="email" name="email" placeholder="Deine Email Adresse..."/>';
+        $html[] = '       <input type="email" class="validate input standard-margin-left standard-margin-right" validate="email" name="email" placeholder="Deine Email Adresse..." >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -75,7 +75,7 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = '   </div>';
         $html[] = '   <div class="field">';
-        $html[] = '       <input type="password" class="validate input standard-margin-left standard-margin-right" validate="password" name="password" placeholder="Passwort..."/>';
+        $html[] = '       <input type="password" class="validate input standard-margin-left standard-margin-right" validate="password" name="password" placeholder="Passwort..." >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -83,9 +83,8 @@ class KosUIHelper {
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
-        $html[] = '   <div class="standard-margin field birthday-field">';
-        $html[] = '       <label>Geburtsdatum:</label>';
-        $html[] = '       <br/>';
+        $html[] = '   <div class="standard-margin field birthday-field row">';
+        $html[] = '   <div class="col-xs-4">';
         $html[] = '       <select class="validate" validate="notempty" name="dob_month">';
         $html[] = '         <option value="-1">Monat</opion>';
         $html[] = '         <option value="1">Januar</option>';
@@ -101,12 +100,16 @@ class KosUIHelper {
         $html[] = '         <option value="11">November</option>';
         $html[] = '         <option value="12">Dezember</option>';
         $html[] = '       </select>';
+        $html[] = '   </div>';
+        $html[] = '   <div class="col-xs-4">';
         $html[] = '       <select class="validate" validate="not empty" name="dob_day">';
         $html[] = '         <option value="-1" selected="">Tag</option>';
         for($i = 1; $i <= 31; $i ++) {
             $html[] = '     <option value="'.$i.'">'.$i.'</option>';
         }
         $html[] = '       </select>';
+        $html[] = '   </div>';
+        $html[] = '   <div class="col-xs-4">';
         $html[] = '       <select class="validate" validate="notempty" name="dob_year">';
         $html[] = '         <option value="-1" selected="">Jahr</option>';
         $currentYear = intval(date('Y'));
@@ -115,6 +118,7 @@ class KosUIHelper {
             $html[] = '     <option value="'.$i.'">'.$i.'</option>';
         }
         $html[] = '       </select>';
+        $html[] = '   </div>';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -123,18 +127,14 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = '   </div>';
         $html[] = '   <div class="standard-margin field sex-field">';
-        $html[] = '       <label>Geschlecht:</label>';
-        $html[] = '       <br/>';
-        $html[] = '       <input type="radio" name="sex" value="male" id="sex-male" class="validate"/>';
-        $html[] = '       <label for="sex-male" class="check-label">';
-        $html[] = '         <img src="'.SITE_ROOT_URL.'/wp-content/themes/twentyten/image/male.png" />';
-        $html[] = '         Männlich';
-        $html[] = '       </label>';
-        $html[] = '       <input type="radio" name="sex" value="female" id="sex-female" class="validate"/>';
-        $html[] = '       <label for="sex-female" class="check-label">';
-        $html[] = '         <img src="'.SITE_ROOT_URL.'/wp-content/themes/twentyten/image/female.png" />';
-        $html[] = '          Weiblich';
-        $html[] = '       </label>';
+        $html[] = '     <div class="select-gender clearfix">';
+        $html[] = '        <input type="radio" name="sex" value="male" id="sex-male" class="validate" checked />';
+        $html[] = '        <input type="radio" name="sex" value="female" id="sex-female" class="validate" />';
+        $html[] = '        <label class="button-sex toggle-male" class="button-sex" for="sex-male">Male</label>';
+        $html[] = '        <label class="button-sex toggle-female" for="sex-female">Female</label>';
+        $html[] = '     </div>';
+        $html[] = '   </div>';
+        $html[] = '   <div class="standard-margin field sex-field">';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -143,10 +143,12 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = '   </div>';
         $html[] = ' <div class="standard-margin field agreement-field">';
-        $html[] = '     <input type="checkbox" name="agreement" value="1" id="agreement-checkbox" class="float-left validate"/>';
-        $html[] = '     <label for="agreement-checkbox" class="check-label">';
+        $html[] = '     ';
+        $html[] = '   <div class="checkbox">';
+        $html[] = '     <label for="agreement-checkbox" class="check-label"><input type="checkbox" name="agreement" value="1" id="agreement-checkbox" class="float-left validate" >';
         $html[] = '         Ich habe die <a href="'.SITE_ROOT_URL.'" target="_blank">Datenschutzregelung und Benutzungsbedingungen</a> gelesen und ihnen zugestimmt.';
         $html[] = '     </label>';
+        $html[] = '   </div>';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <span class="common-background icon">icon</span>';
         $html[] = '         <div class="hint">';
@@ -155,8 +157,9 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = ' </div>';
         $html[] = '   <div class="text-center submit">';
-        $html[] = '       <input type="submit" value="Registrieren mit Email" class="user-auth-button auth-email" />';
+        $html[] = '       <input type="submit" value="JOIN FOR FREE" class="user-auth-button auth-email" />';
         $html[] = '   </div>';
+        $html[] = '   <p class="switch-login"><a onclick="switchLogin(this)" href="javascript:void(0)">ALREADY HAVE AN ACCOUNT?</a></p>';
         $html[] = '</form>';
 
         return implode("\n", $html);

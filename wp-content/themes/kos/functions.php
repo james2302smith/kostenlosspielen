@@ -246,3 +246,10 @@ function render_home_category($slug, $icon) {
     </div>
     <?php
 }
+
+
+function debug($var) {
+	echo "<pre>";
+	var_dump($var);
+	echo "</pre>";
+}

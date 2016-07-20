@@ -45,6 +45,9 @@ ul, li {
 .transition-default {
     .transition(all 200ms ease-in-out);
 }
+input[type="radio"], input[type="checkbox"] {
+    margin-top: 2px;
+}
 // OVERRIDE: OVERRIDE STYLE
 // -------------------------------------
 
@@ -57,6 +60,7 @@ ul, li {
     position: relative;
     overflow: hidden;
     > img {
+        border-radius: @border-radius-base;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -122,14 +126,16 @@ ul, li {
     position: relative;
     z-index: 10;
     padding: 10px;
+    margin-bottom: 25px;
     > .panel-heading.board-header {
         position: absolute;
         width: 100%;
         left: 0;
         top: 0;
         padding-left: 10px;
-        + .panel-body {
-            padding-top: 25px;
+        + .panel-body,
+        + .panel-body.no-padding {
+            padding-top: 25px!important;
         }
     }
     > .panel-heading.board-header.board-lg {
@@ -382,6 +388,33 @@ ul, li {
 
     &.icon-cm-star-metal {
         .stitches-icon-cat(-562px, -5px, 22px, 31px);
+    }
+}
+
+
+.icon-cir {
+    background-image: url('@{img-path}/green-icons.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+
+    &.icon-cir-green-cup {
+        .stitches-icon-cat(-5px, -5px, 38px, 38px);
+    }
+
+    &.icon-cir-green-download {
+        .stitches-icon-cat(-53px, -5px, 38px, 38px);
+    }
+
+    &.icon-cir-green-edit {
+        .stitches-icon-cat(-101px, -5px, 38px, 38px);
+    }
+
+    &.icon-cir-green-game-pad {
+        .stitches-icon-cat(-149px, -5px, 38px, 38px);
+    }
+
+    &.icon-cir-green-play-multi {
+        .stitches-icon-cat(-197px, -5px, 38px, 38px);
     }
 }
 

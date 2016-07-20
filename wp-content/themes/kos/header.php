@@ -63,7 +63,7 @@
 							                    }
 							                    ?>
 							                    <?php if($isLoggedIn): ?>
-							                    <button class="btn btn-primary favorite-game-link" data-toggle="dropdown" href="javascript:void(0)" title="Favorite game <?php if(!$isLoggedIn) echo '- please login to use this function' ?>">
+							                    <button class="btn btn-primary favorite-game-link" onclick="openFavoriteBox(this)" title="Favorite game <?php if(!$isLoggedIn) echo '- please login to use this function' ?>">
 						                        	&nbsp;
 						                        	<span class="fa fa-heart"></span>
 							                        <?php if($kosFavorites && count($kosFavorites->getGames()) > 0): ?>
@@ -71,7 +71,7 @@
 							                        <?php endif ?>
 							                    </button>
 							                    <?php endif; ?>
-							                    <div class="dropdown-box recommend-list">
+							                    <!-- <div class="dropdown-box recommend-list">
 							                        <h4 class="dropdown-box-header">Lieblingsspiel
 														<?php if(($kosFavorites && count($kosFavorites->getGames()) > 0)):?>
 							                                <a class="pull-right" href="<?php echo SITE_ROOT_URL ?>/favoriten-spiele">Alle Lieblingsspiel</a>
@@ -117,7 +117,7 @@
 							                                <?php endif; ?>
 							                            </ul>
 							                        </div>
-							                    </div>
+							                    </div> -->
 							                </div>
 							            </div>
 										<div class="pull-right user-spaces">
@@ -166,13 +166,13 @@
 							                <?php else :?>
 							                    <div class="guest-space">
 							                        <div class="dropdown pull-right">
-							                        	<button class="btn btn-primary favorite-game-link" data-toggle="dropdown">&nbsp;<i class="fa fa-heart"></i></button>
-							                        	<div class="dropdown-box">
+							                        	<button class="btn btn-primary favorite-game-link" onclick="openFavoriteBox(this)">>&nbsp;<i class="fa fa-heart"></i></button>
+							                        	<!-- <div class="dropdown-box">
 							                        		<h4 class="dropdown-box-header">Lieblingsspiel</h4>
 							                        		<div class="dropdown-box-content">
 							                        			<p class="no-margin">Melde dich bitte an, um diese Funktion zu nutzen. Um deine Lieblingsspiele aus <strong class="text-primary">www.kostenlosspielen.biz</strong> schneller zu finden, kannst du sie abspeichern. Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</p>
 							                        		</div>
-							                        	</div>
+							                        	</div> -->
 							                        </div>
 							                        <button id="login-toggle" class="btn btn-primary login-toggle pull-right" onclick="openLogin(this)" ><i class="icon-cm icon-cm-no-avatar"></i> Einloggen</button>
 							                    </div>
@@ -260,4 +260,47 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<div id="favoritesBar" class="top-bar">
+			<div class="container">
+				<h4 class="heading clearfix">Favoriten <a class="more-link" href="#">Merh <i class="fa fa-caret-right"></i></a></h4>
+				<div>
+					<div class="row">
+						<?php if(!$isLoggedIn): ?>
+                            <div class="col-xs-12">
+                                <ul>
+                                    <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
+                                    <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+                                    <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
+                                </ul>
+                            </div>
+                        <?php else :?>
+                            <?php
+                            if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
+                                <?php foreach($kosFavorites->getGames() as $game): ?>
+                                	<div class="col-md-2">
+                                		<div class="game-item">
+                                			<a href="<?php echo SITE_ROOT_URL.'/'.$game->post_name ?>.html">
+                                				<div class="image img-4x3 game-img">
+                                					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
+                                				</div>
+                                				<div class="game-info">
+                                					<h4 class="title"><?php echo $game->post_title ?></h4>
+                                				</div>
+                                			</a>
+                                		</div>
+                                	</div>
+                                <?php endforeach;?>
+                            <?php else:?>
+                                <li>
+                                    <ul>
+                                        <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+                                        <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
+                        <?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">

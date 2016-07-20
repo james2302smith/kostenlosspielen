@@ -88,12 +88,11 @@
 				<div class="register-hint">
 					<h4>GET AN ACCOUNT AND</h4>
 					<ul>
-						<li>Save your favorite games</li>
-						<li>Interact with other games</li>
-						<li>Play Massive Multiplayer Online Games!  </li>
-						<li>Play Massive Multiplayer Online Games!  </li>
-						<li>Complete and win awards</li>
-						<li>Create your own profile picture</li>
+						<li><i class="icon-cir icon-cir-green-download"></i>Save your favorite games</li>
+						<li><i class="icon-cir icon-cir-green-play-multi"></i>Interact with other games</li>
+						<li><i class="icon-cir icon-cir-green-game-pad"></i>Play Massive Multiplayer Online Games!  </li>
+						<li><i class="icon-cir icon-cir-green-cup"></i>Complete and win awards</li>
+						<li><i class="icon-cir icon-cir-green-edit"></i>Create your own profile picture</li>
 					</ul>
 				</div>
 			</div>
@@ -104,7 +103,7 @@
 						<?php echo KosUIHelper::social_login_buttons()?>
 					</div>
 					<hr>
-					<div class="form-desc">Do you prefer to use your e-mail?</div>
+					<p class="form-desc">Do you prefer to use your e-mail?</p>
 					<div class="body">
 						<div class="input-form standard-margin">
 							<?php echo KosUIHelper::modal_login_form() ?>
@@ -113,17 +112,18 @@
 				</div>
 				<div class="form-box register-form">
 					<h3 class="form-title">Resgister</h3>
+					<div class="social standard-margin">
+						<?php echo KosUIHelper::social_login_buttons()?>
+					</div>
 					<hr>
+					<div class="form-desc">Do you prefer to use your e-mail?</div>
 					<div class="input-form standard-margin">
 						<?php echo KosUIHelper::modal_register_form() ?>
-					</div>
-					<div class="social standard-margin">
-						<?php echo KosUIHelper::social_login_buttons() ?>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4 hidden-xs hidden-sm">
-				<img class="img-responsive pull-right" src="<?php echo get_template_directory_uri(); ?>/images/fig-signin-register.png" alt="">
+				<img class="img-responsive squirrel-img pull-right" src="<?php echo get_template_directory_uri(); ?>/images/fig-signin-register.png" alt="">
 			</div>
 		</div>
 	</div>
