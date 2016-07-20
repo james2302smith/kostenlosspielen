@@ -9648,7 +9648,7 @@ input[type="checkbox"] {
 }
 .panel > .panel-heading.board-header.board-lg + .panel-body,
 .panel > .panel-heading.board-header.board-lg + .panel-body.no-padding {
-  padding-top: 35px;
+  padding-top: 35px!important;
 }
 .panel-default {
   background-color: #bb6428;
