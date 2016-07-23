@@ -6,42 +6,125 @@
  *
  * @package kos
  */
-
+$image=$post->game_image;
+$author=$post->game_author;
+$email=$post->game_email;
+$flash=$post->game_flash;
+$flash_width=$post->game_width;
+$flash_height=$post->game_height;
+$iframe=$post->game_iframe;
 ?>
+<div class="layout-singer-top clearfix">
+	<div class="fluid-column">
+		<div class="inner">
+			<div class="panel game-play-box panel-default">
+				<div class="panel-heading clearfix">
+					<div class="panel-title pull-left"><?php the_title(); ?></div>
+					<ul class="game-action pull-right">
+						<li></li>
+					</ul>
+				</div>
+				<div class="panel-body">
+					<div class="large-screenshot" style="margin-top:10px;">
 
+				<div class="large-screenimg">
+					<?php
+
+					if(strlen($flash)>0) {
+						if($flash_width>0){
+							$width=$flash_width;
+						}else{
+							$width= 650;
+						}
+						if($flash_height>0){
+							$height=$flash_height;
+						}else{
+							$height=500;
+						}
+					}
+					?>
+					<div id="divGamePad">
+
+
+						<?php
+						if(strlen($flash)>0){
+							?>
+
+							<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="<?php echo $width; ?>" height="<?php echo $height; ?>" id="movie_name" align="middle">
+								<param name="wmode" value="transparent" />
+								<param name="movie" value="<?php echo $flash; ?>"/>
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="<?php echo $flash; ?>" width="100%" height="<?php echo $height; ?>">
+									<param name="wmode" value="transparent" />
+									<param name="movie" value="<?php echo $flash; ?>"/>
+									<!--<![endif]-->
+									<a href="http://www.adobe.com/go/getflash">
+										<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
+									</a>
+									<div>
+										<h2><?php echo $post->post_title; ?></h2>
+									</div>
+
+									<!--[if !IE]>-->
+								</object>
+								<!--<![endif]-->
+							</object>
+							<?php   }else{          ?>
+
+								<iframe frameborder="0" scrolling="no" width="710" height="530" src="<?php echo $iframe; ?>"></iframe>
+								<?php };?>
+							</div>
+						</div><!-- /screenimg -->
+
+					</div><!-- /screenshot-->
+				</div>
+			</div><!-- .panel -->
+		</div>
+	</div><!-- .fluild-column -->
+	<div class="fixed-column">
+		sdfsdf
+	</div>
+</div><!-- .layout-singer-top -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<p>Spieler, die transformers Prestigez gespielt haben, Spielten auch  </p>
+		</div>
+	</div>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php kos_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+	<div class="panel comment-box panel-default panel-bordered">
+		<div class="panel-body">
+<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+?>
+		</div>
+	</div><!-- comment-box -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'kos' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<i class="icon-cat-sm icon-cm-question"></i>
+				<span>How to play</span>
+			</h4>
+		</div>
+		<div class="panel-body">
+			<div class="entry-content">
+				<?php
+					the_content( sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'kos' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kos' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php kos_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kos' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
 </article><!-- #post-## -->

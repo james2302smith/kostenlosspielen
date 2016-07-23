@@ -6,30 +6,39 @@
  *
  * @package kos
  */
-
 get_header(); ?>
-
+<div class="breadcrumbs-box clearfix">
+	<div class="container">
+		<div class="breadcrumbs">
+			<?php if ( function_exists('yoast_breadcrumb') ) {
+				$breadcrumbs = yoast_breadcrumb('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">','</span>',false);
+				echo $breadcrumbs;
+			} ?>
+		</div>
+		<div class="pull-right">
+			<div id="plusone-div" class="plusone"></div>
+			<script type="text/javascript">
+				gapi.plusone.render('plusone-div',{"size": "medium", "count": "true"});
+			</script>
+		</div>
+	</div>
+</div>
+<div class="container padding-top-0">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
+<?php
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', get_post_format() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
 		endwhile; // End of the loop.
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+</div><!-- .container -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

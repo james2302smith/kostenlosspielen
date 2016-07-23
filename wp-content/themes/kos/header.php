@@ -19,9 +19,34 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+<?php require get_template_directory() . '/included/register-header-js.php'; ?>
+
+
 </head>
 
 <body <?php body_class(); ?>>
+	<!-- Facebook config -->
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '<?php echo KOS_FACEBOOK_CLIENT_API ?>',
+                cookie: true,
+                xfbml: true,
+                oauth: true
+            });
+        };
+    </script>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1&appId=624253760968467";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="layout-header clearfix">
@@ -56,7 +81,7 @@
 							                $isLoggedIn = is_user_logged_in();
 							                ?>
 							                <div class="dropdown pull-right common-background recommend <?php echo ($isLoggedIn ? 'favorite-game' : 'favorite-game-disabled') ?>">
-							                    <?php 
+							                    <?php
 							                    if(class_exists('KosFavorites')) {
 							                        $kosFavorites = KosFavorites::getInstance();
 							                        $kosFavorites->init(1, 5);
@@ -256,7 +281,6 @@
 				</nav><!-- #site-navigation -->
 			</div>
 		</div>
-
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
@@ -303,4 +327,3 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">

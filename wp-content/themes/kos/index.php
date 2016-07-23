@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+<div class="container">
 	<div class="main-layout clearfix">
 		<div class="fluid-column">
 			<div class="inner">
@@ -83,7 +84,7 @@ get_header(); ?>
 			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
 		</div>
 		<div class="item newest-game">
-			<div class="panel panel-default">
+			<div class="panel panel-default panel-bordered">
 				<div class="panel-heading board-header">
 					<h4 class="panel-title"><i class="icon-cm icon-cm-new"></i> <span>News Game</span></h4>
 				</div>
@@ -127,6 +128,7 @@ get_header(); ?>
 			<?php render_home_category('maedchen-spiele', 'madchen');?>
 		</div>
 	</div>
+</div> <!-- .container -->
 <?php
 get_footer();
 

@@ -112,7 +112,7 @@ function kos_widgets_init() {
 		'name'          => esc_html__( 'Favorite Category Menu', 'kos' ),
 		'id'            => 'fav-cat-menu',
 		'description'   => esc_html__( 'Include Widget here', 'kos' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s panel panel-default">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s panel panel-default panel-bordered">',
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<div class="widget-title panel-heading board-header board-lg"><h4 class="panel-title"><i class="icon-cm icon-cm-medal"></i> ',
 		'after_title'   => '</h4></div><div class="panel-body no-padding">',
@@ -219,7 +219,7 @@ function render_home_category($slug, $icon) {
     $category = get_category_by_slug($slug);
     $subCategories = getAllSubCategoriesOf($category->cat_ID, 10);
     ?>
-    <div class="panel panel-default	category-box-item">
+    <div class="panel panel-default panel-bordered category-box-item">
         <div class="panel-heading board-header">
             <h4 class="panel-title" title="<?php echo $category->name ?>"><i class="icon-cat-sm icon-cat-sm-<?php echo strtolower($icon) ?>"></i> <span><?php echo $category->name ?></span></h4>
         </div>
@@ -247,6 +247,44 @@ function render_home_category($slug, $icon) {
     <?php
 }
 
+function mytheme_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
+    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <?php if ( 'div' != $args['style'] ) : ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body ">
+    <?php endif; ?>
+    <div class="comment-author vcard clearfix">
+    	<div class="avatar-column">
+	        <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+        	<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
+    	</div>
+    	<div class="comment-column">
+		    <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"></a>
+		    </div>
+		    <?php comment_text(); ?>
+		    <div class="reply">
+		        <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+		    </div>
+		    <?php edit_comment_link( __( '(Edit)' ), '  ', '' );?>
+    	</div>
+    </div>
+    <?php if ( $comment->comment_approved == '0' ) : ?>
+         <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+          <br />
+    <?php endif; ?>
+
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+    <?php endif; ?>
+    <?php
+    }
 
 function debug($var) {
 	echo "<pre>";

@@ -24,7 +24,7 @@ ul, li {
 	color: #fbce08;
 }
 .container {
-	width: auto;
+    min-width: 980px;
 	max-width: 1440px;
 }
 .btn {
@@ -125,8 +125,15 @@ input[type="radio"], input[type="checkbox"] {
 .panel {
     position: relative;
     z-index: 10;
-    padding: 10px;
     margin-bottom: 25px;
+    border: none;
+    &.panel-bordered {
+        padding: 10px;
+        .panel-body {
+            border-radius: @border-radius-base;
+            background-color: #ffc887;
+        }
+    }
     > .panel-heading.board-header {
         position: absolute;
         width: 100%;
@@ -144,11 +151,25 @@ input[type="radio"], input[type="checkbox"] {
         }
     }
 }
+.panel-heading {
+    position: relative;
+    &.caret-down:after {
+        content: "";
+        position: absolute;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #ffbb70;
+        left: @grid-gutter-width;
+        top: 100%;
+    }
+}
 .panel-default {
     background-color: #bb6428;
+    > .panel-heading {
+        background-color: #ffbb70;
+    }
     > .panel-body {
-        background-color: #ffc887;
-        border-radius: @border-radius-base;
+        border-radius: 0 0 @border-radius-base @border-radius-base;
     }
 }
 
@@ -216,6 +237,27 @@ input[type="radio"], input[type="checkbox"] {
         }
     }
 }
+.squre-view {
+    display: inline-block;
+    .square(19px);
+    background-color: @brand-primary;
+    color: #fff;
+    line-height: 19px;
+    font-size: 11px;
+    text-align: center;
+    .box-shadow(0 1px 2px 0 rgba(3, 43, 0, .5));
+}
+.count-played {
+    display: inline-block;
+    height: 19px;
+    line-height: 19px;
+    background-color: #ffbb70;
+    padding: 0 10px;
+    .icon-cm {
+        vertical-align: -1px;
+    }
+}
+
 // ICON CATEGORY
 // -------------------------------------
 .stitches-icon-cat(@x: 0, @y: 0, @width: 0, @height: 0) {
@@ -325,8 +367,9 @@ input[type="radio"], input[type="checkbox"] {
     background-image: url('@{img-path}/common-icons.png');
     background-repeat: no-repeat;
     display: inline-block;
+    vertical-align: text-bottom;
 
-    &.icon-cm-black-crown {
+   &.icon-cm-black-crown {
         .stitches-icon-cat(-5px, -5px, 19px, 15px);
     }
 
@@ -358,36 +401,44 @@ input[type="radio"], input[type="checkbox"] {
         .stitches-icon-cat(-262px, -5px, 29px, 27px);
     }
 
+    &.icon-cm-game-pad-mini {
+        .stitches-icon-cat(-301px, -5px, 16px, 11px);
+    }
+
     &.icon-cm-heart-yellow {
-        .stitches-icon-cat(-301px, -5px, 24px, 23px);
+        .stitches-icon-cat(-327px, -5px, 24px, 23px);
     }
 
     &.icon-cm-heart-yellow-lg {
-        .stitches-icon-cat(-335px, -5px, 30px, 29px);
+        .stitches-icon-cat(-361px, -5px, 30px, 29px);
     }
 
     &.icon-cm-medal {
-        .stitches-icon-cat(-375px, -5px, 33px, 54px);
+        .stitches-icon-cat(-401px, -5px, 33px, 54px);
     }
 
     &.icon-cm-new {
-        .stitches-icon-cat(-418px, -5px, 37px, 41px);
+        .stitches-icon-cat(-444px, -5px, 37px, 41px);
     }
 
     &.icon-cm-no-avatar {
-        .stitches-icon-cat(-465px, -5px, 14px, 15px);
+        .stitches-icon-cat(-491px, -5px, 14px, 15px);
     }
 
     &.icon-cm-question {
-        .stitches-icon-cat(-489px, -5px, 26px, 27px);
+        .stitches-icon-cat(-515px, -5px, 26px, 27px);
     }
 
     &.icon-cm-rank {
-        .stitches-icon-cat(-525px, -5px, 27px, 23px);
+        .stitches-icon-cat(-551px, -5px, 27px, 23px);
+    }
+
+    &.icon-cm-resize {
+        .stitches-icon-cat(-588px, -5px, 19px, 19px);
     }
 
     &.icon-cm-star-metal {
-        .stitches-icon-cat(-562px, -5px, 22px, 31px);
+        .stitches-icon-cat(-617px, -5px, 22px, 31px);
     }
 }
 
@@ -418,6 +469,11 @@ input[type="radio"], input[type="checkbox"] {
     }
 }
 
+.game-play-box {
+    .panel-title {
+
+    }
+}
 
 
 /* HOOK COMMONS STYLE */
