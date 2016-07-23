@@ -22,6 +22,26 @@ define('PAGE', 'seite');
 
 require_once dirname(__FILE__).'/Category.php';
 
+
+function add_missing_meta_field() {
+    global $table_prefix;
+    global $wpdb;
+
+    // Missing ratings_users
+    $sql = "SELECT p.ID FROM ".$table_prefix."posts p where not exists (select * from ".$table_prefix."postmeta m where m.post_id = p.ID and m.meta_key = 'ratings_users') and p.post_type = 'post'";
+    $items = $wpdb->get_results($sql, ARRAY_A);
+    foreach($items as $item) {
+        $wpdb->insert( $table_prefix.'postmeta', array('post_id' => $item['ID'], 'meta_key' => 'ratings_users', 'meta_value' => 0), array('%d', '%s', '%d'));
+    }
+
+    // Missing ratings_users
+    $sql = "SELECT p.ID FROM ".$table_prefix."posts p where not exists (select * from ".$table_prefix."postmeta m where m.post_id = p.ID and m.meta_key = 'ratings_average') and p.post_type = 'post'";
+    $items = $wpdb->get_results($sql, ARRAY_A);
+    foreach($items as $item) {
+        $wpdb->insert( $table_prefix.'postmeta', array('post_id' => $item['ID'], 'meta_key' => 'ratings_average', 'meta_value' => 0), array('%d', '%s', '%f'));
+    }
+}
+
 /**
  * This method overiter method: WP::parse_request($extra_query_vars)
  */
@@ -257,6 +277,36 @@ function category_classic_paging_parse_request($do, $wp, $extra_query_vars) {
     do_action_ref_array('parse_request', array(&$wp));
 
     return false;
+}
+
+add_action('parse_query', 'category_classic_parse_query');
+function category_classic_parse_query($wp_query) {
+    if ($wp_query->is_category) {
+        if (isset($_GET['kos_order_by'])) {
+            $order = $_GET['kos_order_by'];
+            $q = &$wp_query->query_vars;
+            $q['order'] = 'DESC';
+
+            add_missing_meta_field();
+
+            if ($order == 'vote') {
+
+                $q['orderby'] = 'ratings_users';
+                $q['meta_query'] = array(
+                    'relation' => 'OR',
+                    array('key' => 'ratings_users')
+                );
+            } if ($order == 'best') {
+                $q['orderby'] = 'ratings_average';
+                $q['meta_query'] = array(
+                    'relation' => 'OR',
+                    array('key' => 'ratings_average')
+                );
+            } else {
+                $q['orderby'] = 'date';
+            }
+        }
+    }
 }
 
 //Init category
