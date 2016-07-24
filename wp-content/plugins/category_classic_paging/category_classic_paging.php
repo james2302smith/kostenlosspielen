@@ -22,7 +22,6 @@ define('PAGE', 'seite');
 
 require_once dirname(__FILE__).'/Category.php';
 
-
 function add_missing_meta_field() {
     global $table_prefix;
     global $wpdb;
@@ -42,10 +41,83 @@ function add_missing_meta_field() {
     }
 }
 
+function category_classic_paging_pagination_base() {
+    global $wp_rewrite;
+    $wp_rewrite->pagination_base = PAGE;
+    $wp_rewrite->comments_pagination_base = 'comment-'.PAGE;
+}
+add_action( 'init', 'category_classic_paging_pagination_base' );
+
+add_filter('category_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
+function category_classic_paging_category_rewrite_rules($rules) {
+    global $CATEGORY_ORDER_PARAMS;
+    $extra = array();
+    foreach ($rules as $match => $query) {
+        if (strpos($match, 'feed') !== false || strpos($match, 'embed') !== false) {
+            continue;
+        }
+        $idx = strpos($match, '/(.+?)/');
+        $base = substr($match, 0, $idx);
+        $sub = substr($match, $idx + strlen('/(.+?)/'));
+        foreach ($CATEGORY_ORDER_PARAMS as $text => $type) {
+            $m = $base.'/(.+?)/'.$text.'/'.$sub;
+            $q = $query;
+            if ($type == 'new') {
+                $q .= '&orderby=date&order=DESC';
+            } else {
+                $q .= '&kos_order_by='.$type;
+            }
+            $extra[$m] = $q;
+        }
+    }
+    foreach ($rules as $match => $query) {
+        if (!isset($extra[$match])) {
+            $extra[$match] = $query;
+        }
+    }
+    return $extra;
+}
+
+add_filter('query_vars', 'category_classic_paging_query_vars');
+function category_classic_paging_query_vars($public_query_vars) {
+    array_push($public_query_vars, 'kos_order_by');
+    return $public_query_vars;
+}
+
+add_action('parse_query', 'category_classic_parse_query');
+function category_classic_parse_query($wp_query) {
+    if ($wp_query->is_category) {
+        $q = &$wp_query->query_vars;
+        if (!empty($q['kos_order_by'])) {
+            $order = $q['kos_order_by'];
+            $q['meta_query'] = array(
+                'relation' => 'AND',
+                'ratings_average' => array('key' => 'ratings_average', 'type' => 'DECIMAL(10,2)', 'compare' => 'EXISTS'),
+                'ratings_users' => array('key' => 'ratings_users', 'type' => 'DECIMAL(10,2)', 'compare' => 'EXISTS'),
+            );
+            if ($order == 'vote') {
+                $q['orderby'] = array(
+                    'ratings_users' => 'DESC',
+                    'ratings_average' => 'DESC'
+                );
+
+            } if ($order == 'best') {
+                $q['orderby'] = array(
+                    'ratings_average' => 'DESC',
+                    'ratings_users' => 'DESC',
+                );
+            }
+            add_missing_meta_field();
+        }
+    }
+}
+
 /**
+ * TODO: remove this action
+ * TODO: I want to remove this hook, it's too strick and not good
  * This method overiter method: WP::parse_request($extra_query_vars)
  */
-add_action('do_parse_request', 'category_classic_paging_parse_request', 10, 3);
+//add_action('do_parse_request', 'category_classic_paging_parse_request', 10, 3);
 function category_classic_paging_parse_request($do, $wp, $extra_query_vars) {
     if(!$do) return true;
 
@@ -279,38 +351,9 @@ function category_classic_paging_parse_request($do, $wp, $extra_query_vars) {
     return false;
 }
 
-add_action('parse_query', 'category_classic_parse_query');
-function category_classic_parse_query($wp_query) {
-    if ($wp_query->is_category) {
-        if (isset($_GET['kos_order_by'])) {
-            $order = $_GET['kos_order_by'];
-            $q = &$wp_query->query_vars;
-            $q['order'] = 'DESC';
-
-            add_missing_meta_field();
-
-            if ($order == 'vote') {
-
-                $q['orderby'] = 'ratings_users';
-                $q['meta_query'] = array(
-                    'relation' => 'OR',
-                    array('key' => 'ratings_users')
-                );
-            } if ($order == 'best') {
-                $q['orderby'] = 'ratings_average';
-                $q['meta_query'] = array(
-                    'relation' => 'OR',
-                    array('key' => 'ratings_average')
-                );
-            } else {
-                $q['orderby'] = 'date';
-            }
-        }
-    }
-}
-
+//TODO: remove these filter/action
 //Init category
-add_action('pre_get_posts', 'category_classic_paging_pre_get_posts');
+//add_action('pre_get_posts', 'category_classic_paging_pre_get_posts');
 function category_classic_paging_pre_get_posts($query) {
     $category_name = get_query_var('category_name');
     $paged = get_query_var('paged');
@@ -333,7 +376,7 @@ function category_classic_paging_pre_get_posts($query) {
     $category->getTotal();
 }
 
-add_action('wp_head', 'category_classic_paging_wp_head');
+//add_action('wp_head', 'category_classic_paging_wp_head');
 function category_classic_paging_wp_head() {
     $head = "\n";
     $category = Category::getInstance();
