@@ -49,18 +49,22 @@ function category_classic_paging_pagination_base() {
 add_action( 'init', 'category_classic_paging_pagination_base' );
 
 add_filter('category_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
+add_filter('post_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
 function category_classic_paging_category_rewrite_rules($rules) {
     global $CATEGORY_ORDER_PARAMS;
     $extra = array();
     foreach ($rules as $match => $query) {
-        if (strpos($match, 'feed') !== false || strpos($match, 'embed') !== false) {
+        if (strpos($match, 'feed') !== false || strpos($match, 'embed') !== false
+            || strpos($match, 'attachment') !== false || strpos($match, 'trackback') !== false) {
             continue;
         }
-        $idx = strpos($match, '/(.+?)/');
-        $base = substr($match, 0, $idx);
-        $sub = substr($match, $idx + strlen('/(.+?)/'));
+        if (strpos($query, 'category_name') === false) continue;
+
+        $idx = strpos($match, '(.+?)/');
+        $base = $idx > 0 ? substr($match, 0, $idx) : '';
+        $sub = substr($match, $idx + strlen('(.+?)/'));
         foreach ($CATEGORY_ORDER_PARAMS as $text => $type) {
-            $m = $base.'/(.+?)/'.$text.'/'.$sub;
+            $m = $base.'(.+?)/'.$text.'/'.$sub;
             $q = $query;
             if ($type == 'new') {
                 $q .= '&orderby=date&order=DESC';

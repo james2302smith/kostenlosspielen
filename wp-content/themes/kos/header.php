@@ -117,7 +117,7 @@
 							                                    if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
 							                                        <?php foreach($kosFavorites->getGames() as $game): ?>
 							                                        <li class="game-item">
-							                                            <a href="<?php echo SITE_ROOT_URL.'/'.$game->post_name ?>.html">
+							                                            <a href="<?php the_permalink($game->ID)?>">
 							                                                <div class="game-img">
 							                                                    <img class="img-responsive" src="<?php echo $game->game_image ?>" />
 							                                                </div>
@@ -303,7 +303,7 @@
                                 <?php foreach($kosFavorites->getGames() as $game): ?>
                                 	<div class="col-md-2">
                                 		<div class="game-item">
-                                			<a href="<?php echo SITE_ROOT_URL.'/'.$game->post_name ?>.html">
+                                			<a href="<?php the_permalink($game->ID)?>">
                                 				<div class="image img-4x3 game-img">
                                 					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
                                 				</div>
