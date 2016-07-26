@@ -291,3 +291,16 @@ function debug($var) {
 	var_dump($var);
 	echo "</pre>";
 }
+
+add_filter('category_template', 'kos_custom_category_template');
+function kos_custom_category_template($template) {
+    $category = get_queried_object();
+    $categories = get_categories(array(
+        'parent' => $category->cat_ID
+    ));
+    if (empty($categories)) {
+        return locate_template('category.php');
+    } else {
+        return locate_template('category-has-sub.php');
+    }
+}
