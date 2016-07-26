@@ -160,6 +160,37 @@ object {
 .gallery-caption {
   display: block;
 }
+/*======================================
+=            FONT LinhHelve            =
+======================================*/
+@font-face {
+  font-family: 'LinhHelve';
+  src: url('fonts/LinhHelve.woff') format('woff'), url('fonts/LinhHelve.eot') format('embedded-opentype'), url('fonts/LinhHelve.ttf') format('truetype'), url('fonts/LinhHelve.svg#LinhHelve') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LinhHelve-Bold';
+  src: url('fonts/LinhHelve-Bold.eot') format('embedded-opentype');
+  src: url('fonts/LinhHelve-Bold.woff') format('woff'), url('fonts/LinhHelve-Bold.ttf') format('truetype'), url('fonts/LinhHelve-Bold.svg#LinhHelve-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LinhHelve-Bold-Condensed';
+  src: url('fonts/LinhHelve-BdCnd.eot') format('embedded-opentype');
+  src: url('fonts/LinhHelve-BdCnd.woff') format('woff'), url('fonts/LinhHelve-BdCnd.ttf') format('truetype'), url('fonts/LinhHelve-BdCnd.svg#LinhHelve-BdCnd') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LinhHelve-Regular-Condensed';
+  src: url('fonts/LinhHelve-RegCnd.eot') format('embedded-opentype');
+  src: url('fonts/LinhHelve-RegCnd.woff') format('woff'), url('fonts/LinhHelve-RegCnd.ttf') format('truetype'), url('fonts/LinhHelve-RegCnd.svg#LinhHelve-RegCnd') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*=====  End of FONT LinhHelve  ======*/
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1237,7 +1268,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Signika', sans-serif;
+  font-family: "LinhHelve", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #391d09;
@@ -6400,7 +6431,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: 'Signika', sans-serif;
+  font-family: "LinhHelve", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6518,7 +6549,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'Signika', sans-serif;
+  font-family: "LinhHelve", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -10305,7 +10336,7 @@ html {
 }
 .site-description {
   color: #fff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   text-shadow: -1px -1px 0 #4d1609, 1px -1px 0 #4d1609, -1px 1px 0 #4d1609, 1px 1px 0 #4d1609;
   font-size: 15px;
   text-align: center;
@@ -10338,7 +10369,7 @@ html {
   padding: 5px;
   display: inline-block;
   color: #fff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   text-shadow: -1px -1px 0 #4d1609, 1px -1px 0 #4d1609, -1px 1px 0 #4d1609, 1px 1px 0 #4d1609;
 }
 #full-menu li a:hover {
@@ -10369,7 +10400,7 @@ html {
   text-align: center;
   line-height: 14px;
   color: #fff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   display: block;
   font-size: 15px;
   text-shadow: -1px -1px 0 #4d1609, 1px -1px 0 #4d1609, -1px 1px 0 #4d1609, 1px 1px 0 #4d1609;
@@ -10457,7 +10488,7 @@ html {
 }
 #menu-footer-primary > li > a {
   color: #fff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   display: inline-block;
   padding: 10px;
   position: relative;
@@ -10577,7 +10608,7 @@ html {
   line-height: 1.2;
 }
 .header-right .list-game-favorite .game-info .title {
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   margin: 0 0 5px;
   font-size: 12px;
 }
@@ -10596,7 +10627,7 @@ html {
 }
 #footer-widget .widget-title {
   color: #fff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   font-size: 18px;
   text-transform: uppercase;
 }
@@ -10799,7 +10830,7 @@ html {
   top: 8px;
   right: 71px;
   color: #fff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   background-color: #240f0c;
   border-radius: 4px;
   display: inline-block;
@@ -10817,7 +10848,7 @@ html {
   transition: 150ms;
   display: block;
   padding: 6px 5px;
-  font-weight: 600;
+  font-weight: bold;
 }
 .list-cat-ver > li .name {
   overflow: hidden;
@@ -10848,7 +10879,7 @@ html {
 }
 .category-box-item .more-btn {
   color: #2a170a;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   margin-top: 5px;
 }
 .category-box-item .more-btn:hover {
@@ -10901,7 +10932,7 @@ html {
   color: #fff;
   padding: 5px;
   width: 100%;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -10928,7 +10959,7 @@ html {
 }
 .list-new-game-ver .name > a {
   color: #ffffff;
-  font-weight: bold;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
 }
 .list-new-game-ver .name .icon-cm {
   position: absolute;
@@ -10991,7 +11022,7 @@ html {
   text-align: center;
   color: #fff;
   border-radius: 4px;
-  font-weight: 600;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   margin: 0;
   cursor: pointer;
 }
@@ -11039,7 +11070,7 @@ html {
 .top-game-in-cat .game-info .page-title {
   margin: 0;
   font-size: 24px;
-  font-weight: 600;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
 }
 .top-game-in-cat .list-related-cat > li {
@@ -11088,7 +11119,7 @@ html {
   font-size: 15px;
   text-transform: uppercase;
   margin-top: 0;
-  font-weight: 600;
+  font-family: "LinhHelve-Bold-Condensed", Helvetica, Arial, sans-serif;
   margin-right: 5px;
 }
 .comments-area .comments-title .icon-cm {
