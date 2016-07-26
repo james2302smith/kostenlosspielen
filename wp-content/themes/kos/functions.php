@@ -263,7 +263,7 @@ function mytheme_comment($comment, $args, $depth) {
     <div class="comment-author vcard clearfix">
     	<div class="avatar-column">
 	        <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-        	<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
+        	<?php printf( __( '<cite class="fn">%s</cite><div class="level">Level 78</div>' ), get_comment_author_link() ); ?>
     	</div>
     	<div class="comment-column">
 		    <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"></a>

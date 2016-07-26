@@ -23,9 +23,17 @@ ul, li {
 .fa-heart {
 	color: #fbce08;
 }
-.container {
+body .container {
     min-width: 980px;
-	max-width: 1440px;
+    max-width: 1440px;
+}
+body {
+    min-width: 1048px;
+}
+#content {
+    min-width: 1024px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .btn {
 	min-width: 34px;
@@ -130,8 +138,11 @@ input[type="radio"], input[type="checkbox"] {
     &.panel-bordered {
         padding: 10px;
         .panel-body {
-            border-radius: @border-radius-base;
+            border-radius: 0 0 @border-radius-base @border-radius-base;
             background-color: #ffc887;
+        }
+        > .panel-heading.board-header + .panel-body {
+            border-radius: @border-radius-base;
         }
     }
     > .panel-heading.board-header {
@@ -409,7 +420,7 @@ input[type="radio"], input[type="checkbox"] {
         .stitches-icon-cat(-327px, -5px, 24px, 23px);
     }
 
-    &.icon-cm-heart-yellow-lg {
+    &.zz {
         .stitches-icon-cat(-361px, -5px, 30px, 29px);
     }
 
@@ -469,11 +480,6 @@ input[type="radio"], input[type="checkbox"] {
     }
 }
 
-.game-play-box {
-    .panel-title {
-
-    }
-}
 
 
 /* HOOK COMMONS STYLE */

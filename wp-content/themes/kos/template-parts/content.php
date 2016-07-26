@@ -14,6 +14,7 @@ $flash_width=$post->game_width;
 $flash_height=$post->game_height;
 $iframe=$post->game_iframe;
 ?>
+<br>
 <div class="layout-singer-top clearfix">
 	<div class="fluid-column">
 		<div class="inner">
@@ -21,7 +22,10 @@ $iframe=$post->game_iframe;
 				<div class="panel-heading clearfix">
 					<div class="panel-title pull-left"><?php the_title(); ?></div>
 					<ul class="game-action pull-right">
-						<li></li>
+						<li><a href="#"><i class="icon-cm icon-cm-comment"></i></a></li>
+						<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>
+						<li><a href="#"><i class="icon-cm icon-cm-heart-yellow"></i></a></li>
+						<li><a href="#"><i class="icon-cm icon-cm-resize"></i></a></li>
 					</ul>
 				</div>
 				<div class="panel-body">
@@ -82,11 +86,11 @@ $iframe=$post->game_iframe;
 		</div>
 	</div><!-- .fluild-column -->
 	<div class="fixed-column">
-		sdfsdf
+		<img src="<?php echo get_template_directory_uri(); ?>/images/sample-banner-ads.png" alt="Sample">
 	</div>
 </div><!-- .layout-singer-top -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="panel panel-default">
+	<div class="panel panel-default google-custom-box">
 		<div class="panel-body">
 			<p>Spieler, die transformers Prestigez gespielt haben, Spielten auch  </p>
 		</div>
@@ -103,11 +107,10 @@ $iframe=$post->game_iframe;
 		</div>
 	</div><!-- comment-box -->
 
-	<div class="panel panel-default">
-		<div class="panel-heading">
+	<div class="panel panel-default panel-bordered">
+		<div class="panel-heading board-header">
 			<h4 class="panel-title">
-				<i class="icon-cat-sm icon-cm-question"></i>
-				<span>How to play</span>
+				<i style="margin-top: 8px;" class="icon-cm icon-cm-question"></i>How to play
 			</h4>
 		</div>
 		<div class="panel-body">
