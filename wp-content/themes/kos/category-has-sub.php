@@ -62,13 +62,83 @@ get_header(); ?>
 
 
                 <div class="panel panel-default">
-                    <div class="panel-heading caret-down">
+                    <div class="panel-heading  caret-down">
+                        <ul class="cat-actions pull-right">
+                            <li><span>Sort by: </span></li>
+                            <li class="sort-item"><a href="#">Melst gesplelte</a></li>
+                            <li class="active" class="sort-item"><a href="#">New</a></li>
+                            <li class="sort-item"><a href="#">Bewertete</a></li>
+                        </ul>
                         <?php
-                        the_archive_title( '<h4 class="panel-title">', '</h4>' );
+                        the_archive_title( '<h4 class="panel-title ">', '</h4>' );
                         ?>
                     </div>
                     <div class="panel-body">
-                        <div class="list-game-default clearfix">
+                        <div class="list-game-default has-sub clearfix">
+                            <div class="banner-ads-right">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sample-banner-ads-2.png" alt="Sample">
+                            </div>
+                            <div class="cate-box-item">
+                                <div class="panel panel-default category-box-item">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title" title="Denkspiele"><span>Sub Category</span></h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="list-cat-ver clearfix">
+                                            <li>
+                                                <a title="Unblock me Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/unblock-me-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/02/kokoris-2.gif" cat-name="Unblock me Spiele">
+                                                    <span class="name">Unblock me Spiele</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Sudoku Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/sudoku-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/08/sudoku-original.gif" cat-name="Sudoku Spiele">
+                                                    <span class="name">Sudoku Spiele</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Verchiedene Denkspiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/verschiedene-denkspiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/08/puzzle-maniax-2.gif" cat-name="Verchiedene Denkspiele">
+                                                    <span class="name">Verchiedene Denkspiele</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Wimmelbilder" href="http://local.kostenlosspielen.net/spiele/denkspiele/wimmelbilder/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/08/wolken.gif" cat-name="Wimmelbilder">
+                                                    <span class="name">Wimmelbilder</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Zuma" href="http://local.kostenlosspielen.net/spiele/denkspiele/zuma/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/09/sort-my-tiles-uzumaki-naruto-2.gif" cat-name="Zuma">
+                                                    <span class="name">Zuma</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Wortspiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/wortspiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/10/word-search-gameplay-58.jpg" cat-name="Wortspiele">
+                                                    <span class="name">Wortspiele</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Straße bauen" href="http://local.kostenlosspielen.net/spiele/denkspiele/strasse-bauen/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2013/09/wie-viele-teddybaeren.gif" cat-name="Straße bauen">
+                                                    <span class="name">Straße bauen</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Schach Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/schach-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2013/09/monster-milch.png" cat-name="Schach Spiele">
+                                                    <span class="name">Schach Spiele</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="Blocks-Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/blocks-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/08/mosaik.gif" cat-name="Blocks-Spiele">
+                                                    <span class="name">Blocks-Spiele</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a title="4-Gewinnt Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/4-gewinnt-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/09/connect-four.gif" cat-name="4-Gewinnt Spiele">
+                                                    <span class="name">4-Gewinnt Spiele</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                             <?php
                             /* Start the Loop */
                             while ( have_posts() ) : the_post();
@@ -87,14 +157,15 @@ get_header(); ?>
 
                             endwhile;
 
-                            the_posts_navigation();
 
                             else :
 
                                 get_template_part( 'template-parts/content', 'none' );
 
-                            endif; ?>
-                        </div>
+                            endif;
+                            ?>
+                        </div><!-- .list-game-default -->
+                        <?php numeric_posts_nav(); ?>
                     </div>
                 </div>
 

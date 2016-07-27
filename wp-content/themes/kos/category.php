@@ -63,7 +63,13 @@ get_header(); ?>
 
 
                 <div class="panel panel-default">
-                    <div class="panel-heading caret-down">
+                    <div class="panel-heading clearfix caret-down">
+                        <ul class="cat-actions pull-right">
+                            <li><span>Sort by: </span></li>
+                            <li class="active" class="sort-item"><a href="#">Melst gesplelte</a></li>
+                            <li class="sort-item"><a href="#">New</a></li>
+                            <li class="sort-item"><a href="#">Bewertete</a></li>
+                        </ul>
                         <?php
                         the_archive_title( '<h4 class="panel-title">', '</h4>' );
                         ?>
@@ -88,7 +94,6 @@ get_header(); ?>
 
                             endwhile;
 
-                            the_posts_navigation();
 
                             else :
 
@@ -96,6 +101,7 @@ get_header(); ?>
 
                             endif; ?>
                         </div>
+                        <?php numeric_posts_nav(); ?>
                     </div>
                 </div>
 

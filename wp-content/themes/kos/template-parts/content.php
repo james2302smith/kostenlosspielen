@@ -20,7 +20,7 @@ $iframe=$post->game_iframe;
 		<div class="inner">
 			<div class="panel game-play-box panel-default">
 				<div class="panel-heading clearfix">
-					<div class="panel-title pull-left"><?php the_title(); ?></div>
+					<div class="panel-title pull-left"><?php the_title(); ?> </div><span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></span>
 					<ul class="game-action pull-right">
 						<li><a href="#"><i class="icon-cm icon-cm-comment"></i></a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>

@@ -62,28 +62,28 @@ get_header(); ?>
 	</div><!-- .main-layout -->
 	<div class="main-bottom clearfix">
 		
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('denkspiele', 'denkspiele');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('maedchen-spiele', 'madchen');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('geschicklichkeitsspiele', 'geschick');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('action-spiele', 'action');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('sport-spiele', 'sport');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
 		</div>
-		<div class="item newest-game">
+		<div class="cate-box-item newest-game">
 			<div class="panel panel-default panel-bordered">
 				<div class="panel-heading board-header">
 					<h4 class="panel-title"><i class="icon-cm icon-cm-new"></i> <span>News Game</span></h4>
@@ -109,22 +109,22 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('rennspiele', 'renen');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('denkspiele', 'denkspiele');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('action-spiele', 'action');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('denkspiele', 'denkspiele');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
 		</div>
-		<div class="item">
+		<div class="cate-box-item">
 			<?php render_home_category('maedchen-spiele', 'madchen');?>
 		</div>
 	</div>

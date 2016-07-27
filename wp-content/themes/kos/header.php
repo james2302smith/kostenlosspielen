@@ -282,47 +282,47 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
-		<div id="favoritesBar" class="top-bar">
-			<div class="container">
-				<h4 class="heading clearfix">Favoriten <a class="more-link" href="#">Merh <i class="fa fa-caret-right"></i></a></h4>
-				<div>
-					<div class="row">
-						<?php if(!$isLoggedIn): ?>
-                            <div class="col-xs-12">
+	<div id="favoritesBar" class="top-bar">
+		<div class="container">
+			<h4 class="heading clearfix">Favoriten <a class="more-link" href="#">Merh <i class="fa fa-caret-right"></i></a></h4>
+			<div>
+				<div class="row">
+					<?php if(!$isLoggedIn): ?>
+                        <div class="col-xs-12">
+                            <ul>
+                                <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
+                                <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+                                <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
+                            </ul>
+                        </div>
+                    <?php else :?>
+                        <?php
+                        if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
+                            <?php foreach($kosFavorites->getGames() as $game): ?>
+                            	<div class="col-md-2">
+                            		<div class="game-item">
+                            			<a href="<?php the_permalink($game->ID)?>">
+                            				<div class="image img-4x3 game-img">
+                            					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
+                            				</div>
+                            				<div class="game-info">
+                            					<h4 class="title"><?php echo $game->post_title ?></h4>
+                            				</div>
+                            			</a>
+                            		</div>
+                            	</div>
+                            <?php endforeach;?>
+                        <?php else:?>
+                            <li>
                                 <ul>
-                                    <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
                                     <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
-                                    <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
+                                    <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
                                 </ul>
-                            </div>
-                        <?php else :?>
-                            <?php
-                            if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
-                                <?php foreach($kosFavorites->getGames() as $game): ?>
-                                	<div class="col-md-2">
-                                		<div class="game-item">
-                                			<a href="<?php the_permalink($game->ID)?>">
-                                				<div class="image img-4x3 game-img">
-                                					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
-                                				</div>
-                                				<div class="game-info">
-                                					<h4 class="title"><?php echo $game->post_title ?></h4>
-                                				</div>
-                                			</a>
-                                		</div>
-                                	</div>
-                                <?php endforeach;?>
-                            <?php else:?>
-                                <li>
-                                    <ul>
-                                        <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
-                                        <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
-                                    </ul>
-                                </li>
-                            <?php endif; ?>
+                            </li>
                         <?php endif; ?>
-					</div>
+                    <?php endif; ?>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div id="content" class="site-content">
