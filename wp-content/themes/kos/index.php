@@ -39,7 +39,7 @@ get_header(); ?>
 										?>
 										<div class="item">
 											<div class="ArrangeID_waiting"></div>
-											<a title="<?php echo $post['post_title']; ?>" href="<?php echo SITE_ROOT_URL.'/'.$post['post_name']; ?>.html"><img src="<?php echo $post_image; ?>" width="134" height="100" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" />
+											<a title="<?php echo $post['post_title']; ?>" href="<?php echo get_permalink($post['ID']) ?>"><img src="<?php echo $post_image; ?>" width="134" height="100" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" />
 												<span class="title"><?php echo $post['post_title']; ?></span>
 											</a>
 										</div>
