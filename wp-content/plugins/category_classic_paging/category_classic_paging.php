@@ -116,6 +116,42 @@ function category_classic_parse_query($wp_query) {
     }
 }
 
+function get_current_orderby() {
+    global $wp_query;
+    $q = $wp_query->query_vars;
+    if (!empty($q['kos_order_by'])) {
+        return $q['kos_order_by'];
+    } else {
+        return 'new';
+    }
+}
+
+function get_category_order_link($order, $category = null) {
+    global $wp_query, $CATEGORY_ORDER_PARAMS_INVERSE;
+    $q = $wp_query->query_vars;
+    $currentPage = $q['paged'];
+
+    if (empty($category)) {
+        $category = $q['category_name'];
+    }
+    if (empty($category)) return '';
+    $link = get_term_link($category, 'category');
+
+    if (!empty($order) && !empty($CATEGORY_ORDER_PARAMS_INVERSE[$order])) {
+        $link .= $CATEGORY_ORDER_PARAMS_INVERSE[$order];
+    }
+
+    if ($currentPage && $currentPage > 1) {
+        $link .= '/'.PAGE.'/'.$currentPage;
+    }
+
+    return $link;
+}
+
+/*function get_category_link($category, $orderBy = 'new') {
+    get_term_link()
+}*/
+
 /**
  * TODO: remove this action
  * TODO: I want to remove this hook, it's too strick and not good

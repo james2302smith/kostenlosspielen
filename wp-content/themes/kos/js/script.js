@@ -37,6 +37,9 @@ var swiper = new Swiper('.swiper-container', {
 function openLogin(e){
 	jQuery("#signinRegisterBox").slideToggle('fast/400/fast');
 	jQuery("body").toggleClass('open-login-box');
+    if (!jQuery("#signinRegisterBox .form-box.login-form").is(':visible')) {
+        switchLogin(e);
+    }
 }
 function switchRegister(e){
 	jQuery("#signinRegisterBox .form-box.login-form").hide();

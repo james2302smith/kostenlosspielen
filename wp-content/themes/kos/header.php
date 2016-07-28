@@ -19,7 +19,9 @@
 <?php wp_head(); ?>
 <?php require get_template_directory() . '/included/register-header-js.php'; ?>
 
-
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+    {lang:'de', parsetags:'explicit'}
+</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -200,6 +202,7 @@
 							                        </div>
 							                        <button id="login-toggle" class="btn btn-primary login-toggle pull-right" onclick="openLogin(this)" ><i class="icon-cm icon-cm-no-avatar"></i> Einloggen</button>
 							                    </div>
+                                                <?php /*?>
 							                    <div style="width: 0px; height: 0px">
 							                        <!-- LOGIN FORM -->
 							                        <?php //echo authentication_modal_form('login') ?>
@@ -256,6 +259,7 @@
 							                            </div>
 							                        </div>
 							                    </div>
+                                                <?php */?>
 							                <?php endif;?>
 							            </div>
 									</div>

@@ -65,9 +65,9 @@ get_header(); ?>
                     <div class="panel-heading  caret-down">
                         <ul class="cat-actions pull-right">
                             <li><span>Sort by: </span></li>
-                            <li class="sort-item"><a href="#">Melst gesplelte</a></li>
-                            <li class="active" class="sort-item"><a href="#">New</a></li>
-                            <li class="sort-item"><a href="#">Bewertete</a></li>
+                            <li class="sort-item <?php echo (get_current_orderby() == 'vote' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('vote')?>">Melst gesplelte</a></li>
+                            <li class="sort-item <?php echo (get_current_orderby() == 'new' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('new')?>">New</a></li>
+                            <li class="sort-item <?php echo (get_current_orderby() == 'best' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('best')?>">Bewertete</a></li>
                         </ul>
                         <?php
                         the_archive_title( '<h4 class="panel-title ">', '</h4>' );
