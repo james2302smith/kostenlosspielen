@@ -31,12 +31,12 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: "%s"', 'kos' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
-			<div class="panel panel-default">
+			<div class="panel">
                 <div class="panel-body">
+					<header class="page-header">
+						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: "%s"', 'kos' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					</header><!-- .page-header -->
                     <div class="list-game-default clearfix">
                         <?php
                         /* Start the Loop */

@@ -33,7 +33,7 @@
 #content {
 	background-color: #fae09b;
 	> .container {
-		padding-top: 20px;
+		padding-top: 10px;
 		padding-bottom: 20px;
 		background: #372012 url('@{img-path}/bg-body.png') repeat center top;
 	}
@@ -1203,10 +1203,20 @@
 		> a, > span {
 			color: #240f0c;
 		}
+		> span {
+			margin-right: 10px;
+		}
 		> a {
-			padding: 0 10px;
+			margin-right: 10px;
+			padding-right: 10px;
 			&:hover {
 				color: @brand-primary;
+			}
+		}
+		&:last-child {
+			> a {
+				margin-right: 0;
+				padding-right: 0;
 			}
 		}
 		&.sort-item {
@@ -1218,7 +1228,7 @@
 					height: 11px;
 					position: absolute;
 					top: 50%;
-					left: -1px;
+					left: -9px;
 					background: #66452a;
 					.translate(0, -50%);
 				}
@@ -1228,17 +1238,6 @@
 			> a {
 				font-weight: 700;
 				position: relative;
-				&:after {
-					content: "";
-					border-left: 3px solid transparent;
-					border-right: 3px solid transparent;
-					border-top: 3px solid @brand-primary;
-					vertical-align: text-bottom;
-					position: absolute;
-					top: 50%;
-					right: 0;
-					.translate(0, -50%);
-				}
 				color: @brand-primary;
 			}
 		}

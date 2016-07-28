@@ -10018,8 +10018,6 @@ body {
 }
 #content {
   min-width: 1024px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 .btn,
 .user-auth-button,
@@ -10058,6 +10056,10 @@ body {
   margin-top: 0;
   color: #fff;
   text-shadow: 2px 3px 0 #1c3800;
+}
+.panel .page-header .page-title {
+  color: #391d09;
+  text-shadow: 1px 1px 0 #fff;
 }
 .swiper-button-disabled {
   opacity: 0.8;
@@ -10592,7 +10594,7 @@ body {
   background-color: #fae09b;
 }
 #content > .container {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px;
   background: #372012 url('images/bg-body.png') repeat center top;
 }
@@ -11652,11 +11654,19 @@ body {
 .cat-actions > li > span {
   color: #240f0c;
 }
+.cat-actions > li > span {
+  margin-right: 10px;
+}
 .cat-actions > li > a {
-  padding: 0 10px;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 .cat-actions > li > a:hover {
   color: #005826;
+}
+.cat-actions > li:last-child > a {
+  margin-right: 0;
+  padding-right: 0;
 }
 .cat-actions > li.sort-item + .sort-item {
   position: relative;
@@ -11667,7 +11677,7 @@ body {
   height: 11px;
   position: absolute;
   top: 50%;
-  left: -1px;
+  left: -9px;
   background: #66452a;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -11678,20 +11688,6 @@ body {
   font-weight: 700;
   position: relative;
   color: #005826;
-}
-.cat-actions > li.active > a:after {
-  content: "";
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent;
-  border-top: 3px solid #005826;
-  vertical-align: text-bottom;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
 }
 .cat-actions .btn,
 .cat-actions .user-auth-button,
@@ -12395,7 +12391,7 @@ body {
     right: -145px;
   }
   .banner-ads-right {
-    height: 532px;
+    height: 530px;
     padding: 105px 140px 50px 140px;
   }
 }
@@ -12445,6 +12441,10 @@ body {
   }
 }
 @media (max-width: 991px) {
+  #container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   .inline-max-md {
     display: inline !important;
   }
