@@ -10050,6 +10050,14 @@ body {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
+.page-header {
+  margin-top: 0;
+  border-bottom: 1px solid #bb6428;
+}
+.page-header .page-title {
+  margin-top: 0;
+  color: #fff;
+}
 .swiper-button-disabled {
   opacity: 0.8;
   filter: alpha(opacity=80);
