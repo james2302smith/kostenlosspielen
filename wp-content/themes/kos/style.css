@@ -10057,6 +10057,7 @@ body {
 .page-header .page-title {
   margin-top: 0;
   color: #fff;
+  text-shadow: 2px 3px 0 #1c3800;
 }
 .swiper-button-disabled {
   opacity: 0.8;
@@ -11538,6 +11539,10 @@ body {
 }
 .list-game-default .cate-box-item .panel-default > .panel-heading .panel-title {
   color: #fff;
+}
+.list-game-default .squre-view,
+.list-game-default .count-played {
+  vertical-align: text-bottom;
 }
 .list-game-default.has-sub .game-item {
   float: none;
