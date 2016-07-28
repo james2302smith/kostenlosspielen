@@ -176,9 +176,10 @@ class KosUIHelper {
         $html[] = '             </a>';
         $html[] = '         </div>';
         $html[] = '         <div class="col-xs-6">';
-        $html[] = '             <a href="javascript:void(0)" title="Facebook" class="btn auth-google social-login btn-block" provider="goggle" callback="'.KOS_REST_API_URL.'">';
+        $html[] = '             <a href="javascript:void(0)" title="Google" class="btn auth-google social-login btn-block" provider="goggle" callback="'.KOS_REST_API_URL.'">';
         $html[] = '                 <i class="fa fa-google-plus"></i><span class="standard-margin-left">Google +</span>';
         $html[] = '             </a>';
+        //$html[] = '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
         $html[] = '         </div>';
         $html[] = '     </div>';
         $html[] = ' </div>';

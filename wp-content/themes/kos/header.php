@@ -19,9 +19,7 @@
 <?php wp_head(); ?>
 <?php require get_template_directory() . '/included/register-header-js.php'; ?>
 
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-    {lang:'de', parsetags:'explicit'}
-</script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,7 +31,8 @@
                 appId: '<?php echo KOS_FACEBOOK_CLIENT_API ?>',
                 cookie: true,
                 xfbml: true,
-                oauth: true
+                oauth: true,
+                version: 'v2.7'
             });
         };
     </script>
@@ -41,7 +40,7 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1&appId=624253760968467";
+            js.src = "//connect.facebook.net/de_DE/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>

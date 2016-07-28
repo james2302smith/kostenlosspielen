@@ -617,11 +617,11 @@ jQuery(document).ready(function($) {
                                     $alert.html('<strong>Success:</strong> ' + response.message);
                                     $alert.addClass("hidden");
 
-                                    $.modal.close();
+                                    closeLogin(e);
 
                                     setTimeout(function() {
                                         window.location.reload();
-                                    }, 0);
+                                    }, 500);
 
                                 } else {
                                     //. Show form
@@ -651,9 +651,104 @@ jQuery(document).ready(function($) {
                         .removeClass('alert-success')
                         .removeClass('alert-danger')
                 }
-            },{scope: 'basic_info,email,user_birthday'});
+            },{scope: 'public_profile,user_friends,email,user_birthday'});
         }
 
         return false;
+    });
+
+    function attachSignin(auth2, elements) {
+        $.each(elements, function(index, element) {
+            auth2.attachClickHandler(element, {},
+                function(googleUser) {
+                    var profile = googleUser.getBasicProfile();
+                    var authResp = googleUser.getAuthResponse();
+
+                    var $provider = $(element).closest('a.social-login');
+                    var provider = $provider.attr('provider');
+                    var $alert = $provider.closest('div.form-box').find('div.alert');
+                    var $form = $provider.closest('div.form-box').find('form');
+                    var callback = $provider.attr('callback');
+
+                    var $inputFields = $form.find('div.field, div.submit');
+                    var $names = $form.find('div.name');
+                    var $socials = $form.closest('div.box-form').find('div.separator, div.social-buttons');
+                    var $intro = $form.closest('div.modal').find('div.authentication-intro');
+
+                    $inputFields.hide();
+                    $names.hide();
+                    $socials.hide();
+                    $intro.css('visibility', 'hidden');
+
+                    if(callback) {
+                        $.ajax({
+                            type: 'POST',
+                            url: callback,
+                            data: {
+                                action: 'googleCallback',
+                                access_token: authResp.access_token,
+                                google_id: profile.getId(),
+                                email: profile.getEmail(),
+                                name: profile.getName(),
+                                last_name: profile.getGivenName(),
+                                first_name: profile.getFamilyName()
+                            },
+                            dataType: 'json',
+                            error: function() {
+                                //. Show form
+                                $inputFields.show();
+                                $names.css('display', 'inline-block');
+                                $socials.show();
+                                $intro.css('visibility', 'visible');
+
+                                //. Print error
+                                $alert.removeClass('hidden')
+                                    .removeClass('alert-success')
+                                    .addClass('alert-danger')
+                                    .html('<strong>Error:</strong> Can not connect to server, please try again later.');
+                            },
+                            success: function(response) {
+                                if(response.code == 202) {
+                                    //. Login successfully
+                                    $alert.removeClass("hidden");
+                                    $alert.removeClass("alert-danger");
+                                    $alert.addClass("alert-success");
+                                    $alert.html('<strong>Success:</strong> ' + response.message);
+                                    $alert.addClass("hidden");
+
+                                    closeLogin(null);
+
+                                    setTimeout(function() {
+                                        window.location.reload();
+                                    }, 500);
+
+                                } else {
+                                    //. Show form
+                                    $inputFields.show();
+                                    $socials.show();
+                                    $intro.css('visibility', 'visible');
+
+                                    //. Other error
+                                    $alert.removeClass("hidden");
+                                    $alert.removeClass("alert-success");
+                                    $alert.addClass("alert-danger");
+                                    $alert.html('<strong>Error:</strong> ' + response.message);
+                                }
+                            }
+                        });
+                    }
+
+                }, function(error) {
+                    alert(JSON.stringify(error, undefined, 2));
+                }
+            );
+        });
+    }
+    gapi.load('auth2', function() {
+        window.auth2 = gapi.auth2.init({
+            client_id: KOS_GOOGLE_CLIENT_API,
+            scope: 'profile'
+        });
+        attachSignin(window.auth2, document.getElementsByClassName('auth-google'));
     });
 });

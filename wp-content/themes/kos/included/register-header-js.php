@@ -1,16 +1,19 @@
 <?php
 ?>
+<meta name="google-signin-client_id" content="<?php echo KOS_GOOGLE_CLIENT_API?>">
+<script src="https://apis.google.com/js/platform.js"></script>
+<script type="text/javascript">
+    window.KOS_GOOGLE_CLIENT_API='<?php echo KOS_GOOGLE_CLIENT_API?>';
+</script>
 <!-- WP-Minify JS -->
 
     <script type = "text/javascript"
     src = "https://apis.google.com/js/plusone.js" > {
             lang: 'de',
             parsetags: 'explicit'
-        } <
-        /script>
+        } </script>
         <!-- Start Visual Website Optimizer Asynchronous Code -->
-        <
-        script type = 'text/javascript' >
+        <script type = 'text/javascript' >
         var _vwo_code = (function() {
             var account_id = 106866,
                 settings_tolerance = 2000,
@@ -61,12 +64,10 @@
                 }
             };
         }());
-    _vwo_settings_timer = _vwo_code.init(); <
-    /script>
+    _vwo_settings_timer = _vwo_code.init(); </script>
     <!-- End Visual Website Optimizer Asynchronous Code -->
     <!-- Facebook Conversion Code for ks -->
-    <
-    script > (function() {
+    <script> (function() {
         var _fbq = window._fbq || (window._fbq = []);
         if (!_fbq.loaded) {
             var fbds = document.createElement('script');
@@ -81,16 +82,13 @@
     window._fbq.push(['track', '6020316462170', {
         'value': '0.00',
         'currency': 'EUR'
-    }]); <
-    /script> <
-    noscript > < img height = "1"
+    }]); </script> <noscript> <img height = "1"
     width = "1"
     alt = ""
     style = "display:none"
     src = "https://www.facebook.com/tr?ev=6020316462170&amp;cd[value]=0.00&amp;cd[currency]=EUR&amp;noscript=1" / > < /noscript>
 
-    <
-    script > (function() {
+    <script> (function() {
         var _fbq = window._fbq || (window._fbq = []);
         if (!_fbq.loaded) {
             var fbds = document.createElement('script');
@@ -103,39 +101,32 @@
         _fbq.push(['addPixelId', '1569078870037148']);
     })();
     window._fbq = window._fbq || [];
-    window._fbq.push(['track', 'PixelInitialized', {}]); <
-    /script> <
-    noscript > < img height = "1"
+    window._fbq.push(['track', 'PixelInitialized', {}]); </script> <noscript > <img height = "1"
     width = "1"
     alt = ""
     style = "display:none"
-    src = "https://www.facebook.com/tr?id=1569078870037148&amp;ev=PixelInitialized" / > < /noscript>
+    src = "https://www.facebook.com/tr?id=1569078870037148&amp;ev=PixelInitialized" /> </noscript>
 
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-    <
-    script type = "text/javascript" >
+    <script type="text/javascript">
         window.cookieconsent_options = {
             "message": "Cookies erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklärst Du dich damit einverstanden, dass wir Cookies verwenden",
             "dismiss": "Verstanden",
             "learnMore": "Mehr erfahren",
             "link": "http://www.kostenlosspielen.biz/datenschutzregelung/",
             "theme": "light-bottom"
-        }; <
-    /script>
+        }; </script>
 
-    <
-    script type = "text/javascript"
+    <script type = "text/javascript"
     src = "//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js" > < /script>
         <!-- End Cookie Consent plugin -->
 
     <!-- MUST INCLUDE THIS LINE TO DESTROY PRELOADER-->
-    <
-    script type = "text/javascript" >
+    <script type = "text/javascript" >
         function removeAdSwf() {
             document.getElementById("preloader").style.visibility = "hidden";
         }
 
     function noAdsReturned() {
         document.getElementById("preloader").style.visibility = "hidden";
-    } <
-    /script>
+    } </script>

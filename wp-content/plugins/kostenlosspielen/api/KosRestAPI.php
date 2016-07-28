@@ -326,6 +326,99 @@ class KosRestAPI {
         }
     }
 
+    public function googleCallback($data) {
+        $accessToken = $data['access_token'];
+        if(!$accessToken) {
+            //. Do not have accessToken
+            $this->setResponse(412, 'Precondition Failed', 'Can not get your accessToken, please try again!', array());
+            return;
+        }
+
+        $googleId = $data['google_id'];
+        $name = $data['name'];
+        $firstname = $data['first_name'];
+        $lastname  = $data['last_name'];
+        $email     = $data['email'];
+        $birthday  = '';
+        $sex       = '';
+
+        //. Find user by email
+        $userId = null;
+        $user = get_user_by('email', $email);
+        if(!$user) {
+            $userId = username_exists($email);
+        } else {
+            $userId = $user->ID;
+        }
+
+        $isNewUser = false;
+        if(!$userId) {
+            //. Create user
+            $randomPassword = ''.time();
+            $user = array(
+                'user_pass'     => $randomPassword,
+                'user_login'    => esc_sql($email),
+                'user_email'    => esc_sql($email),
+                'display_name'  => esc_sql($name),
+                'first_name'    => esc_sql($firstname),
+                'last_name'     => esc_sql($lastname)
+            );
+            //wp_create_user($email, $password, $email);
+            $userId = wp_insert_user($user);
+
+            if(!is_wp_error($userId)) {
+                //. Add user meta
+                //add_user_meta($userId, 'sex', $sex);
+                //add_user_meta($userId, 'birthday', $birthday);
+                $isNewUser = true;
+            }
+        } else {
+            //First name
+            if(!get_user_meta($userId, 'first_name', true)) {
+                if(!add_user_meta($userId, 'first_name', $firstname, true)) {
+                    update_user_meta($userId, 'first_name', $firstname);
+                }
+            }
+            if(!get_user_meta($userId, 'last_name', true)) {
+                if(!add_user_meta($userId, 'last_name', $lastname, true)) {
+                    update_user_meta($userId, 'last_name', $lastname);
+                }
+            }
+            /*if(!get_user_meta($userId, 'birthday', true)) {
+                if(!add_user_meta($userId, 'birthday', $birthday, true)) {
+                    update_user_meta($userId, 'birthday', $birthday);
+                }
+            }
+            if(!get_user_meta($userId, 'sex', true)) {
+                if(!add_user_meta($userId, 'sex', $sex, true)) {
+                    update_user_meta($userId, 'sex', $sex);
+                }
+            }*/
+        }
+
+        if(!is_wp_error($userId) && $userId) {
+            if(!add_user_meta($userId, KOS_GOOGLE_ID_KEY, $googleId, true)) {
+                update_user_meta($userId, KOS_GOOGLE_ID_KEY, $googleId, true);
+            }
+            if(!add_user_meta($userId, KOS_GOOGLE_PROFILE_ACCESSTOKEN_KEY, $accessToken, true)) {
+                update_user_meta($userId, KOS_GOOGLE_PROFILE_ACCESSTOKEN_KEY, $accessToken, true);
+            }
+
+            //. Auto login
+            wp_set_auth_cookie($userId);
+            $u = wp_set_current_user($userId);
+
+            $this->setResponse(202, 'Accepted', 'Login with google success, your browser will refresh soon!', array('isNewUser' => $isNewUser, 'user' => $u));
+            return;
+        } else {
+
+            $this->code = 500;
+            $this->status = 'Internal Server Error';
+            $this->message = 'There are some error when process login with google, please try again later!';
+            $this->data = array();
+        }
+    }
+
     private function setResponse($code, $status, $message, $data) {
         $this->code = $code;
         $this->status = $status;
