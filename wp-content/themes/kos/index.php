@@ -22,32 +22,32 @@ get_header(); ?>
 						<div class="panel panel-default popular-games-box clearfix">
 							<div class="panel-heading board-header">
 								<h4 class="panel-title"><span class="board-title"><i class="icon-cm icon-cm-heart-yellow"></i> Populäre Spiele</span></h4>
+								<div class="swiper-next fsw-next"><i class="fa fa-arrow-right"></i></div>
+        						<div class="swiper-prev fsw-prev"><i class="fa fa-arrow-left"></i></div>
 							</div>
 							<a class="more-link" href="#">Mehr</a>
-							<div id="favoriteSlider" class="favorite-slider">
-								<?php
-									$query='SELECT * FROM kostenlosspielen_posts
-											WHERE kostenlosspielen_posts.post_status =  \'publish\'
-											AND kostenlosspielen_posts.post_type =  \'post\'
-											ORDER BY game_views DESC
-											LIMIT 0,24'; 
-									$pageposts = $wpdb->get_results($query, ARRAY_A);
-									foreach (array_chunk($pageposts, 12) as $row) {
-										echo '<div class="row-item">';
-										foreach ($row as $post){
-										$post_image=$post['game_image'];
-										?>
-										<div class="item">
-											<div class="ArrangeID_waiting"></div>
-											<a title="<?php echo $post['post_title']; ?>" href="<?php echo get_permalink($post['ID']) ?>"><img src="<?php echo $post_image; ?>" width="134" height="100" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" />
-												<span class="title"><?php echo $post['post_title']; ?></span>
-											</a>
-										</div>
-								   <?php
-								   		}
-								   		echo '</div>';
-									}
-								   ?>
+							<div id="favoriteSwiper" class="favorite-swiper swiper-container">
+								<div  class="swiper-wrapper">
+									<?php
+										$query='SELECT * FROM kostenlosspielen_posts
+												WHERE kostenlosspielen_posts.post_status =  \'publish\'
+												AND kostenlosspielen_posts.post_type =  \'post\'
+												ORDER BY game_views DESC
+												LIMIT 0,24'; 
+										$pageposts = $wpdb->get_results($query, ARRAY_A);
+											foreach ($pageposts as $post){
+											$post_image=$post['game_image'];
+											?>
+											<div class="swiper-slide item">
+												<div class="ArrangeID_waiting"></div>
+												<a title="<?php echo $post['post_title']; ?>" href="<?php echo get_permalink($post['ID']) ?>"><img src="<?php echo $post_image; ?>" width="134" height="100" alt="kostenlos spielen <?php echo $post['post_title']; ?>" title="<?php echo $post['game_intro']; ?>" />
+													<span class="title"><?php echo $post['post_title']; ?></span>
+												</a>
+											</div>
+									   <?php
+										}
+									   ?>
+								</div>
 							</div>
 						</div>
 					</main><!-- #main -->
@@ -61,7 +61,6 @@ get_header(); ?>
 		</div>
 	</div><!-- .main-layout -->
 	<div class="main-bottom clearfix">
-		
 		<div class="cate-box-item">
 			<?php render_home_category('denkspiele', 'denkspiele');?>
 		</div>

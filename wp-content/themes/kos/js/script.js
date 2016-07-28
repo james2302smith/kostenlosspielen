@@ -8,10 +8,10 @@
 
 ( function( $ ) {
 	// FAVORITE GAMES
-	$('#favoriteSlider').slick({
+	/*$('#favoriteSlider').slick({
 		infinite: false,
 		adaptiveHeight: true
-	});
+	});*/
 	// SHOW FULL MENU
 	$("#primary-menu").on('click', '.show-more-menu', function(event) {
 		/* Act on the event */
@@ -20,6 +20,19 @@
 	});
 } )( jQuery );
 
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 5,
+    slidesPerColumn: 2,
+    paginationClickable: true,
+    nextButton: '.fsw-next',
+    prevButton: '.fsw-prev',
+    spaceBetween: 10,
+     breakpoints: {
+     	slidesPerView: 5,
+   		slidesPerColumn: 2,
+     }
+});
 
 function openLogin(e){
 	jQuery("#signinRegisterBox").slideToggle('fast/400/fast');
