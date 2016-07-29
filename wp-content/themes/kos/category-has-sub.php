@@ -44,7 +44,7 @@ get_header(); ?>
                                     the_archive_title( '<h1 class="page-title">', '</h1>' );
                                     the_archive_description( '<div class="taxonomy-description game-desc">', '</div>' );
                                     ?>
-                                    <h5 class="margin-bottom-5">Related Categories:</h5>
+                                    <!--<h5 class="margin-bottom-5">Related Categories:</h5>
                                     <ul class="list-related-cat">
                                         <li><a href="#">Allient</a></li>
                                         <li><a href="#">Dragon</a></li>
@@ -53,7 +53,7 @@ get_header(); ?>
                                         <li><a href="#">Fantasy</a></li>
                                         <li><a href="#">Halloween</a></li>
                                         <li><a href="#">Horror</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,8 @@ get_header(); ?>
                             <li class="sort-item <?php echo (get_current_orderby() == 'best' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('best')?>">Bewertete</a></li>
                         </ul>
                         <?php
-                        the_archive_title( '<h4 class="panel-title ">', '</h4>' );
+                        global $wp_query;
+                        the_archive_title( '<h4 class="panel-title ">', ' ('.$wp_query->found_posts.')'.'</h4>' );
                         ?>
                     </div>
                     <div class="panel-body">
@@ -85,7 +86,18 @@ get_header(); ?>
                                     </div>
                                     <div class="panel-body">
                                         <ul class="list-cat-ver clearfix">
-                                            <li>
+                                            <?php
+                                            $category = get_queried_object();
+                                            $categories = get_categories(array('child_of' => $category->cat_ID ));
+                                            ?>
+                                            <?php foreach($categories as $cat):?>
+                                                <li>
+                                                    <a title="<?php echo $cat->name?>" href="<?php echo get_category_link($cat)?>">
+                                                        <span class="name"><?php echo $cat->name?></span>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach;?>
+                                            <!--<li>
                                                 <a title="Unblock me Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/unblock-me-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/02/kokoris-2.gif" cat-name="Unblock me Spiele">
                                                     <span class="name">Unblock me Spiele</span>
                                                 </a>
@@ -134,7 +146,7 @@ get_header(); ?>
                                                 <a title="4-Gewinnt Spiele" href="http://local.kostenlosspielen.net/spiele/denkspiele/4-gewinnt-spiele/" game-image="http://www.kostenlosspielen.biz/wp-content/uploads/2012/09/connect-four.gif" cat-name="4-Gewinnt Spiele">
                                                     <span class="name">4-Gewinnt Spiele</span>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                         </ul>
                                     </div>
                                 </div>

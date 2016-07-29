@@ -50,12 +50,15 @@ class Info_Widget extends WP_Widget {
         echo $args['before_widget'];
         ?>
         <div class="row">
+            <div class="col-xs-12">
+                <h4 class="text-uppercase"><?php echo $title?></h4>
+            </div>
             <div class = "col-xs-3 col-lg-2">
                 <ul class="list-toggle-tab" role="tablist">
                     <?php foreach($tabTitles as $i => $tabTitle): ?>
                         <li class="<?php echo ($i == 0 ? 'active' : '') ?>" role="presentation">
                             <a href="#<?php echo $widgetId.'_tab_'.$i ?>" aria-controls="<?php echo $widgetId.'_tab_'.$i ?>" role="tab" data-toggle="tab">
-                                <?php echo $tabTitle ?>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;<?php echo $tabTitle ?>
                             </a>
                         </li>
                     <?php endforeach?>

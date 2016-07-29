@@ -307,6 +307,14 @@ function kos_custom_category_template($template) {
     }
 }
 
+add_filter('get_the_archive_title', 'kos_custom_the_archive_title');
+function kos_custom_the_archive_title($title) {
+    if (is_category()) {
+        $title = single_cat_title( '', false );
+    }
+    return $title;
+}
+
 function numeric_posts_nav() {
 
     if( is_singular() )
@@ -339,8 +347,8 @@ function numeric_posts_nav() {
     echo '<div class="navigation text-center"><ul class="pagination">' . "\n";
 
     /** Previous Post Link */
-    if ( get_previous_posts_link() )
-        printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
+    if ( get_previous_posts_link('&laquo;') )
+        printf( '<li>%s</li>' . "\n", get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>') );
 
     /** Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
@@ -370,8 +378,13 @@ function numeric_posts_nav() {
 
     /** Next Post Link */
     if ( get_next_posts_link() )
-        printf( '<li>%s</li>' . "\n", get_next_posts_link() );
+        printf( '<li>%s</li>' . "\n", get_next_posts_link('<i class="fa fa-angle-right" aria-hidden="true"></i>') );
 
-    echo '</ul></div>' . "\n";
+    echo '</ul>' . "\n";
 
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $offset = ($paged - 1) * get_query_var('posts_per_page');
+
+    echo '<span>Showing '.($offset + 1).'-'.($offset + $wp_query->post_count).' of '.($wp_query->found_posts).'</span>';
+    echo '</div>'."\n";
 }

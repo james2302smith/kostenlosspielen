@@ -13,6 +13,7 @@ $flash=$post->game_flash;
 $flash_width=$post->game_width;
 $flash_height=$post->game_height;
 $iframe=$post->game_iframe;
+
 ?>
 <br>
 <div class="layout-singer-top clearfix">
@@ -22,7 +23,7 @@ $iframe=$post->game_iframe;
 				<div class="panel-heading clearfix">
 					<div class="panel-title pull-left"><?php the_title(); ?> </div><span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></span>
 					<ul class="game-action pull-right">
-						<li><a href="#"><i class="icon-cm icon-cm-comment"></i></a></li>
+						<li><a href="#comment-area">Komment (<?php echo get_comments_number()?>)</a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-heart-yellow"></i></a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-resize"></i></a></li>

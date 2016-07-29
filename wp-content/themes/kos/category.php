@@ -45,7 +45,7 @@ get_header(); ?>
                                     the_archive_title( '<h1 class="page-title">', '</h1>' );
                                     the_archive_description( '<div class="taxonomy-description game-desc">', '</div>' );
                                     ?>
-                                    <h5 class="margin-bottom-5">Related Categories:</h5>
+                                    <!--<h5 class="margin-bottom-5">Related Categories:</h5>
                                     <ul class="list-related-cat">
                                         <li><a href="#">Allient</a></li>
                                         <li><a href="#">Dragon</a></li>
@@ -54,7 +54,7 @@ get_header(); ?>
                                         <li><a href="#">Fantasy</a></li>
                                         <li><a href="#">Halloween</a></li>
                                         <li><a href="#">Horror</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,8 @@ get_header(); ?>
                             <li class="sort-item <?php echo (get_current_orderby() == 'best' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('best')?>">Bewertete</a></li>
                         </ul>
                         <?php
-                        the_archive_title( '<h4 class="panel-title">', '</h4>' );
+                        global $wp_query;
+                        the_archive_title( '<h4 class="panel-title ">', ' ('.$wp_query->found_posts.')'.'</h4>' );
                         ?>
                     </div>
                     <div class="panel-body">

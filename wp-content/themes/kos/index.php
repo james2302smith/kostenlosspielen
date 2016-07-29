@@ -25,7 +25,7 @@ get_header(); ?>
 								<div class="swiper-next fsw-next"><i class="fa fa-arrow-right"></i></div>
         						<div class="swiper-prev fsw-prev"><i class="fa fa-arrow-left"></i></div>
 							</div>
-							<a class="more-link" href="#">Mehr</a>
+							<a class="more-link" href="#">Mehr <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 							<div id="favoriteSwiper" class="favorite-swiper swiper-container">
 								<div  class="swiper-wrapper">
 									<?php
