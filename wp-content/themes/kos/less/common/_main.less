@@ -1255,3 +1255,27 @@
 	float: right;
 	padding: 60px 85px 50px 85px;
 }
+
+.full-screen-modal .fa-compress {
+  display: none;
+}
+body.full-screen {
+  overflow: hidden;
+  .full-screen-modal {
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+    padding:20px;
+    z-index: 1000;
+    overflow-y: auto;
+    background: rgba(0,0,0,.9);
+    .icon-cm-resize {
+      display: none;
+    }
+    .fa-compress {
+      display: inline-block;
+    }
+  }
+}

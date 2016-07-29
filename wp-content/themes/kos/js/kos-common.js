@@ -751,4 +751,8 @@ jQuery(document).ready(function($) {
         });
         attachSignin(window.auth2, document.getElementsByClassName('auth-google'));
     });
+
+    $('body').on('click', '[data-action="fullscreen"]', function(e) {
+        $('body').toggleClass('full-screen');
+    });
 });

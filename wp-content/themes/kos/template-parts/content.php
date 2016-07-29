@@ -19,6 +19,7 @@ $iframe=$post->game_iframe;
 <div class="layout-singer-top clearfix">
 	<div class="fluid-column">
 		<div class="inner">
+            <div class="full-screen-modal">
 			<div class="panel game-play-box panel-default">
 				<div class="panel-heading clearfix">
 					<div class="panel-title pull-left"><?php the_title(); ?> </div><span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></span>
@@ -26,7 +27,13 @@ $iframe=$post->game_iframe;
 						<li><a href="#comment-area">Komment (<?php echo get_comments_number()?>)</a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-heart-yellow"></i></a></li>
-						<li><a href="#"><i class="icon-cm icon-cm-resize"></i></a></li>
+						<li>
+                            <a href="#" data-action="fullscreen">
+                                <i class="icon-cm icon-cm-resize"></i>
+                                <!--<i class="fa fa-expand" aria-hidden="true"></i>-->
+                                <i class="fa fa-compress" aria-hidden="true"></i>
+                            </a>
+                        </li>
 					</ul>
 				</div>
 				<div class="panel-body">
@@ -84,6 +91,7 @@ $iframe=$post->game_iframe;
 					</div><!-- /screenshot-->
 				</div>
 			</div><!-- .panel -->
+            </div>
 		</div>
 	</div><!-- .fluild-column -->
 	<div class="fixed-column">
