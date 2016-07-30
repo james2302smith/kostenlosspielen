@@ -223,7 +223,7 @@ function render_home_category($slug, $icon) {
     ?>
     <div class="panel panel-default panel-bordered category-box-item">
         <div class="panel-heading board-header">
-            <h4 class="panel-title" title="<?php echo $category->name ?>"><i class="icon-cat-sm icon-cat-sm-<?php echo strtolower($icon) ?>"></i> <span><?php echo $category->name ?></span></h4>
+            <h4 class="panel-title" title="<?php echo $category->name ?>"><i class="icon-cat-sm icon-cat-sm-<?php echo strtolower($icon) ?>"></i> <a href="<?php echo get_category_link($category)?>"><?php echo $category->name ?></a></h4>
         </div>
         <div class="panel-body">
             <a class="image img-4x3" href="#">
