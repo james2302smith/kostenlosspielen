@@ -5,6 +5,9 @@
 // LAYOUT: LAYOUT STYLE
 // -------------------------------------
 	// Hook Mixin Render Small devices (tablets, 768px and up)
+.home .main-layout {
+	padding-top: 15px;
+}
 .wrap {
 	overflow-x: hidden;
 }
@@ -688,6 +691,8 @@
 	    	text-decoration: underline;
 	    }
 	}
+}
+.panel {
 	.swiper-next,
 	.swiper-prev {
 		top: 28px;
@@ -916,6 +921,11 @@
 	&.newest-game {
 		float: right;
 	}
+	&:hover {
+		.category-box-item {
+			background-color: #8f8b33;
+		}
+	}
 }
 // Hook Mixin Render Only for Medium devices and lower (<1199px)
 .hook-screen-md-max(){
@@ -924,21 +934,41 @@
 		padding-bottom: 5px;
 	}
 }
+.top-bar[style="display: none"] {
+	display: block!important;
+	height: 0px;
+	overflow: hidden;
+}
 .top-bar {
-	display: none;
-	padding: 10px 0;
-	background-color: #372012;
+	padding: 0!important;
+	background: #372012!important;
 	color: #fff;
-	a {
-		color: #fff;
-		&:hover {text-decoration: underline;}
+	&.open {
+		display: block!important;
+		overflow: visible;
+		height: auto;
 	}
-	.heading {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-		padding-bottom: 5px;
-		margin-bottom: 15px;
-		.more-link {
-			float: right;
+	.popular-category {
+		padding: 15px 15px 5px;
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.more-link {
+		float: right;
+	}
+	.panel {
+		border-radius: 0;
+		margin-top: 20px;
+		margin-bottom: 0;
+		.panel-heading .icon-cm {
+			margin-top: 8px;
+		}
+		.panel-body {
+			padding-top: 40px;
 		}
 	}
 }

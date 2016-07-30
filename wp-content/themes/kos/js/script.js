@@ -20,7 +20,7 @@
 	});
 } )( jQuery );
 
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('#favoriteSwiper', {
     pagination: '.swiper-pagination',
     slidesPerView: 5,
     slidesPerColumn: 2,
@@ -28,10 +28,15 @@ var swiper = new Swiper('.swiper-container', {
     nextButton: '.fsw-next',
     prevButton: '.fsw-prev',
     spaceBetween: 10,
-     breakpoints: {
-     	slidesPerView: 5,
-   		slidesPerColumn: 2,
-     }
+});
+
+var myswiper = new Swiper('#myfavoriteSwiper', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 6,
+    paginationClickable: true,
+    nextButton: '.mfsw-next',
+    prevButton: '.mfsw-prev',
+    spaceBetween: 10,
 });
 
 function openLogin(e){
@@ -60,5 +65,7 @@ function closeLogin(e) {
 }
 
 function openFavoriteBox(e) {
-	 jQuery('#favoritesBar').slideToggle('fast/400/fast');
+	 jQuery('#favoritesBar').slideToggle('fast/400/fast', function(){
+	 	jQuery('#favoritesBar').toggleClass('open');
+	 });
 }

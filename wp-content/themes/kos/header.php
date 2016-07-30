@@ -285,47 +285,113 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div id="favoritesBar" class="top-bar">
-		<div class="container">
-			<h4 class="heading clearfix">Favoriten <a class="more-link" href="#">Merh <i class="fa fa-caret-right"></i></a></h4>
-			<div>
-				<div class="row">
-					<?php if(!$isLoggedIn): ?>
-                        <div class="col-xs-12">
-                            <ul>
-                                <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
-                                <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
-                                <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
-                            </ul>
-                        </div>
-                    <?php else :?>
-                        <?php
-                        if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
-                            <?php foreach($kosFavorites->getGames() as $game): ?>
-                            	<div class="col-md-2">
-                            		<div class="game-item">
-                            			<a href="<?php the_permalink($game->ID)?>">
-                            				<div class="image img-4x3 game-img">
-                            					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
-                            				</div>
-                            				<div class="game-info">
-                            					<h4 class="title"><?php echo $game->post_title ?></h4>
-                            				</div>
-                            			</a>
-                            		</div>
-                            	</div>
-                            <?php endforeach;?>
-                        <?php else:?>
-                            <li>
-                                <ul>
-                                    <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
-                                    <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
-                                </ul>
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div id="content" class="site-content">
+			<div id="favoritesBar" class="top-bar container" style="display: none">
+				<div class="popular-category">Beliebt kategory: <a href="#">Mahjong</a>, <a href="#">Solitar</a>, <a href="#">Bubble, <a href="#">UnclockMe</a>, <a href="#">3 Gewinnt Spiele</a>, <a href="#">Mario</a></div>
+				<div class="panel panel-default">
+					<div class="panel-heading board-header clearfix">
+						<h4 class="panel-title"><i class="icon-cm icon-cm-heart-yellow"></i> FAVORITE GAMES</h4>
+						<div class="swiper-next mfsw-next"><i class="fa fa-arrow-right"></i></div>
+        				<div class="swiper-prev mfsw-prev"><i class="fa fa-arrow-left"></i></div>
+					</div>
+					<div class="panel-body">
+						<?php if(!$isLoggedIn): ?>
+	                        <ul>
+	                            <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
+	                            <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+	                            <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
+	                        </ul>
+		                    <?php else :?>
+		                    	<div class="row">
+		                        <?php
+		                        if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
+		                            <?php foreach($kosFavorites->getGames() as $game): ?>
+		                            	<!-- <div class="col-md-2">
+		                            		<div class="game-item">
+		                            			<a href="<?php the_permalink($game->ID)?>">
+		                            				<div class="image img-4x3 game-img">
+		                            					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
+		                            				</div>
+		                            				<div class="game-info">
+		                            					<h4 class="title"><?php echo $game->post_title ?></h4>
+		                            				</div>
+		                            			</a>
+		                            		</div>
+		                            	</div> -->
+		                            	<div id="myfavoriteSwiper" class="favorite-swiper swiper-container">
+		                            		<div  class="swiper-wrapper">
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Spider Solitär" href="http://local.kostenlosspielen.net/spider-solitaire.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2011/08/spider-solitaer.jpg" width="134" height="100" alt="kostenlos spielen Spider Solitär" title="Beseitige die Karten mit so wenig Zügen wie möglich aus dem Spiel, indem Du die Karten richtig zuordnest!" />
+		                            					<span class="title">Spider Solitär</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Scrabble" href="http://local.kostenlosspielen.net/scrabble.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/04/scrabble.jpg" width="134" height="100" alt="kostenlos spielen Scrabble" title="Die Hauptaufgabe in Scrabble ist es möglichst komplexe Wörter aus seltenen Buchstaben aus den Steinen deiner Hand auf das Spielfeld zu legen." />
+		                            					<span class="title">Scrabble</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Time Travel " href="http://local.kostenlosspielen.net/time-travel.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/10/time-travel.gif" width="134" height="100" alt="kostenlos spielen Time Travel " title="Laufe schnell hin und her, schieße alle fliegenden Sanduhren ab und weiche ihnen auch aus ;-)" />
+		                            					<span class="title">Time Travel </span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Mario Block Ball" href="http://local.kostenlosspielen.net/mario-block-ball.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/09/mario-block-ball.jpg" width="134" height="100" alt="kostenlos spielen Mario Block Ball" title="Lenke Mario, Donkey Kong, und Sonic, um alle Puzzles auf den Boden zu schieben." />
+		                            					<span class="title">Mario Block Ball</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Barbie im Büro" href="http://local.kostenlosspielen.net/barbie-im-buero.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2013/09/barbie-im-buero.jpg" width="134" height="100" alt="kostenlos spielen Barbie im Büro" title="Helfe Barbie sich für die Arbeit im Büro vorzubereiten und suche ihr ein tolles Outfit aus." />
+		                            					<span class="title">Barbie im Büro</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Bubble Shooter" href="http://local.kostenlosspielen.net/bubble-shooter.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/01/bubble-shooter.jpg" width="134" height="100" alt="kostenlos spielen Bubble Shooter" title="Jetzt kannst du auch den Klassiker Bubble Shooter online kostenlos spielen! Die Regeln sind die gleichen: 3 Kugeln der gleichen Farben und sie zerplatzen!" />
+		                            					<span class="title">Bubble Shooter</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Bubble Hit" href="http://local.kostenlosspielen.net/bubble-hit.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2011/08/bubble-hit.jpg" width="134" height="100" alt="kostenlos spielen Bubble Hit" title="Bubble Hit ist ein klassischer Ableger des Bubble Shooter Spiels. Hier kommt es darauf an alle Kugeln von der Decke abzuschießen." />
+		                            					<span class="title">Bubble Hit</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="1001 Arabian Nights" href="http://local.kostenlosspielen.net/1001-arabian-nights.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/06/1001-arabian-nights.jpg" width="134" height="100" alt="kostenlos spielen 1001 Arabian Nights" title="Tauche in eine Welt der zauberhaften Klängen und Schätze Arabiens." />
+		                            					<span class="title">1001 Arabian Nights</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Vivid Arkanoid" href="http://local.kostenlosspielen.net/vivid-arkanoid.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/02/vivid-arkanoid.gif" width="134" height="100" alt="kostenlos spielen Vivid Arkanoid" title="Versuche die Steinmauer zu zerstören, bevor die Zeit abgelaufen ist." />
+		                            					<span class="title">Vivid Arkanoid</span>
+		                            				</a>
+		                            			</div>
+		                            			<div class="swiper-slide item">
+		                            				<div class="ArrangeID_waiting"></div>
+		                            				<a title="Ketten Mahjong" href="http://local.kostenlosspielen.net/ketten-mahjong.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2011/04/ketten-mahjong.jpg" width="134" height="100" alt="kostenlos spielen Ketten Mahjong" title="Versuche bei diesem Mahjong so schnell wie möglich sämtliche Spielsteine aus dem Spielfeld zu räumen." />
+		                            					<span class="title">Ketten Mahjong</span>
+		                            				</a>
+		                            			</div>
+		                            		</div>
+		                            	</div>
+
+		                            <?php endforeach;?>
+		                        </div>
+		                        <?php else:?>
+	                                <ul>
+	                                    <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+	                                    <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
+	                                </ul>
+		                        <?php endif; ?>
+		                <?php endif; ?><!-- .row -->
+					</div>
+				</div><!-- .panel -->
+			</div>

@@ -177,6 +177,12 @@ input[type="radio"], input[type="checkbox"] {
         > .panel-heading.board-header + .panel-body {
             border-radius: @border-radius-base;
         }
+         > .panel-heading.board-header {
+            + .panel-body,
+            + .panel-body.no-padding {
+                padding-top: 25px!important;
+            }
+         }
     }
     > .panel-heading.board-header {
         position: absolute;
@@ -184,9 +190,10 @@ input[type="radio"], input[type="checkbox"] {
         left: 0;
         top: 0;
         padding-left: 10px;
+        padding-right: 10px;
         + .panel-body,
         + .panel-body.no-padding {
-            padding-top: 25px!important;
+            padding-top: 40px!important;
         }
     }
     > .panel-heading.board-header.board-lg {
