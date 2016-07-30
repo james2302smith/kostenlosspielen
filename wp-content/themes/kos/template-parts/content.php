@@ -14,6 +14,13 @@ $flash_width=$post->game_width;
 $flash_height=$post->game_height;
 $iframe=$post->game_iframe;
 
+$isLoggedIn = is_user_logged_in();
+$isFavorited = false;
+if($isLoggedIn && class_exists('KosFavorites')) {
+    $kosFavorites = KosFavorites::getInstance();
+    $isFavorited = $kosFavorites->isFavoritedGame();
+}
+
 ?>
 <br>
 <div class="layout-singer-top clearfix">
@@ -22,11 +29,27 @@ $iframe=$post->game_iframe;
             <div class="full-screen-modal">
 			<div class="panel game-play-box panel-default">
 				<div class="panel-heading clearfix">
-					<div class="panel-title pull-left"><?php the_title(); ?> </div><span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></span>
+					<div class="panel-title pull-left"><?php the_title(); ?> </div>
+                    <span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i>
+                    </span>
+                    <span class="stars">
+                        <?php if(function_exists('the_ratings')) {
+                            the_ratings(
+                                'div', 0, true,
+                                array(
+                                    'postratings_template_vote' => '<div class="inline-block images-vote">%RATINGS_IMAGES_VOTE%</div> <div class="inline-block rated-value"><div class="inline-block rated-average">%RATINGS_AVERAGE%</div><div class="inline-block rated-users"><strong>%RATINGS_USERS%</strong>mal bewertet</div></div>%RATINGS_TEXT%',
+                                    'postratings_template_text' => '<div class="inline-block images-vote">%RATINGS_IMAGES_VOTE%</div> <div class="inline-block rated-value"><div class="inline-block rated-average">%RATINGS_AVERAGE%</div><div class="inline-block rated-users"><strong>%RATINGS_USERS%</strong>mal bewertet</div></div>%RATINGS_TEXT%'
+                                ));
+                        } ?>
+                    </span>
 					<ul class="game-action pull-right">
 						<li><a href="#comment-area">Komment (<?php echo get_comments_number()?>)</a></li>
-						<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>
-						<li><a href="#"><i class="icon-cm icon-cm-heart-yellow-add"></i></a></li>
+						<!--<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>-->
+						<li>
+                            <a href="#"  data-action="likeToggle" data-liked="<?php echo $isFavorited ? 'true' : 'false'?>" data-url="<?php echo KOS_FAVORITES_AJAX_URL ?>" data-game="<?php echo $post->ID ?>">
+                                <i class="icon-cm <?php echo $isFavorited ? 'icon-cm-heart-yellow-remove' : 'icon-cm-heart-yellow-add'?>"></i>
+                            </a>
+                        </li>
 						<li>
                             <a href="#" data-action="fullscreen">
                                 <i class="icon-cm icon-cm-resize"></i>

@@ -397,3 +397,24 @@ function numeric_posts_nav() {
     echo '<span>Showing '.($offset + 1).'-'.($offset + $wp_query->post_count).' of '.($wp_query->found_posts).'</span>';
     echo '</div>'."\n";
 }
+
+//$comment_fields = apply_filters( 'comment_form_fields', $comment_fields );
+add_filter('comment_form_fields', 'kos_comment_form_fields');
+function kos_comment_form_fields($comment_fields) {
+    /*$cmt = $comment_fields['comment'];
+    unset($comment_fields['comment']);
+    $comment_fields['comment'] = $cmt;*/
+
+    $commentField = '<p class="comment-form-comment"> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>';
+    if (is_user_logged_in()) {
+        $commentField = '<div class="media"><div class="media-left">'.get_avatar(get_current_user_id(), 54).'</div><div class="media-body"><p class="comment-form-comment"> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p></div></div></div>';
+    }
+
+    $fields = array(
+        'author' => '<div class="row"><p class="comment-form-author col-xs-4"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" aria-required="true" required="required" /></p>',
+        'email' => '<p class="comment-form-email col-xs-4"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required" /></p>',
+        'url' => '<p class="comment-form-url col-xs-4"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p></div>',
+        'comment' => $commentField
+    );
+    return $fields;
+}

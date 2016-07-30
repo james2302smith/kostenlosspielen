@@ -755,4 +755,37 @@ jQuery(document).ready(function($) {
     $('body').on('click', '[data-action="fullscreen"]', function(e) {
         $('body').toggleClass('full-screen');
     });
+
+    $('.game-action').on('click', 'a[data-action="likeToggle"]', function(e){
+        if (!window.LOGGED_IN) {
+            openLogin(e);
+            return;
+        }
+
+        var $target = $(e.target).closest('[data-action="likeToggle"]');
+        var url = $target.data('url');
+        var liked = $target.data('liked');
+        var game = $target.data('game');
+        var data = {
+            action: liked ? 'unfavorite' : 'favorite',
+            game: game
+        };
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: data,
+            dataType: 'json',
+            error: function() {
+                alert("add to favorite error, please try again");
+            },
+            success: function(data) {
+                if(data.code == 200) {
+                    $target.data('liked', !liked);
+                    $target.attr('data-liked', !liked + '');
+
+                    $target.find('.icon-cm').toggleClass('icon-cm-heart-yellow-add').toggleClass('icon-cm-heart-yellow-remove');
+                }
+            }
+        });
+    });
 });

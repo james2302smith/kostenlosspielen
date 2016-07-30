@@ -16,6 +16,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<script type="text/javascript">
+    window.LOGGED_IN = <?php echo (is_user_logged_in() ? 'true' : 'false')?>;
+</script>
+
 <?php wp_head(); ?>
 <?php require get_template_directory() . '/included/register-header-js.php'; ?>
 
@@ -305,85 +309,20 @@
 		                    	<div class="row">
 		                        <?php
 		                        if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
-		                            <?php foreach($kosFavorites->getGames() as $game): ?>
-		                            	<!-- <div class="col-md-2">
-		                            		<div class="game-item">
-		                            			<a href="<?php the_permalink($game->ID)?>">
-		                            				<div class="image img-4x3 game-img">
-		                            					<img class="img-responsive" src="<?php echo $game->game_image ?>" />
-		                            				</div>
-		                            				<div class="game-info">
-		                            					<h4 class="title"><?php echo $game->post_title ?></h4>
-		                            				</div>
-		                            			</a>
-		                            		</div>
-		                            	</div> -->
-		                            	<div id="myfavoriteSwiper" class="favorite-swiper swiper-container">
-		                            		<div  class="swiper-wrapper">
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Spider Solitär" href="http://local.kostenlosspielen.net/spider-solitaire.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2011/08/spider-solitaer.jpg" width="134" height="100" alt="kostenlos spielen Spider Solitär" title="Beseitige die Karten mit so wenig Zügen wie möglich aus dem Spiel, indem Du die Karten richtig zuordnest!" />
-		                            					<span class="title">Spider Solitär</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Scrabble" href="http://local.kostenlosspielen.net/scrabble.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/04/scrabble.jpg" width="134" height="100" alt="kostenlos spielen Scrabble" title="Die Hauptaufgabe in Scrabble ist es möglichst komplexe Wörter aus seltenen Buchstaben aus den Steinen deiner Hand auf das Spielfeld zu legen." />
-		                            					<span class="title">Scrabble</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Time Travel " href="http://local.kostenlosspielen.net/time-travel.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/10/time-travel.gif" width="134" height="100" alt="kostenlos spielen Time Travel " title="Laufe schnell hin und her, schieße alle fliegenden Sanduhren ab und weiche ihnen auch aus ;-)" />
-		                            					<span class="title">Time Travel </span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Mario Block Ball" href="http://local.kostenlosspielen.net/mario-block-ball.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/09/mario-block-ball.jpg" width="134" height="100" alt="kostenlos spielen Mario Block Ball" title="Lenke Mario, Donkey Kong, und Sonic, um alle Puzzles auf den Boden zu schieben." />
-		                            					<span class="title">Mario Block Ball</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Barbie im Büro" href="http://local.kostenlosspielen.net/barbie-im-buero.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2013/09/barbie-im-buero.jpg" width="134" height="100" alt="kostenlos spielen Barbie im Büro" title="Helfe Barbie sich für die Arbeit im Büro vorzubereiten und suche ihr ein tolles Outfit aus." />
-		                            					<span class="title">Barbie im Büro</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Bubble Shooter" href="http://local.kostenlosspielen.net/bubble-shooter.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/01/bubble-shooter.jpg" width="134" height="100" alt="kostenlos spielen Bubble Shooter" title="Jetzt kannst du auch den Klassiker Bubble Shooter online kostenlos spielen! Die Regeln sind die gleichen: 3 Kugeln der gleichen Farben und sie zerplatzen!" />
-		                            					<span class="title">Bubble Shooter</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Bubble Hit" href="http://local.kostenlosspielen.net/bubble-hit.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2011/08/bubble-hit.jpg" width="134" height="100" alt="kostenlos spielen Bubble Hit" title="Bubble Hit ist ein klassischer Ableger des Bubble Shooter Spiels. Hier kommt es darauf an alle Kugeln von der Decke abzuschießen." />
-		                            					<span class="title">Bubble Hit</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="1001 Arabian Nights" href="http://local.kostenlosspielen.net/1001-arabian-nights.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/06/1001-arabian-nights.jpg" width="134" height="100" alt="kostenlos spielen 1001 Arabian Nights" title="Tauche in eine Welt der zauberhaften Klängen und Schätze Arabiens." />
-		                            					<span class="title">1001 Arabian Nights</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Vivid Arkanoid" href="http://local.kostenlosspielen.net/vivid-arkanoid.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2012/02/vivid-arkanoid.gif" width="134" height="100" alt="kostenlos spielen Vivid Arkanoid" title="Versuche die Steinmauer zu zerstören, bevor die Zeit abgelaufen ist." />
-		                            					<span class="title">Vivid Arkanoid</span>
-		                            				</a>
-		                            			</div>
-		                            			<div class="swiper-slide item">
-		                            				<div class="ArrangeID_waiting"></div>
-		                            				<a title="Ketten Mahjong" href="http://local.kostenlosspielen.net/ketten-mahjong.html"><img src="http://www.kostenlosspielen.biz/wp-content/uploads/2011/04/ketten-mahjong.jpg" width="134" height="100" alt="kostenlos spielen Ketten Mahjong" title="Versuche bei diesem Mahjong so schnell wie möglich sämtliche Spielsteine aus dem Spielfeld zu räumen." />
-		                            					<span class="title">Ketten Mahjong</span>
-		                            				</a>
-		                            			</div>
-		                            		</div>
-		                            	</div>
+                                    <div id="myfavoriteSwiper" class="favorite-swiper swiper-container">
+                                        <div  class="swiper-wrapper">
+                                        <?php foreach($kosFavorites->getGames() as $game): ?>
 
-		                            <?php endforeach;?>
+                                                <div class="swiper-slide item">
+                                                    <div class="ArrangeID_waiting"></div>
+                                                    <a title="<?php echo $game->post_title ?>" href="<?php the_permalink($game->ID)?>">
+                                                        <img class="img-responsive" src="<?php echo $game->game_image ?>" />
+                                                        <span class="title"><?php echo $game->post_title ?></span>
+                                                    </a>
+                                                </div>
+                                        <?php endforeach;?>
+                                        </div>
+                                    </div>
 		                        </div>
 		                        <?php else:?>
 	                                <ul>
