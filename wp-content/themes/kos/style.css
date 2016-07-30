@@ -10266,15 +10266,19 @@ body {
   color: #fff;
 }
 .widget .menu > li > a {
-  -webkit-transition: 150ms;
-  -o-transition: 150ms;
-  transition: 150ms;
   font-size: 15px;
   display: block;
   padding: 5px 10px;
 }
-.widget .menu > li > a:hover {
-  padding-left: 20px;
+.widget .menu > li > a img {
+  border-radius: 4px;
+  width: 36px;
+  padding: 0!important;
+  margin-right: 10px;
+  height: 27px;
+}
+.widget .menu > li:nth-child(even) a {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .squre-view {
   display: inline-block;
@@ -10581,6 +10585,18 @@ body {
   position: relative;
   z-index: 1;
 }
+.site-footer:after {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  content: "";
+  display: block;
+  width: 396px;
+  height: 726px;
+  background: transparent url('images/tree.png') no-repeat 0 0;
+  pointer-events: none;
+}
 .layout-header {
   padding-top: 14px;
 }
@@ -10616,6 +10632,10 @@ body {
   padding-bottom: 20px;
   background: #372012 url('images/bg-body.png') repeat center top;
 }
+#footer-seconds {
+  position: relative;
+  z-index: 10;
+}
 .footer-middle {
   margin-bottom: 125px;
 }
@@ -10636,6 +10656,7 @@ body {
   margin-bottom: 30px;
   padding-top: 7px;
   padding-bottom: 10px;
+  font-size: 14px;
 }
 .site-footer {
   color: #fff;
@@ -10663,18 +10684,6 @@ body {
   position: absolute;
   left: -95px;
   bottom: -100px;
-  pointer-events: none;
-}
-.site-footer .site-info:after {
-  z-index: 1;
-  position: absolute;
-  right: -100px;
-  bottom: -120px;
-  content: "";
-  display: block;
-  width: 396px;
-  height: 726px;
-  background: transparent url('images/tree.png') no-repeat 0 0;
   pointer-events: none;
 }
 #footer-widget {
@@ -10872,7 +10881,7 @@ body {
   display: inline-block;
 }
 #menu-footer-seconds > li > a {
-  font-size: 12px;
+  font-size: 13px;
   display: inline-block;
   padding: 5px 10px;
   color: #fff;
@@ -11537,7 +11546,7 @@ body {
   margin-bottom: 20px;
 }
 .list-game-default .game-item > .inner {
-  padding: 0 10px;
+  padding: 0 5px;
 }
 .list-game-default .image {
   border: 2px solid #5a2001;
@@ -11743,7 +11752,6 @@ body {
   margin-left: 5px;
 }
 .banner-ads-right {
-  min-height: 446px;
   float: right;
   padding: 60px 85px 50px 85px;
 }
@@ -11795,6 +11803,15 @@ body.full-screen .full-screen-modal .fa-compress {
 }
 .cm-meta-row .reply a:hover {
   color: #240f0c;
+}
+.navigation > span {
+  font-size: 12px;
+  color: #240f0c;
+  display: inline-block;
+  margin-left: 5px;
+}
+.pagination {
+  vertical-align: middle;
 }
 .clear {
   clear: both;

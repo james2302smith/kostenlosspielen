@@ -275,14 +275,23 @@ input[type="radio"], input[type="checkbox"] {
 .widget  .menu {
     > li {
         > a {
-            .transition(150ms);
             font-size: 15px;
             display: block;
             padding: 5px 10px;
             &:hover {
                 ///background-color: #372012;
-                //color: #fff;
-                padding-left: 20px;
+            }
+            img {
+                border-radius: @border-radius-small;
+                width: 36px;
+                padding: 0!important;
+                margin-right: 10px;
+                height: 27px;
+            }
+        }
+        &:nth-child(even){
+            a{
+                background-color: rgba(0, 0, 0, 0.05);
             }
         }
     }
