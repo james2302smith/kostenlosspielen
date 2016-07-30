@@ -10487,43 +10487,53 @@ body {
   width: 24px;
   height: 23px;
 }
-.icon-cm.zz {
+.icon-cm.icon-cm-heart-yellow-add {
   background-position: -361px -5px;
+  width: 24px;
+  height: 23px;
+}
+.icon-cm.icon-cm-heart-yellow-lg {
+  background-position: -395px -5px;
   width: 30px;
   height: 29px;
 }
+.icon-cm.icon-cm-heart-yellow-remove {
+  background-position: -435px -5px;
+  width: 24px;
+  height: 23px;
+}
 .icon-cm.icon-cm-medal {
-  background-position: -401px -5px;
+  background-position: -469px -5px;
   width: 33px;
   height: 54px;
 }
 .icon-cm.icon-cm-new {
-  background-position: -444px -5px;
+  background-position: -512px -5px;
   width: 37px;
   height: 41px;
 }
 .icon-cm.icon-cm-no-avatar {
-  background-position: -491px -5px;
+  background-position: -559px -5px;
   width: 14px;
   height: 15px;
 }
 .icon-cm.icon-cm-question {
-  background-position: -515px -5px;
+  background-position: -583px -5px;
   width: 26px;
   height: 27px;
 }
 .icon-cm.icon-cm-rank {
-  background-position: -551px -5px;
+  background-position: -619px -5px;
   width: 27px;
   height: 23px;
 }
 .icon-cm.icon-cm-resize {
-  background-position: -588px -5px;
+  background-position: -656px -5px;
   width: 19px;
   height: 19px;
 }
 .icon-cm.icon-cm-star-metal {
-  background-position: -617px -5px;
+  background-position: -685px -5px;
   width: 22px;
   height: 31px;
 }
@@ -11672,6 +11682,10 @@ body {
 }
 .game-action > li > a {
   display: block;
+  color: #fff;
+}
+.game-action .fa {
+  color: #fff;
 }
 .cat-actions {
   margin-top: -2px;
@@ -11729,7 +11743,7 @@ body {
   margin-left: 5px;
 }
 .banner-ads-right {
-  min-height: 447px;
+  min-height: 446px;
   float: right;
   padding: 60px 85px 50px 85px;
 }
@@ -11755,6 +11769,32 @@ body.full-screen .full-screen-modal .icon-cm-resize {
 }
 body.full-screen .full-screen-modal .fa-compress {
   display: inline-block;
+}
+.cm-meta-row {
+  font-size: 12px;
+}
+.cm-meta-row .stars .fa {
+  color: #391d09;
+}
+.cm-meta-row .stars .fa.active {
+  color: #ff7702;
+}
+.cm-meta-row .comment-like,
+.cm-meta-row .fa {
+  margin-right: 3px;
+}
+.cm-meta-row .comment-like {
+  display: inline-block;
+  color: #ff7702;
+}
+.cm-meta-row .review-text {
+  color: #000;
+}
+.cm-meta-row .reply a {
+  color: #925a2a;
+}
+.cm-meta-row .reply a:hover {
+  color: #240f0c;
 }
 .clear {
   clear: both;

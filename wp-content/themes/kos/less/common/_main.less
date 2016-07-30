@@ -1222,7 +1222,11 @@
 		}
 		> a {
 			display: block;
+			color: #fff;
 		}
+	}
+	.fa {
+		color: #fff;
 	}
 }
 
@@ -1281,7 +1285,7 @@
 }
 
 .banner-ads-right {
-	min-height: 447px;
+	min-height: 446px;
 	float: right;
 	padding: 60px 85px 50px 85px;
 }
@@ -1308,4 +1312,36 @@ body.full-screen {
       display: inline-block;
     }
   }
+}
+
+.cm-meta-row {
+	font-size: 12px;
+	.stars {
+		.fa {
+			color: @text-color;
+			&.active {
+				color: #ff7702;
+			}
+		}
+	}
+	.comment-like, .fa {
+		margin-right: 3px;
+	}
+	.comment-like {
+		display: inline-block;
+		color: #ff7702;
+	}
+	.comment-reply-link {
+	}
+	.review-text {
+		color: #000;
+	}
+	.reply {
+		a {
+			color: #925a2a;
+			&:hover {
+				color: @link-color;
+			}
+		}
+	}
 }

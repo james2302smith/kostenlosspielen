@@ -271,10 +271,19 @@ function mytheme_comment($comment, $args, $depth) {
 		    <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"></a>
 		    </div>
 		    <?php comment_text(); ?>
-		    <div class="reply">
-		        <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-		    </div>
-		    <?php edit_comment_link( __( '(Edit)' ), '  ', '' );?>
+            <div class="row cm-meta-row">
+                <div class="col-xs-6">
+                    <span class="review-text">Spielbewetung :</span>
+                    <span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star-o"></i></span>
+                </div>
+                <div class="col-xs-6 text-right">
+        		    <div class="reply">
+                        <span class="comment-like" href="#"><i class="fa fa-thumbs-o-up"></i> 150</span>
+        		        <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                        - <?php edit_comment_link( __( 'Edit' ), '  ', '' );?>
+        		    </div>
+                </div>
+            </div>
     	</div>
     </div>
     <?php if ( $comment->comment_approved == '0' ) : ?>

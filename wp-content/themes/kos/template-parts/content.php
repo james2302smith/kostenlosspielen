@@ -26,7 +26,7 @@ $iframe=$post->game_iframe;
 					<ul class="game-action pull-right">
 						<li><a href="#comment-area">Komment (<?php echo get_comments_number()?>)</a></li>
 						<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>
-						<li><a href="#"><i class="icon-cm icon-cm-heart-yellow"></i></a></li>
+						<li><a href="#"><i class="icon-cm icon-cm-heart-yellow-add"></i></a></li>
 						<li>
                             <a href="#" data-action="fullscreen">
                                 <i class="icon-cm icon-cm-resize"></i>
