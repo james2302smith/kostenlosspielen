@@ -62,6 +62,12 @@ function switchLogin(e) {
 
 function closeLogin(e) {
 	jQuery("#login-toggle").click();
+	if(jQuery('body').hasClass('open-login-box')) {
+		jQuery('body').removeClass('open-login-box');
+	}
+	else if (jQuery('body').hasClass('open-register-box')) {
+		jQuery('body').removeClass('open-register-box');
+	}
 }
 
 function openFavoriteBox(e) {

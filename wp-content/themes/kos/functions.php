@@ -278,9 +278,9 @@ function mytheme_comment($comment, $args, $depth) {
                 </div>
                 <div class="col-xs-6 text-right">
         		    <div class="reply">
-                        <span class="comment-like" href="#"><i class="fa fa-thumbs-o-up"></i> 150</span>
+                        <a class="comment-like" href="#"><i class="fa fa-thumbs-o-up"></i> 150</a>
         		        <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-                        - <?php edit_comment_link( __( 'Edit' ), '  ', '' );?>
+                        <?php edit_comment_link( __( 'Edit' ), '  ', '' );?>
         		    </div>
                 </div>
             </div>
@@ -405,7 +405,7 @@ function kos_comment_form_fields($comment_fields) {
     unset($comment_fields['comment']);
     $comment_fields['comment'] = $cmt;*/
 
-    $commentField = '<p class="comment-form-comment"> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>';
+    $commentField = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label>  <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>';
     if (is_user_logged_in()) {
         $commentField = '<div class="media"><div class="media-left">'.get_avatar(get_current_user_id(), 54).'</div><div class="media-body"><p class="comment-form-comment"> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p></div></div></div>';
     }
