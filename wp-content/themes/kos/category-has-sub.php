@@ -18,6 +18,13 @@ get_header(); ?>
                 } ?>
             </div>
             <div class="pull-right">
+                <?php
+                global $wp;
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+                ?>
+                <div class="fb-share-button" data-href="<?php echo $current_url?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($current_url)?>&amp;src=sdkpreparse">Share</a>
+                </div>
                 <div id="plusone-div" class="plusone"></div>
                 <script type="text/javascript">
                     gapi.plusone.render('plusone-div',{"size": "medium", "count": "true"});
