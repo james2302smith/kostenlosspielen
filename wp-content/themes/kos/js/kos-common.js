@@ -788,4 +788,12 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+    $('.category-box-item').on('hover', '[cat-name]', function(e) {
+        var $a = $(e.target).closest('[cat-name]');
+        var image = $a.attr('game-image');
+        if (image) {
+            $a.closest('.category-box-item').find('img').attr('src', image);
+        }
+    });
 });
