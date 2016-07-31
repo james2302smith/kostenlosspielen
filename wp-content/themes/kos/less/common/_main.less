@@ -1403,3 +1403,33 @@ body.full-screen {
 .signin-register-box .form-box {
 	text-align: left!important;
 }
+
+.list-post {
+	.blog-item {
+		+ .blog-item {
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px dashed @border-color;
+		}
+		.image {
+			display: block;
+			img {
+				border-radius: @border-radius-base;
+			}
+		}
+		.entry-title {
+			margin-top: 0;
+		}
+	}
+	.media-left {
+		padding-right: 20px;
+	}
+}
+.post-ratings-text {
+	display: none!important;
+}
+
+.banner-ads-in-single {
+	float: left;
+	margin-right: 20px;
+}

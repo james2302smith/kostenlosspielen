@@ -10284,6 +10284,9 @@ body {
   font-size: 15px;
   color: #240f0c;
 }
+h1 .panel-title {
+  font-size: 18px;
+}
 .board-header,
 .panel-heading.board-header {
   background-color: transparent!important;
@@ -12039,6 +12042,30 @@ body.full-screen .full-screen-modal .fa-compress {
 }
 .signin-register-box .form-box {
   text-align: left!important;
+}
+.list-post .blog-item + .blog-item {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #5a2001;
+}
+.list-post .blog-item .image {
+  display: block;
+}
+.list-post .blog-item .image img {
+  border-radius: 10px;
+}
+.list-post .blog-item .entry-title {
+  margin-top: 0;
+}
+.list-post .media-left {
+  padding-right: 20px;
+}
+.post-ratings-text {
+  display: none!important;
+}
+.banner-ads-in-single {
+  float: left;
+  margin-right: 20px;
 }
 .clear {
   clear: both;
