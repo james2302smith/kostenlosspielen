@@ -10508,62 +10508,65 @@ h1 .panel-title {
   width: 46px;
   height: 31px;
 }
+.icon-cat.icon-cat-animal,
+#primary-menu > li.cat-icon.animal > a:before {
+  background-position: -133px -5px;
+  width: 45px;
+  height: 45px;
+}
 .icon-cat.icon-cat-brettspiele,
 #primary-menu > li.cat-icon.brettspiele > a:before {
-  background-position: -133px -5px;
+  background-position: -188px -5px;
   width: 45px;
   height: 43px;
 }
 .icon-cat.icon-cat-denkspiele,
 #primary-menu > li.cat-icon.denkspiele > a:before {
-  background-position: -188px -5px;
+  background-position: -243px -5px;
   width: 37px;
   height: 42px;
 }
 .icon-cat.icon-cat-dice,
-.icon-cat.icon-cat-dice,
 #primary-menu > li.cat-icon.dice > a:before,
-#primary-menu > li.cat-icon.dice > a:before,
-#primary-menu > li.cat-icon.other > a:before,
 #primary-menu > li.cat-icon.other > a:before {
-  background-position: -235px -5px;
+  background-position: -290px -5px;
   width: 41px;
   height: 34px;
 }
 .icon-cat.icon-cat-geschick,
 #primary-menu > li.cat-icon.geschick > a:before {
-  background-position: -286px -5px;
+  background-position: -341px -5px;
   width: 44px;
   height: 43px;
 }
 .icon-cat.icon-cat-kinder,
 #primary-menu > li.cat-icon.kinder > a:before {
-  background-position: -340px -5px;
+  background-position: -395px -5px;
   width: 49px;
   height: 42px;
 }
 .icon-cat.icon-cat-madchen,
 #primary-menu > li.cat-icon.madchen > a:before {
-  background-position: -399px -5px;
+  background-position: -454px -5px;
   width: 45px;
   height: 54px;
 }
 .icon-cat.icon-cat-renen,
 #primary-menu > li.cat-icon.renen > a:before {
-  background-position: -454px -5px;
+  background-position: -509px -5px;
   width: 51px;
   height: 45px;
 }
 .icon-cat.icon-cat-sport,
 #primary-menu > li.cat-icon.sport > a:before {
-  background-position: -515px -5px;
+  background-position: -570px -5px;
   width: 40px;
   height: 40px;
 }
 .icon-cat.icon-cat-startseite,
 #primary-menu > li.cat-icon.startseite > a:before,
 #primary-menu > li.cat-icon.startseite > a:before {
-  background-position: -565px -5px;
+  background-position: -620px -5px;
   width: 20px;
   height: 17px;
 }
@@ -10583,43 +10586,48 @@ h1 .panel-title {
   width: 41px;
   height: 32px;
 }
-.icon-cat-sm.icon-cat-sm-brettspiele {
+.icon-cat-sm.icon-cat-sm-animal {
   background-position: -118px -5px;
+  width: 35px;
+  height: 35px;
+}
+.icon-cat-sm.icon-cat-sm-brettspiele {
+  background-position: -163px -5px;
   width: 39px;
   height: 38px;
 }
 .icon-cat-sm.icon-cat-sm-denkspiele {
-  background-position: -167px -5px;
+  background-position: -212px -5px;
   width: 32px;
   height: 36px;
 }
 .icon-cat-sm.icon-cat-sm-dice {
-  background-position: -209px -5px;
+  background-position: -254px -5px;
   width: 41px;
   height: 34px;
 }
 .icon-cat-sm.icon-cat-sm-geschick {
-  background-position: -260px -5px;
+  background-position: -305px -5px;
   width: 38px;
   height: 37px;
 }
 .icon-cat-sm.icon-cat-sm-kinder {
-  background-position: -308px -5px;
+  background-position: -353px -5px;
   width: 43px;
   height: 36px;
 }
 .icon-cat-sm.icon-cat-sm-madchen {
-  background-position: -361px -5px;
+  background-position: -406px -5px;
   width: 33px;
   height: 40px;
 }
 .icon-cat-sm.icon-cat-sm-renen {
-  background-position: -404px -5px;
+  background-position: -449px -5px;
   width: 44px;
   height: 39px;
 }
 .icon-cat-sm.icon-cat-sm-sport {
-  background-position: -458px -5px;
+  background-position: -503px -5px;
   width: 34px;
   height: 34px;
 }
@@ -10934,7 +10942,6 @@ h1 .panel-title {
 #primary-menu {
   padding-left: 0;
   margin: 0;
-  margin-right: 25px;
   min-height: 39px;
 }
 #primary-menu li {
@@ -11599,6 +11606,7 @@ h1 .panel-title {
 .list-new-game-ver .name {
   margin: 14px 0;
   position: relative;
+  font-weight: normal;
 }
 .list-new-game-ver .name > a {
   color: #ffffff;
@@ -12771,6 +12779,9 @@ body.full-screen .full-screen-modal .fa-compress {
   }
 }
 @media (max-width: 1199px) {
+  .list-new-game-ver .name {
+    margin: 16px 0;
+  }
   .list-cat-ver > li > a {
     padding-top: 5px;
     padding-bottom: 5px;

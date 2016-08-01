@@ -179,7 +179,6 @@
 #primary-menu {
 	padding-left: 0;
 	margin: 0;
-	margin-right: 25px;
 	min-height: 39px;
 	li {
 		list-style: none;
@@ -256,6 +255,10 @@
 			&.action > a:before{
 				&:extend(.icon-cat.icon-cat-action);
 			}
+
+			&.animal > a:before {
+				&:extend(.icon-cat.icon-cat-animal);
+		    }
 
 			&.brettspiele > a:before{
 				&:extend(.icon-cat.icon-cat-brettspiele);
@@ -921,6 +924,7 @@
 	.name {
 		margin: 14px 0;
 		position: relative;
+		font-weight: normal;
 		> a {
 			color: #ffffff;
 		}
