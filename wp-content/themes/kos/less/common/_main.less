@@ -179,7 +179,7 @@
 #primary-menu {
 	padding-left: 0;
 	margin: 0;
-	margin-right: 40px;
+	margin-right: 25px;
 	min-height: 39px;
 	li {
 		list-style: none;
@@ -200,6 +200,9 @@
 		}
 		&:first-child + li {
 			position: relative;
+			> a {
+				border-radius: 40% 0 0 0;
+			}
 			&:before {
 				content: "";
 				display: block;
@@ -207,11 +210,14 @@
 				background: transparent url('@{img-path}/left-main-menu.png') repeat-x left bottom;
 				position: absolute;
 				top: 0;
-				right: 100%;
+				left: -18px;
 			}
 		}
 		&:last-child {
 			position: relative;
+			> a {
+				border-radius: 0 45% 0 0;
+			}
 			&:after {
 				content: "";
 				display: block;
@@ -219,7 +225,7 @@
 				background: transparent url('@{img-path}/right-main-menu.png') repeat-x left bottom;
 				position: absolute;
 				top: 0;
-				left: 100%;
+				right: -18px;
 			}
 		}
 		&.cat-icon {

@@ -10934,7 +10934,7 @@ h1 .panel-title {
 #primary-menu {
   padding-left: 0;
   margin: 0;
-  margin-right: 40px;
+  margin-right: 25px;
   min-height: 39px;
 }
 #primary-menu li {
@@ -10958,6 +10958,9 @@ h1 .panel-title {
 #primary-menu > li:first-child + li {
   position: relative;
 }
+#primary-menu > li:first-child + li > a {
+  border-radius: 40% 0 0 0;
+}
 #primary-menu > li:first-child + li:before {
   content: "";
   display: block;
@@ -10966,10 +10969,13 @@ h1 .panel-title {
   background: transparent url('images/left-main-menu.png') repeat-x left bottom;
   position: absolute;
   top: 0;
-  right: 100%;
+  left: -18px;
 }
 #primary-menu > li:last-child {
   position: relative;
+}
+#primary-menu > li:last-child > a {
+  border-radius: 0 45% 0 0;
 }
 #primary-menu > li:last-child:after {
   content: "";
@@ -10979,7 +10985,7 @@ h1 .panel-title {
   background: transparent url('images/right-main-menu.png') repeat-x left bottom;
   position: absolute;
   top: 0;
-  left: 100%;
+  right: -18px;
 }
 #primary-menu > li.cat-icon {
   /* START*/
