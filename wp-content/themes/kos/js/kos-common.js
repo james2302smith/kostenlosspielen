@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
                 $form.find('div.field input[type="email"]').val('');
                 $form.find('div.field select').val('');
                 $form.find('div.field input[type="checkbox"]').attr('checked', false);
-                $form.find('div.field input[type="radio"]').attr('checked', false);
+                //$form.find('div.field input[type="radio"]').attr('checked', false);
 
                 $form.find('div.field.existing-user').hide();
                 $form.find('div.field.username').show();
@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
             val = formUtil.validateInput($field, {required: true}, {});
         } else if(name == 'email') {
             var $div = $field.closest('div.field');
-            var $hint = $div.find('div.hint');
+            var $hint = $div.find('div.hint .text-hint');
             var val = formUtil.validateInput($field, {required: true, email: true}, {});
             if(!val) {
                 $hint.html('Dies ist keine gültige E-Mail-Adresse. Versuche es bitte noch einmal. Wir sagt es nicht weiter.');

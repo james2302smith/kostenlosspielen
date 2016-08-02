@@ -16,6 +16,11 @@ require_once $PLUGIN_DIR.'/feed/loader.php';
 
 //require_once KOSTENLOSSPIELEN_PLUGIN_DIR.'/api/rest.php';
 
+function get_current_url() {
+    global $wp;
+    $current_url = home_url(add_query_arg(array(),$wp->request));
+    return $current_url;
+}
 
 add_filter('get_avatar', 'social_filter_avatar', 10, 5);
 function social_filter_avatar($avatar, $id_or_email, $size, $default, $alt) {

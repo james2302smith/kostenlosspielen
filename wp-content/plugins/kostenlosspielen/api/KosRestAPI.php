@@ -58,7 +58,7 @@ class KosRestAPI {
             if($existingUser) {
                 $message = '<div class="standard-margin-bottom"><strong>Bitte gib dein Passwort erneut ein</strong></div>';
                 $message .= '<div class="standard-margin-top">Das von dir eingegebene Passwort ist falsch. Bitte versuche es noch einmal. (Stelle dabei sicher, dass deine Feststelltaste nicht gedrückt ist.)</div>';
-                $message .= '<div class="standard-margin-top">Du hast dein Passwort vergessen? <a href="'.SITE_ROOT_URL.'/wp-login.php?action=lostpassword">Fordere ein neues an.</a></div>';
+                $message .= '<div class="standard-margin-top">Du hast dein Passwort vergessen? <a href="'.home_url('wp-login.php?action=lostpassword').'">Fordere ein neues an.</a></div>';
 
                 $userDisplayName = trim($existingUser->first_name.' '.$existingUser->last_name);
                 if(!$userDisplayName) {
@@ -93,7 +93,7 @@ class KosRestAPI {
                 $message = '<div class="standard-margin-bottom"><strong>Falsche E-Mail-Adresse</strong></div>';
                 $message .= '<div class="standard-margin-top">Die eingegebene E-Mail-Adresse gehört zu keinem Konto.</div>';
                 $message .= '<div class="standard-margin-top">Bitte versuche es noch einmal oder';
-                $message .= '   <a href="#authentication_modal_form_register" rel="modal:open">erstelle ein neues Konto</a>.</div>';
+                $message .= '   <a href="#authentication_modal_form_register" onclick="switchRegister(false)">erstelle ein neues Konto</a>.</div>';
             }
             $this->setResponse(401, 'Unauthorized', $message, $data);
             return;
@@ -114,7 +114,7 @@ class KosRestAPI {
         if($user) {
             $this->code = 409;
             $this->status = 'Conflict';
-            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a rel="modal:open" href="#authentication_modal_form_login">Logge dich an</a>, oder erstelle ein <a href="'.SITE_ROOT_URL.'/wp-login.php?action=lostpassword">neues Passwort</a>.';
+            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a href="#authentication_modal_form_login" onclick="switchLogin(false)">Logge dich an</a>, oder erstelle ein <a href="'.home_url('wp-login.php?action=lostpassword').'">neues Passwort</a>.';
             $this->data = array();
             return;
         } else {
@@ -153,7 +153,7 @@ class KosRestAPI {
         if($user) {
             $this->code = 409;
             $this->status = 'Conflict';
-            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a rel="modal:open" href="#authentication_modal_form_login">Logge dich an</a>, oder erstelle ein <a href="'.SITE_ROOT_URL.'/wp-login.php?action=lostpassword">neues Passwort</a>.';
+            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a onclick="switchLogin(false)" href="#authentication_modal_form_login">Logge dich an</a>, oder erstelle ein <a href="'.home_url('wp-login.php?action=lostpassword').'">neues Passwort</a>.';
             $this->data = array();
             return;
         }

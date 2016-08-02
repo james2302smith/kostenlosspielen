@@ -27,10 +27,10 @@ class KosUIHelper {
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = ' </div>';
-        $html[] = ' <p class="forgot-pass"><a href="#" class>Forgot your username or password?</a></p>';
+        $html[] = ' <p class="forgot-pass"><a href="'.home_url('wp-login.php?action=lostpassword').'" class>Forgot your username or password?</a></p>';
         $html[] = ' <div class="submit text-center">';
         $html[] = '     <input type="submit" class="user-auth-button auth-email" value="LOG IN" placeholder="Einloggen" />';
-        $html[] = '     <input type="hidden" name="redirect_to" value="'. get_permalink() .'" >';
+        $html[] = '     <input type="hidden" name="redirect_to" value="'. get_current_url() .'" >';
         $html[] = ' </div>';
         $html[] = ' <p class="not-a-member"><a onclick="switchRegister(this)" href="javascript:void(0)">NOT A MEMBER YET?</a></p>';
         $html[] = '</form>';
@@ -49,7 +49,7 @@ class KosUIHelper {
         $html[] = '       <input type="text" class="validate input standard-margin-left standard-margin-right name" validate="required" name="firstname" placeholder="Vorname..." >';
         $html[] = '       <div class="field-hint firstname-hint">';
         $html[] = '         <div class="hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Wie ist dein Vorname ?';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Wie ist dein Vorname ?</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
@@ -57,7 +57,7 @@ class KosUIHelper {
         $html[] = '       <input type="text" class="validate input standard-margin-left standard-margin-right name" validate="notempty " name="lastname" placeholder="Nachname..." >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <div class="hint firstname-hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Wie ist dein Nachname ?';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Wie ist dein Nachname ?</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
@@ -65,7 +65,7 @@ class KosUIHelper {
         $html[] = '       <input type="email" class="validate input standard-margin-left standard-margin-right" validate="email" name="email" placeholder="Deine Email Adresse..." >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <div class="hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Dies ist keine gültige E-Mail-Adresse. Versuche es bitte noch einmal. Wir sagt es nicht weiter.';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Dies ist keine gültige E-Mail-Adresse. Versuche es bitte noch einmal. Wir sagt es nicht weiter.</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
@@ -73,7 +73,7 @@ class KosUIHelper {
         $html[] = '       <input type="password" class="validate input standard-margin-left standard-margin-right" validate="password" name="password" placeholder="Passwort..." >';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <div class="hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Du brauchst ein Passwort mit mindestens 5 Zeichen.';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Du brauchst ein Passwort mit mindestens 5 Zeichen.</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
@@ -115,13 +115,13 @@ class KosUIHelper {
         $html[] = '   </div>';
         $html[] = '       <div class="field-hint col-xs-12">';
         $html[] = '         <div class="hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Wann bist du geboren ? Dann wir die Spiele für dich besonder empfehlen können.';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Wann bist du geboren ? Dann wir die Spiele für dich besonder empfehlen können.</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
         $html[] = '   <div class="standard-margin field sex-field">';
         $html[] = '     <div class="select-gender clearfix">';
-        $html[] = '        <input type="radio" name="sex" value="male" id="sex-male" class="validate" checked />';
+        $html[] = '        <input type="radio" name="sex" value="male" id="sex-male" class="validate" checked="checked" />';
         $html[] = '        <input type="radio" name="sex" value="female" id="sex-female" class="validate" />';
         $html[] = '        <label class="button-sex toggle-male" class="button-sex" for="sex-male">Male</label>';
         $html[] = '        <label class="button-sex toggle-female" for="sex-female">Female</label>';
@@ -130,7 +130,7 @@ class KosUIHelper {
         $html[] = '   <div class="standard-margin field sex-field">';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <div class="hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Wie ist dein Geschlecht ? Dann wir die Spiele für dich besonder empfehlen können.';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Wie ist dein Geschlecht ? Dann wir die Spiele für dich besonder empfehlen können.</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = '   </div>';
@@ -138,12 +138,12 @@ class KosUIHelper {
         $html[] = '     ';
         $html[] = '   <div class="checkbox">';
         $html[] = '     <label for="agreement-checkbox" class="check-label"><input type="checkbox" name="agreement" value="1" id="agreement-checkbox" class="float-left validate" >';
-        $html[] = '         Ich habe die <a href="'.SITE_ROOT_URL.'" target="_blank">Datenschutzregelung und Benutzungsbedingungen</a> gelesen und ihnen zugestimmt.';
+        $html[] = '         Ich habe die <a href="'.home_url().'" target="_blank">Datenschutzregelung und Benutzungsbedingungen</a> gelesen und ihnen zugestimmt.';
         $html[] = '     </label>';
         $html[] = '   </div>';
         $html[] = '       <div class="field-hint">';
         $html[] = '         <div class="hint">';
-        $html[] = '             <span class="fa fa-warning"></span> Bitte zugestimmt die Datenschutzregelung und Benutzungsbedingungen';
+        $html[] = '             <span class="fa fa-warning"></span> <span class="text-hint">Bitte zugestimmt die Datenschutzregelung und Benutzungsbedingungen</span>';
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = ' </div>';
