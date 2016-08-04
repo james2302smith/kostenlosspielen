@@ -30,8 +30,8 @@ if($isLoggedIn && class_exists('KosFavorites')) {
 			<div class="panel game-play-box panel-default">
 				<div class="panel-heading clearfix">
 					<h1 class="panel-title pull-left"><?php the_title(); ?> </h1>
-                    <span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i>
-                    </span>
+                    <!-- <span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i>
+                    </span> -->
                     <span class="stars">
                         <?php if(function_exists('the_ratings')) {
                             the_ratings(
