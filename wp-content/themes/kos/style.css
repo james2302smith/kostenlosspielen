@@ -10831,7 +10831,7 @@ h1 .panel-title {
   background-color: #fae09b;
 }
 #content > .container {
-  padding-top: 10px;
+  padding-top: 14px;
   padding-bottom: 20px;
   background: #372012 url('images/bg-body.png') repeat center top;
 }
@@ -11912,6 +11912,7 @@ h1 .panel-title {
   font-size: 18px;
   margin-right: 50px;
   text-shadow: 0 2px 0 #1c3800;
+  margin-top: 2px;
 }
 .game-play-box .panel-body {
   padding-top: 30px;
@@ -12091,6 +12092,15 @@ body.full-screen .full-screen-modal .fa-compress {
 }
 .fb_iframe_widget {
   vertical-align: top;
+}
+.post-ratings,
+.post-ratings strong {
+  font-size: 0;
+}
+.post-ratings IMG,
+.post-ratings-loading IMG,
+.post-ratings-image IMG {
+  vertical-align: -1px;
 }
 .clear {
   clear: both;

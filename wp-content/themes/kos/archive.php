@@ -41,12 +41,12 @@ get_header(); ?>
 			<header class="panel top-game-in-cat">
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-xs-2">
 							<a class="image" href="#">
 								<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/img-game-sample.jpg" alt="Sample" >
 							</a>
 						</div>
-						<div class="col-md-10">
+						<div class="col-xs-10">
 							<div class="game-info">
 								<?php
 								the_archive_title( '<h1 class="page-title">', '</h1>' );
