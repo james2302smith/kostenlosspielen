@@ -324,6 +324,24 @@ function kos_custom_the_archive_title($title) {
     return $title;
 }
 
+add_filter( 'post_link_category', 'kos_post_link_category', 11, 3 );
+function kos_post_link_category( $category, $categories = null, $post = null ) {
+    //$post = get_post( $post );
+
+    if ($category->parent > 0) {
+        // Do nothing
+    } else {
+        foreach($categories as $c) {
+            if ($c->parent > 0) {
+                $category = $c;
+                break;
+            }
+        }
+    }
+
+    return $category;
+}
+
 function numeric_posts_nav() {
 
     if( is_singular() )
