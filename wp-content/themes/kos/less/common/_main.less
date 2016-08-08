@@ -5,6 +5,10 @@
 // LAYOUT: LAYOUT STYLE
 // -------------------------------------
 	// Hook Mixin Render Small devices (tablets, 768px and up)
+.container {
+	padding-left: 14px;
+	padding-right: 14px;
+}
 .home .main-layout {
 	padding-top: 15px;
 }
@@ -40,6 +44,9 @@
 .layout-header {
 	padding-top: 14px;
 	#liquid-layout > .fixedFluidPush(235px, 20px);
+	.fixed-column + .fluid-column > .inner {
+		margin-top: 14px;
+	}
 }
 .layout-singer-top {
 	#liquid-layout > .fluidFixedSwap(160px, 20px);
@@ -122,7 +129,7 @@
 .site-main-menu {
 	background: transparent url('@{img-path}/bg-main-menu.png') repeat-x left bottom;
 	.main-navigation {
-		margin-top: -4px;
+		margin-top: -15px;
 	}
 }
 .site-description {
@@ -130,6 +137,7 @@
 	text-shadow: -1px -1px 0 #4d1609, 1px -1px 0 #4d1609, -1px 1px 0 #4d1609, 1px 1px 0 #4d1609;
 	font-size: 15px;
 	text-align: center;
+	line-height: 1.2;
 }
 .nav-menu-top {
 	position: relative;
@@ -1094,7 +1102,7 @@
 		float: left;
 		margin-bottom: @grid-gutter-width;
 		> .inner {
-			padding: 0 @gutter /2 ;
+			padding: 0 7px;
 		}
 	}
 	.image {
@@ -1442,4 +1450,8 @@ body.full-screen {
 .banner-ads-in-single {
 	float: left;
 	margin-right: 20px;
+}
+
+.fb_iframe_widget {
+	vertical-align: top;
 }
