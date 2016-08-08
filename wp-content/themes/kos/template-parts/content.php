@@ -139,8 +139,8 @@ if($isLoggedIn && class_exists('KosFavorites')) {
 		</div>
 	</div><!-- comment-box -->
 
-	<div class="panel panel-default panel-bordered">
-		<div class="panel-heading board-header">
+	<div class="panel panel-default how-to-play panel-bordered">
+		<div class="panel-heading  board-header">
 			<h4 class="panel-title">
 				<i style="margin-top: 8px;" class="icon-cm icon-cm-question"></i>How to play
 			</h4>

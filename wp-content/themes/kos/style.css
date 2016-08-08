@@ -11902,9 +11902,10 @@ h1 .panel-title {
   margin-bottom: 30px;
 }
 .game-play-box .panel-heading {
-  background-color: #bb6428;
+  background-color: #754c28;
   color: #fff;
   font-weight: bold;
+  padding: 7px 10px;
 }
 .game-play-box .panel-title {
   color: #fff;
@@ -12101,6 +12102,16 @@ body.full-screen .full-screen-modal .fa-compress {
 .post-ratings-loading IMG,
 .post-ratings-image IMG {
   vertical-align: -1px;
+}
+.how-to-play .entry-content h4 {
+  font-weight: 700;
+}
+.how-to-play .entry-content h3 {
+  font-size: 16px;
+}
+.how-to-play .entry-content h2 {
+  font-size: 16px;
+  font-family: 700;
 }
 .clear {
   clear: both;
