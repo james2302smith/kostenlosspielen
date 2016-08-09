@@ -20,8 +20,15 @@
 			<?php
 				the_title( '<h4 class="entry-title game-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 			?>
-			<span class="squre-view">81</span>
-			<span class="count-played"><i class="icon-cm icon-cm-game-pad-mini"></i> <?php echo $post->game_views ?></span>
+            <?php
+            $rating = number_format(get_post_meta(get_the_ID(), 'ratings_average', true), 1, ',', '.');
+            if (strpos($rating, ',') !== false) {
+                $rating = rtrim($rating, '0');
+                $rating = rtrim($rating, ',');
+            }
+            ?>
+			<span class="squre-view"><?php echo $rating?></span>
+			<span class="count-played"><i class="icon-cm icon-cm-game-pad-mini"></i> <?php echo number_format($post->game_views, 0, ',', '.') ?></span>
 		</header><!-- .entry-header -->
 	</div>
 </article><!-- #post-## -->
