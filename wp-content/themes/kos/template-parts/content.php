@@ -52,7 +52,7 @@ if($isLoggedIn && class_exists('KosFavorites')) {
                         </li>
 						<li>
                             <a href="#" data-action="fullscreen">
-                                <i class="icon-cm icon-cm-resize"></i>
+                                <i class="fa fa-expand"></i>
                                 <!--<i class="fa fa-expand" aria-hidden="true"></i>-->
                                 <i class="fa fa-compress" aria-hidden="true"></i>
                             </a>

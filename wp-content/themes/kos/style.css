@@ -11938,6 +11938,7 @@ h1 .panel-title {
 }
 .game-action .fa {
   color: #fff;
+  font-size: 16px;
 }
 .cat-actions {
   margin-top: -2px;
@@ -12015,7 +12016,8 @@ body.full-screen .full-screen-modal {
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.9);
 }
-body.full-screen .full-screen-modal .icon-cm-resize {
+body.full-screen .full-screen-modal .icon-cm-resize,
+body.full-screen .full-screen-modal .fa-expand {
   display: none;
 }
 body.full-screen .full-screen-modal .fa-compress {
