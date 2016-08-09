@@ -185,7 +185,7 @@ function getAllSubCategoriesOf($categoryId, $number = 0) {
         $category->order = $ordering;
 
         // Load newest game of each category
-        $latestGames = wp_get_recent_posts(array(
+        /*$latestGames = wp_get_recent_posts(array(
             'numberposts' => 1,
             'category' => $category->cat_ID,
             'orderby' => 'post_date',
@@ -193,12 +193,28 @@ function getAllSubCategoriesOf($categoryId, $number = 0) {
             'post_type' => 'post',
             'post_status' => 'publish'
         ), OBJECT);
-        $category->latest_game = $latestGames[0];
+        $category->latest_game = $latestGames[0];*/
+
+        // WP_Query arguments
+        $args = array (
+            'post_type'              => array( 'post' ),
+            'post_status'            => array( 'publish' ),
+            'cat'                    => $category->cat_ID,
+            'nopaging'               => false,
+            'posts_per_page'         => '1',
+            'posts_per_archive_page' => '1',
+            'order'                  => 'DESC',
+            'orderby'                => 'date',
+        );
+        // The Query
+        $query = new WP_Query( $args );
+        $category->latest_game = $query->next_post();
+        $category->nunber_games = $query->found_posts;
 
         //. Count number game
-        global $table_prefix, $wpdb;
+        /*global $table_prefix, $wpdb;
         $sql = 'SELECT count(*) as count FROM '.$table_prefix.'term_relationships WHERE term_taxonomy_id = '.(int)$category->term_id;
-        $category->nunber_games = $wpdb->get_var($sql);
+        $category->nunber_games = $wpdb->get_var($sql);*/
 
     }
 
