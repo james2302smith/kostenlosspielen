@@ -33,7 +33,7 @@ get_header(); ?>
 												WHERE kostenlosspielen_posts.post_status =  \'publish\'
 												AND kostenlosspielen_posts.post_type =  \'post\'
 												ORDER BY game_views DESC
-												LIMIT 0,24'; 
+												LIMIT 0,50';
 										$pageposts = $wpdb->get_results($query, ARRAY_A);
 											foreach ($pageposts as $post){
 											$post_image=$post['game_image'];

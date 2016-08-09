@@ -24,6 +24,7 @@ var swiper = new Swiper('#favoriteSwiper', {
     pagination: '.swiper-pagination',
     slidesPerView: 5,
     slidesPerColumn: 2,
+    slidesPerGroup: 5,
     paginationClickable: true,
     nextButton: '.fsw-next',
     prevButton: '.fsw-prev',
