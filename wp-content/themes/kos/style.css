@@ -12043,7 +12043,7 @@ h1 .panel-title {
 }
 .banner-ads-right {
   float: right;
-  padding: 60px 85px 50px 85px;
+  padding: 62px 70px 102px 60px;
 }
 .full-screen-modal .fa-compress {
   display: none;
@@ -12848,8 +12848,8 @@ body.full-screen .full-screen-modal .fa-compress {
     right: -145px;
   }
   .banner-ads-right {
-    height: 530px;
-    padding: 105px 140px 50px 140px;
+    height: 546px;
+    padding: 105px 130px 143px 130pxx;
   }
 }
 @media (max-width: 1599px) {
