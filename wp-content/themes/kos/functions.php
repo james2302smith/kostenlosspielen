@@ -114,7 +114,7 @@ function kos_widgets_init() {
 		'description'   => esc_html__( 'Include Widget here', 'kos' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s panel panel-default panel-bordered">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<div class="widget-title panel-heading board-header board-lg"><h4 class="panel-title"><i class="icon-cm icon-cm-medal"></i> ',
+		'before_title'  => '<div class="widget-title panel-heading"><h4 class="panel-title"> ',
 		'after_title'   => '</h4></div><div class="panel-body no-padding">',
 	) );
 }

@@ -28,7 +28,7 @@ var swiper = new Swiper('#favoriteSwiper', {
     paginationClickable: true,
     nextButton: '.fsw-next',
     prevButton: '.fsw-prev',
-    spaceBetween: 10,
+    spaceBetween: 0,
 });
 
 var myswiper = new Swiper('#myfavoriteSwiper', {
