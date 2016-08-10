@@ -165,7 +165,7 @@
 							                    <div class="dropdown">
 							                        <button class="btn btn-primary display-name" data-toggle="dropdown" >
 								                    	<?php echo get_avatar(get_current_user_id(),18);?>
-							                            <?php echo $userDisplayName ?>
+							                            <span><?php echo $userDisplayName ?></span>
 							                        </button>
 								                    <ul class="dropdown-menu pull-right user-actions">
 								                        <li>

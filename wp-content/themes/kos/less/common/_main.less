@@ -415,15 +415,39 @@
 		line-height: 34px;
 		font-size: 16px;
 	}
+	.open .form-control{
+		background-color: #fff!important;
+		opacity: 1!important;
+	}
+	.dropdown-menu {
+		min-width: 100%;
+		background-color: #fff;
+		border-width: 0 2px 2px;
+		.border-top-radius(0);
+		> li {
+			> a {
+				color: #333;
+				strong	{
+					font-family: 700;
+					color: @brand-primary;
+				}
+			}
+		}
+	}
 }
 // HEADER RIGHT
 .header-right {
+	#liquid-layout > .fluidFixedPush(@widthFixedColumn: 200px, @gutterSize: 10px, @fixedColumnName: ~'.acc-column', @fluidColumnName: ~'.search-form', @fluidInnerColumnName: ~'.inner');
 	.acc-column {
-		float: right;
-		margin-left: 15px;
 	}
 	.search-form {
+	}
+	.display-name {
+		display: inline-block;
 		overflow: hidden;
+		.text-overflow;
+		max-width: 103px;
+		max-width: 160px;
 	}
 	.favorite-game-link {
 		.fa-heart {

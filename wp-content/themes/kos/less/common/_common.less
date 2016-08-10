@@ -174,8 +174,11 @@ h1 .panel-title {
     &.panel-bordered {
         padding: 10px;
         .panel-body {
-            border-radius: 0 0 @border-radius-base @border-radius-base;
+            border-radius:  @border-radius-base;
             background-color: #ffc887;
+        }
+        > .panel-heading + .panel-body {
+            border-radius: 0 0 @border-radius-base @border-radius-base;
         }
         > .panel-heading.board-header + .panel-body {
             border-radius: @border-radius-base;
@@ -224,6 +227,15 @@ h1 .panel-title {
     }
     > .panel-body {
         border-radius: 0 0 @border-radius-base @border-radius-base;
+    }
+    &.panel-bordered {
+        > .panel-heading {
+            padding-top: 0;
+            background-color: #bb6428;
+            .panel-title {
+                color: #fff;
+            }
+        }
     }
 }
 

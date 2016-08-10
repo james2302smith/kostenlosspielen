@@ -10347,8 +10347,11 @@ h1 .panel-title {
   padding: 10px;
 }
 .panel.panel-bordered .panel-body {
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
   background-color: #ffc887;
+}
+.panel.panel-bordered > .panel-heading + .panel-body {
+  border-radius: 0 0 10px 10px;
 }
 .panel.panel-bordered > .panel-heading.board-header + .panel-body {
   border-radius: 10px;
@@ -10393,6 +10396,13 @@ h1 .panel-title {
 }
 .panel-default > .panel-body {
   border-radius: 0 0 10px 10px;
+}
+.panel-default.panel-bordered > .panel-heading {
+  padding-top: 0;
+  background-color: #bb6428;
+}
+.panel-default.panel-bordered > .panel-heading .panel-title {
+  color: #fff;
 }
 #secondary .panel .panel-heading.board-header.board-lg {
   padding-left: 0px;
@@ -11129,12 +11139,47 @@ h1 .panel-title {
   line-height: 34px;
   font-size: 16px;
 }
-.header-right .acc-column {
-  float: right;
-  margin-left: 15px;
+.search-form .open .form-control,
+.search-form .open .comments-area textarea,
+.search-form .open .comments-area input[type="text"],
+.search-form .open .comments-area input[type="email"],
+.search-form .open .comments-area input[type="url"] {
+  background-color: #fff!important;
+  opacity: 1!important;
 }
-.header-right .search-form {
+.search-form .dropdown-menu {
+  min-width: 100%;
+  background-color: #fff;
+  border-width: 0 2px 2px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.search-form .dropdown-menu > li > a {
+  color: #333;
+}
+.search-form .dropdown-menu > li > a strong {
+  font-family: 700;
+  color: #005826;
+}
+.header-right > .acc-column {
+  float: right;
+  width: 200px;
+  margin-left: 10px;
+}
+.header-right > .acc-column + .search-form {
+  margin-right: 210px;
+}
+.header-right > .acc-column + .search-form > .inner {
+  display: inline-block;
+  width: 100%;
+}
+.header-right .display-name {
+  display: inline-block;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 103px;
+  max-width: 160px;
 }
 .header-right .favorite-game-link .fa-heart {
   position: absolute;
