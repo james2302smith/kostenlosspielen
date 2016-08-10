@@ -10388,6 +10388,27 @@ h1 .panel-title {
   left: 24px;
   top: 100%;
 }
+.panel-heading .pagin {
+  float: right;
+  line-height: 1;
+  margin-right: -20px;
+}
+.panel-heading .pagin > li {
+  display: inline-block;
+}
+.panel-heading .pagin > li > a {
+  display: block;
+  padding: 0 5px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+}
+.panel-heading .pagin > li > a:hover {
+  color: #240f0c;
+}
+.panel-heading .pagin > li.active > a {
+  color: #240f0c;
+}
 .panel-default {
   background-color: #bb6428;
 }

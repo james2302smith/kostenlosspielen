@@ -219,6 +219,29 @@ h1 .panel-title {
         left: @grid-gutter-width;
         top: 100%;
     }
+    .pagin {
+        float: right;
+        line-height: 1;
+        margin-right: -20px;
+        > li {
+            display: inline-block;
+            > a {
+                display: block;
+                padding: 0 5px;
+                color: #fff;
+                font-size: 13px;
+                line-height: 1;
+                &:hover {
+                    color: #240f0c;
+                }
+            }
+            &.active {
+                > a {
+                    color: #240f0c;
+                }
+            }
+        }
+    }
 }
 .panel-default {
     background-color: #bb6428;
