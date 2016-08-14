@@ -796,4 +796,42 @@ jQuery(document).ready(function($) {
             $a.closest('.category-box-item').find('img').attr('src', image);
         }
     });
+
+    //TODO: pagination at favorite menu
+    (function() {
+        var ITEM_PER_PAGE = 7;
+        var $secondary = $('#secondary');
+        var $pagin = $secondary.find('ul.pagin');
+        var $menu = $secondary.find('ul.menu');
+
+        var $items = $menu.find('li');
+        var total = $items.length;
+        var pages = Math.ceil(total/ITEM_PER_PAGE);
+
+        function showPage(page) {
+            for (var i = 0; i < total; i++) {
+                $($items[i]).hide();
+            }
+            var start = (page - 1)*ITEM_PER_PAGE;
+            if (start < 0) start = 0;
+            var end = start + ITEM_PER_PAGE;
+
+            for (var i = start; i < end; i++) {
+                $($items[i]).show();
+            }
+        }
+
+        $pagin.html('');
+        if (pages > 1) {
+            for (var i = 1; i <= pages; i++) {
+                var page = i;
+                var $item = $('<li data-page="'+i+'"><a href="#">' + i + '</a></li>');
+                $item.click(function(e){
+                    showPage($(e.target).closest('[data-page]').data('page'));
+                });
+                $pagin.append($item);
+            }
+        }
+        showPage(1);
+    })();
 });
