@@ -27,13 +27,9 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<i class="icon-cm icon-cm-comment-lg"></i>
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'KOMMENTARE ZU %2$s', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'kos' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
+            <?php
+            echo '<span>Kommentare zu </span><span>'.get_the_title().'</span>';
+            ?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
