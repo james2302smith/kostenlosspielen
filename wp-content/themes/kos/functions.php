@@ -446,8 +446,8 @@ function kos_comment_form_fields($comment_fields) {
 
     $fields = array(
         'author' => '<div class="row"><p class="comment-form-author col-xs-4"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" aria-required="true" required="required" /></p>',
-        'email' => '<p class="comment-form-email col-xs-4"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required" /></p>',
-        'url' => '<p class="comment-form-url col-xs-4"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p></div>',
+        'email' => '<p class="comment-form-email col-xs-4"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required" /></p></div>',
+        //'url' => '<p class="comment-form-url col-xs-4"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p></div>',
         'comment' => $commentField
     );
     return $fields;
