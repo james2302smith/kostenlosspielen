@@ -73,7 +73,7 @@ get_header(); ?>
                     <div class="panel-heading clearfix caret-down">
                         <ul class="cat-actions pull-right">
                             <li><span>Sort by: </span></li>
-                            <li class="sort-item <?php echo (get_current_orderby() == 'vote' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('vote')?>">Melst gesplelte</a></li>
+                            <li class="sort-item <?php echo (get_current_orderby() == 'most' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('most')?>">Melst gesplelte</a></li>
                             <li class="sort-item <?php echo (get_current_orderby() == 'new' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('new')?>">New</a></li>
                             <li class="sort-item <?php echo (get_current_orderby() == 'best' ? 'active' : '')?>"><a href="<?php echo get_category_order_link('best')?>">Bewertete</a></li>
                         </ul>
