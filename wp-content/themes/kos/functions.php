@@ -452,3 +452,8 @@ function kos_comment_form_fields($comment_fields) {
     );
     return $fields;
 }
+
+add_filter( 'wp_postratings_image_extension', 'custom_rating_image_extension' );
+function custom_rating_image_extension() {
+    return 'png';
+}
