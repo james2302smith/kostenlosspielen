@@ -758,8 +758,8 @@ jQuery(document).ready(function($) {
 
     $('.game-action').on('click', 'a[data-action="likeToggle"]', function(e){
         if (!window.LOGGED_IN) {
-            openLogin(e);
-            return;
+            //openLogin(e);
+            //return;
         }
 
         var $target = $(e.target).closest('[data-action="likeToggle"]');

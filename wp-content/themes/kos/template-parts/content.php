@@ -16,7 +16,7 @@ $iframe=$post->game_iframe;
 
 $isLoggedIn = is_user_logged_in();
 $isFavorited = false;
-if($isLoggedIn && class_exists('KosFavorites')) {
+if(class_exists('KosFavorites')) {
     $kosFavorites = KosFavorites::getInstance();
     $isFavorited = $kosFavorites->isFavoritedGame();
 }

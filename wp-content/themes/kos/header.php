@@ -99,22 +99,20 @@
 							                <?php
 							                $isLoggedIn = is_user_logged_in();
 							                ?>
-							                <div class="dropdown pull-right common-background recommend <?php echo ($isLoggedIn ? 'favorite-game' : 'favorite-game-disabled') ?>">
+							                <div class="dropdown pull-right common-background recommend favorite-game">
 							                    <?php
 							                    if(class_exists('KosFavorites')) {
 							                        $kosFavorites = KosFavorites::getInstance();
 							                        $kosFavorites->init(1, 5);
 							                    }
 							                    ?>
-							                    <?php if($isLoggedIn): ?>
-							                    <button class="btn btn-primary favorite-game-link" onclick="openFavoriteBox(this)" title="Favorite game <?php if(!$isLoggedIn) echo '- please login to use this function' ?>">
+							                    <button class="btn btn-primary favorite-game-link" onclick="openFavoriteBox(this)" title="Favorite game">
 						                        	&nbsp;
 						                        	<span class="fa fa-heart"></span>
 							                        <?php if($kosFavorites && count($kosFavorites->getGames()) > 0): ?>
 							                            <span class="circle-number"><?php echo $kosFavorites->getTotal() ?><span>
 							                        <?php endif ?>
 							                    </button>
-							                    <?php endif; ?>
 							                    <!-- <div class="dropdown-box recommend-list">
 							                        <h4 class="dropdown-box-header">Lieblingsspiel
 														<?php if(($kosFavorites && count($kosFavorites->getGames()) > 0)):?>
@@ -209,15 +207,7 @@
 							                    </div>
 							                <?php else :?>
 							                    <div class="guest-space">
-							                        <div class="dropdown pull-right">
-							                        	<button class="btn btn-primary favorite-game-link" onclick="openFavoriteBox(this)">>&nbsp;<i class="fa fa-heart"></i></button>
-							                        	<!-- <div class="dropdown-box">
-							                        		<h4 class="dropdown-box-header">Lieblingsspiel</h4>
-							                        		<div class="dropdown-box-content">
-							                        			<p class="no-margin">Melde dich bitte an, um diese Funktion zu nutzen. Um deine Lieblingsspiele aus <strong class="text-primary">www.kostenlosspielen.biz</strong> schneller zu finden, kannst du sie abspeichern. Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</p>
-							                        		</div>
-							                        	</div> -->
-							                        </div>
+							                        
 							                        <button id="login-toggle" class="btn btn-primary login-toggle pull-right" onclick="openLogin(this)" ><i class="icon-cm icon-cm-no-avatar"></i> Einloggen</button>
 							                    </div>
                                                 <?php /*?>
@@ -314,38 +304,27 @@
         				<div class="swiper-prev mfsw-prev"><i class="fa fa-arrow-left"></i></div>
 					</div>
 					<div class="panel-body">
-						<?php if(!$isLoggedIn): ?>
-	                        <ul>
-	                            <li class="description">Melde dich bitte an, um diese Funktion zu nutzen.</li>
-	                            <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
-	                            <li class="description">Wenn dir ein Spiel gefällt, kannst du es zu deiner Favoriten hinzufügen. Dieses Spiel wird dann unter Lieblingsspiele gespeichert.</li>
-	                        </ul>
-		                    <?php else :?>
-		                    	<div class="row">
-		                        <?php
-		                        if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
-                                    <div id="myfavoriteSwiper" class="favorite-swiper swiper-container">
-                                        <div  class="swiper-wrapper">
-                                        <?php foreach($kosFavorites->getGames() as $game): ?>
+                        <?php if($kosFavorites && count($kosFavorites->getGames()) > 0):?>
+                            <div id="myfavoriteSwiper" class="favorite-swiper swiper-container">
+                                <div  class="swiper-wrapper">
+                                    <?php foreach($kosFavorites->getGames() as $game): ?>
 
-                                                <div class="swiper-slide item">
-                                                    <div class="ArrangeID_waiting"></div>
-                                                    <a title="<?php echo $game->post_title ?>" href="<?php the_permalink($game->ID)?>">
-                                                        <img class="img-responsive" src="<?php echo $game->game_image ?>" />
-                                                        <span class="title"><?php echo $game->post_title ?></span>
-                                                    </a>
-                                                </div>
-                                        <?php endforeach;?>
+                                        <div class="swiper-slide item">
+                                            <div class="ArrangeID_waiting"></div>
+                                            <a title="<?php echo $game->post_title ?>" href="<?php the_permalink($game->ID)?>">
+                                                <img class="img-responsive" src="<?php echo $game->game_image ?>" />
+                                                <span class="title"><?php echo $game->post_title ?></span>
+                                            </a>
                                         </div>
-                                    </div>
-		                        </div>
-		                        <?php else:?>
-	                                <ul>
-	                                    <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
-	                                    <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
-	                                </ul>
-		                        <?php endif; ?>
-		                <?php endif; ?><!-- .row -->
+                                    <?php endforeach;?>
+                                </div>
+                            </div>
+                        <?php else:?>
+                            <ul>
+                                <li class="description">Um deine Lieblingsspiele aus www.kostenlosspielen.biz schneller zu finden, kannst du sie abspeichern.</li>
+                                <li class="description">Wähle "Zu Favoriten" und du wirst beim nächsten Einloggen das gespeicherte Spiel unter Lieblingsspiele in der Navigationsleiste wiederfinden.</li>
+                            </ul>
+                        <?php endif;?>
 					</div>
 				</div><!-- .panel -->
 			</div>
