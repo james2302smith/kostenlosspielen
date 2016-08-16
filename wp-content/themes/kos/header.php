@@ -79,7 +79,7 @@
                                         $description = $h1;
 
                                     } else if (is_category() || is_tag()) {
-                                        $h1 = types_render_termmeta('term_h1');
+                                        $h1 = types_render_termmeta('term_h1', array());
                                         if (!$h1) {
                                             $h1 = get_the_archive_title();
                                         }
