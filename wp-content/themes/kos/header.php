@@ -57,7 +57,7 @@
 				<div class="fixed-column site-branding">
 					<?php
 					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+						<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></div>
 					<?php else : ?>
 						<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></div>
 					<?php
@@ -71,8 +71,23 @@
 							<div class="col-xs-6">
 								<?php
 									$description = get_bloginfo( 'description', 'display' );
+                                    if (is_single()) {
+                                        $h1 = wpcf_api_field_meta_value('post_h1');
+                                        if (!$h1) {
+                                            $h1 = get_the_title();
+                                        }
+                                        $description = $h1;
+
+                                    } else if (is_category() || is_tag()) {
+                                        $h1 = types_render_termmeta('term_h1');
+                                        if (!$h1) {
+                                            $h1 = get_the_archive_title();
+                                        }
+                                        $description = $h1;
+                                    }
+
 										if ( $description || is_customize_preview() ) : ?>
-											<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+											<h1 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h1>
 										<?php
 									endif;
 								?>

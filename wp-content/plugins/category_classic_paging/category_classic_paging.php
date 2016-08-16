@@ -150,3 +150,10 @@ function get_category_order_link($order, $category = null) {
 
     return $link;
 }
+
+function get_current_category() {
+    global $wp_query;
+    $q = $wp_query->query_vars;
+    $category = $q['category_name'];
+    return get_category_by_slug($category);
+}
