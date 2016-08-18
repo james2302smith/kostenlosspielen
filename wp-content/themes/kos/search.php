@@ -35,7 +35,7 @@ get_header(); ?>
 			<div class="panel">
                 <div class="panel-body">
 					<header class="page-header">
-						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: "%s"', 'kos' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+						<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: "%s"', 'kos' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 					</header><!-- .page-header -->
                     <div class="list-game-default clearfix">
                         <?php

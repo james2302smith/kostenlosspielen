@@ -11705,6 +11705,7 @@ h1 .panel-title {
 }
 .cate-box-item {
   padding: 0 10px;
+  margin-bottom: 10px;
 }
 .cate-box-item.newest-game {
   float: right;
@@ -11944,10 +11945,14 @@ h1 .panel-title {
   color: #703d18;
 }
 .comments-area .comments-title {
-  font-size: 15px;
-  text-transform: uppercase;
   margin-top: 0;
   margin-right: 5px;
+}
+.comments-area .comments-title h2 {
+  margin: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-block;
 }
 .comments-area .comments-title .icon-cm {
   vertical-align: middle;

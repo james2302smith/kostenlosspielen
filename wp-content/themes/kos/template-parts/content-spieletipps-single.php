@@ -10,7 +10,7 @@
 ?>
 <div class="panel panel-default game-play-box">
 	<div class="panel-heading entry-header">
-		<?php the_title( '<h1 class="panel-title entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h2 class="panel-title entry-title">', '</h2>' ); ?>
 	</div>
 	<div class="panel-body">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

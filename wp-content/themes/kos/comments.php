@@ -25,12 +25,12 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<div class="comments-title">
 			<i class="icon-cm icon-cm-comment-lg"></i>
             <?php
-            echo '<span>Kommentare zu </span><span>'.get_the_title().'</span>';
+            echo '<h2>Kommentare zu '.get_the_title().'</h2>';
             ?>
-		</h2>
+		</div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">

@@ -141,9 +141,9 @@ if(class_exists('KosFavorites')) {
 
 	<div class="panel panel-default how-to-play panel-bordered">
 		<div class="panel-heading  board-header">
-			<h4 class="panel-title">
+			<div class="panel-title">
 				<i style="margin-top: 8px;" class="icon-cm icon-cm-question"></i>How to play
-			</h4>
+			</div>
 		</div>
 		<div class="panel-body">
 			<div class="entry-content">

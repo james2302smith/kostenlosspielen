@@ -48,7 +48,7 @@ get_header(); ?>
                             <div class="col-md-10">
                                 <div class="game-info">
                                     <?php
-                                    the_archive_title( '<h1 class="page-title">', '</h1>' );
+                                    the_archive_title( '<h2 class="page-title">', '</h2>' );
                                     the_archive_description( '<div class="taxonomy-description game-desc">', '</div>' );
                                     ?>
                                     <!--<h5 class="margin-bottom-5">Related Categories:</h5>

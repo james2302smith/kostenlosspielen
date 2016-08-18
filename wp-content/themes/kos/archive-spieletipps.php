@@ -38,7 +38,7 @@ get_header(); ?>
 				</div> -->
 				<div class="panel-body">
 					<div class="page-header">
-						<?php the_archive_title( '<h1 class="page-title">', '</h1>' );?>
+						<?php the_archive_title( '<h2 class="page-title">', '</h2>' );?>
 					</div>
 					<div class="list-post clearfix">
 						<?php
