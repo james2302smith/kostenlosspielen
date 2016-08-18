@@ -1216,7 +1216,9 @@
 }
 .comment-respond {
 	h3 {
-		margin-top: 0;
+		margin-top: 10px;
+		font-size: 22px;
+		margin-bottom: 5px;
 	}
 }
 .comment-body {
@@ -1227,6 +1229,23 @@
 	}
 	.comment-column {
 		overflow: hidden;
+	}
+	+ .comment-respond {
+		margin-top: 15px;
+		background: #fbaf5d;
+		padding: 5px 15px 10px;
+		border-radius: 10px;
+		border: 1px solid rgba(0, 0, 0, .05);
+		position: relative;
+		&:before {
+			content: "";
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-bottom: 8px solid #efa759;
+			position: absolute;
+			bottom: 100%;
+			left: 10px;
+		}
 	}
 }
 .comments-area {
