@@ -65,13 +65,13 @@ get_header(); ?>
 			<?php render_home_category('denkspiele', 'denkspiele');?>
 		</div>
 		<div class="cate-box-item">
-			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
+			<?php render_home_category('brettspiele', 'brettspiele');?>
 		</div>
+        <div class="cate-box-item">
+            <?php render_home_category('geschicklichkeitsspiele', 'geschick');?>
+        </div>
 		<div class="cate-box-item">
 			<?php render_home_category('maedchen-spiele', 'madchen');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('geschicklichkeitsspiele', 'geschick');?>
 		</div>
 		<div class="cate-box-item">
 			<?php render_home_category('action-spiele', 'action');?>
@@ -109,22 +109,16 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="cate-box-item">
+			<?php render_home_category('weitere-spiele', 'kinder');?>
+		</div>
+		<div class="cate-box-item">
 			<?php render_home_category('rennspiele', 'renen');?>
 		</div>
 		<div class="cate-box-item">
-			<?php render_home_category('denkspiele', 'denkspiele');?>
+			<?php render_home_category('weitere-spiele', 'renen');?>
 		</div>
 		<div class="cate-box-item">
-			<?php render_home_category('action-spiele', 'action');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('denkspiele', 'denkspiele');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('abenteuer-spiele', 'abenteuer');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('maedchen-spiele', 'madchen');?>
+			<?php render_home_category('maedchen-spiele', 'animal');?>
 		</div>
 	</div>
 </div> <!-- .container -->
