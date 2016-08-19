@@ -140,6 +140,9 @@ function get_category_order_link($order, $category = null) {
     if (empty($category)) return '';
     $link = get_term_link($category, 'category');
 
+    $link = rtrim($link, '/');
+    $link .= '/';
+
     if (!empty($order) && !empty($CATEGORY_ORDER_PARAMS_INVERSE[$order])) {
         $link .= $CATEGORY_ORDER_PARAMS_INVERSE[$order];
     }
