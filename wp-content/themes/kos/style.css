@@ -11930,7 +11930,8 @@ h1 .panel-title {
   color: #005826;
   font-size: 12px;
 }
-.comment-respond h3 {
+.comment-respond .comment-reply-title {
+  font-weight: 600;
   margin-top: 10px;
   font-size: 22px;
   margin-bottom: 5px;
@@ -11976,7 +11977,7 @@ h1 .panel-title {
 .comments-area .comments-title h2 {
   margin: 0;
   font-size: 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   display: inline-block;
 }
 .comments-area .comments-title .icon-cm {

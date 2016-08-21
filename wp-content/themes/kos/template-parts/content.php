@@ -29,7 +29,7 @@ if(class_exists('KosFavorites')) {
             <div class="full-screen-modal">
 			<div class="panel game-play-box panel-default">
 				<div class="panel-heading clearfix">
-					<h1 class="panel-title pull-left"><?php the_title(); ?> </h1>
+					<h2 class="panel-title pull-left"><?php the_title(); ?> </h2>
                     <!-- <span class="stars"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i>
                     </span> -->
                     <span class="stars">
