@@ -11935,6 +11935,12 @@ h1 .panel-title {
   font-size: 22px;
   margin-bottom: 5px;
 }
+.comment-respond .comment-reply-title a {
+  color: #703d18;
+}
+.comment-respond .comment-reply-title a:hover {
+  color: #240f0c;
+}
 .comment-body .avatar-column {
   width: 80px;
   float: left;
