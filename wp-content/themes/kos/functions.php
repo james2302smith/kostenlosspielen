@@ -439,7 +439,7 @@ function kos_comment_form_fields($comment_fields) {
     unset($comment_fields['comment']);
     $comment_fields['comment'] = $cmt;*/
 
-    $commentField = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label>  <textarea class="form-control" id="comment" name="comment" cols="45" rows="4" maxlength="65525" aria-required="true" required="required"></textarea></p>';
+    $commentField = '<p class="comment-form-comment"><label for="comment">' . _x( 'Kommentar', 'noun' ) . '</label>  <textarea class="form-control" id="comment" name="comment" cols="45" rows="4" maxlength="65525" aria-required="true" required="required"></textarea></p>';
     if (is_user_logged_in()) {
         $commentField = '<div class="media"><div class="media-left">'.get_avatar(get_current_user_id(), 54).'</div><div class="media-body"><p class="comment-form-comment"> <textarea class="form-control" id="comment" name="comment" cols="45" rows="4" maxlength="65525" aria-required="true" required="required"></textarea></p></div></div>';
     }

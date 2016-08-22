@@ -82,29 +82,29 @@
 
 <div id="signinRegisterBox" class="signin-register-box">
 	<div class="inner">
-		<button onclick="closeLogin(this)" id="closeLoginBox" class="btn btn-default btn-close btn-bordered">Close</button>
+		<button onclick="closeLogin(this)" id="closeLoginBox" class="btn btn-default btn-close btn-bordered">Schließen</button>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="register-hint">
-						<h4>GET AN ACCOUNT AND</h4>
+						<h4>Account anmelden und</h4>
 						<ul>
-							<li><i class="icon-cir icon-cir-green-download"></i>Save your favorite games</li>
-							<li><i class="icon-cir icon-cir-green-play-multi"></i>Interact with other games</li>
-							<li><i class="icon-cir icon-cir-green-game-pad"></i>Play Massive Multiplayer Online Games!  </li>
-							<li><i class="icon-cir icon-cir-green-cup"></i>Complete and win awards</li>
-							<li><i class="icon-cir icon-cir-green-edit"></i>Create your own profile picture</li>
+							<li><i class="icon-cir icon-cir-green-download"></i>speichere deine Lieblingsspiele.</li>
+							<li><i class="icon-cir icon-cir-green-play-multi"></i>interagiere mit anderen Spielern.</li>
+							<li><i class="icon-cir icon-cir-green-game-pad"></i>spiele tausende Online Spiele.</li>
+							<li><i class="icon-cir icon-cir-green-cup"></i>spiele und gewinne einen Preis.</li>
+							<li><i class="icon-cir icon-cir-green-edit"></i>erstelle dein eigenes Profilbild.</li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="form-box login-form">
-						<h3 class="form-title">LOG IN</h3>
+						<h3 class="form-title">Einloggen</h3>
 						<div class="social standard-margin">
 							<?php echo KosUIHelper::social_login_buttons()?>
 						</div>
 						<hr>
-						<p class="form-desc">Do you prefer to use your e-mail?</p>
+						<p class="form-desc">Lieber per Email anmelden?</p>
 						<div class="body">
 							<div class="input-form standard-margin">
 								<?php echo KosUIHelper::modal_login_form() ?>
@@ -112,12 +112,12 @@
 						</div>
 					</div>
 					<div class="form-box register-form">
-						<h3 class="form-title">Resgister</h3>
+						<h3 class="form-title">Registrieren</h3>
 						<div class="social standard-margin">
 							<?php echo KosUIHelper::social_login_buttons()?>
 						</div>
 						<hr>
-						<div class="form-desc">Do you prefer to use your e-mail?</div>
+						<div class="form-desc">Lieber per Email anmelden?</div>
 						<div class="input-form standard-margin">
 							<?php echo KosUIHelper::modal_register_form() ?>
 						</div>

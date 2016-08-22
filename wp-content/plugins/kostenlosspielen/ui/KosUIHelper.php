@@ -27,12 +27,12 @@ class KosUIHelper {
         $html[] = '         </div>';
         $html[] = '       </div>';
         $html[] = ' </div>';
-        $html[] = ' <p class="forgot-pass"><a href="'.home_url('wp-login.php?action=lostpassword').'" class>Forgot your username or password?</a></p>';
+        $html[] = ' <p class="forgot-pass"><a href="'.home_url('wp-login.php?action=lostpassword').'" class>Benutzername oder Passwort vergessen?</a></p>';
         $html[] = ' <div class="submit text-center">';
-        $html[] = '     <input type="submit" class="user-auth-button auth-email" value="LOG IN" placeholder="Einloggen" />';
+        $html[] = '     <input type="submit" class="user-auth-button auth-email" value="Einloggen" placeholder="Einloggen" />';
         $html[] = '     <input type="hidden" name="redirect_to" value="'. get_current_url() .'" >';
         $html[] = ' </div>';
-        $html[] = ' <p class="not-a-member"><a onclick="switchRegister(this)" href="javascript:void(0)">NOT A MEMBER YET?</a></p>';
+        $html[] = ' <p class="not-a-member"><a onclick="switchRegister(this)" href="javascript:void(0)">Noch kein Mitglied?</a></p>';
         $html[] = '</form>';
 
         return implode("\n", $html);
@@ -123,8 +123,8 @@ class KosUIHelper {
         $html[] = '     <div class="select-gender clearfix">';
         $html[] = '        <input type="radio" name="sex" value="male" id="sex-male" class="validate" checked="checked" />';
         $html[] = '        <input type="radio" name="sex" value="female" id="sex-female" class="validate" />';
-        $html[] = '        <label class="button-sex toggle-male" class="button-sex" for="sex-male">Male</label>';
-        $html[] = '        <label class="button-sex toggle-female" for="sex-female">Female</label>';
+        $html[] = '        <label class="button-sex toggle-male" class="button-sex" for="sex-male">Männlich</label>';
+        $html[] = '        <label class="button-sex toggle-female" for="sex-female">Weiblich</label>';
         $html[] = '     </div>';
         $html[] = '   </div>';
         $html[] = '   <div class="standard-margin field sex-field">';
@@ -148,9 +148,9 @@ class KosUIHelper {
         $html[] = '       </div>';
         $html[] = ' </div>';
         $html[] = '   <div class="text-center submit">';
-        $html[] = '       <input type="submit" value="JOIN FOR FREE" class="user-auth-button auth-email" />';
+        $html[] = '       <input type="submit" value="Kostenlos anmelden" class="user-auth-button auth-email" />';
         $html[] = '   </div>';
-        $html[] = '   <p class="switch-login"><a onclick="switchLogin(this)" href="javascript:void(0)">ALREADY HAVE AN ACCOUNT?</a></p>';
+        $html[] = '   <p class="switch-login"><a onclick="switchLogin(this)" href="javascript:void(0)">Bereits Mitglied?</a></p>';
         $html[] = '</form>';
 
         return implode("\n", $html);

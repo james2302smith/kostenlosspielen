@@ -43,7 +43,7 @@ if(class_exists('KosFavorites')) {
                         } ?>
                     </span>
 					<ul class="game-action pull-right">
-						<li><a href="#comment-area">Komment (<?php echo get_comments_number()?>)</a></li>
+						<li><a href="#comment-area">Kommentare (<?php echo get_comments_number()?>)</a></li>
 						<!--<li><a href="#"><i class="icon-cm icon-cm-rank"></i></a></li>-->
 						<li>
                             <a href="#"  data-action="likeToggle" data-liked="<?php echo $isFavorited ? 'true' : 'false'?>" data-url="<?php echo KOS_FAVORITES_AJAX_URL ?>" data-game="<?php echo $post->ID ?>">
@@ -124,7 +124,7 @@ if(class_exists('KosFavorites')) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="panel panel-default google-custom-box">
 		<div class="panel-body">
-			<p>Spieler, die transformers Prestigez gespielt haben, Spielten auch  </p>
+			<p>Spieler, die … gespielt haben, spielten auch</p>
 		</div>
 	</div>
 
@@ -142,7 +142,7 @@ if(class_exists('KosFavorites')) {
 	<div class="panel panel-default how-to-play panel-bordered">
 		<div class="panel-heading  board-header">
 			<div class="panel-title">
-				<i style="margin-top: 8px;" class="icon-cm icon-cm-question"></i>How to play
+				<i style="margin-top: 8px;" class="icon-cm icon-cm-question"></i>Spielanleitung
 			</div>
 		</div>
 		<div class="panel-body">
