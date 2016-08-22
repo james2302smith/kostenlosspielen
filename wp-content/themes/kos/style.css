@@ -11937,10 +11937,12 @@ h1 .panel-title {
   margin-bottom: 5px;
 }
 .comment-respond .comment-reply-title a {
+  font-size: 15px;
   color: #703d18;
+  font-weight: 300;
 }
 .comment-respond .comment-reply-title a:hover {
-  color: #240f0c;
+  color: #005826;
 }
 .comment-body .avatar-column {
   width: 80px;
