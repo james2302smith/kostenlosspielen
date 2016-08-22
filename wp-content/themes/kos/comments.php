@@ -69,7 +69,13 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	comment_form(array(
+        'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Deine Email Adresse wird nicht veröffentlicht. Mit * markierte Felder sind Pflichtfelder.' ) . '</span>' . '</p>',
+        'title_reply' => 'Hinterlasse einen Kommentar',
+        'title_reply_before'   => '<div id="reply-title" class="comment-reply-title">',
+        'title_reply_after'    => '</div>',
+        'label_submit' => 'Kommentar abgeben'
+    ));
 	?>
 
 	<ol class="comment-list">
