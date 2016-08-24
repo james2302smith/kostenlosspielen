@@ -124,7 +124,7 @@ if(class_exists('KosFavorites')) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="panel panel-default google-custom-box">
 		<div class="panel-body">
-			<p>Spieler, die … gespielt haben, spielten auch</p>
+			<p>Spieler, die <?php the_title()?> gespielt haben, spielten auch</p>
 		</div>
 	</div>
 
