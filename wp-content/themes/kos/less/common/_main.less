@@ -40,6 +40,9 @@
 		background: transparent url('@{img-path}/tree.png') no-repeat 0 0;
 		pointer-events: none;
 	}
+	.copyright {
+		text-align: center;
+	}
 }
 .layout-header {
 	padding-top: 14px;
@@ -381,7 +384,7 @@
 	}
 }
 #menu-footer-seconds {
-	text-align: right;
+	text-align: center;
 	> li {
 		display: inline-block;
 		> a {
@@ -603,8 +606,9 @@
 		right: @grid-gutter-width;
 		top: @grid-gutter-width;
 		z-index: 10;
-		&:hover, &:active {
+		&:hover, &:active, &:focus {
 			border-color: #fff;
+			color: #fff;
 		}
 	}
 	.field {
@@ -766,6 +770,8 @@
 	}
 }
 .list-cat-ver {
+	height: 339px;
+	overflow: hidden;
 	> li {
 		+ li  {
 			border-top: 1px solid #bb6428;
@@ -977,6 +983,10 @@
 		float: left;
 	}
 }
+/*.main-bottom .cate-box-item .panel .panel-body{
+	height: 572px;
+	overflow: hidden;
+}*/
 .cate-box-item {
 	padding: 0 10px;
 	margin-bottom: 10px;
@@ -1536,4 +1546,8 @@ body.full-screen {
 		font-family: 700;
 
 	}
+}
+.menu-footer-primary-container {
+	position: relative;
+	z-index: 100;
 }

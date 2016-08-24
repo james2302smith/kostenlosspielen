@@ -10191,6 +10191,12 @@ body {
   font-size: 17px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
+.btn .times,
+.user-auth-button .times,
+.comments-area input[type="submit"] .times {
+  font-size: 20px;
+  line-height: 0;
+}
 .btn-bordered {
   background: none!important;
 }
@@ -10828,6 +10834,9 @@ h1 .panel-title {
   background: transparent url('images/tree.png') no-repeat 0 0;
   pointer-events: none;
 }
+.site-footer .copyright {
+  text-align: center;
+}
 .layout-header {
   padding-top: 14px;
 }
@@ -11115,7 +11124,7 @@ h1 .panel-title {
   display: none;
 }
 #menu-footer-seconds {
-  text-align: right;
+  text-align: center;
 }
 #menu-footer-seconds > li {
   display: inline-block;
@@ -11342,8 +11351,10 @@ h1 .panel-title {
   z-index: 10;
 }
 .signin-register-box .btn-close:hover,
-.signin-register-box .btn-close:active {
+.signin-register-box .btn-close:active,
+.signin-register-box .btn-close:focus {
   border-color: #fff;
+  color: #fff;
 }
 .signin-register-box .field {
   margin-bottom: 10px;
@@ -11503,6 +11514,10 @@ h1 .panel-title {
 .panel .swiper-prev {
   left: auto;
   right: 40px;
+}
+.list-cat-ver {
+  height: 339px;
+  overflow: hidden;
 }
 .list-cat-ver > li + li {
   border-top: 1px solid #bb6428;
@@ -11703,6 +11718,10 @@ h1 .panel-title {
   width: 25%;
   float: left;
 }
+/*.main-bottom .cate-box-item .panel .panel-body{
+	height: 572px;
+	overflow: hidden;
+}*/
 .cate-box-item {
   padding: 0 10px;
   margin-bottom: 10px;
@@ -12214,6 +12233,10 @@ body.full-screen .full-screen-modal .fa-compress {
 .how-to-play .entry-content h2 {
   font-size: 16px;
   font-family: 700;
+}
+.menu-footer-primary-container {
+  position: relative;
+  z-index: 100;
 }
 .clear {
   clear: both;
