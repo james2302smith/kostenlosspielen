@@ -92,7 +92,7 @@ get_header(); ?>
                                         <h4 class="panel-title" title="Denkspiele"><span>Sub Category</span></h4>
                                     </div>
                                     <div class="panel-body">
-                                        <ul class="list-cat-ver clearfix">
+                                        <ul class="list-cat-ver show-full clearfix">
                                             <?php
                                             $category = get_queried_object();
                                             $categories = get_categories(array('child_of' => $category->cat_ID ));
