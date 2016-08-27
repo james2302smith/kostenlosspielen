@@ -12038,12 +12038,15 @@ h1 .panel-title {
   margin-top: 2px;
 }
 .game-play-box .panel-body {
-  padding-top: 30px;
+  padding-top: 25px;
   padding-bottom: 30px;
   background-color: #da8b48;
 }
 .google-custom-box {
   color: #fff;
+}
+.layout-singer-top {
+  padding-top: 15px;
 }
 .game-action > li {
   display: inline-block;

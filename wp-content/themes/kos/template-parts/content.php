@@ -22,7 +22,6 @@ if(class_exists('KosFavorites')) {
 }
 
 ?>
-<br>
 <div class="layout-singer-top clearfix">
 	<div class="fluid-column">
 		<div class="inner">
