@@ -10935,6 +10935,10 @@ h1 .panel-title {
   position: relative;
   z-index: 10;
 }
+#main > .panel:last-child,
+#main > article .panel:last-child {
+  margin-bottom: 0;
+}
 .menu-toggle {
   display: none;
 }
@@ -11691,13 +11695,19 @@ h1 .panel-title {
     width: 16.666666%;
   }
 }
+.list-new-game-ver > li {
+  padding: 0 37px;
+}
+.list-new-game-ver > li > a {
+  display: block;
+}
 .list-new-game-ver > li + li {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #ea9c3a;
 }
 .list-new-game-ver .name {
-  margin: 14px 0;
+  margin: 14px -37px;
   position: relative;
   font-weight: normal;
 }
@@ -11716,6 +11726,7 @@ h1 .panel-title {
 .main-bottom {
   margin-left: -10px;
   margin-right: -10px;
+  padding-top: 20px;
 }
 .main-bottom .cate-box-item {
   width: 25%;
@@ -12044,9 +12055,6 @@ h1 .panel-title {
 }
 .google-custom-box {
   color: #fff;
-}
-.layout-singer-top {
-  padding-top: 15px;
 }
 .game-action > li {
   display: inline-block;
