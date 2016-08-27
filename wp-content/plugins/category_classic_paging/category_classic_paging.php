@@ -50,6 +50,23 @@ function category_classic_paging_pagination_base() {
 }
 add_action( 'init', 'category_classic_paging_pagination_base' );
 
+add_action('init', 'category_classic_paging_page_permalink', -1);
+function category_classic_paging_page_permalink() {
+    global $wp_rewrite;
+    $pageStructure = $wp_rewrite->get_page_permastruct();
+    if (!$pageStructure) {
+        return;
+    }
+    $strlen = strlen('.html');
+    if (strlen($pageStructure) < $strlen) {
+        $pageStructure .= '.html';
+    } else if (substr_compare($pageStructure, '.html', strlen($pageStructure)-strlen($pageStructure), $strlen) !== 0) {
+        $pageStructure .= '.html';
+    }
+
+    $wp_rewrite->page_structure = $pageStructure;
+}
+
 add_filter('category_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
 add_filter('post_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
 function category_classic_paging_category_rewrite_rules($rules) {
