@@ -11834,10 +11834,10 @@ h1 .panel-title {
   font-weight: 300;
 }
 .breadcrumbs-box .breadcrumbs > span > a,
-.breadcrumbs-box .breadcrumbs > span > span,
+.breadcrumbs-box .breadcrumbs > span span,
 .breadcrumbs-box .breadcrumbs > span > strong {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 2px;
 }
 .breadcrumbs-box .breadcrumbs > span > a:hover {
   text-decoration: underline;
