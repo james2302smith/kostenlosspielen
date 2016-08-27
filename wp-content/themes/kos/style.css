@@ -11695,6 +11695,9 @@ h1 .panel-title {
     width: 16.666666%;
   }
 }
+#secondary > .panel:last-child {
+  margin-bottom: 0;
+}
 .list-new-game-ver > li {
   padding: 0 37px;
 }
