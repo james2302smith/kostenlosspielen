@@ -21,10 +21,14 @@
 				the_title( '<h4 class="entry-title game-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 			?>
             <?php
-            $rating = number_format(get_post_meta(get_the_ID(), 'ratings_average', true), 1, ',', '.');
-            if (strpos($rating, ',') !== false) {
-                $rating = rtrim($rating, '0');
-                $rating = rtrim($rating, ',');
+            $ratingVal = get_post_meta(get_the_ID(), 'ratings_average', true);
+            $rating = '0';
+            if (is_float($ratingVal)) {
+                $rating = number_format(floatval($ratingVal), 1, ',', '.');
+                if (strpos($rating, ',') !== false) {
+                    $rating = rtrim($rating, '0');
+                    $rating = rtrim($rating, ',');
+                }
             }
             ?>
 			<span class="squre-view"><?php echo $rating?></span>
