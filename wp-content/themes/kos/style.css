@@ -10836,6 +10836,8 @@ h1 .panel-title {
 }
 .site-footer .copyright {
   text-align: center;
+  font-size: 14px;
+  margin-bottom: 3px;
 }
 .layout-header {
   padding-top: 14px;
@@ -11134,6 +11136,7 @@ h1 .panel-title {
   display: inline-block;
   padding: 5px 10px;
   color: #fff;
+  font-size: 12px;
 }
 #menu-footer-seconds > li > a:hover {
   color: #fff100;
@@ -12911,6 +12914,11 @@ body.full-screen .full-screen-modal .fa-compress {
   #primary-menu > li > a {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  .col-xlg-10 {
+    width: 83.33333333%;
   }
 }
 @media (min-width: 1600px) {

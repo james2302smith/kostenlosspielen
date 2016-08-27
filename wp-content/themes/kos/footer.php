@@ -42,7 +42,7 @@
 						wp_nav_menu( $args );
 				?>
 				<div class="row footer-middle">
-					<div class="col-xs-9 col-lg-10">
+					<div class="col-xs-9 col-xlg-10 col-md-9 col-sm-7">
 						<?php if ( is_active_sidebar( 'footer-tab-content' ) ) : ?>
 							<div id="footer-widget">
 								<?php dynamic_sidebar( 'footer-tab-content' ); ?>
