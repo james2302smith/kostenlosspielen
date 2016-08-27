@@ -67,10 +67,12 @@ function category_classic_paging_page_permalink() {
     $wp_rewrite->page_structure = $pageStructure;
 }
 
-add_filter('category_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
+add_filter('category_rewrite_rules', 'category_classic_paging_category_rewrite_rules', 100);
 add_filter('post_rewrite_rules', 'category_classic_paging_category_rewrite_rules');
 function category_classic_paging_category_rewrite_rules($rules) {
     global $CATEGORY_ORDER_PARAMS;
+    $category_base = get_option('category_base');
+
     $extra = array();
     foreach ($rules as $match => $query) {
         if (strpos($match, 'feed') !== false || strpos($match, 'embed') !== false
@@ -79,11 +81,20 @@ function category_classic_paging_category_rewrite_rules($rules) {
         }
         if (strpos($query, 'category_name') === false) continue;
 
-        $idx = strpos($match, '(.+?)/');
-        $base = $idx > 0 ? substr($match, 0, $idx) : '';
-        $sub = substr($match, $idx + strlen('(.+?)/'));
+        $separator = ')/';
+        $idx = strpos($match, $separator);
+        $base = $idx > 0 ? substr($match, 0, $idx + strlen($separator)) : '';
+        $sub = substr($match, $idx + strlen($separator));
+
+
+        if ($category_base == '.') {
+            $b = $base;
+            $b = ltrim($b, './');
+            $extra[$b.$sub] = $query;
+        }
+
         foreach ($CATEGORY_ORDER_PARAMS as $text => $type) {
-            $m = $base.'(.+?)/'.$text.'/'.$sub;
+            $m = $text.'/'.$sub;
             $q = $query;
             $q .= '&kos_order_by='.$type;
 
@@ -94,6 +105,12 @@ function category_classic_paging_category_rewrite_rules($rules) {
             } else if ($type == 'vote') {
                 $q .= '&r_sortby=most_rated&r_orderby=desc';
             }
+            if ($category_base == '.') {
+                $b = $base;
+                $b = ltrim($b, './');
+                $extra[$b.$m] = $q;
+            }
+            $m = $base.$m;
             $extra[$m] = $q;
         }
     }
