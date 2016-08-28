@@ -10838,6 +10838,7 @@ h1 .panel-title {
   text-align: center;
   font-size: 12px;
   margin-bottom: 0px;
+  margin-top: 5px;
 }
 .layout-header {
   padding-top: 14px;
@@ -10898,7 +10899,7 @@ h1 .panel-title {
   transition: 200ms;
   min-height: 268px;
   border-bottom: 1px solid #bb6428;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   padding-top: 7px;
   padding-bottom: 10px;
   font-size: 14px;
