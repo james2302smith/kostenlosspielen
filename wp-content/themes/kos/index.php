@@ -108,17 +108,17 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+        <div class="cate-box-item">
+            <?php render_home_category('rennspiele', 'renen');?>
+        </div>
+        <div class="cate-box-item">
+            <?php render_home_category('kinderspiele', 'kinder');?>
+        </div>
+        <div class="cate-box-item">
+            <?php render_home_category('tierspiele', 'animal');?>
+        </div>
 		<div class="cate-box-item">
-			<?php render_home_category('weitere-spiele', 'kinder');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('rennspiele', 'renen');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('weitere-spiele', 'renen');?>
-		</div>
-		<div class="cate-box-item">
-			<?php render_home_category('maedchen-spiele', 'animal');?>
+			<?php render_home_category('weitere-spiele', 'dice');?>
 		</div>
 	</div>
 </div> <!-- .container -->
