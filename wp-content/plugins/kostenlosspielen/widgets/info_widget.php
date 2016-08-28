@@ -73,6 +73,9 @@ class Info_Widget extends WP_Widget {
                     <?php endforeach?>
                 </div>
             </div>
+            <div class="col-xs-9 col-lg-10 col-xs-offset-3 col-lg-offset-2">
+                <div class="border-bottom"></div>
+            </div>
         </div>
         <?php
         echo $args['after_widget'];
