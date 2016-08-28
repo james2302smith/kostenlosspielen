@@ -51,7 +51,7 @@
 
 						<div class="row">
 							<div class="col-xs-9 col-lg-10 col-xs-offset-3 col-lg-offset-2">
-								<p class="copyright">Copyright © 2010 - <a href="www.kostenlosspielen.biz">www.kostenlosspielen.biz</a>. Alle Rechte vorbehalten</p>
+								<p class="copyright">Copyright © 2010 - <a href="<?php home_url('/')?>">www.kostenlosspielen.biz</a>. Alle Rechte vorbehalten</p>
 								<?php
 								   /**
 									* Displays a navigation menu

@@ -10836,8 +10836,8 @@ h1 .panel-title {
 }
 .site-footer .copyright {
   text-align: center;
-  font-size: 14px;
-  margin-bottom: 3px;
+  font-size: 12px;
+  margin-bottom: 0px;
 }
 .layout-header {
   padding-top: 14px;
@@ -11138,7 +11138,7 @@ h1 .panel-title {
 #menu-footer-seconds > li > a {
   font-size: 13px;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 0px 10px;
   color: #fff;
   font-size: 12px;
 }
