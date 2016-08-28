@@ -84,7 +84,16 @@ get_header(); ?>
                     <div class="panel-body">
                         <div class="list-game-default has-sub clearfix">
                             <div class="banner-ads-right">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sample-banner-ads-2.png" alt="Sample">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- ads-336x280 -->
+                                <ins class="adsbygoogle"
+                                     style="display:inline-block;width:336px;height:280px"
+                                     data-ad-client="ca-pub-2394577543361208"
+                                     data-ad-slot="5079646976"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                                <!--<img src="<?php /*echo get_template_directory_uri(); */?>/images/sample-banner-ads-2.png" alt="Sample">-->
                             </div>
                             <div class="cate-box-item">
                                 <div class="panel panel-default category-box-item">
