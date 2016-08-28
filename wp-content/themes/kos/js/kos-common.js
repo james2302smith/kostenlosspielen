@@ -793,7 +793,10 @@ jQuery(document).ready(function($) {
         var $a = $(e.target).closest('[cat-name]');
         var image = $a.attr('game-image');
         if (image) {
-            $a.closest('.category-box-item').find('img').attr('src', image).closest('a').attr('href', $a.attr('href'));
+            $a.closest('.category-box-item')
+                .find('img').attr('src', image).attr('alt', $a.attr('cat-name'))
+                .closest('a').attr('href', $a.attr('href'))
+                .find('.game-title').html($a.attr('cat-name'));
         }
     });
 

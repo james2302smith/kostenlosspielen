@@ -246,6 +246,7 @@ function render_home_category($slug, $icon) {
         <div class="panel-body">
             <a class="image img-4x3" href="#">
                 <img class="img-responsive" alt="<?php echo $subCategories[0]->name?>" src="<?php echo $subCategories[0]->latest_game->game_image ?>" />
+                <span class="game-title"><?php echo $subCategories[0]->name?></span>
             </a>
             <ul class="list-cat-ver clearfix">
                 <?php foreach($subCategories as $subCategory):?>

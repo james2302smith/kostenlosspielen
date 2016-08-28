@@ -10250,6 +10250,7 @@ body {
   padding-bottom: 75%;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 .image.img-4x3 > img {
   border-radius: 10px;
@@ -10262,6 +10263,27 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+}
+.image.img-4x3 > .game-title {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 10px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-shadow: none;
+  padding: 3% 5px;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.image.img-4x3:hover > .game-title {
+  opacity: 1;
+  bottom: 0px;
 }
 .icon {
   display: inline-block;
