@@ -459,3 +459,21 @@ add_filter( 'wp_postratings_image_extension', 'custom_rating_image_extension' );
 function custom_rating_image_extension() {
     return 'png';
 }
+
+/**
+ * Don't count pingbacks or trackbacks when determining
+ * the number of comments on a post.
+ */
+function kos_comment_count( $count ) {
+    global $id;
+    $comment_count = 0;
+    $comments = get_approved_comments( $id );
+    foreach ( $comments as $comment ) {
+        if ( $comment->comment_type === '' ) {
+            $comment_count++;
+        }
+    }
+    return $comment_count;
+}
+
+add_filter( 'get_comments_number', 'kos_comment_count', 0 );
