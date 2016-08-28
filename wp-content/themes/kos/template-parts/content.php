@@ -123,7 +123,19 @@ if(class_exists('KosFavorites')) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="panel panel-default google-custom-box">
 		<div class="panel-body">
-			<p>Spieler, die <?php the_title()?> gespielt haben, spielten auch</p>
+			<p>Spieler, die <strong><?php the_title()?></strong> gespielt haben, spielten auch</p>
+            <div class="body">
+                <!--bat dau suggest Google -->
+
+                <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- match_kostenlosspielen -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2394577543361208" data-ad-slot="6479946171" data-ad-format="autorelaxed" ri5zx5u="" hidden=""></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--ket thuc suggest Google -->
+
+            </div>
 		</div>
 	</div>
 
