@@ -167,7 +167,9 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Hiden Admin Bar
  */
-//show_admin_bar( false );
+if (!current_user_can( 'manage_options' )) {
+    show_admin_bar( false );
+}
 
 
 function getAllSubCategoriesOf($categoryId, $number = 0) {
