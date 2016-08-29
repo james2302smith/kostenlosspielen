@@ -58,7 +58,7 @@ class KosRestAPI {
             if($existingUser) {
                 $message = '<div class="standard-margin-bottom"><strong>Bitte gib dein Passwort erneut ein</strong></div>';
                 $message .= '<div class="standard-margin-top">Das von dir eingegebene Passwort ist falsch. Bitte versuche es noch einmal. (Stelle dabei sicher, dass deine Feststelltaste nicht gedrückt ist.)</div>';
-                $message .= '<div class="standard-margin-top">Du hast dein Passwort vergessen? <a href="'.SITE_ROOT_URL.'/wp-login.php?action=lostpassword">Fordere ein neues an.</a></div>';
+                $message .= '<div class="standard-margin-top">Du hast dein Passwort vergessen? <a href="'.home_url('wp-login.php?action=lostpassword').'">Fordere ein neues an.</a></div>';
 
                 $userDisplayName = trim($existingUser->first_name.' '.$existingUser->last_name);
                 if(!$userDisplayName) {
@@ -93,7 +93,7 @@ class KosRestAPI {
                 $message = '<div class="standard-margin-bottom"><strong>Falsche E-Mail-Adresse</strong></div>';
                 $message .= '<div class="standard-margin-top">Die eingegebene E-Mail-Adresse gehört zu keinem Konto.</div>';
                 $message .= '<div class="standard-margin-top">Bitte versuche es noch einmal oder';
-                $message .= '   <a href="#authentication_modal_form_register" rel="modal:open">erstelle ein neues Konto</a>.</div>';
+                $message .= '   <a href="#authentication_modal_form_register" onclick="switchRegister(false)">erstelle ein neues Konto</a>.</div>';
             }
             $this->setResponse(401, 'Unauthorized', $message, $data);
             return;
@@ -114,7 +114,7 @@ class KosRestAPI {
         if($user) {
             $this->code = 409;
             $this->status = 'Conflict';
-            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a rel="modal:open" href="#authentication_modal_form_login">Logge dich an</a>, oder erstelle ein <a href="'.SITE_ROOT_URL.'/wp-login.php?action=lostpassword">neues Passwort</a>.';
+            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a href="#authentication_modal_form_login" onclick="switchLogin(false)">Logge dich an</a>, oder erstelle ein <a href="'.home_url('wp-login.php?action=lostpassword').'">neues Passwort</a>.';
             $this->data = array();
             return;
         } else {
@@ -153,7 +153,7 @@ class KosRestAPI {
         if($user) {
             $this->code = 409;
             $this->status = 'Conflict';
-            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a rel="modal:open" href="#authentication_modal_form_login">Logge dich an</a>, oder erstelle ein <a href="'.SITE_ROOT_URL.'/wp-login.php?action=lostpassword">neues Passwort</a>.';
+            $this->message = 'Wir kennen diese E-Mail-Adresse… Bist du schon bei uns?<br/><a onclick="switchLogin(false)" href="#authentication_modal_form_login">Logge dich an</a>, oder erstelle ein <a href="'.home_url('wp-login.php?action=lostpassword').'">neues Passwort</a>.';
             $this->data = array();
             return;
         }
@@ -323,6 +323,99 @@ class KosRestAPI {
 
             $this->setResponse(401, 'Unauthorized', 'There are some error when try to retrieve your facebook information, please try again!', array('fb_exception' => $e));
             return;
+        }
+    }
+
+    public function googleCallback($data) {
+        $accessToken = $data['access_token'];
+        if(!$accessToken) {
+            //. Do not have accessToken
+            $this->setResponse(412, 'Precondition Failed', 'Can not get your accessToken, please try again!', array());
+            return;
+        }
+
+        $googleId = $data['google_id'];
+        $name = $data['name'];
+        $firstname = $data['first_name'];
+        $lastname  = $data['last_name'];
+        $email     = $data['email'];
+        $birthday  = '';
+        $sex       = '';
+
+        //. Find user by email
+        $userId = null;
+        $user = get_user_by('email', $email);
+        if(!$user) {
+            $userId = username_exists($email);
+        } else {
+            $userId = $user->ID;
+        }
+
+        $isNewUser = false;
+        if(!$userId) {
+            //. Create user
+            $randomPassword = ''.time();
+            $user = array(
+                'user_pass'     => $randomPassword,
+                'user_login'    => esc_sql($email),
+                'user_email'    => esc_sql($email),
+                'display_name'  => esc_sql($name),
+                'first_name'    => esc_sql($firstname),
+                'last_name'     => esc_sql($lastname)
+            );
+            //wp_create_user($email, $password, $email);
+            $userId = wp_insert_user($user);
+
+            if(!is_wp_error($userId)) {
+                //. Add user meta
+                //add_user_meta($userId, 'sex', $sex);
+                //add_user_meta($userId, 'birthday', $birthday);
+                $isNewUser = true;
+            }
+        } else {
+            //First name
+            if(!get_user_meta($userId, 'first_name', true)) {
+                if(!add_user_meta($userId, 'first_name', $firstname, true)) {
+                    update_user_meta($userId, 'first_name', $firstname);
+                }
+            }
+            if(!get_user_meta($userId, 'last_name', true)) {
+                if(!add_user_meta($userId, 'last_name', $lastname, true)) {
+                    update_user_meta($userId, 'last_name', $lastname);
+                }
+            }
+            /*if(!get_user_meta($userId, 'birthday', true)) {
+                if(!add_user_meta($userId, 'birthday', $birthday, true)) {
+                    update_user_meta($userId, 'birthday', $birthday);
+                }
+            }
+            if(!get_user_meta($userId, 'sex', true)) {
+                if(!add_user_meta($userId, 'sex', $sex, true)) {
+                    update_user_meta($userId, 'sex', $sex);
+                }
+            }*/
+        }
+
+        if(!is_wp_error($userId) && $userId) {
+            if(!add_user_meta($userId, KOS_GOOGLE_ID_KEY, $googleId, true)) {
+                update_user_meta($userId, KOS_GOOGLE_ID_KEY, $googleId, true);
+            }
+            if(!add_user_meta($userId, KOS_GOOGLE_PROFILE_ACCESSTOKEN_KEY, $accessToken, true)) {
+                update_user_meta($userId, KOS_GOOGLE_PROFILE_ACCESSTOKEN_KEY, $accessToken, true);
+            }
+
+            //. Auto login
+            wp_set_auth_cookie($userId);
+            $u = wp_set_current_user($userId);
+
+            $this->setResponse(202, 'Accepted', 'Login with google success, your browser will refresh soon!', array('isNewUser' => $isNewUser, 'user' => $u));
+            return;
+        } else {
+
+            $this->code = 500;
+            $this->status = 'Internal Server Error';
+            $this->message = 'There are some error when process login with google, please try again later!';
+            $this->data = array();
         }
     }
 

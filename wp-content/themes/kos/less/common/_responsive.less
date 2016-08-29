@@ -1,0 +1,105 @@
+// --------------------------------------------------
+// RESPONSIVE
+// --------------------------------------------------
+//
+// MOBILE FIRST
+// -------------------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+
+
+
+	// Hook Mixin Render Small devices (tablets, 768px and up)
+	.hook-screen-sm-min;
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+	.abc {
+		font-size: 12px;
+	}
+
+
+	// Hook Mixin Render
+	.hook-screen-md-min;
+}
+
+// Large devices (large desktops, 1200px and up)
+@media (min-width: @screen-lg-min) {
+	#primary-menu > li > a {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	// Hook Mixin Render Medium devices (desktops, 992px and up)
+	.hook-screen-lg-min;
+}
+@media (min-width: 1366px) {
+	#primary-menu > li > a {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.col-xlg-10 {
+	    width: 83.33333333%;
+	}
+}
+
+@media(min-width: 1600px){
+	body .container {
+		width: auto;
+		max-width: 1460px
+	}
+	.main-bottom .cate-box-item {
+		width: 20%;
+	}
+	.site-footer .site-info:after {
+		right: -145px;
+	}
+	.banner-ads-right {
+		height: 546px;
+		padding: 105px 130px 143px 130pxx;
+	}
+}
+@media(max-width: 1599px){
+	#menu-favorite-category-menu {
+		max-height: 251px;
+		overflow: hidden;
+	}
+}
+// In special cases
+// -------------------------------------
+
+// Only for Medium devices and lower (<1199px)
+@media (max-width: @screen-md-max) {
+	.list-new-game-ver .name {
+		margin: 16px 0;
+	}
+
+
+	// Hook Mixin Render Only for Medium devices and lower (<1199px)
+	.hook-screen-md-max;
+}
+
+// Only for Small devices and lower (<991px)
+@media (max-width: @screen-sm-max) {
+	#container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+
+	// Hook Mixin Render
+	.hook-screen-sm-max;
+}
+// Only for Small devices and lower (<767px)
+@media (max-width: @screen-xs-max) {
+
+
+
+	// Hook Mixin Render Only for Small devices and lower (<767px)
+	.hook-screen-xs-max;
+}

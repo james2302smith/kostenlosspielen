@@ -1,41 +1,130 @@
 === WP-PostRatings ===
-Contributors: GamerZ
-Donate link: http://lesterchan.net/site/donation/
-Tags: ratings, rating, postratings, postrating, vote, digg, ajax, post
-Requires at least: 2.8
-Tested up to: 3.0.4
-Stable tag: trunk
+Contributors: GamerZ  
+Donate link: http://lesterchan.net/site/donation/  
+Tags: ratings, rating, postratings, postrating, vote, digg, ajax, post  
+Requires at least: 2.8  
+Tested up to: 4.5  
+Stable tag: 1.83.2  
 
 Adds an AJAX rating system for your WordPress blog's post/page.
 
 == Description ==
 
-= Previous Versions =
-* [WP-PostRatings 1.40 For WordPress 2.7.x](http://downloads.wordpress.org/plugin/wp-postratings.1.40.zip "WP-PostRatings 1.40 For WordPress 2.7.x")
-* [WP-PostRatings 1.31 For WordPress 2.5.x And 2.6.x](http://downloads.wordpress.org/plugin/wp-postratings.1.31.zip "WP-PostRatings 1.31 For WordPress 2.5.x And 2.6.x")
-* [WP-PostRatings 1.20 For WordPress 2.3.x](http://downloads.wordpress.org/plugin/wp-postratings.1.20.zip "WP-PostRatings 1.20 For WordPress 2.3.x")</a>
-* [WP-PostRatings 1.11 For WordPress 2.1.x And 2.2.x](http://downloads.wordpress.org/plugin/wp-postratings.1.11.zip "WP-PostRatings 1.11 For WordPress 2.1.x And 2.2.x")
-* [WP-PostRatings 1.05 For WordPress 2.0.x](http://downloads.wordpress.org/plugin/wp-postratings.1.05.zip "WP-PostRatings 1.05 For WordPress 2.0.x")
-* [WP-PostRatings 1.03 For WordPress 1.5.2](http://downloads.wordpress.org/plugin/wp-postratings.1.03wp1.52.zip "WP-PostRatings 1.03 For WordPress 1.5.2")
+= Build Status =
+[![Build Status](https://travis-ci.org/lesterchan/wp-postratings.svg?branch=master)](https://travis-ci.org/lesterchan/wp-postratings)
 
 = Development =
-* [http://dev.wp-plugins.org/browser/wp-postratings/](http://dev.wp-plugins.org/browser/wp-postratings/ "http://dev.wp-plugins.org/browser/wp-postratings/")
+[https://github.com/lesterchan/wp-postratings](https://github.com/lesterchan/wp-postratings "https://github.com/lesterchan/wp-postratings")
 
 = Translations =
-* [http://dev.wp-plugins.org/browser/wp-postratings/i18n/](http://dev.wp-plugins.org/browser/wp-postratings/i18n/ "http://dev.wp-plugins.org/browser/wp-postratings/i18n/")
-
-= Support Forums =
-* [http://forums.lesterchan.net/index.php?board=17.0](http://forums.lesterchan.net/index.php?board=17.0 "http://forums.lesterchan.net/index.php?board=17.0")
+[http://dev.wp-plugins.org/browser/wp-postratings/i18n/](http://dev.wp-plugins.org/browser/wp-postratings/i18n/ "http://dev.wp-plugins.org/browser/wp-postratings/i18n/")
 
 = Credits =
+* Plugin icon by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com)
 * Icons courtesy of [FamFamFam](http://www.famfamfam.com/ "FamFamFam") and [Everaldo](http://www.everaldo.com "Everaldo")
-* __ngetext() by [Anna Ozeritskaya](http://hweia.ru/ "Anna Ozeritskaya")
-* Right To Left Language Support by [Kambiz R. Khojasteh](http://persian-programming.com/ "Kambiz R. Khojasteh")
 
 = Donations =
-* I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
+I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appreciate it. If not feel free to use it without any obligations.
 
 == Changelog ==
+= Version 1.83.2 =
+* FIXED: Unauthenticated blind SQL injection in ratings_most_orderby(). Props @Ben Bidner from Automattic.
+
+= Version 1.83.1 =
+* FIXED: Remove No Results template from the_ratings_results()
+
+= Version 1.83 =
+* NEW: Added 'wp_postratings_display_comment_author_ratings' filter
+* FIXED: Removing Loading ... because SERP will index the text if the ratings is at the top of the article
+* FIXED: Move wp_postratings_image_extension filter to init()
+* FIXED: Show headline, datePublished and image despite there is no ratings
+* FIXED: Show post without ratings as well when sorting is done in URL. Props @talljosh.
+
+= Version 1.82 =
+* NEW: Added 'wp_postratings_image_extension' filter
+* FIXED: Added headline, datePublished, image to Article Schema type
+* FIXED: Deprecated PHP4 constructor in WordPress 4.3
+* FIXED: Remove schema code when Rich Snippets is off
+
+= Version 1.81 =
+* NEW: Added worstRating of 1. Props @rafaellop
+* NEW: Checked for defined() for RATINGS_IMG_EXT to allow overwrite
+* FIXED: Integration with WP-Stats
+
+= Version 1.80 =
+* NEW: Suppor Custom Post Types in Widgets
+* NEW: Added 'wp_postratings_process_ratings_user', 'wp_postratings_process_ratings_userid' & 'wp_postratings_check_rated' filters
+* NEW: Supports WordPress Multisite Network Activate
+* NEW: Uses WordPress native uninstall.php
+
+= Version 1.79 =
+* NEW: Use POST for ratings instead
+* NEW: Add 'wp_postratings_schema_itemtype' filter so that you can change the Schema Type. See the FAQ for sample.
+* FIXED: Use 'is_rtl()' instead of $text_direction
+
+= Version 1.78 =
+* NEW: Uses Dash Icons
+* NEW: Option to turn off Google Rich Snippets
+* FIXED: Use SITECOOKIEPATH instead of COOKIEPATH. Props jbrule.
+* FIXED: If global $id is 0, use get_the_ID(). Props instruite.
+* FIXED: use esc_attr() and esc_js() to escape characters
+
+= Version 1.77 =
+* NEW: Add in %POST_ID% template variables
+* FIXED: Ensure Google Rich Snippet only displays in main loop and not in the widget
+* FIXED: Removed reviewCount from Google Rich Snippet
+* FIXED: Make the ratings widget more optimized
+* FIXED: Some widget templates are using postratings_template_mostrated instead of postratings_template_highestrated
+
+= Version 1.76 =
+* FIXED: No longer needing add_post_meta() if update_post_meta() fails
+* FIXED: Update 'Individual Rating Text/Value' Display no working due to missing nonce
+* FIXED: Added stripslashes() to remove slashes in the templates
+* FIXED: Check whether it is an array to prevent array_key_exists() from throwing a warning.
+
+= Version 1.75 =
+* Change htmlspecialchars to esc_attr(). Props Ryan Satterfield.
+* Change esc_attr() to wp_kses() For itemprop. Props oneTarek.
+
+= Version 1.74 =
+*  check_rated_username() should be using $user_ID. Props Artem Gordinsky.
+
+= Version 1.73 =
+* Add Stars Flat (PNG) Icons. Props hebaf.
+* Change Schema From http://schema.org/Product To http://schema.org/Article
+
+= Version 1.72 (11-07-2013) =
+* Fixed not logging ratings
+* Fixed sorting of ratings logs
+
+= Version 1.71 (10-07-2013) =
+* Fixed "unable to delete logs/data"
+
+= Version 1.70 (01-07-2013) =
+* Add rate_post action for other plugins to use. Props paulgibbs.
+* Prevent direct access to PHP files to avoid PHP errors. Props paulgibbs.
+* Fixes for PHP Notices. Props paulgibbs.
+* Improvements. Props paulgibbs.
+  * Better and safer handling of input variables
+  * Removed some manual SQL in favour of WP's API.
+  * Audited the rest of the SQL to make sure it was safe.
+  * Removed unneeded switch() block, and decreased the line indentation for better readability :)
+  * Use $wpdb->prepare() for SQL statements in wp-postratings.php
+* esc_attr(). Props felipedjinn.
+
+= Version 1.65 (19-04-2013) =
+* Fixed "Creating default object from empty value"
+* Added Text Domain To Plugin
+* Added Tested To 3.5
+
+= Version 1.64 (17-12-2012) =
+* Add "Ratings" Column To Manage Pages In WP-Admin
+* Add Sortable "Ratings" Column To Manage Posts/Pages In WP-Admin
+
+= Version 1.63 (21-05-2012) =
+* NEW: Move AJAX Request to wp-admin/admin-ajax.php
+* NEW: Added nonce To AJAX Calls And Admin Pages
+* NEW: Added Support For Google Rich Snippet
 
 = Version 1.62 (31-09-2011) =
 * FIXED: Escaped Hostname
@@ -71,7 +160,7 @@ Adds an AJAX rating system for your WordPress blog's post/page.
 * NEW: Works For WordPress 2.7 Only
 * NEW: Load Admin JS And CSS Only In WP-PostRatings Admin Pages
 * NEW: Added postratings-admin-css.css For WP-PostRatings Admin CSS Styles
-* NEW: Allow The Usage Of PNG Icons Or GIF Icons. See Usage Tab.* 
+* NEW: Allow The Usage Of PNG Icons Or GIF Icons. See Usage Tab.*
 * NEW: Added get_lowest_rated_range() Function
 * NEW: Right To Left Language Support by <a href="http://persian-programming.com/" title="http://persian-programming.com/">Kambiz R. Khojasteh</a>
 * NEW: Added "postratings-css-rtl.css" by <a href="http://persian-programming.com/" title="http://persian-programming.com/">Kambiz R. Khojasteh</a>
@@ -217,7 +306,7 @@ Adds an AJAX rating system for your WordPress blog's post/page.
 4. Activate `WP-PostRatings` Plugin
 5. Go to `WP-Admin -> Ratings -> Ratings Templates` and restore all the template variables to `Default`
 6. Go to `WP-Admin -> Appearance -> Widgets` and re-add the Ratings Widget
-	
+
 == Upgrade Notice ==
 
 N/A
@@ -233,25 +322,36 @@ N/A
 
 == Frequently Asked Questions ==
 
+= How To Change Schema Type? =
+* The default schema type is 'Article', if you want to change it to 'Recipe', you need to make use of the `wp_postratings_schema_itemtype` filter as shown in the sample code below:
+<code>
+<?php  
+add_filter('wp_postratings_schema_itemtype', 'wp_postratings_schema_itemtype');  
+function wp_postratings_schema_itemtype($itemtype) {  
+	return 'itemscope itemtype="http://schema.org/Recipe"';  
+}  
+?>
+</code>
+
 = How To Display Comment Author Ratings? =
-1. Open `wp-content/plugins/wp-postratings/wp-postratings.php`
-2. Find: `//add_filter('comment_text', 'comment_author_ratings_filter');`
-3. Replace: `add_filter('comment_text', 'comment_author_ratings_filter');`
-
-= How To use PNG images instead of GIF images =
-1. Open `wp-content/plugins/wp-postratings/wp-postratings.php`
-2. Find:
+* By default, the comment author ratings are not displayed. If you want to display the ratings, you need to make use of the `wp_postratings_display_comment_author_ratings` filter as shown in the sample code below:
 <code>
-define('RATINGS_IMG_EXT', 'gif');
-//define('RATINGS_IMG_EXT', 'png');
-</code>
-3. Replace:
-<code>
-//define('RATINGS_IMG_EXT', 'gif');
-define('RATINGS_IMG_EXT', 'png');
+function custom_display_comment_author_ratings() {
+    return true;
+}
+add_filter( 'wp_postratings_display_comment_author_ratings', 'custom_display_comment_author_ratings' );
 </code>
 
-= How Does WP-PostRatings Load CSS? = 
+= How To use PNG images instead of GIF images? =
+* The default image extension if 'gif', if you want to change it to 'png', you need to make use of the `wp_postratings_image_extension` filter as shown in the sample code below:
+<code>
+function custom_rating_image_extension() {
+    return 'png';
+}
+add_filter( 'wp_postratings_image_extension', 'custom_rating_image_extension' );
+</code>
+
+= How Does WP-PostRatings Load CSS? =
 * WP-PostRatings will load `postratings-css.css` from your theme's directory if it exists.
 * If it doesn't exists, it will just load the default 'postratings-css.css' that comes with WP-PostRatings.
 * This will allow you to upgrade WP-PostRatings without worrying about overwriting your ratings styles that you have created.
@@ -295,7 +395,7 @@ define('RATINGS_IMG_EXT', 'png');
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 lowest rated posts/pages.
 
-= To Display Lowest Rated Post In A Category = 
+= To Display Lowest Rated Post In A Category =
 * Use:
 <code>
 <?php if (function_exists('get_lowest_rated_category')): ?>
@@ -311,8 +411,8 @@ define('RATINGS_IMG_EXT', 'png');
 * If you want to display the lowest rated pages only, replace 'both' with 'page'.
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 lowest rated posts/pages.
-		
-= To Display Highest Rated Post =				
+
+= To Display Highest Rated Post =
 * Use:
 <code>
 <?php if (function_exists('get_highest_rated')): ?>
@@ -339,14 +439,14 @@ define('RATINGS_IMG_EXT', 'png');
 </code>
 * Default: get_highest_rated_tag(TAG_ID, 'both', 0, 10)
 * Replace TAG_ID will your tag ID. If you want it to span several categories, replace TAG_ID with array(1, 2) where 1 and 2 are your categories ID.
-* The value 'both' will display both the highest rated posts and pages.					
+* The value 'both' will display both the highest rated posts and pages.
 * If you want to display the highest rated posts only, replace 'both' with 'post'.
 * If you want to display the highest rated pages only, replace 'both' with 'page'.
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 highest rated posts/pages.
-		
+
 = To Display Highest Rated Post In A Category =
-* Use:					
+* Use:
 <code>
 <?php if (function_exists('get_highest_rated_category')): ?>
 	<ul>
@@ -356,7 +456,7 @@ define('RATINGS_IMG_EXT', 'png');
 </code>
 * Default: get_highest_rated_category(CATEGORY_ID, 'both', 0, 10)
 * Replace CATEGORY_ID will your category ID. If you want it to span several categories, replace CATEGORY_ID with array(1, 2) where 1 and 2 are your categories ID.
-* The value 'both' will display both the highest rated posts and pages.					
+* The value 'both' will display both the highest rated posts and pages.
 * If you want to display the highest rated posts only, replace 'both' with 'post'.
 * If you want to display the highest rated pages only, replace 'both' with 'page'.
 * The value 0 refers to the minimum votes required before the post get shown.
@@ -364,12 +464,12 @@ define('RATINGS_IMG_EXT', 'png');
 
 = To Display Highest Rated Post Within A Given Period =
 * Use:
-<code>					
+<code>
 <?php if (function_exists('get_highest_rated_range')): ?>
 	<ul>
 		<?php get_highest_rated_range('1 day'); ?>
 	</ul>
-<?php endif; ?>				
+<?php endif; ?>
 </code>
 * Default: get_highest_rated_range('1 day', 'both', 10)
 * The value '1 day' will be the range that you want. You can use '2 days', '1 month', etc.
@@ -386,7 +486,7 @@ define('RATINGS_IMG_EXT', 'png');
 		<?php get_most_rated(); ?>
 	</ul>
 <?php endif; ?>
-</code>		
+</code>
 * Default: get_most_rated('both', 0, 10)
 * The value 'both' will display both the most rated posts and pages.
 * If you want to display the most rated posts only, replace 'both' with 'post'.
@@ -394,7 +494,7 @@ define('RATINGS_IMG_EXT', 'png');
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 most rated posts/pages.
 
-= To Display Most Rated Post In A Category =				
+= To Display Most Rated Post In A Category =
 * Use:
 <code>
 <?php if (function_exists('get_most_rated_category')): ?>
@@ -402,7 +502,7 @@ define('RATINGS_IMG_EXT', 'png');
 		<?php get_most_rated_category(CATEGORY_ID); ?>
 	</ul>
 <?php endif; ?>
-</code>				
+</code>
 * Default: get_most_rated_category(CATEGORY_ID, 'both', 0, 10)
 * Replace CATEGORY_ID will your category ID. If you want it to span several categories, replace CATEGORY_ID with array(1, 2) where 1 and 2 are your categories ID.
 * The value 'both' will display both the most rated posts and pages.
@@ -411,7 +511,7 @@ define('RATINGS_IMG_EXT', 'png');
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 most rated posts/pages.
 
-= To Display Most Rated Post Within A Given Period =				
+= To Display Most Rated Post Within A Given Period =
 * Use:
 <code>
 <?php if (function_exists('get_most_rated_range')): ?>
@@ -427,7 +527,7 @@ define('RATINGS_IMG_EXT', 'png');
 * If you want to display the most rated pages only, replace 'both' with 'page'.
 * The value 10 will display only the top 10 most rated posts/pages.
 
-= To Display Highest Score Post =				
+= To Display Highest Score Post =
 * Use:
 <code>
 <?php if (function_exists('get_highest_score')): ?>
@@ -442,16 +542,16 @@ define('RATINGS_IMG_EXT', 'png');
 * If you want to display the most rated pages only, replace 'both' with 'page'.
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 most rated posts/pages.
-	
+
 = To Display Highest Score Post In A Category =
 * Use:
-<code>				
+<code>
 <?php if (function_exists('get_highest_score_category')): ?>
 	<ul>
 		<?php get_highest_score_category(CATEGORY_ID); ?>
 	</ul>
 <?php endif; ?>
-</code>	
+</code>
 * Default: get_highest_score_category(CATEGORY_ID, 'both', 0, 10)
 * Replace CATEGORY_ID will your category ID. If you want it to span several categories, replace CATEGORY_ID with array(1, 2) where 1 and 2 are your categories ID.
 * The value 'both' will display both the most rated posts and pages.
@@ -459,8 +559,8 @@ define('RATINGS_IMG_EXT', 'png');
 * If you want to display the most rated pages only, replace 'both' with 'page'.
 * The value 0 refers to the minimum votes required before the post get shown.
 * The value 10 will display only the top 10 most rated posts/pages.
-				
-				
+
+
 = To Display Highest Score Post Within A Given Period =
 * Use:
 <code>
@@ -476,13 +576,13 @@ define('RATINGS_IMG_EXT', 'png');
 * If you want to display the most rated posts only, replace 'both' with 'post'.
 * If you want to display the most rated pages only, replace 'both' with 'page'.
 * The value 10 will display only the top 10 most rated posts/pages.
-				
+
 = To Sort Highest/Lowest Rated Posts =
-* You can use: `<?php query_posts($query_string.'&r_sortby=highest_rated&amp;r_orderby=desc') ?>`
+* You can use: ``<?php query_posts( array( 'meta_key' => 'ratings_average', 'orderby' => 'meta_value_num', 'order' => 'DESC' ) ); ?>``
 * Or pass in the variables to the URL: `http://yoursite.com/?r_sortby=highest_rated&amp;r_orderby=desc`
 * You can replace desc with asc if you want the lowest rated posts.
 
 = To Sort Most/Least Rated Posts =
-* You can use: `<?php query_posts($query_string.'&r_sortby=most_rated&amp;r_orderby=desc') ?>`
-* Or pass in the variables to the URL: `http://yoursite.com/?r_sortby=most_rated&amp;r_orderby=desc`	
+* You can use: ``<?php query_posts( array( 'meta_key' => 'ratings_users', 'orderby' => 'meta_value_num', 'order' => 'DESC' ) ); ?>``
+* Or pass in the variables to the URL: `http://yoursite.com/?r_sortby=most_rated&amp;r_orderby=desc`
 * You can replace desc with asc if you want the least rated posts.

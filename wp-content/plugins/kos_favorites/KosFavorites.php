@@ -45,90 +45,148 @@ class KosFavorites {
         if(empty($postid)) {
             $postid = get_the_ID();
         }
-        if(empty($postid) || empty($this->userid)) {
+        if(empty($postid)) {
             return false;
         }
-        
-        global $wpdb;
-        global $table_prefix;
-        $sql = 'SELECT * FROM '.$table_prefix.'favorite_games AS fav WHERE fav.user_id = '.(int)$this->userid.' AND fav.post_id = '.(int)$postid;
-        $result = $wpdb->get_row($sql);
-        
-        return !empty($result);
+
+        if ($this->userid) {
+            global $wpdb;
+            global $table_prefix;
+            $sql = 'SELECT * FROM '.$table_prefix.'favorite_games AS fav WHERE fav.user_id = '.(int)$this->userid.' AND fav.post_id = '.(int)$postid;
+            $result = $wpdb->get_row($sql);
+
+            return !empty($result);
+        } else {
+            $favorites = json_decode(stripslashes($_COOKIE['favorites']), true);
+            if (empty($favorites) || !is_array($favorites)) return false;
+            foreach ($favorites as $f) {
+                if ($f['post_id'] == $postid) return true;
+            }
+            return false;
+        }
+
     }
     
     public function addToFavorite($postid) {
         if(empty($postid)) {
             $postid = get_the_ID();
         }
-        if(empty($postid) || empty($this->userid)) {
+        if(empty($postid)) {
             return false;
         }
         
         if($this->isFavoritedGame($postid)) {
             return true;
         }
-        
-        global $table_prefix;
-        $table = $table_prefix.'favorite_games';
+
         $data = array(
             'user_id' => $this->userid,
             'post_id' => $postid,
             'timestamp' => time()
         );
-        $format = array('%d', '%d', '%d');
-        
-        global $wpdb;
-        $result = $wpdb->insert($table, $data, $format);
-        if($result === false) {
-            return false;
+
+        if ($this->userid) {
+            global $table_prefix;
+            $table = $table_prefix.'favorite_games';
+            $format = array('%d', '%d', '%d');
+
+            global $wpdb;
+            $result = $wpdb->insert($table, $data, $format);
+            if($result === false) {
+                return false;
+            }
+            return true;
+        } else {
+            $favorites = json_decode(stripslashes($_COOKIE['favorites']), true);
+            if (empty($favorites) || !is_array($favorites)) {
+                $favorites = array();
+            }
+            array_push($favorites, $data);
+            setcookie('favorites', json_encode($favorites), time()+60*60*24*30, '/');
+            return true;
         }
-        return true;
     }
     
     public function removeFromFavorite($postid) {
         if(empty($postid)) {
             $postid = get_the_ID();
         }
-        if(empty($postid) || empty($this->userid)) {
+        if(empty($postid)) {
             return true;
         }
-        
-        global $table_prefix;
-        $table = $table_prefix.'favorite_games';
-        $where = array(
-            'user_id' => $this->userid,
-            'post_id' => $postid
-        );
-        $where_format = array('%d', '%d');
 
-        global $wpdb;
-        $wpdb->delete($table, $where, $where_format);
-        
-        return true;
+        if ($this->userid) {
+            global $table_prefix;
+            $table = $table_prefix.'favorite_games';
+            $where = array(
+                'user_id' => $this->userid,
+                'post_id' => $postid
+            );
+            $where_format = array('%d', '%d');
+
+            global $wpdb;
+            $wpdb->delete($table, $where, $where_format);
+
+            return true;
+        } else {
+            $favorites = json_decode(stripslashes($_COOKIE['favorites']), true);
+            if (!is_array($favorites) || empty($favorites)) return true;
+
+            $fa = array();
+            foreach($favorites as $f) {
+                if ($f['post_id'] != $postid) {
+                    array_push($fa, $f);
+                }
+            }
+            setcookie('favorites', json_encode($fa), time()+60*60*24*30, '/');
+            //$_COOKIE['favorites'] = $fa;
+            return true;
+        }
     }
     
     
     public function init($currentPage = 1, $limit = 20, $orderType = 'last_add_to_favorite') {
-        if(empty($this->userid)){
-            return;
-        }
         $this->currentPage = $currentPage;
         $this->perPage = $limit;
         $this->orderType = $orderType;
         
         $start = ($this->currentPage - 1) * $this->perPage;
+
+        $listId = array();
+        if (!$this->userid) {
+            $favorites = json_decode(stripslashes($_COOKIE['favorites']), true);
+            if (is_array($favorites) && !empty($favorites)) {
+                foreach($favorites as $f) {
+                    array_push($listId, $f['post_id']);
+                }
+            }
+            if (empty($listId)) return;
+        }
         
         global $wpdb;
         global $table_prefix;
 
         $select = 'SELECT SQL_CALC_FOUND_ROWS DISTINCT post.*';
-        $from = 'FROM '.$table_prefix.'posts as post INNER JOIN '.$table_prefix.'favorite_games AS fav ON fav.post_id = post.ID';
+        $from = '';
+        if ($this->userid) {
+            $from = 'FROM '.$table_prefix.'posts as post INNER JOIN '.$table_prefix.'favorite_games AS fav ON fav.post_id = post.ID';
+        } else {
+            $from = 'FROM '.$table_prefix.'posts as post';
+        }
+
         $where = "WHERE post.post_status = 'publish' ";
-        $where .= " AND fav.user_id = ".(int)$this->userid;
+        if ($this->userid) {
+            $where .= " AND fav.user_id = ".(int)$this->userid;
+        } else {
+            $where .= ' AND post.ID in ('.implode(',', $listId).') ';
+        }
         $where .= " AND post.post_type = 'post' ";
         //$where .= " AND post.category2 = ".(int)$this->id.' ';
-        $orderby = 'ORDER BY fav.timestamp DESC';
+        if ($this->userid) {
+            $orderby = 'ORDER BY fav.timestamp DESC';
+        } else {
+            $orderby = '';
+        }
 
         if($this->orderType == 'new') {
             $orderby = 'ORDER BY post.post_date DESC';

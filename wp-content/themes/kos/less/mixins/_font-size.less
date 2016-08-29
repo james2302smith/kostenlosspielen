@@ -1,0 +1,39 @@
+// MIXIN: Generate Font Size
+//--------------------------------------------------------------------------------
+// Parameter 		Type 		Default 		Description
+//--------------------------------------------------------------------------------
+// @maxValue 		int							maximum value
+// @minValue 		int			1				Minium value
+// @countDown 		int			1				Count down value
+// @important 		boolean		false			If value is true values will be add !important
+
+.fontSizeLoop(@maxValue, @minValue: 1, @countDown: 1) {
+	@numberMaxValue: unit(@maxValue);
+	@unitMaxValue: get-unit(@maxValue);
+	@numberMinValue: unit(@minValue);
+	@unitMinValue: get-unit(@maxValue);
+
+
+	// Default unit is px
+	.loopSize (@numberMaxValue) when (@numberMaxValue >= @numberMinValue) and (@unitMaxValue = px){
+		.@{font-size-prefix}-@{numberMaxValue} {
+			font-size: ~"@{numberMaxValue}@{unitMaxValue}";
+		}
+
+		// next iteration
+		.loopSize(@numberMaxValue - @countDown);
+	}
+	// When unit is not px
+	.loopSize (@index) when (@index >= @minValue) and not (@unitMaxValue = px){
+		.@{font-size-prefix}-@{index}@{unitMaxValue} {
+			font-size: ~"@{index}@{unitMaxValue}";
+		}
+
+		// next iteration
+		.loopSize(@index - @countDown);
+	}
+
+	// end the loop when index is 0
+	.loopSize (0) {}
+	.loopSize(@numberMaxValue);
+}

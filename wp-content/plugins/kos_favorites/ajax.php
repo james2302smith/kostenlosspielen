@@ -57,4 +57,4 @@ if(empty($game)) {
 }
 
 echo json_encode($return);
-die;
+//die;
